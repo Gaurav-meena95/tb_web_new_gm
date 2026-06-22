@@ -1,0 +1,9 @@
+{
+  "api_base_url": "https://api.terrainspotter.in/v4/",
+  "dev_base_url": "https://dev.beatravelbuddy.com/v4/",
+  "uat_base_url": "https://dev.beatravelbuddy.com/v5/",
+  "termsCondition": "https://beatravelbuddy.com/terms-and-conditions.html",
+  "privacyPolicy": "https://beatravelbuddy.com/privacy-policy.html",
+  "app_under_maintenance": false,
+  "under_maintenance_msg": "Our App is under maintenance"
+}

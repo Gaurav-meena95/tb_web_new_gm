@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Selfie Verification - Travel Buddy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .camera-container {
+            position: relative;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #000;
+            display: none;
+        }
+
+        .camera-video {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .camera-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .face-guide {
+            width: 200px;
+            height: 200px;
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .face-guide::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 180px;
+            height: 180px;
+            border: 2px dashed rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+        }
+
+        .upload-area {
+            border: 3px dashed #ddd;
+            border-radius: 15px;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+			display: none;
+        }
+
+        .upload-area:hover {
+            border-color: #667eea;
+            background-color: #f8f9ff;
+        }
+
+        .upload-area.dragover {
+            border-color: #667eea;
+            background-color: #f0f2ff;
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .upload-text {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .upload-hint {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .camera-section {
+            margin-bottom: 30px;
+        }
+
+        .camera-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .camera-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .camera-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+            opacity: 0.6;
+        }
+
+        .capture-btn {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            display: none;
+        }
+
+        .capture-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+        }
+
+        .capture-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+            opacity: 0.6;
+        }
+
+        .preview-container {
+            margin: 20px 0;
+            display: none;
+        }
+
+        .preview-image {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .result-container {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 15px;
+            display: none;
+        }
+
+        .result-success {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+        }
+
+        .result-error {
+            background: linear-gradient(135deg, #f44336, #d32f2f);
+            color: white;
+        }
+
+        .result-loading {
+            background: linear-gradient(135deg, #2196F3, #1976D2);
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .file-input {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .error-message {
+            color: #f44336;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .success-message {
+            color: #4CAF50;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .camera-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .switch-camera-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .switch-camera-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .camera-status {
+            color: #666;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .gender-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .gender-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .confidence-text {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Enhanced accessibility */
+        .camera-btn:focus,
+        .capture-btn:focus,
+        .switch-camera-btn:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .camera-video {
+                height: 250px;
+            }
+
+            .face-guide {
+                width: 150px;
+                height: 150px;
+            }
+
+            .face-guide::before {
+                width: 130px;
+                height: 130px;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .camera-btn,
+            .capture-btn {
+                border: 2px solid #000;
+            }
+
+            .result-container {
+                border: 2px solid #000;
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            .camera-btn:hover,
+            .capture-btn:hover {
+                transform: none;
+            }
+
+            .loading-spinner {
+                animation: none;
+            }
+
+            .result-loading {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">TB</div>
+        <h1>Live Selfie Verification</h1>
+        <p class="subtitle">Use your camera for instant gender detection</p>
+
+        <!-- Camera Container -->
+        <div class="camera-container" id="cameraContainer">
+            <video class="camera-video" id="cameraVideo" autoplay playsinline muted></video>
+            <div class="camera-overlay">
+                <div class="face-guide"></div>
+            </div>
+            <div class="camera-controls">
+                <button class="switch-camera-btn" id="switchCameraBtn">🔄 Switch Camera</button>
+            </div>
+        </div>
+
+        <!-- Upload Area (Fallback) -->
+        <div class="upload-area" id="uploadArea">
+            <input type="file" id="fileInput" class="file-input" accept="image/*" capture="user">
+            <div class="upload-icon">📷</div>
+            <div class="upload-text">Click to upload or drag & drop</div>
+            <div class="upload-hint">Supports JPG, PNG, GIF (Max 20MB)</div>
+        </div>
+
+        <!-- Camera Buttons -->
+        <div class="camera-section">
+            <button class="camera-btn" id="startCameraBtn">📱 Start Live Camera</button>
+            <button class="camera-btn" id="uploadBtn" style="display: none;">📤 Upload File</button>
+            <button class="capture-btn" id="captureBtn">📸 Capture Selfie</button>
+        </div>
+		
+        <div class="camera-status" id="cameraStatus"></div>
+
+        <div class="preview-container" id="previewContainer">
+            <img id="previewImage" class="preview-image" alt="Selfie Preview">
+        </div>
+
+        <div class="result-container" id="resultContainer">
+            <div id="resultContent"></div>
+        </div>
+    </div>
+
+    <script>
+        class LiveSelfieVerification {
+            constructor() {
+                this.uploadArea = document.getElementById('uploadArea');
+                this.fileInput = document.getElementById('fileInput');
+                this.startCameraBtn = document.getElementById('startCameraBtn');
+                this.uploadBtn = document.getElementById('uploadBtn');
+                this.captureBtn = document.getElementById('captureBtn');
+                this.switchCameraBtn = document.getElementById('switchCameraBtn');
+                this.cameraContainer = document.getElementById('cameraContainer');
+                this.cameraVideo = document.getElementById('cameraVideo');
+                this.previewContainer = document.getElementById('previewContainer');
+                this.previewImage = document.getElementById('previewImage');
+                this.resultContainer = document.getElementById('resultContainer');
+                this.resultContent = document.getElementById('resultContent');
+                this.cameraStatus = document.getElementById('cameraStatus');
+                
+                this.selectedFile = null;
+                this.stream = null;
+                this.facingMode = 'user'; // Start with front camera
+                this.isCameraActive = false;
+                this.isSwitchingCamera = false;
+                this.isProcessing = false;
+                this.retryCount = 0;
+                this.maxRetries = 3;
+                
+                this.initEventListeners();
+                this.checkBrowserSupport();
+            }
+
+            checkBrowserSupport() {
+                // Check for required browser features
+                const features = {
+                    getUserMedia: !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia),
+                    FileReader: !!window.FileReader,
+                    FormData: !!window.FormData,
+                    fetch: !!window.fetch
+                };
+
+                console.log('Browser feature support:', features);
+
+                if (!features.getUserMedia) {
+                    this.updateStatus('Camera not supported in this browser. Please use file upload.');
+                    this.showFallbackMode();
+                }
+
+                if (!features.fetch) {
+                    this.showError('This browser does not support required features. Please use a modern browser.');
+                }
+            }
+
+            initEventListeners() {
+                // Start camera button
+                this.startCameraBtn.addEventListener('click', () => {
+                    this.startCamera();
+                });
+
+                // Capture button
+                this.captureBtn.addEventListener('click', () => {
+                    this.captureSelfie();
+                });
+
+                // Switch camera button
+                this.switchCameraBtn.addEventListener('click', () => {
+                    this.switchCamera();
+                });
+
+                // File input change (fallback)
+                this.fileInput.addEventListener('change', (e) => {
+                    this.handleFileSelect(e.target.files[0]);
+                });
+
+                // Drag and drop (fallback)
+                this.uploadArea.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    this.uploadArea.classList.add('dragover');
+                });
+
+                this.uploadArea.addEventListener('dragleave', () => {
+                    this.uploadArea.classList.remove('dragover');
+                });
+
+                this.uploadArea.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    this.uploadArea.classList.remove('dragover');
+                    this.handleFileSelect(e.dataTransfer.files[0]);
+                });
+
+                // Upload button (fallback)
+                this.uploadBtn.addEventListener('click', () => {
+                    this.uploadSelfie();
+                });
+
+                // Click upload area (fallback)
+                this.uploadArea.addEventListener('click', () => {
+                    this.fileInput.removeAttribute('capture');
+                    this.fileInput.click();
+                });
+
+                // Handle page visibility changes
+                document.addEventListener('visibilitychange', () => {
+                    if (document.hidden && this.isCameraActive) {
+                        this.stopCamera();
+                        this.updateStatus('Camera stopped due to page visibility change.');
+                    }
+                });
+
+                // Handle beforeunload
+                window.addEventListener('beforeunload', () => {
+                    if (this.stream) {
+                        this.stopCamera();
+                    }
+                });
+            }
+
+            async startCamera() {
+                if (this.isProcessing) {
+                    this.updateStatus('Please wait, processing in progress...');
+                    return;
+                }
+
+                try {
+                    this.updateStatus('Starting camera...');
+                    console.log('Starting camera with facingMode:', this.facingMode);
+                    
+                    // Stop existing stream if any
+                    if (this.stream) {
+                        this.stopCamera();
+                    }
+
+                    const constraints = {
+                        video: {
+                            facingMode: this.facingMode,
+                            width: { ideal: 640 },
+                            height: { ideal: 480 }
+                        }
+                    };
+
+                    console.log('Camera constraints:', constraints);
+                    
+                    // Check if getUserMedia is supported
+                    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                        throw new Error('Camera API not supported in this browser');
+                    }
+                    
+                    this.stream = await navigator.mediaDevices.getUserMedia(constraints);
+                    console.log('Camera stream obtained:', this.stream);
+                    
+                    this.cameraVideo.srcObject = this.stream;
+                    
+                    // Wait for video to be ready
+                    await new Promise((resolve, reject) => {
+                        const timeout = setTimeout(() => {
+                            reject(new Error('Video load timeout'));
+                        }, 10000); // 10 second timeout
+                        
+                        this.cameraVideo.onloadedmetadata = () => {
+                            clearTimeout(timeout);
+                            this.isCameraActive = true;
+                            this.retryCount = 0; // Reset retry count on success
+                            resolve();
+                        };
+                        
+                        this.cameraVideo.onerror = () => {
+                            clearTimeout(timeout);
+                            reject(new Error('Video load error'));
+                        };
+                    });
+
+                    // Show camera interface
+                    this.cameraContainer.style.display = 'block';
+                    this.uploadArea.style.display = 'none';
+                    this.captureBtn.style.display = 'inline-block';
+                    this.startCameraBtn.style.display = 'none';
+                   //	 this.uploadBtn.style.display = 'inline-block';
+
+                    this.updateStatus('Camera ready! Position your face in the circle and click capture.');
+                } catch (error) {
+                    console.error('Camera error:', error);
+                    console.error('Error name:', error.name);
+                    console.error('Error message:', error.message);
+                    
+                    this.retryCount++;
+                    let errorMessage = 'Camera access denied. Please use file upload instead.';
+                    
+                    if (error.name === 'NotAllowedError') {
+                        errorMessage = 'Camera permission denied. Please allow camera access in your browser settings and try again.';
+                    } else if (error.name === 'NotFoundError') {
+                        errorMessage = 'No camera found. Please connect a camera or use file upload.';
+                    } else if (error.name === 'NotSupportedError') {
+                        errorMessage = 'Camera not supported in this browser. Please use file upload.';
+                    } else if (error.message === 'Video load timeout') {
+                        errorMessage = 'Camera took too long to start. Please try again.';
+                    } else if (error.message === 'Video load error') {
+                        errorMessage = 'Failed to load camera video. Please try again.';
+                    } else if (error.message === 'Camera API not supported in this browser') {
+                        errorMessage = 'Your browser does not support camera access. Please use file upload.';
+                    }
+                    
+                    this.updateStatus(errorMessage);
+                    
+                    // Auto-retry for certain errors
+                    if (this.retryCount < this.maxRetries && 
+                        (error.name === 'NotAllowedError' || error.message === 'Video load timeout')) {
+                        this.updateStatus(`Retrying... (${this.retryCount}/${this.maxRetries})`);
+                        setTimeout(() => this.startCamera(), 2000);
+                    } else {
+                        this.showFallbackMode();
+                    }
+                }
+            }
+
+            stopCamera() {
+                if (this.stream) {
+                    this.stream.getTracks().forEach(track => {
+                        track.stop();
+                        console.log('Stopped track:', track.kind);
+                    });
+                    this.stream = null;
+                }
+                
+                // Clear video source
+                if (this.cameraVideo.srcObject) {
+                    this.cameraVideo.srcObject = null;
+                }
+                
+                this.isCameraActive = false;
+                this.isSwitchingCamera = false;
+                this.cameraContainer.style.display = 'none';
+                this.captureBtn.style.display = 'none';
+                this.startCameraBtn.style.display = 'inline-block';
+                this.switchCameraBtn.disabled = false;
+            }
+
+            async switchCamera() {
+                // Prevent multiple simultaneous camera switches
+                if (this.isSwitchingCamera) return;
+                
+                this.isSwitchingCamera = true;
+                this.switchCameraBtn.disabled = true;
+                
+                try {
+                    this.facingMode = this.facingMode === 'user' ? 'environment' : 'user';
+                    await this.startCamera();
+                } catch (error) {
+                    console.error('Camera switch error:', error);
+                    this.updateStatus('Failed to switch camera. Please try again.');
+                } finally {
+                    this.isSwitchingCamera = false;
+                    this.switchCameraBtn.disabled = false;
+                }
+            }
+
+            showFallbackMode() {
+                this.uploadArea.style.display = 'block';
+                this.cameraContainer.style.display = 'none';
+                this.captureBtn.style.display = 'none';
+                this.startCameraBtn.style.display = 'inline-block';
+                this.uploadBtn.style.display = 'inline-block';
+            }
+
+            captureSelfie() {
+                if (!this.isCameraActive) return;
+
+                // Check if video is ready
+                if (this.cameraVideo.videoWidth === 0 || this.cameraVideo.videoHeight === 0) {
+                    this.showError('Camera not ready. Please wait a moment and try again.');
+                    return;
+                }
+
+                // Create canvas to capture the video frame
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                
+                canvas.width = this.cameraVideo.videoWidth;
+                canvas.height = this.cameraVideo.videoHeight;
+                
+                try {
+                    // Draw the video frame to canvas
+                    context.drawImage(this.cameraVideo, 0, 0, canvas.width, canvas.height);
+                    
+                    // Convert canvas to blob
+                    canvas.toBlob((blob) => {
+                        if (blob) {
+                            // Create a file from the blob
+                            const file = new File([blob], 'selfie.jpg', { type: 'image/jpeg' });
+                            this.handleCapturedSelfie(file);
+                        } else {
+                            this.showError('Failed to capture image. Please try again.');
+                        }
+                    }, 'image/jpeg', 0.8);
+                } catch (error) {
+                    console.error('Canvas capture error:', error);
+                    this.showError('Failed to capture image. Please try again.');
+                }
+            }
+
+            handleCapturedSelfie(file) {
+                this.selectedFile = file;
+                this.showPreview(file);
+                this.uploadSelfie(); // Automatically upload the captured selfie
+            }
+
+            handleFileSelect(file) {
+                if (!file) return;
+
+                // Reset retry count for new file
+                this.retryCount = 0;
+
+                // Validate file type
+                if (!file.type.startsWith('image/')) {
+                    this.showError('Please select an image file (JPG, PNG, GIF, etc.)');
+                    return;
+                }
+
+                // Check for specific image formats
+                const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+                if (!allowedTypes.includes(file.type.toLowerCase())) {
+                    this.showError('Please select a supported image format (JPG, PNG, GIF, WebP)');
+                    return;
+                }
+
+                // Validate file size (20MB)
+                if (file.size > 20 * 1024 * 1024) {
+                    this.showError('File size must be less than 20MB');
+                    return;
+                }
+
+                // Check minimum file size (at least 1KB)
+                if (file.size < 1024) {
+                    this.showError('File appears to be too small. Please select a valid image.');
+                    return;
+                }
+
+                // Validate file name
+                if (!file.name || file.name.length === 0) {
+                    this.showError('Invalid file name. Please select a different file.');
+                    return;
+                }
+
+                // Check for suspicious file extensions
+                const suspiciousExtensions = ['.exe', '.bat', '.cmd', '.com', '.pif', '.scr', '.vbs', '.js'];
+                const fileName = file.name.toLowerCase();
+                if (suspiciousExtensions.some(ext => fileName.endsWith(ext))) {
+                    this.showError('Invalid file type. Please select an image file.');
+                    return;
+                }
+
+                this.selectedFile = file;
+                this.showPreview(file);
+                this.showUploadButton();
+            }
+
+            showPreview(file) {
+                const reader = new FileReader();
+                
+                reader.onload = (e) => {
+                    this.previewImage.src = e.target.result;
+                    this.previewContainer.style.display = 'block';
+                };
+                
+                reader.onerror = () => {
+                    this.showError('Failed to read file. Please try again.');
+                };
+                
+                try {
+                    reader.readAsDataURL(file);
+                } catch (error) {
+                    console.error('FileReader error:', error);
+                    this.showError('Failed to read file. Please try again.');
+                }
+            }
+
+            showUploadButton() {
+                this.uploadBtn.style.display = 'inline-block';
+                this.startCameraBtn.style.display = 'none';
+            }
+
+            async uploadSelfie() {
+                if (!this.selectedFile) {
+                    this.showError('Please select a file first');
+                    return;
+                }
+
+                if (this.isProcessing) {
+                    this.showError('Please wait, another upload is in progress');
+                    return;
+                }
+
+                this.isProcessing = true;
+                this.showLoading();
+                this.disableAllButtons();
+
+                const formData = new FormData();
+                formData.append('uploaded_files', this.selectedFile);
+
+                try {
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 60000); // 60 second timeout
+
+                    const response = await fetch('/selfie-verification', {
+                        method: 'POST',
+                        body: formData,
+                        signal: controller.signal
+                    });
+
+                    clearTimeout(timeoutId);
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    this.handleResult(result);
+                } catch (error) {
+                    console.error('Upload error:', error);
+                    
+                    let errorMessage = 'Failed to upload selfie. Please try again.';
+                    
+                    if (error.name === 'AbortError') {
+                        errorMessage = 'Request timed out. Please check your connection and try again.';
+                    } else if (error.message.includes('HTTP error! status: 413')) {
+                        errorMessage = 'File too large. Please select a smaller image.';
+                    } else if (error.message.includes('HTTP error! status: 500')) {
+                        errorMessage = 'Server error. Please try again later.';
+                    } else if (error.message.includes('HTTP error! status: 400')) {
+                        errorMessage = 'Invalid file format. Please select a valid image.';
+                    }
+                    
+                    this.showError(errorMessage);
+                    
+                    // Auto-retry for network errors
+                    if (this.retryCount < this.maxRetries && 
+                        (error.name === 'AbortError' || error.message.includes('Failed to fetch'))) {
+                        this.retryCount++;
+                        this.updateStatus(`Retrying upload... (${this.retryCount}/${this.maxRetries})`);
+                        setTimeout(() => this.uploadSelfie(), 2000);
+                        return;
+                    }
+                } finally {
+                    this.isProcessing = false;
+                    this.enableAllButtons();
+                }
+            }
+
+            handleResult(result) {
+                console.log('API Response:', result);
+                console.log('Face++ Raw Data:', result.faceppRaw);
+                
+                // Debug: Log the structure of the response
+                if (result.faceppRaw && result.faceppRaw.faces && result.faceppRaw.faces.length > 0) {
+                    console.log('First face data:', result.faceppRaw.faces[0]);
+                    console.log('Gender attributes:', result.faceppRaw.faces[0].attributes);
+                }
+                
+                // Track analytics
+                this.trackAnalytics('selfie_verification_result', {
+                    success: result.responseCode === 200,
+                    gender: result.gender || 'unknown',
+                    error: result.errorMessage || null
+                });
+                
+                if (result.responseCode === 200 && result.gender) {
+                    this.showSuccess(result);
+                } else {
+                    const errorMessage = result.errorMessage || 'Failed to detect gender. Please try again.';
+                    this.showError(errorMessage);
+                }
+            }
+
+            showLoading() {
+                this.resultContainer.className = 'result-container result-loading';
+                this.resultContent.innerHTML = `
+                    <div class="loading-spinner"></div>
+                    <div>Analyzing selfie...</div>
+                    <div style="font-size: 12px; margin-top: 10px; opacity: 0.8;">This may take a few seconds</div>
+                `;
+                this.resultContainer.style.display = 'block';
+            }
+
+            showSuccess(result) {
+                const gender = result.gender;
+                const icon = gender === 'Male' ? '👨' : '👩';
+                
+                // Face++ API doesn't provide confidence scores for gender detection
+                // So we'll show a generic success message
+                const confidenceText = 'Gender detection completed successfully';
+
+                this.resultContainer.className = 'result-container result-success';
+                this.resultContent.innerHTML = `
+                    <div class="gender-icon">${icon}</div>
+                    <div class="gender-text">Detected: ${gender}</div>
+                    <div class="confidence-text">${confidenceText}</div>
+                    <div style="font-size: 12px; margin-top: 10px; opacity: 0.8;">Face analysis completed</div>
+                    <button class="camera-btn" onclick="location.reload()" style="margin-top: 15px; background: rgba(255,255,255,0.2);">🔄 Detect Another</button>
+                `;
+                this.resultContainer.style.display = 'block';
+                
+                // Stop camera after successful detection
+                this.stopCamera();
+                
+                // Track success
+                this.trackAnalytics('selfie_verification_success', { gender });
+            }
+
+            showError(message) {
+                this.resultContainer.className = 'result-container result-error';
+                this.resultContent.innerHTML = `
+                    <div class="gender-icon">❌</div>
+                    <div class="gender-text">Error</div>
+                    <div class="confidence-text">${message}</div>
+                    <button class="camera-btn" onclick="location.reload()" style="margin-top: 15px;">🔄 Try Again</button>
+                `;
+                this.resultContainer.style.display = 'block';
+                
+                // Track error
+                this.trackAnalytics('selfie_verification_error', { error: message });
+            }
+
+            updateStatus(message) {
+                this.cameraStatus.textContent = message;
+            }
+
+            disableAllButtons() {
+                this.captureBtn.disabled = true;
+                this.uploadBtn.disabled = true;
+                this.startCameraBtn.disabled = true;
+                this.switchCameraBtn.disabled = true;
+            }
+
+            enableAllButtons() {
+                this.captureBtn.disabled = false;
+                this.uploadBtn.disabled = false;
+                this.startCameraBtn.disabled = false;
+                this.switchCameraBtn.disabled = false;
+            }
+
+            trackAnalytics(event, data) {
+                try {
+                    // Simple analytics tracking
+                    console.log('Analytics Event:', event, data);
+                    
+                    // You can integrate with Google Analytics, Mixpanel, etc. here
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', event, data);
+                    }
+                    
+                    if (typeof mixpanel !== 'undefined') {
+                        mixpanel.track(event, data);
+                    }
+                } catch (error) {
+                    console.error('Analytics error:', error);
+                }
+            }
+        }
+
+        // Initialize the app when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new LiveSelfieVerification();
+        });
+    </script>
+</body>
+</html> 

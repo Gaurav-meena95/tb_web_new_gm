@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TB Home Design (Figma Replica)</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/view/assets/css/tb-home-figma.css" />
+</head>
+<body>
+  <main class="tb-page">
+    <section class="hero">
+      <div class="hero-top">
+        <div class="logo">TB</div>
+        <div class="hero-icons">
+          <div class="hero-icon">%</div>
+          <div class="hero-icon">☰</div>
+        </div>
+      </div>
+      <div class="tabs">
+        <button class="tab active">Flights</button>
+        <button class="tab">Group Trips</button>
+        <button class="tab">Packages</button>
+      </div>
+      <div class="hero-copy hero-copy--compact">
+        <h1>Its more than<br />just a trip</h1>
+      </div>
+      <div class="flight-controls">
+        <div class="trip-toggle">
+          <button class="trip-chip trip-chip--active">✓ One way</button>
+          <button class="trip-chip">Round trip</button>
+        </div>
+        <div class="flight-row">
+          <div class="flight-card flight-card--lg">
+            <span class="flight-label">From</span>
+            <div class="flight-main">Delhi</div>
+            <div class="flight-sub">DEL, Delhi Airport India</div>
+            <span class="flight-caret">⌄</span>
+          </div>
+          <div class="flight-card flight-card--lg">
+            <span class="flight-label">To</span>
+            <div class="flight-main">Mumbai</div>
+            <div class="flight-sub">
+              BOM, Chhatrapati Shivaji Maharaj International Airport Mumbai
+            </div>
+            <span class="flight-caret">⌄</span>
+          </div>
+          <div class="flight-card">
+            <span class="flight-label">Departure</span>
+            <div class="flight-main">
+              30 <small>Mar'25</small>
+            </div>
+            <div class="flight-sub">Sunday</div>
+            <span class="flight-caret">⌄</span>
+          </div>
+          <div class="flight-card">
+            <span class="flight-label">Return</span>
+            <div class="flight-main">
+              1 <small>Apr'25</small>
+            </div>
+            <div class="flight-sub">Sunday</div>
+            <span class="flight-caret">⌄</span>
+          </div>
+          <div class="flight-card">
+            <span class="flight-label">Travel &amp; Class</span>
+            <div class="flight-main">
+              1 <small>Traveller</small>
+            </div>
+            <div class="flight-sub">Economy / Premium Economy</div>
+            <span class="flight-caret">⌄</span>
+          </div>
+        </div>
+        <div class="fare-wrap">
+          <span class="fare-title">Select a special fare</span>
+          <div class="fare-row">
+            <span class="fare-chip fare-chip--active">Extra Savings</span>
+            <span class="fare-chip">Student</span>
+            <span class="fare-chip">Senior citizen</span>
+            <span class="fare-chip">Armed forces</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Trending Group Trips</h2>
+      </div>
+      <div class="trip-grid">
+        <article class="trip-card">
+          <div
+            class="trip-img"
+            style="background-image:url('https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1000&q=80')"
+          >
+            <span class="trip-tag">Mountaineering</span>
+          </div>
+          <div class="trip-body">
+            <h3 class="trip-title">Jibhi Adventure Trail</h3>
+            <p class="trip-meta">Himachal Pradesh, India • 6N/7D • APR-JUN</p>
+            <div class="trip-price-row">
+              <span class="trip-price">INR 8,250</span>
+              <span class="trip-rating">4.3</span>
+            </div>
+          </div>
+        </article>
+        <article class="trip-card">
+          <div
+            class="trip-img"
+            style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1000&q=80')"
+          >
+            <span class="trip-tag">Hiking</span>
+          </div>
+          <div class="trip-body">
+            <h3 class="trip-title">Kasol Forest Escape</h3>
+            <p class="trip-meta">Himachal Pradesh, India • 4N/5D • MAY-JUL</p>
+            <div class="trip-price-row">
+              <span class="trip-price">INR 10,490</span>
+              <span class="trip-rating">4.4</span>
+            </div>
+          </div>
+        </article>
+        <article class="trip-card">
+          <div
+            class="trip-img"
+            style="background-image:url('https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1000&q=80')"
+          >
+            <span class="trip-tag">Camping</span>
+          </div>
+          <div class="trip-body">
+            <h3 class="trip-title">Tirthan Valley Camp</h3>
+            <p class="trip-meta">Tirthan, India • 3N/4D • APR-SEP</p>
+            <div class="trip-price-row">
+              <span class="trip-price">INR 7,999</span>
+              <span class="trip-rating">4.5</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Choose Your Travel Type</h2>
+      </div>
+      <div class="type-grid">
+        <div class="type-pill">
+          <div
+            class="avatar"
+            style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=260&q=80')"
+          ></div>
+          <span>Adventure</span>
+        </div>
+        <div class="type-pill">
+          <div
+            class="avatar"
+            style="background-image:url('https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&w=260&q=80')"
+          ></div>
+          <span>Mountains</span>
+        </div>
+        <div class="type-pill">
+          <div
+            class="avatar"
+            style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=260&q=80')"
+          ></div>
+          <span>Lakes</span>
+        </div>
+        <div class="type-pill">
+          <div
+            class="avatar"
+            style="background-image:url('https://images.unsplash.com/photo-1501554728187-ce583db33af7?auto=format&fit=crop&w=260&q=80')"
+          ></div>
+          <span>Road Trips</span>
+        </div>
+        <div class="type-pill">
+          <div
+            class="avatar"
+            style="background-image:url('https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=260&q=80')"
+          ></div>
+          <span>Island</span>
+        </div>
+        <div class="type-pill">
+          <div
+            class="avatar"
+            style="background-image:url('https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=260&q=80')"
+          ></div>
+          <span>Wildlife</span>
+        </div>
+        <div class="type-pill">
+          <div
+            class="avatar"
+            style="background-image:url('https://images.unsplash.com/photo-1494783367193-149034c05e8f?auto=format&fit=crop&w=260&q=80')"
+          ></div>
+          <span>Culture</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Find the perfect escape</h2>
+        <div class="escape-head-actions">
+          <button class="pill">View All</button>
+          <div class="escape-nav">
+            <button
+              class="escape-nav-btn"
+              type="button"
+              aria-label="Previous destinations"
+              data-escape-prev
+            >
+              &#8249;
+            </button>
+            <button
+              class="escape-nav-btn"
+              type="button"
+              aria-label="Next destinations"
+              data-escape-next
+            >
+              &#8250;
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="escape-slider" data-escape-slider>
+        <article
+          class="escape-card"
+          style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=700&q=80')"
+        >
+          <h3>Nepal</h3>
+        </article>
+        <article
+          class="escape-card"
+          style="background-image:url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=700&q=80')"
+        >
+          <h3>Maldives</h3>
+        </article>
+        <article
+          class="escape-card"
+          style="background-image:url('https://images.unsplash.com/photo-1505765050516-f72dcac9c60f?auto=format&fit=crop&w=700&q=80')"
+        >
+          <h3>Belgium</h3>
+        </article>
+        <article
+          class="escape-card"
+          style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=700&q=80')"
+        >
+          <h3>Himalayas</h3>
+        </article>
+        <article
+          class="escape-card"
+          style="background-image:url('https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=700&q=80')"
+        >
+          <h3>Iceland</h3>
+        </article>
+        <article
+          class="escape-card"
+          style="background-image:url('https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=700&q=80')"
+        >
+          <h3>Norway</h3>
+        </article>
+        <article
+          class="escape-card"
+          style="background-image:url('https://images.unsplash.com/photo-1520769945061-0a448c463865?auto=format&fit=crop&w=700&q=80')"
+        >
+          <h3>Bali</h3>
+        </article>
+      </div>
+    </section>
+
+    <section class="section membership">
+      <div class="membership-copy">
+        <h2>Your Travel Saving Hacks</h2>
+        <p class="membership-kicker">get 50x of what you pay</p>
+        <p class="membership-sub">Join Travel Buddy Membership Club</p>
+        <button class="membership-cta">Join Now</button>
+      </div>
+      <div class="membership-photo">
+        <img
+          src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=900&q=80"
+          alt="Travel couple"
+        />
+      </div>
+    </section>
+
+    <section class="why-buddy">
+      <div class="why-copy">
+        <h2>Why Travel Buddy</h2>
+        <p class="why-lead">
+          Being the first travel community to provide free travel insurance
+          for adventure activities up to 4.5 lakhs, we financially back our
+          customers.
+        </p>
+        <p class="why-sub">
+          Our constant dedication and hard work have helped us earn the
+          following achievements:
+        </p>
+        <ul class="why-list">
+          <li>Incubated by IIM Bangalore | NSRCEL</li>
+          <li>Recognized adventure tour operator by Uttar Pradesh Tourism</li>
+          <li>Supported by Google for Startups</li>
+          <li>TripAdvisor Travel Choice Award winner (2020, 2023)</li>
+          <li>Three-time MSME Best Enterprise (Travel &amp; Tourism)</li>
+          <li>Featured on Business Standard and ANI</li>
+        </ul>
+      </div>
+      <div class="why-collage">
+        <img
+          class="why-img why-img--tall"
+          src="https://images.unsplash.com/photo-1526481280695-3c4699d13e61?auto=format&fit=crop&w=800&q=80"
+          alt="Travel experience"
+        />
+        <img
+          class="why-img why-img--top"
+          src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=700&q=80"
+          alt="Adventure"
+        />
+        <img
+          class="why-img why-img--mid"
+          src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=700&q=80"
+          alt="Nature"
+        />
+        <img
+          class="why-img why-img--wide"
+          src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1000&q=80"
+          alt="Scenic lake"
+        />
+      </div>
+    </section>
+
+    <section class="figma-about">
+      <div class="figma-about-top">
+        <div class="figma-stats">
+          <div class="figma-stat figma-stat--rating">
+            <strong>4.8</strong>
+            <span>Overall Ratings</span>
+          </div>
+          <div class="figma-stat figma-stat--travellers">
+            <strong>3M</strong>
+            <span>Travellers</span>
+          </div>
+          <div class="figma-stat figma-stat--experience">
+            <strong>10+</strong>
+            <span>Years Of Experiences</span>
+          </div>
+          <div class="figma-stat figma-stat--customers">
+            <strong>12k</strong>
+            <span>Happy Customers</span>
+          </div>
+        </div>
+        <div class="figma-circle-photo">
+          <img
+            src="https://www.figma.com/api/mcp/asset/6cd79ec8-fbc9-4302-a597-870cf2e44a3d"
+            alt="Travel moments"
+          />
+        </div>
+      </div>
+
+      <div class="figma-about-mid">
+        <div class="figma-accreditation">
+          <h2>Our Accrediations</h2>
+          <img
+            src="https://www.figma.com/api/mcp/asset/5837c07f-9ca6-48cd-af05-b211c38f5901"
+            alt="Accreditation logos"
+          />
+        </div>
+
+        <div class="figma-news-card">
+          <div class="figma-news-image">
+            <img
+              src="https://www.figma.com/api/mcp/asset/a4d4281d-3971-43df-a61b-a3575c0d95d6"
+              alt="Newsletter"
+            />
+          </div>
+          <div class="figma-news-content">
+            <p class="figma-news-eyebrow">NEWSLETTER</p>
+            <h3>Never Miss a Travel Deal!</h3>
+            <p class="figma-news-copy">
+              Encourage users to subscribe for exclusive offers and travel tips.
+            </p>
+            <div class="figma-news-form">
+              <input type="email" placeholder="Email Address" />
+              <button>Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img
+          src="/view/assets/img/app_logo_new.webp"
+          alt="Travel Buddy logo"
+        />
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Travel With Us</h4>
+          <a href="#">Blog</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">FAQ's</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Address</h4>
+          <a href="#">Travel Horizons</a>
+          <a href="#">123 Wanderlust Avenue</a>
+          <a href="#">Suite 456, Adventure City</a>
+          <a href="#">California, USA 90210</a>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Link</h4>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">i</a>
+            <a href="#" aria-label="Twitter">x</a>
+            <a href="#" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+  <script>
+    (() => {
+      const slider = document.querySelector('[data-escape-slider]');
+      if (!slider) return;
+
+      const prevButton = document.querySelector('[data-escape-prev]');
+      const nextButton = document.querySelector('[data-escape-next]');
+      const AUTOPLAY_MS = 2800;
+      let autoplayTimer = null;
+
+      const getStep = () => {
+        const card = slider.querySelector('.escape-card');
+        if (!card) return 320;
+        const cardWidth = card.getBoundingClientRect().width;
+        return cardWidth + 12;
+      };
+
+      const scrollByStep = (direction) => {
+        slider.scrollBy({
+          left: direction * getStep(),
+          behavior: 'smooth',
+        });
+      };
+
+      const runAutoSlide = () => {
+        const step = getStep();
+        const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+        const reachedEnd = slider.scrollLeft >= maxScrollLeft - step / 2;
+
+        if (reachedEnd) {
+          slider.scrollTo({ left: 0, behavior: 'smooth' });
+          return;
+        }
+
+        scrollByStep(1);
+      };
+
+      const startAutoplay = () => {
+        if (autoplayTimer) return;
+        autoplayTimer = window.setInterval(runAutoSlide, AUTOPLAY_MS);
+      };
+
+      const stopAutoplay = () => {
+        if (!autoplayTimer) return;
+        window.clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      };
+
+      prevButton?.addEventListener('click', () => scrollByStep(-1));
+      nextButton?.addEventListener('click', () => scrollByStep(1));
+
+      slider.addEventListener('mouseenter', stopAutoplay);
+      slider.addEventListener('mouseleave', startAutoplay);
+      prevButton?.addEventListener('mouseenter', stopAutoplay);
+      nextButton?.addEventListener('mouseenter', stopAutoplay);
+      prevButton?.addEventListener('mouseleave', startAutoplay);
+      nextButton?.addEventListener('mouseleave', startAutoplay);
+
+      // Pause autoplay when tab is hidden.
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          stopAutoplay();
+        } else {
+          startAutoplay();
+        }
+      });
+
+      startAutoplay();
+    })();
+  </script>
+</body>
+</html>

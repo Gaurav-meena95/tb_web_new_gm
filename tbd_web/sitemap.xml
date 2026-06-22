@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    
+    <!-- Main Pages -->
+    <url>
+        <loc>https://beatravelbuddy.com/</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/new-banner-home.png</image:loc>
+            <image:caption>Explore exciting meetups, unbeatable travel packages, and fantastic hotel deals with us.</image:caption>
+        </image:image>
+        <video:video>
+            <video:content_loc>https://beatravelbuddy.com/view/assets/img/Travel_Buddy_Blurb_Video.mp4</video:content_loc>
+            <video:thumbnail_loc>https://beatravelbuddy.com/view/assets/img/poster_onboarding.png</video:thumbnail_loc>
+            <video:title>Seamless Journey Booking: Uncover Great Deals on Trips, Hotels, and Flights</video:title>
+            <video:description>Embark on a journey of a lifetime with our comprehensive travel services. We offer a wide range of options for you to choose from, whether it's exploring exotic destinations, booking comfortable and luxurious accommodations, or securing the best deals on flights. Our platform is designed to make your travel planning seamless and enjoyable. Experience the thrill of adventure, the relaxation of a well-planned vacation, and the joy of great savings. With us, a great travel experience is just a click away. Start your journey with us today!</video:description>
+        </video:video>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/check-deals-hotels-flights-packages</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/new-banner-home.png</image:loc>
+            <image:caption>Discover thrilling gatherings, irresistible travel bundles, and premium hotel offers with us.</image:caption>
+        </image:image>
+        <video:video>
+            <video:content_loc>https://beatravelbuddy.com/view/assets/img/Travel_Buddy_Blurb_Video.mp4</video:content_loc>
+            <video:thumbnail_loc>https://beatravelbuddy.com/view/assets/img/poster_onboarding.png</video:thumbnail_loc>
+            <video:title>Seamless Journey Booking: Uncover Great Deals on Trips, Hotels, and Flights</video:title>
+            <video:description>Embark on a journey of a lifetime with our comprehensive travel services. We offer a wide range of options for you to choose from, whether it's exploring exotic destinations, booking comfortable and luxurious accommodations, or securing the best deals on flights. Our platform is designed to make your travel planning seamless and enjoyable. Experience the thrill of adventure, the relaxation of a well-planned vacation, and the joy of great savings. With us, a great travel experience is just a click away. Start your journey with us today!</video:description>
+        </video:video>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:caption>Travel Buddy - Book / Plan Trips, Packages &amp; Experiences</image:caption>
+        </image:image>
+        <video:video>
+            <video:content_loc>https://beatravelbuddy.com/view/assets/img/Travel_Buddy_Blurb_Video.mp4</video:content_loc>
+            <video:thumbnail_loc>https://beatravelbuddy.com/view/assets/img/poster_onboarding.png</video:thumbnail_loc>
+            <video:title>Seamless Journey Booking: Uncover Great Deals on Trips, Hotels, and Flights</video:title>
+            <video:description>Plan, Find, Book &amp; Travel across the Globe. Visit exotic locations and experience diverse cultures. Enjoy the best cuisines the world has to offer. Make memories that will last a lifetime. #NeverFeelAlone</video:description>
+        </video:video>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/search</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/new-banner-home.png</image:loc>
+            <image:caption>Travel Buddy - Book / Plan Trips, Packages &amp; Experiences</image:caption>
+        </image:image>
+        <video:video>
+            <video:content_loc>https://beatravelbuddy.com/view/assets/img/Travel_Buddy_Blurb_Video.mp4</video:content_loc>
+            <video:thumbnail_loc>https://beatravelbuddy.com/view/assets/img/poster_onboarding.png</video:thumbnail_loc>
+            <video:title>Seamless Journey Booking: Uncover Great Deals on Trips, Hotels, and Flights</video:title>
+            <video:description>Plan, Find, Book &amp; Travel across the Globe. Visit exotic locations and experience diverse cultures. Enjoy the best cuisines the world has to offer. Make memories that will last a lifetime. #NeverFeelAlone</video:description>
+        </video:video>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/listings</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:caption>Travel Buddy - Book / Plan Trips, Packages &amp; Experiences</image:caption>
+        </image:image>
+        <video:video>
+            <video:content_loc>https://beatravelbuddy.com/view/assets/img/Travel_Buddy_Blurb_Video.mp4</video:content_loc>
+            <video:thumbnail_loc>https://beatravelbuddy.com/view/assets/img/poster_onboarding.png</video:thumbnail_loc>
+            <video:title>Seamless Journey Booking: Uncover Great Deals on Trips, Hotels, and Flights</video:title>
+            <video:description>Plan, Find, Book &amp; Travel across the Globe. Visit exotic locations and experience diverse cultures. Enjoy the best cuisines the world has to offer. Make memories that will last a lifetime. #NeverFeelAlone</video:description>
+        </video:video>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/community</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/homePage</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/groupTrips</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- AI Travel Plans -->
+    <url>
+        <loc>https://beatravelbuddy.com/ai-travel-plan/Las-Vegas/couple/ai_decision/December/288</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/ai-travel-plan/Spiti-Valley/solo/ai_decision/July/289</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/ai-travel-plan/Goa/solo/budget_friendly/July/290</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- Experience Categories -->
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/category/Culinary-Tourism</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:title>Culinary Tourism: Unique Flavors &amp; Food Adventures</image:title>
+            <image:caption>culinary tourism, food tours, culinary experiences, gastronomic travel, food adventures, local cuisine tours, culinary delights, food enthusiasts, authentic food experiences, culinary travel</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/category/Heritage-Walks</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:title>Heritage Walks: Explore Historical Sites &amp; Culture</image:title>
+            <image:caption>heritage walks, historical tours, cultural heritage experiences, guided historical tours, explore historical sites, cultural journeys, local heritage walks, historical exploration, heritage tourism, cultural travel</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/category/Road-Trip</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:title>Road Trips: Epic Journeys &amp; Scenic Drives</image:title>
+            <image:caption>road trips, scenic drives, epic journeys, road trip experiences, adventure road trips, travel by car, scenic routes, road trip itineraries, driving adventures, road trip travel</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/category/Adventure-Travel</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:title>Adventure Travel: Thrilling Experiences &amp; Escapes</image:title>
+            <image:caption>adventure travel, thrilling experiences, outdoor adventures, extreme sports, adventure tours, travel experiences, exploration trips, adventure holidays, adrenaline travel, adventure escapades</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/category/Backpacking</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:title>Backpacking Adventures: Explore &amp; Experience</image:title>
+            <image:caption>backpacking adventures, backpacking trips, travel experiences, backpacking journeys, exploration travel, adventure backpacking, backpacking destinations, independent travel, backpacker tours, travel exploration</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/category/Pub-Crawling</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:title>Pub Crawling Adventures: Discover Local Nightlife</image:title>
+            <image:caption>pub crawling, nightlife tours, bar hopping, local pubs, pub experiences, social nightlife, guided pub tours, drinking adventures, bar tours, pub crawl experiences</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/category/Trekking</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:title>Trekking Adventures: Trails &amp; Scenic Landscapes</image:title>
+            <image:caption>trekking adventures, hiking trails, scenic treks, outdoor exploration, trekking experiences, nature hikes, adventure treks, mountain trails, trekking tours, outdoor adventures</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/category/Historical-Tourism</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:title>Historical Tourism: Historic Sites &amp; Cultural Heritage</image:title>
+            <image:caption>historical tourism, historic sites, cultural heritage tours, historical travel, ancient landmarks, history tours, cultural exploration, heritage sites, historical experiences, historical destinations</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/category/Religious-Tourism</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:title>Religious Tourism: Sacred Sites &amp; Spiritual Journeys</image:title>
+            <image:caption>religious tourism, sacred sites, spiritual journeys, pilgrimage destinations, places of worship, spiritual retreats, religious travel, faith-based tours, religious experiences, sacred travel</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/category/Cultural-Tourism</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:title>Cultural Tourism: Explore Traditions &amp; Heritage</image:title>
+            <image:caption>cultural tourism, local traditions, cultural heritage, cultural experiences, heritage tours, authentic cultural interactions, cultural travel, traditions exploration, local culture, cultural destinations</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/category/Family</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:title>Family Travel: Fun &amp; Adventure for All Ages</image:title>
+            <image:caption>family travel, family adventures, family vacations, family-friendly activities, family experiences, family holidays, family destinations, fun for all ages, family bonding trips, family travel ideas</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/category/City-Tours</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:title>City Tours: Urban Adventures &amp; Local Highlights</image:title>
+            <image:caption>city tours, urban adventures, city sightseeing, guided city tours, local highlights, city exploration, urban travel, cultural city tours, city landmarks, city travel experiences</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/category/Biking-Tours</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:title>Biking Tours: Scenic Routes &amp; Cycling Adventures</image:title>
+            <image:caption>biking tours, cycling adventures, scenic bike routes, bike tours, cycling experiences, biking travel, cycling trips, bike trails, adventure biking, bike tours and trips</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/category/Jungle-Safaris</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:title>Jungle Safaris: Wildlife Adventures &amp; Expeditions</image:title>
+            <image:caption>jungle safaris, wildlife safaris, nature expeditions, jungle adventures, wildlife tours, safari experiences, exotic wildlife, jungle exploration, nature safaris, wildlife encounters</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/category/Offroading</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:title>Offroading Adventures: Terrain Challenges &amp; Rides</image:title>
+            <image:caption>offroading, offroad adventures, rugged terrain, offroad driving, terrain challenges, adventure driving, offroad experiences, rugged rides, offroad trips, adventure offroading</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/category/Kayaking</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:title>Kayaking Adventures: Serene Waters &amp; Thrilling Rapids</image:title>
+            <image:caption>kayaking, kayaking adventures, serene waters, thrilling rapids, paddling experiences, water sports, kayaking trips, kayaking tours, outdoor water activities, kayaking destinations</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/category/Beach</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://beatravelbuddy.com/view/assets/img/mini_experiences-bg.jpg</image:loc>
+            <image:title>Beach Getaways: Sun, Sand &amp; Sea Adventures</image:title>
+            <image:caption>beach getaways, beach vacations, sun and sand, seaside adventures, coastal trips, beach activities, beach holidays, beach experiences, tropical beaches, seaside relaxation</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Popular Experiences -->
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/valley-of-flowers-trek-261/</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://s3.ap-south-1.amazonaws.com/tbd-prod-media/travel_buddy_cms/WhatsApp%20Image%202024-06-06%20at%2019.14.56%20(1).jpeg</image:loc>
+            <image:caption>Valley Of Flowers Trek</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/mcleodganj--triund-group-trip--explore-the-himalayas-150/</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://s3.ap-south-1.amazonaws.com/tbd-prod-media/travel_buddy_cms/Mcleodganj-Triund%20CMS%20Image%202.png</image:loc>
+            <image:caption>McLeodganj &amp; Triund Group Trip | Explore the Himalayas</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/rann-utsav-desert-festival-extravaganza-47/</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://d1hphxyq85xv5h.cloudfront.net/filters:format(webp)/fit-in/1680x800//filters:format(webp)/fit-in/1680x800//filters:format(webp)/fit-in/1680x800//filters:format(webp)/fit-in/1680x800/uploads/experiences/ran-utsav-1-min.jpg</image:loc>
+            <image:caption>Rann Utsav: Desert Festival Extravaganza</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/old-delhi-food-walk---authentic-culinary-experience--192/</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://s3.ap-south-1.amazonaws.com/tbd-prod-media/travel_buddy_cms/Old%20Delhi%20Food%20Walk%20Cms%20Image%201.png</image:loc>
+            <image:caption>Old Delhi Food Walk - Authentic Culinary Experience</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/lodhi-garden-tour-of-delhi---explore-historical-elegance--190/</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://s3.ap-south-1.amazonaws.com/tbd-prod-media/travel_buddy_cms/Lodhi%20Garden%20CMS%20Image%203.png</image:loc>
+            <image:caption>Lodhi Garden Tour of Delhi - Explore Historical Elegance</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/kerala-escapade-beyond-the-ordinary-53/</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://d2w2hi6m5h0cd0.cloudfront.net/uploads/experiences/Kerala-1.png</image:loc>
+            <image:caption>Kerala Escapade: Beyond the Ordinary</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/phuket---karabi---bangkok-couple-trip-231/</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://s3.ap-south-1.amazonaws.com/tbd-prod-media/travel_buddy_cms/Phuket-Karabi%20CMS%20image%203.png</image:loc>
+            <image:caption>Phuket - Karabi - Bangkok Couple Trip</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/-old-delhis-heritage-e-rickshaw-tour---discover-timeless-charm-102/</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://s3.ap-south-1.amazonaws.com/tbd-prod-media/travel_buddy_cms/Untitled%20design%20(11).png</image:loc>
+            <image:caption>Old Delhi's Heritage E-Rickshaw Tour - Discover Timeless Charm</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/chopta--chandrashila-group-trip---trekking--scenic-bliss--195/</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://s3.ap-south-1.amazonaws.com/tbd-prod-media/travel_buddy_cms/Chopta-%20Chandrashila%20Trek%20CMS%20image%201.png</image:loc>
+            <image:caption>Chopta &amp; Chandrashila Group Trip - Trekking &amp; Scenic Bliss</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/nainitals-holistic-experience-232/</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://s3.ap-south-1.amazonaws.com/tbd-prod-media/travel_buddy_cms/Bhowali%20just%20naturals%20resort%20CMS%20Image%201.png</image:loc>
+            <image:caption>Nainital's Holistic Experience</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://beatravelbuddy.com/experiences/rishkesh-trip--2-person-208/</loc>
+        <lastmod>2024-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://s3.ap-south-1.amazonaws.com/tbd-prod-media/travel_buddy_cms/Rishikesh_2.png</image:loc>
+            <image:caption>Rishkesh Trip- 2 Person</image:caption>
+        </image:image>
+    </url>
+    
+</urlset>

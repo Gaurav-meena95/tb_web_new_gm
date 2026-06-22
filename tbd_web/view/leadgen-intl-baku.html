@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Discover Baku: Where History Meets Modern Luxury</title>
+	<meta name="description" content="Experience the stunning capital of Azerbaijan, a perfect blend of ancient charm and futuristic marvels.">
+	<meta name="keywords" content="Baku, Azerbaijan, travel, tourism, vacation, holiday, Caspian Sea">
+	<meta property="og:title" content="Discover Baku: Where History Meets Modern Luxury">
+	<meta property="og:description" content="Experience the stunning capital of Azerbaijan, a perfect blend of ancient charm and futuristic marvels.">
+	<meta property="og:image" content="https://beatravelbuddy.com/view/assets/img/leadGen/Baku/Bibi_Heybat_Mosque.webp">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<link rel="icon" href="/view/assets/img/app_logo_new.webp" type="image/x-icon">
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+	
+	/* Add these CSS variables to the top of your existing style block */
+	:root {
+		--color-yellow-light: #fef2a0;
+		--color-yellow: #fde723;
+		--color-yellow-dark: #e6d119;
+		--color-navy-light: #2d2d3f;
+		--color-navy: #1e1e2d;
+		--color-navy-dark: #15151f;
+	}
+	
+    /* Additional custom styles */
+    /* Update these classes in your style block */
+	.gradient-yellow {
+		background: linear-gradient(to right, var(--color-yellow), var(--color-yellow-dark));
+	}
+	.gradient-navy {
+		background: linear-gradient(to right, var(--color-navy), var(--color-navy-light));
+	}
+	.gradient-navy-dark {
+		background: linear-gradient(to bottom right, var(--color-navy), var(--color-navy-dark));
+	}
+	/* Add these utility classes to your style block */
+	.text-yellow {
+	color: var(--color-yellow);
+	}
+	.text-yellow-dark {
+	color: var(--color-yellow-dark);
+	}
+	.border-yellow {
+	border-color: var(--color-yellow);
+	}
+	.bg-yellow {
+	background-color: var(--color-yellow);
+	}
+	.bg-navy {
+	background-color: var(--color-navy);
+	}
+	.focus\:ring-yellow:focus {
+	--tw-ring-color: var(--color-yellow);
+	}
+    .text-shadow {
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    .hover-scale {
+      transition: transform 0.3s ease;
+    }
+    .hover-scale:hover {
+      transform: scale(1.05);
+    }
+    #toast-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .toast {
+      display: flex;
+      align-items: center;
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .toast.show {
+      opacity: 1;
+    }
+	.description {
+		height: 150px;
+	}
+	/* Slideshow styles */
+	.testimonial-slideshow {
+	position: relative;
+	max-width: 800px;
+	margin: 0 auto;
+	touch-action: pan-y;
+	user-select: none;
+	}
+
+	.testimonial-slides {
+	position: relative;
+	height: 500px;
+	overflow: hidden;
+	}
+
+	.testimonial-slide {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+	}
+
+	.testimonial-slide.active {
+	opacity: 1;
+	pointer-events: auto;
+	}
+
+	.testimonial-dots {
+	text-align: center;
+	margin-top: 20px;
+	}
+
+	.testimonial-dot {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	margin: 0 5px;
+	background-color: #bbb;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	}
+
+	.testimonial-dot.active {
+	background-color: var(--color-yellow);
+	}
+
+	.testimonial-prev, .testimonial-next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 40px;
+	height: 40px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+	cursor: pointer;
+	z-index: 10;
+	transition: background-color 0.3s ease;
+	}
+
+	.testimonial-prev:hover, .testimonial-next:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.testimonial-prev {
+	left: 10px;
+	}
+
+	.testimonial-next {
+	right: 10px;
+	}
+
+	/* Pause indicator */
+	.testimonial-slideshow::after {
+	content: "Paused";
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background-color: rgba(0, 0, 0, 0.7);
+	color: white;
+	padding: 5px 10px;
+	border-radius: 4px;
+	font-size: 12px;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	pointer-events: none;
+	}
+
+	.testimonial-slideshow.paused::after {
+	opacity: 1;
+	}
+  </style>
+</head>
+<body class="bg-white font-sans">
+  <!-- Hero Section -->
+  <div class="relative" style="height: 100vh; width: 100%; overflow: hidden;">
+    <div 
+      class="absolute inset-0 bg-cover bg-center" 
+      id="hero-background"
+      style="background-image: url('/view/assets/img/leadGen/Baku/Flame_Towers.png'); filter: brightness(0.7);"
+    ></div>
+    <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(21, 21, 31, 0.7), rgba(30, 30, 45, 0.5), rgba(21, 21, 31, 0.9));"></div>
+    <div class="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
+      <div class="bg-gradient-to-r from-yellow-light to-yellow p-1 rounded-full mb-6">
+        <div class="bg-navy rounded-full px-6 py-1">
+          <span class="text-yellow font-medium">Luxury Travel Experience</span>
+        </div>
+      </div>
+      <h1 class="mb-2 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-white text-shadow">
+        Discover <span class="text-yellow">Baku</span>
+      </h1>
+      <p class="mb-6 text-xl font-medium sm:text-2xl md:text-3xl text-white text-shadow">
+        Where History Meets Modern Luxury
+      </p>
+      <p class="mb-8 max-w-2xl text-base sm:text-lg text-gray-200">
+        Experience the stunning capital of Azerbaijan, a perfect blend of ancient charm and futuristic marvels. Stroll through the historic Old City, marvel at the iconic Flame Towers, and dive into the vibrant nightlife.
+      </p>
+      <button 
+        class="gradient-yellow text-navy-dark font-bold py-3 px-8 rounded-md hover-scale text-lg"
+        onclick="document.getElementById('lead-form').scrollIntoView({behavior: 'smooth'})"
+      >
+        Book Your Experience Now
+      </button>
+    </div>
+  </div>
+
+  <!-- Tour Packages Section -->
+  <section class="py-16 px-4 bg-gradient-to-b from-white to-yellow-light/30">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-2">Choose Your Perfect Baku Experience</h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        Whether you're an explorer, a history buff, or a shopaholic, we have the perfect package for you!
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Package 1 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-lg border-2 border-transparent hover:border-yellow transition-all duration-300">
+          <div class="h-48 overflow-hidden">
+            <img 
+              src="/view/assets/img/leadGen/Baku/Bibi_Heybat_Mosque.webp" 
+              alt="Baku - 4 Nights 5 Days" 
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            >
+          </div>
+          <div class="gradient-navy p-4">
+            <h3 class="text-white text-xl font-semibold">Baku - 4N/5D</h3>
+            <p class="text-yellow text-sm">From Delhi</p>
+          </div>
+          <div class="p-4 description">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="flex items-center">
+                <i class="fas fa-calendar text-yellow-dark mr-1"></i>
+                <span class="text-sm">5 Days</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-clock text-yellow-dark mr-1"></i>
+                <span class="text-sm">4 Nights</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-map-marker-alt text-yellow-dark mr-1"></i>
+                <span class="text-sm">Azerbaijan</span>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">Experience the best of Baku in a short yet power-packed trip! From the breathtaking Flame Towers to the charming streets of the Old City.</p>
+          </div>
+          <div class="p-4">
+            <button 
+              class="w-full gradient-navy text-white py-2 px-4 rounded hover-scale"
+              onclick="document.getElementById('lead-form').scrollIntoView({behavior: 'smooth'})"
+            >
+              Enquire Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-lg border-2 border-transparent hover:border-yellow transition-all duration-300">
+          <div class="h-48 overflow-hidden">
+            <img 
+              src="/view/assets/img/leadGen/Baku/Baku_Crystal_Hall.png" 
+              alt="Baku - 5 Nights 6 Days" 
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            >
+          </div>
+          <div class="gradient-navy p-4">
+            <h3 class="text-white text-xl font-semibold">Baku - 5N/6D</h3>
+            <p class="text-yellow text-sm">From Delhi</p>
+          </div>
+          <div class="p-4 description">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="flex items-center">
+                <i class="fas fa-calendar text-yellow-dark mr-1"></i>
+                <span class="text-sm">6 Days</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-clock text-yellow-dark mr-1"></i>
+                <span class="text-sm">5 Nights</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-map-marker-alt text-yellow-dark mr-1"></i>
+                <span class="text-sm">Azerbaijan</span>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">Want an extra day to explore? This package lets you dive deeper into Baku's magic! Witness the fiery Ateshgah Temple and stroll along Boulevard Park.</p>
+          </div>
+          <div class="p-4">
+            <button 
+              class="w-full gradient-navy text-white py-2 px-4 rounded hover-scale"
+              onclick="document.getElementById('lead-form').scrollIntoView({behavior: 'smooth'})"
+            >
+              Enquire Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-lg border-2 border-transparent hover:border-yellow transition-all duration-300">
+          <div class="h-48 overflow-hidden">
+            <img 
+              src="/view/assets/img/leadGen/Baku/Ismailiyya_Palace.png" 
+              alt="Baku with Gabala - 6 Nights 7 Days" 
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            >
+          </div>
+          <div class="gradient-navy p-4">
+            <h3 class="text-white text-xl font-semibold">Baku with Gabala - 6N/7D</h3>
+            <p class="text-yellow text-sm">From Delhi</p>
+          </div>
+          <div class="p-4 description">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="flex items-center">
+                <i class="fas fa-calendar text-yellow-dark mr-1"></i>
+                <span class="text-sm">7 Days</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-clock text-yellow-dark mr-1"></i>
+                <span class="text-sm">6 Nights</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-map-marker-alt text-yellow-dark mr-1"></i>
+                <span class="text-sm">Azerbaijan</span>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">An extended adventure that takes you beyond Baku to Gabala, the 'Switzerland of Azerbaijan.' Ride the Shahdag Cable Car and explore Candy Cane Mountain.</p>
+          </div>
+          <div class="p-4">
+            <button 
+              class="w-full gradient-navy text-white py-2 px-4 rounded hover-scale"
+              onclick="document.getElementById('lead-form').scrollIntoView({behavior: 'smooth'})"
+            >
+              Enquire Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Package 4 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-lg border-2 border-transparent hover:border-yellow transition-all duration-300">
+          <div class="h-48 overflow-hidden">
+            <img 
+              src="/view/assets/img/leadGen/Baku/Heydar_Aliyev_Center.png" 
+              alt="Baku with Gabala - 6 Nights 7 Days (From Mumbai)" 
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            >
+          </div>
+          <div class="gradient-navy p-4">
+            <h3 class="text-white text-xl font-semibold">Baku with Gabala - 6N/7D</h3>
+            <p class="text-yellow text-sm">From Mumbai</p>
+          </div>
+          <div class="p-4 description">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="flex items-center">
+                <i class="fas fa-calendar text-yellow-dark mr-1"></i>
+                <span class="text-sm">7 Days</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-clock text-yellow-dark mr-1"></i>
+                <span class="text-sm">6 Nights</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-map-marker-alt text-yellow-dark mr-1"></i>
+                <span class="text-sm">Azerbaijan</span>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">The same fantastic journey but starting from Mumbai! A week full of unforgettable experiences, from the vibrant cityscapes of Baku to the natural wonders of Gabala.</p>
+          </div>
+          <div class="p-4">
+            <button 
+              class="w-full gradient-navy text-white py-2 px-4 rounded hover-scale"
+              onclick="document.getElementById('lead-form').scrollIntoView({behavior: 'smooth'})"
+            >
+              Enquire Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included Section -->
+  <section class="py-16 px-4 bg-gradient-to-b from-yellow-light/30 to-white">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-2">What's Included</h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        We've thought of everything to make your Baku experience unforgettable
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="gradient-navy-dark p-6 rounded-lg text-white shadow-lg">
+          <h3 class="text-xl font-semibold mb-4 text-yellow">Package Inclusions</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow mr-2 mt-1"></i>
+              <span>Flights (To & Fro in Economy Class)</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow mr-2 mt-1"></i>
+              <span>Hotel Stay (05 Nights with Breakfast – Comfortable & Cozy)</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow mr-2 mt-1"></i>
+              <span>Transportation (Luxury Mercedes VITO with a Professional Driver)</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow mr-2 mt-1"></i>
+              <span>City & Culture Tours</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow mr-2 mt-1"></i>
+              <span>All Entrance Fees Covered</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow mr-2 mt-1"></i>
+              <span>Funicular Ride for Stunning City Views</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow mr-2 mt-1"></i>
+              <span>Daily Breakfast & 5 Sumptuous Indian Dinners</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow mr-2 mt-1"></i>
+              <span>Hassle-Free E-Visa</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="gradient-navy-dark p-6 rounded-lg text-white shadow-lg">
+          <h3 class="text-xl font-semibold mb-4 text-yellow">Attractions & Experiences</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow mr-2 mt-1"></i>
+              <span>Flame Towers, Boulevard Park, Nizami Street</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow mr-2 mt-1"></i>
+              <span>Crystal Hall, Carpet Museum, Little Venice</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow mr-2 mt-1"></i>
+              <span>Heydar Aliyev Center</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow mr-2 mt-1"></i>
+              <span>Ichari Seher, Maiden Tower, Shirvanshah Palace (Old City Tour)</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow mr-2 mt-1"></i>
+              <span>Ateshgah Fire Temple & Fire Mountain</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow mr-2 mt-1"></i>
+              <span>Gobustan Mud Volcano & Rock Museum</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow mr-2 mt-1"></i>
+              <span>Shahdag Cable Car & Candy Cane Mountain</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow mr-2 mt-1"></i>
+              <span>Shopping Spree at Local Markets & High-End Malls (28 Mall, Ganjlik, Port Baku)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section - Enhanced Slideshow -->
+<section class="py-16 px-4" style="background: linear-gradient(to bottom, white, rgba(254, 242, 160, 0.3));">
+	<div class="container mx-auto">
+	  <h2 class="text-3xl font-bold text-center mb-2">What Our Customers Say</h2>
+	  <div class="content-box">
+		<!-- Slideshow container -->
+		<div class="testimonial-slideshow">
+		  <div class="testimonial-slides">
+			<!-- New testimonial image -->
+			<div class="testimonial-slide">
+			  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/14.jpg-S2f290xIsdEmfuxIrxB6RAqIyBqrPH.jpeg" alt="Ghamroj Trek Experience Testimonial" style="height: auto; max-height: 500px; width: 100%; object-fit: contain;">
+			</div>
+			<!-- Existing testimonial images -->
+			<div class="testimonial-slide">
+			  <img src="/view/assets/img/Testimonials/1.jpg" alt="Testimonial 1" style="height: auto; max-height: 500px; width: 100%; object-fit: contain;">
+			</div>
+			<div class="testimonial-slide">
+			  <img src="/view/assets/img/Testimonials/2.jpg" alt="Testimonial 2" style="height: auto; max-height: 500px; width: 100%; object-fit: contain;">
+			</div>
+			<div class="testimonial-slide">
+			  <img src="/view/assets/img/Testimonials/4.jpg" alt="Testimonial 4" style="height: auto; max-height: 500px; width: 100%; object-fit: contain;">
+			</div>
+			<div class="testimonial-slide">
+			  <img src="/view/assets/img/Testimonials/5.jpg" alt="Testimonial 5" style="height: auto; max-height: 500px; width: 100%; object-fit: contain;">
+			</div>
+			<div class="testimonial-slide">
+			  <img src="/view/assets/img/Testimonials/6.jpg" alt="Testimonial 6" style="height: auto; max-height: 500px; width: 100%; object-fit: contain;">
+			</div>
+			<div class="testimonial-slide">
+			  <img src="/view/assets/img/Testimonials/7.jpg" alt="Testimonial 7" style="height: auto; max-height: 500px; width: 100%; object-fit: contain;">
+			</div>
+			<div class="testimonial-slide">
+			  <img src="/view/assets/img/Testimonials/8.jpg" alt="Testimonial 8" style="height: auto; max-height: 500px; width: 100%; object-fit: contain;">
+			</div>
+			<div class="testimonial-slide">
+			  <img src="/view/assets/img/Testimonials/9.jpg" alt="Testimonial 9" style="height: auto; max-height: 500px; width: 100%; object-fit: contain;">
+			</div>
+		  </div>
+		  
+		  <!-- Navigation arrows -->
+		  <div class="testimonial-prev">&lt;</div>
+		  <div class="testimonial-next">&gt;</div>
+		  
+		  <!-- Navigation dots -->
+		  <div class="testimonial-dots"></div>
+		</div>
+	  </div>
+	</div>
+  </section>
+  
+  <!-- Lead Form Section -->
+  <section id="lead-form" class="py-16 px-4 bg-gradient-to-b from-white to-yellow-light/50">
+    <div class="container mx-auto">
+      <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden border-2 border-yellow">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class="p-8 gradient-navy-dark text-white flex flex-col justify-center">
+            <h2 class="text-2xl font-bold mb-4 text-yellow">Book Your Baku Adventure</h2>
+            <p class="mb-6">Fill out the form and our travel expert will get in touch with you to plan your perfect Baku getaway.</p>
+            
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <i class="fas fa-plane text-yellow mr-3"></i>
+                <div>
+                  <h3 class="font-medium">Customized Itineraries</h3>
+                  <p class="text-sm opacity-80">Tailored to your preferences</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center">
+                <i class="fas fa-calendar text-yellow mr-3"></i>
+                <div>
+                  <h3 class="font-medium">Flexible Dates</h3>
+                  <p class="text-sm opacity-80">Travel when it suits you best</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center">
+                <i class="fas fa-users text-yellow mr-3"></i>
+                <div>
+                  <h3 class="font-medium">Group Discounts</h3>
+                  <p class="text-sm opacity-80">Special rates for groups</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="p-8">
+            <form id="enquiryForm" class="space-y-4">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  placeholder="Your full name" 
+                  required 
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow focus:border-transparent"
+                >
+              </div>
+              
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  placeholder="Your email address" 
+                  required 
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow focus:border-transparent"
+                >
+              </div>
+              
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                <div class="flex space-x-2">
+                  <select 
+                    id="countryCode" 
+                    name="countryCode" 
+                    class="w-1/3 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow focus:border-transparent"
+                  >
+                    <option value="+91">+91 India</option>
+                  </select>
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone" 
+                    placeholder="Your contact number" 
+                    required 
+                    class="w-2/3 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow focus:border-transparent"
+                  >
+                </div>
+              </div>
+              
+              <div>
+                <label for="packageType" class="block text-sm font-medium text-gray-700 mb-1">Package Type</label>
+                <select 
+                  id="packageType" 
+                  name="packageType" 
+                  required
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow focus:border-transparent"
+                >
+                  <option value="" selected disabled>Select a package</option>
+                  <option value="Baku - 4 Nights 5 Days (From Delhi)">Baku - 4 Nights 5 Days (From Delhi)</option>
+                  <option value="Baku - 5 Nights 6 Days (From Delhi)">Baku - 5 Nights 6 Days (From Delhi)</option>
+                  <option value="Baku with Gabala - 6 Nights 7 Days (From Delhi)">Baku with Gabala - 6 Nights 7 Days (From Delhi)</option>
+                  <option value="Baku with Gabala - 6 Nights 7 Days (From Mumbai)">Baku with Gabala - 6 Nights 7 Days (From Mumbai)</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="departureDate" class="block text-sm font-medium text-gray-700 mb-1">Preferred Travel Date</label>
+                <select 
+                  id="departureDate" 
+                  name="departureDate" 
+                  required
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow focus:border-transparent"
+                >
+                  <option value="" selected disabled>Select a package first</option>
+                </select>
+              </div>
+              
+              <input 
+                type="text" 
+                id="verificationCodeInput" 
+                placeholder="Enter verification code" 
+                style="display: none;"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow focus:border-transparent"
+              >
+              
+              <button 
+                type="button" 
+                id="sendOtpButton"
+                class="w-full gradient-yellow text-navy-dark font-bold py-2 px-4 rounded hover-scale"
+              >
+                Submit Enquiry
+              </button>
+              
+              <button 
+                type="button" 
+                id="verifyOtpButton" 
+                style="display: none;"
+                class="w-full gradient-yellow text-navy-dark font-bold py-2 px-4 rounded hover-scale"
+              >
+                Verify OTP
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+	<!-- Footer -->
+	<footer class="gradient-navy text-white py-12 px-4">
+		<div class="container mx-auto">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+			<div>
+			<h3 class="text-xl font-bold mb-4">Discover Baku</h3>
+			<p class="text-gray-400 mb-4">
+				Experience the perfect blend of ancient charm and modern luxury in the stunning capital of Azerbaijan.
+			</p>
+			<div class="flex space-x-4">
+				<a href="#" class="text-yellow hover:text-yellow-light transition-colors">
+				<i class="fab fa-facebook-f"></i>
+				</a>
+				<a href="#" class="text-yellow hover:text-yellow-light transition-colors">
+				<i class="fab fa-instagram"></i>
+				</a>
+				<a href="#" class="text-yellow hover:text-yellow-light transition-colors">
+				<i class="fab fa-twitter"></i>
+				</a>
+			</div>
+			</div>
+			
+			<div>
+			</div>
+			
+			<div>
+			<h3 class="text-xl font-bold mb-4">Contact Information</h3>
+			<address class="not-italic text-gray-400">
+				<p class="mb-2">Gurugram, Haryana</p>
+				<p class="mb-2">Email: info@beatravelbuddy.com</p>
+			</address>
+			</div>
+		</div>
+		
+		<div class="border-t border-navy-light mt-8 pt-8 text-center text-gray-500">
+			<p>&copy; <script>document.write(new Date().getFullYear())</script> Travel Buddy. All rights reserved.</p>
+		</div>
+		</div>
+  	</footer>
+
+  <!-- Toast Notification -->
+  <div id="toast-container"></div>
+  
+  <!-- reCAPTCHA Container -->
+  <div id="recaptcha-container"></div>
+
+  <!-- Firebase SDK -->
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+  
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '525874949911799');
+    fbq('track', 'PageView');
+    fbq('trackCustom', 'TrackCustomEventLeadGen');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=525874949911799&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+  
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TXFKZVW');
+  </script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-827809061"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-827809061');
+  </script>
+  <!-- End Google Analytics -->
+  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXFKZVW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <!-- Main JavaScript -->
+  <script>
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBnKtZnePCqVLbr6jOUr4_Saf3iNmsZR-s",
+      authDomain: "travelbuddy-174317.firebaseapp.com",
+      databaseURL: "https://tbd-prod-174317-b933e.asia-southeast1.firebasedatabase.app/",
+      projectId: "travelbuddy-174317",
+      storageBucket: "travelbuddy-174317.appspot.com",
+      messagingSenderId: "9959459076",
+      appId: "1:9959459076:web:c4417f188991113b37a851",
+      measurementId: "G-PXBR867EGP"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const googleAnalytics = firebase.analytics();
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      // Package data with available dates
+      const packageData = {
+        "Baku - 4 Nights 5 Days (From Delhi)": {
+          "March": [20, 27],
+          "April": [3, 10, 17, 24],
+          "May": [15, 20, 27]
+        },
+        "Baku - 5 Nights 6 Days (From Delhi)": {
+          "March": [28],
+          "April": [5, 11, 12, 18, 20, 24]
+        },
+        "Baku with Gabala - 6 Nights 7 Days (From Delhi)": {
+          "March": [15, 22],
+          "April": [3, 5, 8, 10, 12, 15, 17, 19, 26]
+        },
+        "Baku with Gabala - 6 Nights 7 Days (From Mumbai)": {
+          "April": [5, 9, 14, 16, 21, 24]
+        }
+      };
+      
+      // Hero background image rotation
+      const heroImages = [
+        '/view/assets/img/leadGen/Baku/Flame_Towers.png',
+        '/view/assets/img/leadGen/Baku/Baku_Crystal_Hall.png',
+        '/view/assets/img/leadGen/Baku/Maiden_Tower.png',
+        '/view/assets/img/leadGen/Baku/Heydar_Aliyev_Center.png',
+        '/view/assets/img/leadGen/Baku/Bibi_Heybat_Mosque.webp',
+        '/view/assets/img/leadGen/Baku/Ismailiyya_Palace.png',
+
+      ];
+      
+      let currentImageIndex = 0;
+      const heroBackground = document.getElementById('hero-background');
+      
+      function changeHeroBackground() {
+        currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+        heroBackground.style.backgroundImage = `url('${heroImages[currentImageIndex]}')`;
+      }
+      
+      // Change the background image every 7 seconds
+      setInterval(changeHeroBackground, 7000);
+      
+      // Toast notification function
+      function showToast(message) {
+        const toastContainer = document.getElementById('toast-container');
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.textContent = message;
+        toastContainer.appendChild(toast);
+
+        // Show the toast
+        setTimeout(() => {
+          toast.classList.add('show');
+        }, 100);
+
+        // Hide the toast after 3 seconds
+        setTimeout(() => {
+          toast.classList.remove('show');
+          setTimeout(() => {
+            toastContainer.removeChild(toast);
+          }, 500);
+        }, 3000);
+      }
+      
+      // Get UTM parameters function
+      function getUTMParameters(url) {
+        let urlParams = new URLSearchParams(new URL(url).search);
+        let utmParams = {};
+        
+        urlParams.forEach((value, key) => {
+          if (key.startsWith('utm_') || key.startsWith('param')) {
+            utmParams[key] = value;
+          }
+        });
+        
+        return utmParams;
+      }
+      
+      // Facebook event tracking
+      function fbEvent(event, data) {
+        if (window.location.href.includes('localhost') || window.location.href.includes('dev.')) {
+          return;
+        }
+        let trackEvent = '';
+        let params = {};
+
+        switch (event) {
+          case 'sentOTP':
+            trackEvent = 'Sent OTP via Dom LP';
+            params = {
+              content_name: 'Sent OTP via Dom LP',
+              content_category: 'Sent OTP via Dom LP',
+            };
+            break;
+          case 'verifyOTP':
+            trackEvent = 'Verify OTP via Dom LP';
+            params = {
+              content_name: 'Verify OTP via Dom LP',
+              content_category: 'Verify OTP via Dom LP',
+            };
+            break;    
+        }
+        // Call fbq with the prepared parameters
+        fbq('trackCustom', trackEvent, params);
+      }
+      
+      // Update departure dates based on selected package
+      function updateDepartureDates() {
+        const packageSelect = document.getElementById('packageType');
+        const dateSelect = document.getElementById('departureDate');
+        
+        // Clear previous options
+        dateSelect.innerHTML = '';
+        
+        const selectedPackage = packageSelect.value;
+        
+        if (selectedPackage && packageData[selectedPackage]) {
+          // Add default option
+          const defaultOption = document.createElement('option');
+          defaultOption.value = '';
+          defaultOption.textContent = 'Select a date';
+          defaultOption.disabled = true;
+          defaultOption.selected = true;
+          dateSelect.appendChild(defaultOption);
+          
+          // Add dates for the selected package
+          for (const month in packageData[selectedPackage]) {
+            packageData[selectedPackage][month].forEach(day => {
+              const option = document.createElement('option');
+              option.value = `${month} ${day}`;
+              option.textContent = `${month} ${day}`;
+              dateSelect.appendChild(option);
+            });
+          }
+        } else {
+          // No package selected, show default message
+          const defaultOption = document.createElement('option');
+          defaultOption.value = '';
+          defaultOption.textContent = 'Select a package first';
+          defaultOption.disabled = true;
+          defaultOption.selected = true;
+          dateSelect.appendChild(defaultOption);
+        }
+      }
+      
+      // Add event listener to package select
+      const packageSelect = document.getElementById('packageType');
+      packageSelect.addEventListener('change', updateDepartureDates);
+      
+      // Initialize reCAPTCHA verifier
+      const appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+        'size': 'invisible',
+        'callback': function(response) {
+          // reCAPTCHA solved, allow signInWithPhoneNumber.
+        }
+      });
+      
+      let confirmationResult;
+      
+      // OTP Send Button Click Handler
+      const sendOtpButton = document.getElementById('sendOtpButton');
+      const verifyOtpButton = document.getElementById('verifyOtpButton');
+      const verificationCodeInput = document.getElementById('verificationCodeInput');
+      
+      sendOtpButton.addEventListener('click', function() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const countryCode = document.getElementById('countryCode').value;
+        const packageType = document.getElementById('packageType').value;
+        const depDate = document.getElementById('departureDate').value;
+
+        if (name && email && phone && packageType && depDate) {
+          const fullPhoneNumber = `${countryCode}${phone}`;
+          sendOTP(fullPhoneNumber, appVerifier);
+          sendOtpButton.style.display = 'none';
+          showToast('OTP sent successfully!');
+          fbEvent('sentOTP', { phone: fullPhoneNumber });
+          
+          // Send event to Google Analytics
+          gtag('event', 'lead_generation-sendOtp', {
+            'event_category': 'engagement',
+            'event_label': 'OTP Sent',
+            'value': fullPhoneNumber
+          });
+
+          // Send event to Google Tag Manager
+          dataLayer.push({
+            'event': 'lead_generation-sendOtp',
+            'event_category': 'engagement',
+            'event_label': 'OTP Sent',
+            'value': fullPhoneNumber
+          });
+        } else {
+          showToast('Please fill in all the required fields.');
+        }
+      });
+      
+      function sendOTP(phoneNumber, appVerifier) {
+        firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+          .then(function(result) {
+            confirmationResult = result;
+            verificationCodeInput.style.display = 'block';
+            verifyOtpButton.style.display = 'block';
+          }).catch(function(error) {
+            console.error('Error during signInWithPhoneNumber', error);
+            showToast('Error sending OTP. Please try again.');
+          });
+      }
+      
+      // OTP Verification Button Click Handler
+      verifyOtpButton.addEventListener('click', function() {
+        const code = verificationCodeInput.value;
+        confirmationResult.confirm(code).then(async function(result) {
+          const user = result.user;
+          showToast('Thank you for choosing Travel Buddy. Our team will get in touch with you within the next 24 hours.');
+          fbEvent('verifyOTP');
+          
+          // Send event to Google Analytics
+          gtag('event', 'lead_generation-verifyOtp', {
+            'event_category': 'engagement',
+            'event_label': 'OTP Verified',
+            'value': 1
+          });
+          
+          // Send event to Google Tag Manager
+          dataLayer.push({
+            'event': 'lead_generation-verifyOtp',
+            'event_category': 'engagement',
+            'event_label': 'OTP Verified',
+            'value': 1
+          });
+          
+          // Prepare form data for submission
+          var url = window.location.href;
+          var utmParams;
+          if (url.includes('?utm_')) {
+            utmParams = getUTMParameters(url);
+          }
+          
+          let formData = {
+            date: new Date().toLocaleString(),
+            name: document.getElementById('name').value,
+            phone: document.getElementById('countryCode').value + document.getElementById('phone').value,
+            email: document.getElementById('email').value,
+            destination: 'Baku',
+            packageType: document.getElementById('packageType').value,
+            utmParams: utmParams,
+            depDate: document.getElementById('departureDate').value
+          };
+
+          // Convert to 2D array format required by Google Sheets
+          let dataArray = [
+            [
+              formData.date,
+              formData.name,
+              formData.phone,
+              formData.email,
+              formData.destination,
+              formData.packageType,
+              JSON.stringify(formData.utmParams),
+              formData.depDate
+            ]
+          ];
+
+          try {
+            let response = await fetch('/write-to-sheet', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                googleSheetId: '1FimuK7vR7WUAY5Qydep4_OOjSKaUVYFifEWfA0cUh6c',
+                data: dataArray,
+                sheetName: 'International'
+              })
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+              // Redirect to flights page
+              window.open('https://beatravelbuddy.com/flights', '_self');
+            } else {
+              throw new Error(result.message || 'Form submission failed');
+            }
+          } catch (error) {
+            console.error('Error submitting form:', error);
+            showToast('Error submitting form. Please try again.');
+          }
+        }).catch(function(error) {
+          console.error('Error during confirmationResult.confirm', error);
+          showToast('Invalid verification code. Please try again.');
+        });
+      });
+      
+      // Initialize the page
+      updateDepartureDates();
+      
+      // Send page view event to Google Analytics
+      gtag('event', 'lead_generation', {
+        'event_category': 'engagement',
+        'event_label': 'Lead Generation Page View',
+        'value': 1
+      });
+
+      // Send page view event to Google Tag Manager
+      dataLayer.push({
+        'event': 'lead_generation',
+        'event_category': 'engagement',
+        'event_label': 'Lead Generation Page View',
+        'value': 1
+      });
+	  
+	  
+	  
+	  
+	// Testimonial slideshow
+  const slideshow = document.querySelector('.testimonial-slideshow');
+  const slidesContainer = document.querySelector('.testimonial-slides');
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const dotsContainer = document.querySelector('.testimonial-dots');
+  const prevButton = document.querySelector('.testimonial-prev');
+  const nextButton = document.querySelector('.testimonial-next');
+  
+  let currentSlide = 0;
+  let slideInterval;
+  let isPaused = false;
+  let startX, endX;
+  let isScrollingVertically = false;
+  
+  // Create navigation dots
+  slides.forEach((_, index) => {
+    const dot = document.createElement('span');
+    dot.classList.add('testimonial-dot');
+    if (index === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      goToSlide(index);
+      resetInterval();
+    });
+    dotsContainer.appendChild(dot);
+  });
+  
+  // Initialize the first slide
+  slides[0].classList.add('active');
+  
+  // Function to go to a specific slide
+  function goToSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    document.querySelectorAll('.testimonial-dot')[currentSlide].classList.remove('active');
+    
+    currentSlide = (n + slides.length) % slides.length;
+    
+    slides[currentSlide].classList.add('active');
+    document.querySelectorAll('.testimonial-dot')[currentSlide].classList.add('active');
+  }
+  
+  // Function to go to the next slide
+  function nextSlide() {
+    goToSlide(currentSlide + 1);
+  }
+  
+  // Function to go to the previous slide
+  function prevSlide() {
+    goToSlide(currentSlide - 1);
+  }
+  
+  // Function to reset the interval
+  function resetInterval() {
+    clearInterval(slideInterval);
+    if (!isPaused) {
+      slideInterval = setInterval(nextSlide, 5000);
+    }
+  }
+  
+  // Function to pause the slideshow
+  function pauseSlideshow() {
+    isPaused = true;
+    slideshow.classList.add('paused');
+    clearInterval(slideInterval);
+  }
+  
+  // Function to resume the slideshow
+  function resumeSlideshow() {
+    isPaused = false;
+    slideshow.classList.remove('paused');
+    resetInterval();
+  }
+  
+  // Event listeners for navigation buttons
+  prevButton.addEventListener('click', () => {
+    prevSlide();
+    resetInterval();
+  });
+  
+  nextButton.addEventListener('click', () => {
+    nextSlide();
+    resetInterval();
+  });
+  
+  // Pause on hover
+  slideshow.addEventListener('mouseenter', pauseSlideshow);
+  slideshow.addEventListener('mouseleave', resumeSlideshow);
+  
+  // Pause on mousedown (click and hold)
+  slideshow.addEventListener('mousedown', (e) => {
+    pauseSlideshow();
+    startX = e.clientX;
+  });
+  
+  // Resume on mouseup
+  window.addEventListener('mouseup', () => {
+    if (isPaused) {
+      resumeSlideshow();
+    }
+  });
+  
+  // Touch events for swipe
+  slideshow.addEventListener('touchstart', (e) => {
+    // Don't interfere with vertical scrolling
+    const touch = e.touches[0];
+    startX = touch.clientX;
+    startY = touch.clientY;
+    isScrollingVertically = false;
+  }, { passive: true });
+  
+  slideshow.addEventListener('touchmove', (e) => {
+    if (!startX) return;
+    
+    const touch = e.touches[0];
+    const moveX = touch.clientX;
+    const moveY = touch.clientY;
+    
+    // Determine if the user is scrolling vertically
+    if (!isScrollingVertically) {
+      const diffX = Math.abs(moveX - startX);
+      const diffY = Math.abs(moveY - startY);
+      
+      // If vertical movement is greater than horizontal, let the browser handle it
+      if (diffY > diffX) {
+        isScrollingVertically = true;
+        return;
+      }
+      
+      // Only pause for horizontal swipes
+      if (diffX > 10) {
+        pauseSlideshow();
+      }
+    }
+    
+    // Only track horizontal movement if not scrolling vertically
+    if (!isScrollingVertically) {
+      endX = moveX;
+    }
+  }, { passive: true });
+  
+  slideshow.addEventListener('touchend', () => {
+    // If we were scrolling vertically, don't do anything with the slideshow
+    if (isScrollingVertically || !startX || !endX) {
+      startX = null;
+      endX = null;
+      return;
+    }
+    
+    const diff = startX - endX;
+    const threshold = 50; // Minimum swipe distance
+    
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0) {
+        // Swipe left, go to next slide
+        nextSlide();
+      } else {
+        // Swipe right, go to previous slide
+        prevSlide();
+      }
+    }
+    
+    // Reset values
+    startX = null;
+    endX = null;
+    resumeSlideshow();
+  });
+  
+  // Wheel event for trackpad scrolling - modified to allow vertical scrolling
+  slideshow.addEventListener('wheel', (e) => {
+    // Only handle horizontal wheel events
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+      e.preventDefault(); // Only prevent default for horizontal scrolling
+      pauseSlideshow();
+      
+      // Debounce the wheel event
+      clearTimeout(slideshow.wheelTimeout);
+      slideshow.wheelTimeout = setTimeout(() => {
+        if (e.deltaX > 50) {
+          nextSlide();
+        } else if (e.deltaX < -50) {
+          prevSlide();
+        }
+        
+        // Resume after a short delay
+        setTimeout(resumeSlideshow, 1000);
+      }, 100);
+    }
+    // For vertical scrolling, do nothing and let the browser handle it
+  }, { passive: false });
+  
+  // Start the slideshow
+  resetInterval();
+
+		
+	});
+  </script>
+</body>
+</html>

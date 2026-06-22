@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel to Thailand - Discover the Land of Smiles</title>
+    <meta name="description" content="Thailand is a vibrant tapestry of golden temples, lush jungles, and turquoise waters, where every moment feels like a postcard come to life.">
+    <meta name="keywords" content="Thailand, Bangkok, Chiang Mai, Phuket, Krabi, Pattaya, Koh Samui, Grand Palace, Wat Phra Kaew, Wat Arun, Chatuchak Market, Night Bazaar, Doi Suthep Temple, Night Bazaar, Patong Beach, Nai Harn Beach, Phi Phi Islands, James Bond Island, Railay Beach, Ao Nang, Sanctuary of Truth, Nong Nooch Tropical Garden, Coral Island">
+    <meta property="og:title" content="Travel to Thailand - Discover the Land of Smiles">
+    <meta property="og:description" content="Thailand is a vibrant tapestry of golden temples, lush jungles, and turquoise waters, where every moment feels like a postcard come to life.">
+    <meta property="og:image" content="https://beatravelbuddy.com/view/assets/img/leadGen/Thailand/Phuket.jpg">
+    <link rel="icon" href="/view/assets/img/app_logo_new.webp" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="image_src" href="/view/assets/img/leadGen/R2.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Montserrat';
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(200deg, #FFF9CF, white);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat';
+        }
+        header {
+            color: #1e1e2d;
+            padding: 1rem;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            width: 100%;
+            position: fixed;
+            z-index: 4;
+        }
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+        }
+        nav h1 {
+            font-size: 31px;
+            font-weight: 700;
+            font-family: 'Nunito';
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/view/assets/img/leadGen/Thailand/Phuket.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            color: white;
+            padding-top: 4rem;
+            transition: background-image 3s ease-in-out;
+        }
+        .hero-content {
+            max-width: 500px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #FF6B6B;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-family: 'Montserrat';
+            font-weight: 600;
+        }
+        .btn:hover {
+            background-color: #FF8E8E;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 4rem 2rem;
+        }
+        .description {
+            margin-bottom: 2rem;
+        }
+        .description h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1e1e2d;
+            font-weight: 700;
+            font-family: 'Nunito';
+        }
+        .enquiry-form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            color: #1e1e2d;
+        }
+        img.cont_img {
+            margin-top: 15px;
+        }
+        input#verificationCodeInput {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Nunito';
+            margin-bottom: 15px;
+        }
+        .enquiry-form h3 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-family: 'Montserrat';
+        }
+        .form-group input, #countryCode {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Nunito';
+        }
+        #countryCode {
+            width: 40%;
+            margin-right: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #fde723;
+            color: #1e1e2d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            font-family: 'Montserrat';
+            font-weight: 600;
+        }
+        .destinations {
+            margin-top: 4rem;
+        }
+        .destinations h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #FF6B6B;
+            font-weight: 700;
+        }
+        .destination-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .destination-card {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .destination-card:hover {
+            transform: translateY(-5px);
+        }
+        .destination-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .destination-card-content {
+            padding: 1.5rem;
+        }
+        .destination-card-content h3 {
+            margin-bottom: 0.5rem;
+            color: #FF6B6B;
+            font-weight: 600;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-family: 'Montserrat';
+        }
+        .fixed-button {
+            position: fixed;
+            bottom: 20px;
+            /* right: 20px; */
+            /* background-color: #FF6B6B; */
+            /* color: white; */
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-family: 'Nunito';
+            font-weight: 700;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            color: #333;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            /* width: 98%; */
+            font-size: 22px;
+        }
+        .fixed-button:hover {
+            background-color: #FF8E8E;
+        }
+        #enquiry-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1999;
+        }
+        /* New styles for added sections */
+        .section-title {
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        strong {
+            font-size: 17px;
+            font-weight: 700;
+        }
+        .content-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .content-box h3 {
+            margin-bottom: 1rem;
+        }
+        .itinerary-day {
+            margin-bottom: 1.5rem;
+        }
+        .itinerary-day h4 {
+            margin-bottom: 0.5rem;
+            font-size: 18px;
+        }
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .feature-list li::before {
+            content: '✓';
+            color: #FF6B6B;
+            position: absolute;
+            left: 0;
+        }
+        .policy-section {
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        .policy-section h3 {
+            margin-bottom: 1rem;
+        }
+        #toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .toast {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
+        .testimonial_cont {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 2rem;
+                height: auto;
+                min-height: 100vh;
+                margin-top: 20%;
+            }
+            .hero-content, .enquiry-form {
+                width: 100%;
+                max-width: 100%;
+            }
+            .destination-cards {
+                flex-direction: column;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            nav ul {
+                display: none;
+            }
+        }
+        @media (min-width: 768px) {
+            .hero {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            .hero-content {
+                max-width: 500px;
+                text-align: center;
+                left: 14%;
+                position: relative;
+            }
+            .enquiry-form {
+                position: fixed;
+                left: 65%;
+            }
+            .container {
+                max-width: 600px;
+                margin: unset;
+                padding: 4rem 2rem;
+                left: 10%;
+                position: relative;
+            }
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="/view/assets/img/app_logo_new.webp" alt="Travel Buddy Logo" width="50" style="border-radius: 50%;">
+            <h1>Travel Buddy</h1>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Beaches and Beats: Thailand’s Ultimate Party Vibe</h1>
+            <p>Thailand is a vibrant tapestry of golden temples, lush jungles, and turquoise waters, where every moment feels like a postcard come to life.</p>
+        </div>
+        <div class="enquiry-form" id="enquiry">
+            <h3>Enquire Now</h3>
+            <form id="enquiryForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <div style="display: flex; align-items: center;">
+                        <select id="countryCode" name="countryCode" style="margin-right: 10px;">
+                            <option value="+91">+91</option>
+                        </select>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <input type="text" id="verificationCodeInput" placeholder="Enter verification code" style="display: none;">
+                <button type="button" id="sendOtpButton">Submit</button>
+                <button type="button" id="verifyOtpButton" style="display: none;">Verify OTP</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="container">
+		
+		<section id="about-dubai">
+            <h2 class="section-title">About Thailand</h2>
+            <div class="content-box">
+                <p>The gentle sway of a longtail boat on emerald canals whispers tales of ancient Siam, while the sizzling aroma of street food dances in the air, inviting you to savour flavours as bold as its sunsets. From the bustling streets of Bangkok, alive with neon and night markets, to the serene islands of Phuket and Koh Samui, kissed by the tides of the Andaman Sea, Thailand is a symphony of contrasts—a land where tradition embraces modernity and every corner promises adventure.</p>
+				<p>Stay Included 🏨 Meals Included 🍴 Sightseeing Included 🗺️ Transport Included 🚐</p>
+            </div>
+        </section>
+        <section id="inclusions">
+            <h2 class="section-title">Inclusions</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Stay Included:</strong> 🏨</li>
+                    <li><strong>Meals Included:</strong> 🍴</li>
+                    <li><strong>Sightseeing Included:</strong> 🗺️</li>
+                    <li><strong>Transport Included:</strong> 🚐</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="why-travel-buddy">
+            <h2 class="section-title">Why Choose Travel Buddy?</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Reliable Vendor:</strong> We partner with trusted and dependable suppliers to ensure seamless travel experiences.</li>
+                    <li><strong>On-Time Guarantee:</strong> If your transportation is delayed for more than 30 minutes without a valid reason, we will provide a complimentary transfer and offer additional compensation as a gesture of goodwill.</li>
+                    <li><strong>Complimentary eSIM:</strong> Stay connected with our complimentary eSIM, offering easy access to mobile data during your travels.</li>
+                    <li><strong>24/7 Assistance:</strong> Our dedicated support team is available around the clock, ensuring you always know who to reach out to in case of an emergency.</li>
+                    <li><strong>Experienced Partners:</strong> Our experienced partners are well-equipped to handle your group's needs, ensuring a smooth and memorable journey.</li>
+                </ul>
+            </div>
+        </section>
+		
+        <section id="why-thailand">
+            <h2 class="section-title">Why Choose Thailand for Your Next Getaway?</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Spectacular Beaches:</strong> Imagine pristine white sand beaches framed by turquoise waters. Thailand's islands, such as Phuket, Koh Samui, and Krabi, are world-renowned for their beauty. Relax under swaying palm trees, snorkel in crystal-clear waters, or enjoy thrilling water sports.</li>
+					<img class= "cont_img"src="/view/assets/img/leadGen/Thailand/Phuket.jpg" alt="Forts and Palaces" style="width: 100%;">
+                    <li><strong>Rich Culture and Heritage:</strong> Thailand’s culture is deeply rooted in its history and religion. Visit magnificent temples like Wat Arun, Wat Phra Kaew, and the iconic White Temple in Chiang Rai to experience the country's spiritual charm.</li>
+					<img class= "cont_img"src="/view/assets/img/leadGen/Thailand/Pattaya.jpg" alt="Forts and Palaces" style="width: 100%;">
+                    <li><strong>Mouthwatering Cuisine:</strong> From aromatic street food to gourmet dining, Thai cuisine is a feast for the senses. Don’t miss Pad Thai, Tom Yum Goong, and Green Curry. For adventurous eaters, the floating markets offer an array of exotic delicacies.</li>
+                    <li><strong>Thrilling Adventures:</strong> Embark on an adventure to the jungles of Chiang Mai, explore hidden caves in Phang Nga Bay, or enjoy zip-lining through tropical rainforests. Thailand is an adventurer’s paradise.</li>
+					<img class= "cont_img"src="/view/assets/img/leadGen/Thailand/Chiang_Mai.jpg" alt="Forts and Palaces" style="width: 100%;">
+                    <li><strong>Warm Hospitality:</strong> True to its nickname, the "Land of Smiles" is home to some of the friendliest people you’ll ever meet. Thai hospitality will make you feel welcome wherever you go.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="highlights-thailand">
+            <h2 class="section-title">Highlights of Thailand: Must-Visit Destinations</h2>
+            <div class="content-box">
+                <h3>1. Bangkok: The City of Angels</h3>
+                <p>Start your journey in Thailand’s bustling capital, where ancient traditions meet modern living. Explore the Grand Palace, shop till you drop at Chatuchak Market, and take a boat ride along the Chao Phraya River. Bangkok’s nightlife is legendary, with rooftop bars and vibrant street parties.</p>
+				<img class= "cont_img"src="/view/assets/img/leadGen/Thailand/Chatuchak_Market.webp" alt="Forts and Palaces" style="width: 100%;">
+                <h3>2. Chiang Mai: A Cultural Haven</h3>
+                <p>Nestled in the mountains of northern Thailand, Chiang Mai is the cultural heart of the country. Wander through ancient temples, attend a traditional cooking class, and visit the famous Night Bazaar. Nature lovers can trek to hill tribes or visit the ethical elephant sanctuaries.</p>
+				<img class= "cont_img"src="/view/assets/img/leadGen/Thailand/Chiang_Mai.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>3. Phuket: The Pearl of the Andaman</h3>
+                <p>Phuket is the gateway to some of Thailand’s most beautiful beaches. Enjoy the lively Patong Beach or escape to the tranquil shores of Nai Harn. Island-hopping tours to Phi Phi Islands and James Bond Island are a must.</p>
+				<img class= "cont_img"src="/view/assets/img/leadGen/Thailand/Phuket.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>4. Krabi: A Paradise for Nature Lovers</h3>
+                <p>Known for its dramatic limestone cliffs and emerald waters, Krabi is a haven for beach enthusiasts and climbers. Railay Beach and Ao Nang are ideal spots for relaxation and adventure.</p>
+                <h3>5. Pattaya: Vibrant and Dynamic</h3>
+                <p>Famous for its nightlife, Pattaya also offers family-friendly attractions such as the Sanctuary of Truth, Nong Nooch Tropical Garden, and Coral Island.</p>
+                <h3>6. Koh Samui: A Tropical Escape</h3>
+                <p>Koh Samui is a perfect blend of luxury and natural beauty. Pamper yourself at world-class resorts, indulge in spa treatments, and enjoy the island’s relaxed vibe.</p>
+				<img class= "cont_img"src="/view/assets/img/leadGen/Thailand/Koh_Samui.jpg" alt="Forts and Palaces" style="width: 100%;">
+            </div>
+        </section>
+
+        <section id="itinerary-thailand">
+            <h2 class="section-title">7-Day Itinerary for Thailand</h2>
+            <div class="content-box">
+                <h4>Day 1: Arrival in Bangkok</h4>
+                <p><strong>Morning:</strong> Land at Suvarnabhumi Airport and transfer to your hotel.</p>
+                <p><strong>Afternoon:</strong> Visit the Grand Palace and Wat Phra Kaew.</p>
+                <p><strong>Evening:</strong> Enjoy dinner at Asiatique the Riverfront.</p>
+                <h4>Day 2: Explore Bangkok</h4>
+                <p><strong>Morning:</strong> Take a morning boat ride along the Chao Phraya River.</p>
+                <p><strong>Afternoon:</strong> Visit Wat Arun and the Jim Thompson House.</p>
+                <p><strong>Evening:</strong> Shop at MBK Center or Siam Paragon. Experience the vibrant nightlife at Khao San Road.</p>
+                <h4>Day 3: Travel to Chiang Mai</h4>
+                <p><strong>Morning:</strong> Fly to Chiang Mai and check in to your hotel.</p>
+                <p><strong>Afternoon:</strong> Visit Doi Suthep Temple for a stunning sunset view.</p>
+                <p><strong>Evening:</strong> Stroll through the Night Bazaar for local crafts and street food.</p>
+                <h4>Day 4: Adventures in Chiang Mai</h4>
+                <p><strong>Morning:</strong> Spend the day at an ethical elephant sanctuary.</p>
+                <p><strong>Afternoon:</strong> Explore the local countryside with a trekking tour.</p>
+                <p><strong>Evening:</strong> Take a traditional Thai cooking class.</p>
+                <h4>Day 5: Fly to Phuket</h4>
+                <p><strong>Morning:</strong> Arrive in Phuket and transfer to your beach resort.</p>
+                <p><strong>Afternoon:</strong> Relax at Patong Beach or Nai Harn Beach.</p>
+                <p><strong>Evening:</strong> Enjoy a seafood dinner by the beach.</p>
+                <h4>Day 6: Island Hopping from Phuket</h4>
+                <p><strong>Morning:</strong> Take a full-day tour to Phi Phi Islands or James Bond Island.</p>
+                <p><strong>Afternoon:</strong> Snorkel in crystal-clear waters and explore hidden lagoons.</p>
+                <p><strong>Evening:</strong> Return to Phuket for a relaxing evening.</p>
+                <h4>Day 7: Departure</h4>
+                <p><strong>Morning:</strong> Spend your morning shopping for souvenirs or relaxing at the beach.</p>
+                <p><strong>Afternoon:</strong> Transfer to the airport for your onward journey.</p>
+            </div>
+        </section>
+        <section id="testimonials" class="user-test">
+            <div class="content-box">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="testimonial_cont">
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/1.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/2.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/4.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/5.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/6.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/7.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/8.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/9.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/10.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/11.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/12.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/13.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/14.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                
+            </div>
+        </section>
+		
+		
+        <section id="policies" class="policy-section">
+            <h3>Confirmation Policy</h3>
+            <ul>
+                <li>The customer receives a confirmation voucher via email within 24 hours of successful booking.</li>
+                <li>In case the preferred slots are unavailable, an alternate schedule of the customer’s preference will be arranged and a new confirmation voucher will be sent via email.</li>
+                <li>Alternatively, the customer may choose to cancel their booking before confirmation and a full refund will be processed.</li>
+            </ul>
+
+            <h3>Refund Policy</h3>
+            <p>The applicable refund amount will be processed within 2-3 business days.</p>
+
+            <h3>Cancellation Policy</h3>
+            <ul>
+                <li>If cancellation is made 45 days before the date of travel, then 10% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 30 days before the date of travel, then 50.0% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 21 days before the date of travel, then 70% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 10 days before the date of travel, then 100% of total tour cost will be charged as cancellation fees.</li>
+            </ul>
+        </section>
+    </div>
+
+    <a href="#" class="fixed-button" id="openEnquiry" style="display: none;">Enquire Now</a>
+
+    <div class="overlay" id="overlay"></div>
+    <div id="enquiry-popup" class="enquiry-form"></div>
+    <script src="https://apis.google.com/js/api.js"></script>
+   <!-- Firebase SDK -->
+   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+   <script>
+var _0x2b20b8=_0x40ce;function _0x40ce(_0x2ac2f2,_0x4cdb76){var _0x286eab=_0x5aa2();return _0x40ce=function(_0x28e035,_0x23a67f){_0x28e035=_0x28e035-(0x1*0x7+-0x26b*0x7+0x12b7*0x1);var _0x2e2216=_0x286eab[_0x28e035];return _0x2e2216;},_0x40ce(_0x2ac2f2,_0x4cdb76);}(function(_0x2751a9,_0x33e680){var _0x3568ec=_0x40ce,_0x22778b=_0x2751a9();while(!![]){try{var _0x3b12cb=parseInt(_0x3568ec(0x1d5))/(-0x90f*-0x4+0xca9+-0x37e*0xe)+-parseInt(_0x3568ec(0x1e8))/(-0x95e+-0x4*-0x1e5+0x1cc)*(parseInt(_0x3568ec(0x1d6))/(0x6b9+-0x23d*-0x2+-0xb30))+-parseInt(_0x3568ec(0x1d1))/(-0x1937+-0x97*0x23+-0x5bc*-0x8)+-parseInt(_0x3568ec(0x1e6))/(0x23e1+0x5*-0x295+-0x16f3)+-parseInt(_0x3568ec(0x1f3))/(-0x21af*-0x1+-0x1509+-0xca*0x10)*(-parseInt(_0x3568ec(0x1eb))/(-0xd7c*0x1+0x5a*0xd+-0x2fb*-0x3))+parseInt(_0x3568ec(0x1ef))/(0xfc2+-0x1c0b+0xc51)+parseInt(_0x3568ec(0x1d2))/(0x1ef9+-0x4*-0x41+-0x1ff4);if(_0x3b12cb===_0x33e680)break;else _0x22778b['push'](_0x22778b['shift']());}catch(_0x2e13f7){_0x22778b['push'](_0x22778b['shift']());}}}(_0x5aa2,-0x11101a+-0x3a28e*-0x6+-0x1*-0x8aa49),!function(_0x164f07,_0x451560,_0x3d449a,_0x42e892,_0x1041bd,_0x23a09f,_0x3c48f4){var _0x488d96=_0x40ce,_0x2715c6={'WRpwZ':'7|8|1|4|5|'+'2|9|10|11|'+_0x488d96(0x1e5),'YBIfY':_0x488d96(0x1e0)},_0x3afc00=_0x2715c6['WRpwZ']['split']('|'),_0x3f36d5=-0xbd+-0x25ec+0xce3*0x3;while(!![]){switch(_0x3afc00[_0x3f36d5++]){case'0':_0x3c48f4=_0x451560['getElement'+_0x488d96(0x1d4)](_0x3d449a)[0x17*0x1af+-0xe9b+-0x62*0x3f];continue;case'1':if(!_0x164f07[_0x488d96(0x1d3)])_0x164f07['_fbq']=_0x1041bd;continue;case'2':_0x1041bd[_0x488d96(0x1e3)]=_0x2715c6[_0x488d96(0x1e9)];continue;case'3':_0x3c48f4[_0x488d96(0x1dc)][_0x488d96(0x1e4)+'re'](_0x23a09f,_0x3c48f4);continue;case'4':_0x1041bd[_0x488d96(0x1ed)]=_0x1041bd;continue;case'5':_0x1041bd[_0x488d96(0x1ec)]=!(0x13*-0x3d+-0x16*-0xcd+-0x1*0xd17);continue;case'6':_0x23a09f[_0x488d96(0x1e7)]=_0x42e892;continue;case'7':if(_0x164f07[_0x488d96(0x1d8)])return;continue;case'8':_0x1041bd=_0x164f07[_0x488d96(0x1d8)]=function(){var _0x4dee86=_0x488d96;_0x1041bd['callMethod']?_0x1041bd[_0x4dee86(0x1de)][_0x4dee86(0x1d7)](_0x1041bd,arguments):_0x1041bd[_0x4dee86(0x1db)][_0x4dee86(0x1ed)](arguments);};continue;case'9':_0x1041bd['queue']=[];continue;case'10':_0x23a09f=_0x451560[_0x488d96(0x1f0)+'ent'](_0x3d449a);continue;case'11':_0x23a09f[_0x488d96(0x1e2)]=!(0x268*0x8+-0x259+0x10e7*-0x1);continue;}break;}}(window,document,_0x2b20b8(0x1f2),_0x2b20b8(0x1ee)+_0x2b20b8(0x1dd)+_0x2b20b8(0x1e1)+'n_US/fbeve'+'nts.js'),fbq(_0x2b20b8(0x1da),_0x2b20b8(0x1ea)+'11799'),fbq('track','PageView'),fbq(_0x2b20b8(0x1f1)+'m',_0x2b20b8(0x1df)+'mEventLead'+_0x2b20b8(0x1d9)));function _0x5aa2(){var _0x23d831=['src','54jKUyzl','YBIfY','5258749499','9165289DBLXdc','loaded','push','https://co','6870808kjjpox','createElem','trackCusto','script','6urGDtg','3377572SpdhLg','613845KmYRXy','_fbq','sByTagName','1576339ZhFPps','109359mWejwb','apply','fbq','Gen','init','queue','parentNode','nnect.face','callMethod','TrackCusto','2.0','book.net/e','async','version','insertBefo','6|0|3','5525595vjOIIS'];_0x5aa2=function(){return _0x23d831;};return _0x5aa2();}
+</script>
+   <noscript>
+	 <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=525874949911799&ev=PageView&noscript=1"/>
+   </noscript>
+   <!-- End Meta Pixel Code -->
+    <!-- Google Tag Manager -->
+    <script>
+function _0x10a8(){var _0x56e63c=['zzWag','hKLbq','split','GZFbI','1PePJEg','11608jQgNnG','307540TICykY','src','gmanager.c','147396neBeaL','ent','446605OPwWae','gtm.js','1063056taspDg','4309605JJSxBn','createElem','&l=','w.googleta','push','4|2|3|0|1|','dataLayer','parentNode','getElement','id=','sByTagName','1498oRsVRT','script','628492ACTXwl','getTime','JxIhc'];_0x10a8=function(){return _0x56e63c;};return _0x10a8();}var _0x1d14af=_0x4f8b;function _0x4f8b(_0x21207c,_0x1b39d2){var _0x2af8fb=_0x10a8();return _0x4f8b=function(_0x29b148,_0x5d2fcc){_0x29b148=_0x29b148-(-0x1a39+0x21ac*-0x1+0xd*0x4a9);var _0x3f4a9=_0x2af8fb[_0x29b148];return _0x3f4a9;},_0x4f8b(_0x21207c,_0x1b39d2);}(function(_0x1add24,_0x4782d3){var _0x415227=_0x4f8b,_0xd6cbec=_0x1add24();while(!![]){try{var _0x298a54=-parseInt(_0x415227(0xb5))/(-0x1dd2+-0x13ef+-0x16*-0x243)*(parseInt(_0x415227(0xcc))/(-0x685*-0x2+0x9*0x416+-0x66*0x7d))+parseInt(_0x415227(0xbe))/(0x1bc6+0x211c*0x1+-0x3cdf)+-parseInt(_0x415227(0xb7))/(-0x157d+0x13c0+-0x1c1*-0x1)+parseInt(_0x415227(0xbc))/(0xbcb*0x3+-0x1381*-0x1+0x5*-0xaf9)+-parseInt(_0x415227(0xba))/(0xa6f*0x2+-0x871+-0x19*0x7f)+parseInt(_0x415227(0xca))/(-0x22fc+-0x3*-0x832+0xa6d)*(-parseInt(_0x415227(0xb6))/(0x10ab*0x1+0x19*-0x17+-0xe64))+parseInt(_0x415227(0xbf))/(0xc9f+-0x5f2+-0x55*0x14);if(_0x298a54===_0x4782d3)break;else _0xd6cbec['push'](_0xd6cbec['shift']());}catch(_0x26b15e){_0xd6cbec['push'](_0xd6cbec['shift']());}}}(_0x10a8,0x28407+-0x34c98+0x1*0x3c764),function(_0x4df92a,_0x3e79b5,_0xdd5c6a,_0x132ded,_0x402cba){var _0x3c0ca4=_0x4f8b,_0x6adc14={'XKhQU':_0x3c0ca4(0xc4)+'5','zzWag':function(_0x59553f,_0x37d435){return _0x59553f+_0x37d435;},'GZFbI':'https://ww'+_0x3c0ca4(0xc2)+_0x3c0ca4(0xb9)+'om/gtm.js?'+_0x3c0ca4(0xc8),'hKLbq':'dataLayer','JxIhc':function(_0x306b5e,_0x2c1004){return _0x306b5e+_0x2c1004;}},_0x36a066=_0x6adc14['XKhQU'][_0x3c0ca4(0xb3)]('|'),_0xedec6a=-0x10ae*-0x1+-0x50b*0x6+0x4f*0x2c;while(!![]){switch(_0x36a066[_0xedec6a++]){case'0':_0x1314c1['async']=!![];continue;case'1':_0x1314c1[_0x3c0ca4(0xb8)]=_0x6adc14[_0x3c0ca4(0xb1)](_0x6adc14[_0x3c0ca4(0xb4)]+_0x402cba,_0x239544);continue;case'2':_0x4df92a[_0x132ded][_0x3c0ca4(0xc3)]({'gtm.start':new Date()[_0x3c0ca4(0xcd)](),'event':_0x3c0ca4(0xbd)});continue;case'3':var _0x238f49=_0x3e79b5[_0x3c0ca4(0xc7)+_0x3c0ca4(0xc9)](_0xdd5c6a)[-0x10*-0x153+-0x13c1+-0x16f],_0x1314c1=_0x3e79b5[_0x3c0ca4(0xc0)+_0x3c0ca4(0xbb)](_0xdd5c6a),_0x239544=_0x132ded!=_0x6adc14[_0x3c0ca4(0xb2)]?_0x6adc14[_0x3c0ca4(0xb0)](_0x3c0ca4(0xc1),_0x132ded):'';continue;case'4':_0x4df92a[_0x132ded]=_0x4df92a[_0x132ded]||[];continue;case'5':_0x238f49[_0x3c0ca4(0xc6)]['insertBefo'+'re'](_0x1314c1,_0x238f49);continue;}break;}}(window,document,_0x1d14af(0xcb),_0x1d14af(0xc5),'GTM-TXFKZVW'));
+</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-827809061"></script>
+    <script>
+var _0x572678=_0x422a;function _0x422a(_0x46b6f9,_0x9412c1){var _0x2cbe70=_0x23a4();return _0x422a=function(_0x26edb8,_0x5319d6){_0x26edb8=_0x26edb8-(0x1151+-0x802*-0x1+-0x18d5);var _0x3deff3=_0x2cbe70[_0x26edb8];return _0x3deff3;},_0x422a(_0x46b6f9,_0x9412c1);}function _0x23a4(){var _0x49477c=['934759LHUmIO','1247136KIsnLS','444lcRZnb','13712uaawdq','dataLayer','195960zcChbC','4621309znajKH','6SRLLQq','2297832PhETHl','push','763960PBdTqi','531LhOflw','AW-8278090'];_0x23a4=function(){return _0x49477c;};return _0x23a4();}(function(_0x4ed30e,_0x1e651d){var _0x4ef309=_0x422a,_0x4418c7=_0x4ed30e();while(!![]){try{var _0x3beb21=parseInt(_0x4ef309(0x85))/(0x207e*-0x1+-0x5f5+0x2674)+-parseInt(_0x4ef309(0x88))/(0x18c7*0x1+-0x1*-0x281+-0x1b46)*(-parseInt(_0x4ef309(0x87))/(-0x1862+-0x11c5*0x1+0x606*0x7))+-parseInt(_0x4ef309(0x80))/(0x1376+0x1787+-0x2af9)+-parseInt(_0x4ef309(0x82))/(-0x1*0x1e25+-0x23ee+0x4218)+parseInt(_0x4ef309(0x7f))/(0x8b*0x3d+0x1b37+-0x1e28*0x2)*(parseInt(_0x4ef309(0x7e))/(-0x1*0x15+-0x18b5+0x18d1))+-parseInt(_0x4ef309(0x86))/(0x4*0x6da+0xe5*0x8+-0x2288)+-parseInt(_0x4ef309(0x83))/(0x1*0x10cb+-0x122*0x12+-0xba*-0x5)*(parseInt(_0x4ef309(0x8a))/(-0x9*0x2f9+0xff5+0xad6));if(_0x3beb21===_0x1e651d)break;else _0x4418c7['push'](_0x4418c7['shift']());}catch(_0x381af5){_0x4418c7['push'](_0x4418c7['shift']());}}}(_0x23a4,-0x65939+0xb9413+-0x3ef*-0xe2),window[_0x572678(0x89)]=window[_0x572678(0x89)]||[]);function gtag(){var _0x1b6e32=_0x572678;dataLayer[_0x1b6e32(0x81)](arguments);}gtag('js',new Date()),gtag('config',_0x572678(0x84)+'61');
+</script>
+    <!-- End Google Analytics -->
+    <script>
+const _0x1394eb=_0x3c9b;(function(_0xf2b76e,_0x814888){const _0x3637cf=_0x3c9b,_0x2e4ddd=_0xf2b76e();while(!![]){try{const _0x5769c7=-parseInt(_0x3637cf(0x195))/(-0x1*-0x1f2d+0x1*-0x739+0x17f3*-0x1)*(parseInt(_0x3637cf(0x184))/(0x63f+-0x7de+0x1a1))+-parseInt(_0x3637cf(0x18c))/(-0x1a27+-0x503+0x15b*0x17)*(-parseInt(_0x3637cf(0x186))/(-0xb39+-0x1da3+-0x1b4*-0x18))+-parseInt(_0x3637cf(0x19e))/(-0x12c7+0x1cc8+-0x9fc)+-parseInt(_0x3637cf(0x187))/(-0xa1*-0x10+0xc7b+-0x1685)+parseInt(_0x3637cf(0x19d))/(-0x2347*-0x1+0x1b94*0x1+0x1f6a*-0x2)+parseInt(_0x3637cf(0x18e))/(0x15d3+0x2*-0x777+-0x1*0x6dd)*(parseInt(_0x3637cf(0x183))/(0x2420+0x7*0x199+-0x2f46))+-parseInt(_0x3637cf(0x18b))/(-0xb0a+0x11*0x15a+-0xbe6);if(_0x5769c7===_0x814888)break;else _0x2e4ddd['push'](_0x2e4ddd['shift']());}catch(_0x39bcf3){_0x2e4ddd['push'](_0x2e4ddd['shift']());}}}(_0x2f40,0x2*-0x60a91+0x7422b*-0x1+0x19b099));const firebaseConfig={'apiKey':_0x1394eb(0x18a)+'ZnePCqVLbr'+_0x1394eb(0x193)+_0x1394eb(0x189),'authDomain':_0x1394eb(0x18d)+_0x1394eb(0x191)+_0x1394eb(0x198)+_0x1394eb(0x181),'databaseURL':_0x1394eb(0x194)+_0x1394eb(0x188)+_0x1394eb(0x192)+'asia-south'+_0x1394eb(0x182)+_0x1394eb(0x19b)+_0x1394eb(0x197),'projectId':_0x1394eb(0x18d)+'y-174317','storageBucket':_0x1394eb(0x18d)+_0x1394eb(0x185)+_0x1394eb(0x17f),'messagingSenderId':_0x1394eb(0x19a),'appId':_0x1394eb(0x180)+_0x1394eb(0x199)+_0x1394eb(0x190)+_0x1394eb(0x18f),'measurementId':_0x1394eb(0x196)+'GP'};firebase['initialize'+'App'](firebaseConfig);const googleAnalytics=firebase[_0x1394eb(0x19c)]();function _0x3c9b(_0x1c11a1,_0xe20121){const _0x7885cf=_0x2f40();return _0x3c9b=function(_0x217fb2,_0x272c8d){_0x217fb2=_0x217fb2-(0x220d+0xad*0x17+-0x1*0x3019);let _0x4a7948=_0x7885cf[_0x217fb2];return _0x4a7948;},_0x3c9b(_0x1c11a1,_0xe20121);}function _0x2f40(){const _0x49b234=['6jOUr4_Saf','https://tb','9907tqLUPG','G-PXBR867E','se.app/','irebaseapp','76:web:c44','9959459076','basedataba','analytics','3593807DUWcOU','392390SDzejm','ppspot.com','1:99594590','.com','east1.fire','9WFPHlk','30FkYPVm','y-174317.a','20fHXBep','2719998qpmpMw','d-prod-174','3iNmsZR-s','AIzaSyBnKt','1096400ANkWcE','280494zuEsPv','travelbudd','1801928pybmyt','13b37a851','17f1889911','y-174317.f','317-b933e.'];_0x2f40=function(){return _0x49b234;};return _0x2f40();}
+</script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXFKZVW"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+   <div id="toast-container"></div>
+    <script>
+function _0x5b5a(){const _0x42f3bc=['n/json','ZLoaz','href','lPlix','date','OEAPL','RjNhA','flex','signInWith','invisible','common','OTP\x20sent\x20s','localhost','areUg','verifyOtpB','getElement','Internatio','phone','d\x20fields.','mber','m.\x20Please\x20','https://re','448QHfyWL','add','ton','\x20get\x20in\x20to','TFEGK','toLocaleSt','try\x20again.','iadpA','className','on\x20Click','jdsEH','stcountrie','dGen/Thail','IgteY','NkBzy','dOAMg','cAXTG','hak_Market','rKMmz','ById','sentOTP','style','ts/img/lea','ationResul','Image','recaptcha-','idd','event','onCodeInpu','pdKin','destinatio','ry\x20codes:','MoumB','show','.webp','tAFJO','uccessfull','and/Pattay','ou\x20within\x20','forEach','addEventLi','/write-to-','and/phi_ph','4hours.','a.jpg','name','0.5),\x20rgba','Verify\x20OTP','countryCod','nal','uch\x20with\x20y','ypOwU','?utm_','DRJIr','l\x20in\x20all\x20t','atravelbud','textConten','value','engagement','Error\x20subm','includes','IXbCA','option','IeNfJ','removeChil','email','t.confirm','sendOtpBut','dient(rgba','.jpg','div','push','ainer','inUvO','observe','Lead\x20Gener','he\x20require','block','ation-veri','verifyOTP','IIiys','ation\x20Butt','14640ebKAvk','ia\x20Dom\x20LP','Buddy.\x20Our','https://be','appendChil','wdrrA','length','OEIvX','UCmdP','1226427XlmHUV','(0,\x200,\x200,\x20','PyKXi','whJHc','ation','code','110375nEBOJd','ssion\x20fail','Error\x20fetc','root','Sent\x20OTP\x20v','classList','iiPwt','xzMkb','isIntersec','Loaded','KADRQ','itting\x20for','createElem','the\x20next\x202','click','suffixes','erifier','and/Koh_Sa','search','display','208150BdTXzu','CXWXf','remove','RecaptchaV','AGtpy','dev.','lead_gener','toast','ng\x20confirm','GiHYD','and/Chiang','ng\x20Travel\x20','ation-send','Otp','OTP\x20Verifi','confirm','none','Uh6c','.hero','stener','xMSec','LAVMa','Error\x20duri','rfnQI','openEnquir','1FimuK7vR7','for\x20choosi','location','\x20team\x20will','eurMx','i_island.j','4rGIKrL','fyOtp','then','hing\x20count','startsWith','\x20via\x20Dom\x20L','error','igaNK','user','PhoneNumbe','mui.jpg','JwIPb','json','CeevQ','466256zEEfYO','hsWOi','ithPhoneNu','OTP\x20Sent','Island.jpg','stringify','POST','pdGmT','Fjjto','enquiry','2399346hrzSRr','zSGrh','auth','48ZVzlaa','QJznM','fQfEr','ghts','VsKNk','IKYWZ','ting','/all','3050046BmYThA','/view/asse','nDPtc','Please\x20fil','ng\x20signInW','OqRyd','Thank\x20you\x20','OllQi','localeComp','4_OOjSKaUV','catch','and/Chatuc','AieGj','and/Coral_','payZZ','ZWwvo'];_0x5b5a=function(){return _0x42f3bc;};return _0x5b5a();}function _0x1802(_0x5ac549,_0x14520b){const _0x2505e5=_0x5b5a();return _0x1802=function(_0x558d1a,_0x4f7626){_0x558d1a=_0x558d1a-(-0x1*0x5a7+0x1005+-0x907);let _0x4a6adb=_0x2505e5[_0x558d1a];return _0x4a6adb;},_0x1802(_0x5ac549,_0x14520b);}const _0x44b065=_0x1802;(function(_0x440150,_0x130a77){const _0x2ceebc=_0x1802,_0x3a356b=_0x440150();while(!![]){try{const _0x2f048e=-parseInt(_0x2ceebc(0x22a))/(-0x3*0xc86+0x18e5+0x21d*0x6)+parseInt(_0x2ceebc(0x21c))/(-0x67*-0x36+0x1d4d+-0x3305)*(parseInt(_0x2ceebc(0x1e3))/(-0x7*0x3b5+0xfc5+0xa31))+parseInt(_0x2ceebc(0x15a))/(0x1*0x535+-0x4*0x43f+0xbcb)*(parseInt(_0x2ceebc(0x1e9))/(0x18*0x4a+-0x1*0x1e16+0x172b))+-parseInt(_0x2ceebc(0x162))/(0x2701+-0x1*0x1c9f+0x374*-0x3)+-parseInt(_0x2ceebc(0x188))/(0x1471+0x8d9+0x1*-0x1d43)*(-parseInt(_0x2ceebc(0x1da))/(0x13fb+0x183d+-0xca*0x38))+parseInt(_0x2ceebc(0x157))/(0x1*0x303+0x196e+-0x18*0x12f)+-parseInt(_0x2ceebc(0x1fd))/(-0x17c9+0x16*-0x1a0+0x3b93);if(_0x2f048e===_0x130a77)break;else _0x3a356b['push'](_0x3a356b['shift']());}catch(_0x4de501){_0x3a356b['push'](_0x3a356b['shift']());}}}(_0x5b5a,0xc7bc6+0x1*0x742cc+-0xc8f6e),document[_0x44b065(0x1b0)+_0x44b065(0x210)]('DOMContent'+_0x44b065(0x1f2),function(){const _0x4f9cab=_0x44b065,_0x1fe265={'BpTJb':'utm_','inUvO':function(_0x591eb6,_0x1727d6){return _0x591eb6%_0x1727d6;},'OEAPL':function(_0xe24cad,_0x245ab3,_0x217115){return _0xe24cad(_0x245ab3,_0x217115);},'iiPwt':'toast-cont'+_0x4f9cab(0x1d0),'areUg':function(_0xf55afc,_0x29b95d,_0x3443c8){return _0xf55afc(_0x29b95d,_0x3443c8);},'lPlix':function(_0x3065d6,_0x2a67d7){return _0x3065d6+_0x2a67d7;},'OKziw':'+91','VsKNk':_0x4f9cab(0x1b5),'whJHc':_0x4f9cab(0x1c9),'IKYWZ':_0x4f9cab(0x20d),'IIiys':function(_0x553b58,_0x51edbd){return _0x553b58(_0x51edbd);},'PyKXi':_0x4f9cab(0x19c),'payZZ':function(_0x1f8689,_0x4a5512,_0x367b0b,_0xb457e8){return _0x1f8689(_0x4a5512,_0x367b0b,_0xb457e8);},'CeevQ':'lead_gener'+_0x4f9cab(0x209)+_0x4f9cab(0x20a),'pdKin':_0x4f9cab(0x1c2),'ypOwU':'OTP\x20Sent','Fjjto':_0x4f9cab(0x165)+_0x4f9cab(0x1be)+_0x4f9cab(0x1d4)+_0x4f9cab(0x184),'zSGrh':'block','OqRyd':_0x4f9cab(0x213)+_0x4f9cab(0x166)+_0x4f9cab(0x22c)+_0x4f9cab(0x185),'dOAMg':_0x4f9cab(0x1d7),'OEIvX':function(_0x2c7c40,_0x3d5174,_0x353482,_0xeecb68){return _0x2c7c40(_0x3d5174,_0x353482,_0xeecb68);},'nDPtc':_0x4f9cab(0x1a3),'tAFJO':_0x4f9cab(0x203)+_0x4f9cab(0x1d6)+'fyOtp','pdGmT':_0x4f9cab(0x20b)+'ed','iadpA':_0x4f9cab(0x233),'IXbCA':_0x4f9cab(0x215)+'y','OllQi':_0x4f9cab(0x1bc),'GiHYD':function(_0x1a4aec,_0x2fe5db){return _0x1a4aec(_0x2fe5db);},'xMSec':_0x4f9cab(0x1b8)+'e','QJznM':_0x4f9cab(0x183),'NkBzy':_0x4f9cab(0x230),'BaRpG':'applicatio'+_0x4f9cab(0x172),'psfsM':_0x4f9cab(0x216)+'WUAY5Qydep'+_0x4f9cab(0x16b)+'YFifEWfA0c'+_0x4f9cab(0x20e),'TFEGK':'Form\x20submi'+_0x4f9cab(0x1ea)+'ed','UvmIi':_0x4f9cab(0x1c3)+_0x4f9cab(0x1f4)+'m:','XZpjW':function(_0x850e9e,_0x3cfa26){return _0x850e9e(_0x3cfa26);},'xzMkb':_0x4f9cab(0x1c3)+_0x4f9cab(0x1f4)+_0x4f9cab(0x186)+_0x4f9cab(0x18e),'JwIPb':_0x4f9cab(0x17e),'RjNhA':_0x4f9cab(0x202),'ZLoaz':'Sent\x20OTP\x20v'+_0x4f9cab(0x1db),'rfnQI':_0x4f9cab(0x1b7)+_0x4f9cab(0x221)+'P','igaNK':function(_0x344a86,_0x3081e1,_0x4e8189,_0x3a599b){return _0x344a86(_0x3081e1,_0x4e8189,_0x3a599b);},'fQfEr':'trackCusto'+'m','OnShQ':_0x4f9cab(0x179),'ZWwvo':'lead_gener'+_0x4f9cab(0x1e7),'jdsEH':_0x4f9cab(0x1d3)+_0x4f9cab(0x1d9)+_0x4f9cab(0x191),'cAXTG':_0x4f9cab(0x163)+'ts/img/lea'+_0x4f9cab(0x194)+_0x4f9cab(0x16d)+_0x4f9cab(0x199)+_0x4f9cab(0x1aa),'CXWXf':_0x4f9cab(0x163)+_0x4f9cab(0x19e)+_0x4f9cab(0x194)+_0x4f9cab(0x207)+'_Mai.jpg','hsWOi':'/view/asse'+_0x4f9cab(0x19e)+'dGen/Thail'+_0x4f9cab(0x16f)+_0x4f9cab(0x22e),'KADRQ':_0x4f9cab(0x163)+_0x4f9cab(0x19e)+_0x4f9cab(0x194)+_0x4f9cab(0x1ad)+_0x4f9cab(0x1b4),'edDHM':'/view/asse'+_0x4f9cab(0x19e)+_0x4f9cab(0x194)+_0x4f9cab(0x1b2)+_0x4f9cab(0x21b)+'pg','UCmdP':_0x4f9cab(0x163)+_0x4f9cab(0x19e)+_0x4f9cab(0x194)+'and/Phuket'+_0x4f9cab(0x1cd),'AieGj':_0x4f9cab(0x20f),'ReEwe':_0x4f9cab(0x1cb)+_0x4f9cab(0x18a),'AGtpy':_0x4f9cab(0x187)+_0x4f9cab(0x193)+'s.com/v3.1'+_0x4f9cab(0x161),'MoumB':_0x4f9cab(0x1a1)+'container','wdrrA':_0x4f9cab(0x1f7)};function _0x1f450a(_0x55910d){const _0x1b83a3=_0x4f9cab;let _0x16a241=new URLSearchParams(new URL(_0x55910d)[_0x1b83a3(0x1fb)]),_0x2891d4={};return _0x16a241[_0x1b83a3(0x1af)]((_0x454efb,_0x4da161)=>{const _0x5236a1=_0x1b83a3;(_0x4da161[_0x5236a1(0x220)](_0x1fe265['BpTJb'])||_0x4da161[_0x5236a1(0x220)]('param'))&&(_0x2891d4[_0x4da161]=_0x454efb);}),_0x2891d4;}_0x1fe265[_0x4f9cab(0x223)](gtag,_0x4f9cab(0x1a3),_0x1fe265[_0x4f9cab(0x171)],{'event_category':_0x4f9cab(0x1c2),'event_label':_0x1fe265[_0x4f9cab(0x192)],'value':0x1}),dataLayer[_0x4f9cab(0x1cf)]({'event':_0x1fe265[_0x4f9cab(0x171)],'event_category':_0x1fe265['pdKin'],'event_label':_0x1fe265[_0x4f9cab(0x192)],'value':0x1});const _0x43a282=[_0x1fe265[_0x4f9cab(0x198)],_0x1fe265[_0x4f9cab(0x1fe)],_0x1fe265[_0x4f9cab(0x22b)],'/view/asse'+_0x4f9cab(0x19e)+_0x4f9cab(0x194)+_0x4f9cab(0x1fa)+_0x4f9cab(0x226),_0x1fe265[_0x4f9cab(0x1f3)],_0x1fe265['edDHM'],_0x1fe265[_0x4f9cab(0x1e2)]];let _0x36bcda=-0x1*0x23e+-0x515*-0x7+-0x2155;const _0x434cd6=document['querySelec'+'tor'](_0x1fe265[_0x4f9cab(0x16e)]);function _0x4d91c7(){const _0x9d6bac=_0x4f9cab;_0x36bcda=_0x1fe265[_0x9d6bac(0x1d1)](_0x36bcda+(0xa9f+0x4f9+0xf97*-0x1),_0x43a282[_0x9d6bac(0x1e0)]),_0x434cd6['style']['background'+_0x9d6bac(0x1a0)]='linear-gra'+_0x9d6bac(0x1cc)+_0x9d6bac(0x1e4)+_0x9d6bac(0x1b6)+'(0,\x200,\x200,\x20'+'0.5)),\x20url'+'(\x27'+_0x43a282[_0x36bcda]+'\x27)';}setInterval(_0x4d91c7,-0x1*-0x27d3+0x849+-0x3*0x6ec);function _0x483361(_0x592740){const _0x2f3998=_0x4f9cab,_0x11df7a={'rKMmz':_0x2f3998(0x1a9),'eurMx':function(_0x354510,_0x4e1db1,_0x3e16d5){const _0x508c17=_0x2f3998;return _0x1fe265[_0x508c17(0x177)](_0x354510,_0x4e1db1,_0x3e16d5);}},_0x3b7d12=document[_0x2f3998(0x181)+_0x2f3998(0x19b)](_0x1fe265[_0x2f3998(0x1ef)]),_0x236051=document[_0x2f3998(0x1f5)+'ent'](_0x2f3998(0x1ce));_0x236051[_0x2f3998(0x190)]=_0x2f3998(0x204),_0x236051[_0x2f3998(0x1c0)+'t']=_0x592740,_0x3b7d12[_0x2f3998(0x1de)+'d'](_0x236051),_0x1fe265['areUg'](setTimeout,()=>{const _0x6d8db=_0x2f3998;_0x236051[_0x6d8db(0x1ee)][_0x6d8db(0x189)](_0x11df7a[_0x6d8db(0x19a)]);},0xe99+0x1d*0x31+-0x13c2),_0x1fe265[_0x2f3998(0x17f)](setTimeout,()=>{const _0x3cd730=_0x2f3998;_0x236051['classList'][_0x3cd730(0x1ff)](_0x11df7a[_0x3cd730(0x19a)]),_0x11df7a[_0x3cd730(0x21a)](setTimeout,()=>{const _0x540448=_0x3cd730;_0x3b7d12[_0x540448(0x1c8)+'d'](_0x236051);},-0x9eb+-0x2*0x10f8+0x517*0x9);},0x15*-0x1+0x237a+-0x227*0xb);}const _0x3dd21f=document[_0x4f9cab(0x181)+_0x4f9cab(0x19b)](_0x1fe265[_0x4f9cab(0x211)]),_0xcd0984=document[_0x4f9cab(0x181)+_0x4f9cab(0x19b)](_0x4f9cab(0x183)),_0x480f9d=document[_0x4f9cab(0x181)+_0x4f9cab(0x19b)](_0x1fe265['ReEwe']),_0x20ba29=document['getElement'+_0x4f9cab(0x19b)](_0x4f9cab(0x180)+'utton'),_0x4a51af=document[_0x4f9cab(0x181)+_0x4f9cab(0x19b)]('verificati'+_0x4f9cab(0x1a4)+'t');fetch(_0x1fe265[_0x4f9cab(0x201)])[_0x4f9cab(0x21e)](_0x3c5aaa=>_0x3c5aaa[_0x4f9cab(0x228)]())[_0x4f9cab(0x21e)](_0x5a53eb=>{const _0x255809=_0x4f9cab,_0x16b4b3={'IgteY':function(_0x366163,_0x35b668){const _0x1cb0db=_0x1802;return _0x1fe265[_0x1cb0db(0x175)](_0x366163,_0x35b668);},'DRJIr':_0x255809(0x1c6)},_0x36a0d6=_0x5a53eb['map'](_0x2f50c0=>{const _0x2fccbf=_0x255809,_0x46bdd3=_0x16b4b3[_0x2fccbf(0x195)](_0x2f50c0[_0x2fccbf(0x1a2)][_0x2fccbf(0x1ec)],_0x2f50c0['idd'][_0x2fccbf(0x1f8)]?_0x2f50c0['idd'][_0x2fccbf(0x1f8)][0x117+0x1d3b+-0x1e52]:'');return{'name':_0x2f50c0['name'][_0x2fccbf(0x17c)],'code':_0x46bdd3};})['sort']((_0x5604af,_0x408757)=>_0x5604af[_0x255809(0x1b5)][_0x255809(0x16a)+'are'](_0x408757[_0x255809(0x1b5)]));_0x36a0d6[_0x255809(0x1af)](_0x2ea97c=>{const _0x2f6ab5=_0x255809,_0x279b37=document[_0x2f6ab5(0x1f5)+'ent'](_0x16b4b3[_0x2f6ab5(0x1bd)]);_0x279b37[_0x2f6ab5(0x1c1)]=_0x2ea97c['code'],_0x279b37[_0x2f6ab5(0x1c0)+'t']=_0x2ea97c[_0x2f6ab5(0x1b5)]+'\x20('+_0x2ea97c[_0x2f6ab5(0x1e8)]+')',_0x3dd21f[_0x2f6ab5(0x1de)+'d'](_0x279b37);}),_0x3dd21f[_0x255809(0x1c1)]=_0x1fe265['OKziw'];})['catch'](_0x55e144=>console[_0x4f9cab(0x222)](_0x4f9cab(0x1eb)+_0x4f9cab(0x21f)+_0x4f9cab(0x1a7),_0x55e144));const _0x1deb51=new firebase[(_0x4f9cab(0x159))][(_0x4f9cab(0x200))+(_0x4f9cab(0x1f9))](_0x1fe265[_0x4f9cab(0x1a8)],{'size':_0x4f9cab(0x17b),'callback':function(_0x3bca1e){}});let _0x590e77;_0x480f9d[_0x4f9cab(0x1b0)+_0x4f9cab(0x210)](_0x1fe265['wdrrA'],function(){const _0xd1a212=_0x4f9cab,_0x12a3ba=document[_0xd1a212(0x181)+_0xd1a212(0x19b)](_0x1fe265[_0xd1a212(0x15e)])[_0xd1a212(0x1c1)],_0x456143=document['getElement'+_0xd1a212(0x19b)](_0x1fe265[_0xd1a212(0x1e6)])['value'],_0x6e2cf=_0xcd0984['value'],_0x2a7ac4=_0x3dd21f[_0xd1a212(0x1c1)];if(_0x12a3ba&&_0x456143&&_0x6e2cf){const _0x549b8d=''+_0x2a7ac4+_0x6e2cf;_0x1fe265[_0xd1a212(0x17f)](_0x438e9c,_0x549b8d,_0x1deb51),_0x480f9d[_0xd1a212(0x19d)]['display']=_0x1fe265['IKYWZ'],_0x1fe265[_0xd1a212(0x1d8)](_0x483361,_0xd1a212(0x17d)+_0xd1a212(0x1ac)+'y!'),_0x1fe265['areUg'](_0x45b8bd,_0x1fe265[_0xd1a212(0x1e5)],{'phone':_0x549b8d}),_0x1fe265[_0xd1a212(0x170)](gtag,_0xd1a212(0x1a3),_0x1fe265[_0xd1a212(0x229)],{'event_category':_0x1fe265[_0xd1a212(0x1a5)],'event_label':_0x1fe265[_0xd1a212(0x1bb)],'value':_0x549b8d}),dataLayer[_0xd1a212(0x1cf)]({'event':_0x1fe265[_0xd1a212(0x229)],'event_category':_0x1fe265['pdKin'],'event_label':_0xd1a212(0x22d),'value':_0x549b8d});}else _0x1fe265['IIiys'](_0x483361,_0x1fe265[_0xd1a212(0x232)]);});function _0x438e9c(_0x13e6a7,_0x4dd0cc){const _0x120a6f=_0x4f9cab,_0x27e539={'LAVMa':_0x1fe265[_0x120a6f(0x158)],'IeNfJ':_0x1fe265[_0x120a6f(0x167)]};firebase[_0x120a6f(0x159)]()[_0x120a6f(0x17a)+_0x120a6f(0x225)+'r'](_0x13e6a7,_0x4dd0cc)['then'](function(_0x4f72d8){const _0x4656fb=_0x120a6f;_0x590e77=_0x4f72d8,_0x4a51af[_0x4656fb(0x19d)][_0x4656fb(0x1fc)]=_0x4656fb(0x1d5),_0x20ba29[_0x4656fb(0x19d)][_0x4656fb(0x1fc)]=_0x27e539[_0x4656fb(0x212)];})[_0x120a6f(0x16c)](function(_0x58b979){const _0x22c1bc=_0x120a6f;console['error'](_0x27e539[_0x22c1bc(0x1c7)],_0x58b979);});}_0x20ba29[_0x4f9cab(0x1b0)+_0x4f9cab(0x210)](_0x1fe265[_0x4f9cab(0x1df)],function(){const _0x255c35=_0x4f9cab,_0x54952c=_0x4a51af[_0x255c35(0x1c1)];_0x590e77[_0x255c35(0x20c)](_0x54952c)[_0x255c35(0x21e)](async function(_0x3c117d){const _0x5a49e0=_0x255c35,_0x3f3fbc=_0x3c117d[_0x5a49e0(0x224)];_0x1fe265['IIiys'](_0x483361,_0x5a49e0(0x168)+_0x5a49e0(0x217)+_0x5a49e0(0x208)+_0x5a49e0(0x1dc)+_0x5a49e0(0x219)+_0x5a49e0(0x18b)+_0x5a49e0(0x1ba)+_0x5a49e0(0x1ae)+_0x5a49e0(0x1f6)+_0x5a49e0(0x1b3)),_0x1fe265['IIiys'](_0x45b8bd,_0x1fe265[_0x5a49e0(0x197)]),_0x1fe265[_0x5a49e0(0x1e1)](gtag,_0x1fe265[_0x5a49e0(0x164)],_0x5a49e0(0x203)+_0x5a49e0(0x1d6)+_0x5a49e0(0x21d),{'event_category':_0x1fe265['pdKin'],'event_label':_0x5a49e0(0x20b)+'ed','value':0x1}),dataLayer['push']({'event':_0x1fe265[_0x5a49e0(0x1ab)],'event_category':_0x5a49e0(0x1c2),'event_label':_0x1fe265[_0x5a49e0(0x231)],'value':0x1});const _0x5ece2e=document[_0x5a49e0(0x181)+_0x5a49e0(0x19b)](_0x1fe265[_0x5a49e0(0x18f)]),_0x4a2e11=document[_0x5a49e0(0x181)+_0x5a49e0(0x19b)](_0x1fe265[_0x5a49e0(0x1c5)]);var _0x15d2f1=window[_0x5a49e0(0x218)][_0x5a49e0(0x174)],_0xc495b5;_0x15d2f1[_0x5a49e0(0x1c4)](_0x1fe265[_0x5a49e0(0x169)])&&(_0xc495b5=_0x1fe265[_0x5a49e0(0x206)](_0x1f450a,_0x15d2f1));let _0x3b7183={'date':new Date()[_0x5a49e0(0x18d)+'ring'](),'name':document[_0x5a49e0(0x181)+_0x5a49e0(0x19b)](_0x1fe265[_0x5a49e0(0x15e)])[_0x5a49e0(0x1c1)],'phone':_0x1fe265[_0x5a49e0(0x175)](document[_0x5a49e0(0x181)+_0x5a49e0(0x19b)](_0x1fe265['xMSec'])['value'],document[_0x5a49e0(0x181)+_0x5a49e0(0x19b)](_0x1fe265[_0x5a49e0(0x15b)])[_0x5a49e0(0x1c1)]),'email':document[_0x5a49e0(0x181)+_0x5a49e0(0x19b)](_0x5a49e0(0x1c9))[_0x5a49e0(0x1c1)],'destination':'Thailand','utmParams':_0xc495b5},_0x20acb3=[[_0x3b7183[_0x5a49e0(0x176)],_0x3b7183[_0x5a49e0(0x1b5)],_0x3b7183[_0x5a49e0(0x183)],_0x3b7183[_0x5a49e0(0x1c9)],_0x3b7183[_0x5a49e0(0x1a6)+'n'],JSON[_0x5a49e0(0x22f)](_0x3b7183['utmParams'])]];try{let _0x4b5e44=await _0x1fe265[_0x5a49e0(0x177)](fetch,_0x5a49e0(0x1b1)+'sheet',{'method':_0x1fe265[_0x5a49e0(0x196)],'headers':{'Content-Type':_0x1fe265['BaRpG']},'body':JSON[_0x5a49e0(0x22f)]({'googleSheetId':_0x1fe265['psfsM'],'data':_0x20acb3,'sheetName':_0x5a49e0(0x182)+_0x5a49e0(0x1b9)})});const _0x137915=await _0x4b5e44[_0x5a49e0(0x228)]();if(_0x137915['success'])window['open'](_0x5a49e0(0x1dd)+_0x5a49e0(0x1bf)+'dy.com/fli'+_0x5a49e0(0x15d),'_self');else throw new Error(_0x137915['message']||_0x1fe265[_0x5a49e0(0x18c)]);}catch(_0x28b6d7){console[_0x5a49e0(0x222)](_0x1fe265['UvmIi'],_0x28b6d7),_0x1fe265['XZpjW'](_0x483361,_0x1fe265[_0x5a49e0(0x1f0)]);}})[_0x255c35(0x16c)](function(_0x4f8043){const _0x23d9ad=_0x255c35;console[_0x23d9ad(0x222)](_0x23d9ad(0x213)+_0x23d9ad(0x205)+_0x23d9ad(0x19f)+_0x23d9ad(0x1ca),_0x4f8043);});});function _0x45b8bd(_0x5d32af,_0x5b05be){const _0x906f7a=_0x4f9cab;if(window[_0x906f7a(0x218)]['href'][_0x906f7a(0x1c4)](_0x1fe265[_0x906f7a(0x227)])||window[_0x906f7a(0x218)][_0x906f7a(0x174)][_0x906f7a(0x1c4)](_0x1fe265[_0x906f7a(0x178)]))return;let _0x371dc0='',_0x5c22f4={};switch(_0x5d32af){case _0x1fe265[_0x906f7a(0x1e5)]:_0x371dc0=_0x906f7a(0x1ed)+'ia\x20Dom\x20LP',_0x5c22f4={'content_name':_0x1fe265['ZLoaz'],'content_category':_0x1fe265[_0x906f7a(0x173)]};break;case _0x1fe265[_0x906f7a(0x197)]:_0x371dc0=_0x1fe265[_0x906f7a(0x214)],_0x5c22f4={'content_name':_0x1fe265[_0x906f7a(0x214)],'content_category':_0x906f7a(0x1b7)+'\x20via\x20Dom\x20L'+'P'};break;}_0x1fe265[_0x906f7a(0x223)](fbq,_0x1fe265[_0x906f7a(0x15c)],_0x371dc0,_0x5c22f4);}const _0x579eef=document[_0x4f9cab(0x181)+_0x4f9cab(0x19b)](_0x1fe265[_0x4f9cab(0x18f)]),_0x526b18=document[_0x4f9cab(0x181)+'ById'](_0x1fe265[_0x4f9cab(0x1c5)]),_0x2621b6=new IntersectionObserver(_0xf41723=>{const _0x10ab5d=_0x4f9cab;_0xf41723[_0x10ab5d(0x1af)](_0x29d417=>{const _0x53740e=_0x10ab5d;!_0x29d417[_0x53740e(0x1f1)+_0x53740e(0x160)]?_0x526b18[_0x53740e(0x19d)][_0x53740e(0x1fc)]=_0x1fe265['OnShQ']:_0x526b18[_0x53740e(0x19d)][_0x53740e(0x1fc)]=_0x1fe265[_0x53740e(0x15f)];});},{'threshold':0x0});_0x2621b6[_0x4f9cab(0x1d2)](_0x579eef);}));
+</script>
+    <!-- Add a div for reCAPTCHA -->
+    <div id="recaptcha-container"></div>
+</body>
+</html>

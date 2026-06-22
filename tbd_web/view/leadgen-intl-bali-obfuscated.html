@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover the Wonders of Bali | Travel Buddy</title>
+    <meta name="description" content="Bali offers an enchanting blend of cultural heritage, natural beauty, and warm hospitality that captivates every traveler">
+    <meta name="keywords" content="Bali, Indonesia, travel, tourism, vacation, holiday, paradise">
+    <meta property="og:title" content="Discover the Wonders of Bali">
+    <meta property="og:description" content="Bali offers an enchanting blend of cultural heritage, natural beauty, and warm hospitality that captivates every traveler">
+    <meta property="og:image" content="https://beatravelbuddy.com/view/assets/img/leadGen/Bali/Kuta_Beach.jpg">
+    <link rel="icon" href="/view/assets/img/app_logo_new.webp" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="image_src" href="/view/assets/img/leadGen/Bali/Kuta_Beach.jpg">
+    <style>
+        :root {
+            --primary: #00A896;
+            --primary-light: #02C39A;
+            --primary-dark: #028090;
+            --secondary: #F9C80E;
+            --secondary-light: #F9E04C;
+            --secondary-dark: #F8A100;
+            --accent: #F94144;
+            --dark: #2D3142;
+            --light: #F7F9F9;
+            --gray: #BFC0C0;
+            --gray-light: #E5E5E5;
+            --gray-dark: #4F5D75;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+            --radius: 8px;
+            --radius-lg: 16px;
+            --radius-full: 9999px;
+            --header-height: 70px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--header-height);
+        }
+
+        body {
+            font-family: 'Montserrat';
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat';
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-dark);
+            color: var(--dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-lg {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0;
+            color: var(--primary-dark);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            padding-top: calc(var(--header-height) + 2rem);
+            padding-bottom: 3rem;
+            overflow: visible;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+        }
+
+        .hero-content {
+            max-width: 550px;
+            color: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            background-color: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 1s ease-in-out;
+            margin-bottom: 2rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-text {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Enquiry Form */
+        .enquiry-form-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-bottom: 2rem;
+        }
+
+        .enquiry-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--gray-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--gray-light);
+            border-radius: var(--radius);
+            font-family: 'Montserrat';
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 168, 150, 0.2);
+        }
+
+        .phone-input {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .country-code {
+            width: 40%;
+        }
+
+        .phone-number {
+            width: 60%;
+        }
+
+        .verification-code {
+            display: none;
+            margin-top: 1rem;
+        }
+
+        /* Form Steps */
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .form-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .form-progress::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--gray-light);
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .progress-step {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: white;
+            border: 2px solid var(--gray-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--gray-dark);
+            position: relative;
+            z-index: 2;
+        }
+
+        .progress-step.active {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .progress-step.completed {
+            background-color: var(--primary-light);
+            border-color: var(--primary-light);
+            color: white;
+        }
+
+        .form-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .form-category {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .form-category-title {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .form-grid .form-group {
+            margin-bottom: 0.75rem;
+        }
+
+        .form-grid-full {
+            grid-column: 1 / -1;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--primary-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--gray-dark);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 0;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-dark);
+        }
+
+        .card-text {
+            color: var(--gray-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Features */
+        .features {
+            background-color: var(--light);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-dark);
+        }
+
+        /* Destinations */
+        .destinations {
+            background-color: #f8f9fa;
+        }
+
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Itinerary */
+        .itinerary-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .itinerary-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary-light);
+            border-radius: var(--radius-full);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-content {
+            position: relative;
+            width: calc(50% - 30px);
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: auto;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary);
+            border: 4px solid white;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-day {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--light);
+        }
+
+        .testimonial-slider {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            flex: 0 0 100%;
+            padding: 1rem;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 3px solid var(--primary);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--gray-dark);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            gap: 0.5rem;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonial-dot.active {
+            background-color: var(--primary);
+            transform: scale(1.2);
+        }
+
+        /* Policies */
+        .policies {
+            background-color: #f8f9fa;
+        }
+
+        .policy-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .policy-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .policy-list {
+            list-style-position: inside;
+            margin-bottom: 1rem;
+        }
+
+        .policy-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-title {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-link {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-link a {
+            color: var(--gray);
+            transition: var(--transition);
+        }
+
+        .footer-link a:hover {
+            color: var(--primary-light);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Toast Notifications */
+        #toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .toast {
+            display: flex;
+            align-items: center;
+            background-color: var(--dark);
+            color: white;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.3s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .toast-icon {
+            margin-right: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .toast-success {
+            background-color: #28a745;
+        }
+
+        .toast-error {
+            background-color: #dc3545;
+        }
+
+        .toast-warning {
+            background-color: #ffc107;
+            color: var(--dark);
+        }
+
+        .toast-info {
+            background-color: var(--primary);
+        }
+
+        /* Fixed Enquiry Button */
+        .fixed-enquiry-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-lg);
+            z-index: 900;
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .fixed-enquiry-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Success Message */
+        .success-message {
+            text-align: center;
+            padding: 2rem;
+            display: none;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .success-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .success-text {
+            margin-bottom: 2rem;
+            color: var(--gray-dark);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.25rem;
+            }
+
+            .itinerary-timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item::before {
+                left: 30px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                height: calc(100vh - var(--header-height));
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+
+            .hero {
+                flex-direction: column;
+                height: auto;
+                padding: calc(var(--header-height) + 2rem) 0 3rem;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                margin-bottom: 3rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+
+            .enquiry-form-container {
+                max-width: 100%;
+            }
+
+            .feature-grid,
+            .destination-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .hero .container {
+                max-width: 1200px;
+                padding: 0 2rem;
+            }
+            
+            .hero-content {
+                margin-right: 2rem;
+            }
+        }
+
+        @media (max-width: 992px) and (min-width: 769px) {
+            .hero .container {
+                justify-content: center;
+            }
+            
+            .hero-content, .enquiry-form-container {
+                max-width: 45%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="/view/assets/img/app_logo_new.webp" alt="Travel Buddy Logo">
+                <h1>Travel Buddy</h1>
+            </a>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About Bali</a></li>
+                <li><a href="#features" class="nav-link">Why Choose Us</a></li>
+                <li><a href="#destinations" class="nav-link">Attractions</a></li>
+                <li><a href="#itinerary" class="nav-link">Itinerary</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg" id="heroBg" style="background-image: url('/view/assets/img/leadGen/Bali/Kuta_Beach.jpg');"></div>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; padding-top: 2rem;">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover the Magic of Bali</h1>
+                <h2 class="hero-subtitle">Where Paradise Meets Adventure</h2>
+                <p class="hero-text">Experience the enchanting blend of cultural heritage, breathtaking landscapes, and warm hospitality that makes Bali a dream destination for travelers worldwide.</p>
+                <a href="#enquiry" class="btn btn-secondary btn-lg">Book Your Experience</a>
+            </div>
+            
+            <div class="enquiry-form-container" id="enquiry">
+                <div class="enquiry-form">
+                    <h3 class="form-title">Start Your Bali Journey</h3>
+                    
+                    <!-- Success Message (shown after form submission) -->
+                    <div class="success-message" id="successMessage">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h4 class="success-title">Thank You!</h4>
+                        <p class="success-text">Your information has been submitted successfully. Our team will get in touch with you within the next 24 hours.</p>
+                        <a href="https://beatravelbuddy.com/community" class="btn btn-primary">Explore Our Community</a>
+                    </div>
+                    
+                    <form id="enquiryForm">
+                        <!-- Step 1: Basic Contact Information -->
+                        <div class="form-step active" id="step1">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <div class="phone-input">
+                                    <select id="countryCode" name="countryCode" class="form-control country-code" required>
+                                        <option value="+91">+91 India</option>
+                                    </select>
+                                    <input type="tel" id="phone" name="phone" class="form-control phone-number" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group verification-code" id="verificationCodeContainer">
+                                <label for="verificationCodeInput" class="form-label">Verification Code</label>
+                                <input type="text" id="verificationCodeInput" class="form-control" placeholder="Enter the OTP sent to your phone">
+                            </div>
+                            
+                            <button type="button" id="sendOtpButton" class="btn btn-primary btn-block">Request OTP</button>
+                            <button type="button" id="verifyOtpButton" class="btn btn-secondary btn-block" style="display: none;">Verify OTP</button>
+                        </div>
+                        
+                        <!-- Step 2: Travel Preferences -->
+                        <div class="form-step" id="step2">
+                            <div class="form-progress">
+                                <div class="progress-step completed">1</div>
+                                <div class="progress-step active">2</div>
+                            </div>
+                            
+                            <div class="form-category">
+                                <h4 class="form-category-title"><i class="fas fa-map-marker-alt"></i> Travel Details</h4>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="departureCity" class="form-label">Departure City</label>
+                                        <input type="text" id="departureCity" name="departureCity" class="form-control" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="preferredMonth" class="form-label">Travel Month</label>
+                                        <select id="preferredMonth" name="preferredMonth" class="form-control" required>
+                                            <option value="" disabled selected>Select month</option>
+                                            <option value="January">January</option>
+                                            <option value="February">February</option>
+                                            <option value="March">March</option>
+                                            <option value="April">April</option>
+                                            <option value="May">May</option>
+                                            <option value="June">June</option>
+                                            <option value="July">July</option>
+                                            <option value="August">August</option>
+                                            <option value="September">September</option>
+                                            <option value="October">October</option>
+                                            <option value="November">November</option>
+                                            <option value="December">December</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="totalTravelers" class="form-label">Total Travelers</label>
+                                        <input type="number" id="totalTravelers" name="totalTravelers" class="form-control" min="1" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="childrenBelow13" class="form-label">Child Below 13 Yrs</label>
+                                        <select id="childrenBelow13" name="childrenBelow13" class="form-control" required>
+                                            <option value="" disabled selected>Select option</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-category">
+                                <h4 class="form-category-title"><i class="fas fa-plane"></i> Flight & Accommodation</h4>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="flightsRequired" class="form-label">Flights Required</label>
+                                        <select id="flightsRequired" name="flightsRequired" class="form-control" required>
+                                            <option value="" disabled selected>Select option</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="flightPreference" class="form-label">Flight Preference</label>
+                                        <select id="flightPreference" name="flightPreference" class="form-control" required>
+                                            <option value="" disabled selected>Select preference</option>
+                                            <option value="Direct">Direct</option>
+                                            <option value="Layover">Layover</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="hotelPreference" class="form-label">Hotel Preference</label>
+                                        <select id="hotelPreference" name="hotelPreference" class="form-control" required>
+                                            <option value="" disabled selected>Select preference</option>
+                                            <option value="3 Star">3 Star</option>
+                                            <option value="4 Star">4 Star</option>
+                                            <option value="5 Star">5 Star</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group form-grid-full">
+                                        <label for="tripPurpose" class="form-label">Purpose of Trip</label>
+                                        <input type="text" id="tripPurpose" name="tripPurpose" class="form-control" placeholder="Family Vacation/Honeymoon/Anniversary etc." required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-category">
+                                <h4 class="form-category-title"><i class="fas fa-phone-alt"></i> Contact Preference</h4>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="contactPreference" class="form-label">How Shall We Contact You</label>
+                                        <select id="contactPreference" name="contactPreference" class="form-control" required>
+                                            <option value="" disabled selected>Select preference</option>
+                                            <option value="Call">Call</option>
+                                            <option value="Whatsapp Only">Whatsapp Only</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="callTime" class="form-label">Preferred Time to Call</label>
+                                        <select id="callTime" name="callTime" class="form-control" required>
+                                            <option value="" disabled selected>Select time</option>
+                                            <option value="10am to 1pm">10am to 1pm</option>
+                                            <option value="1pm to 5pm">1pm to 5pm</option>
+                                            <option value="5pm to 7pm">5pm to 7pm</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-navigation">
+                                <button type="button" id="prevStepButton" class="btn btn-outline">Back</button>
+                                <button type="button" id="submitFormButton" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Bali Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title fade-in">About Bali</h2>
+            <p class="section-subtitle fade-in">Discover the Island of the Gods</p>
+            
+            <div class="card fade-in">
+                <div class="card-body">
+                    <p>Nestled in the heart of Indonesia, Bali is a tropical haven that captivates travelers with its breathtaking landscapes, vibrant culture, and serene beaches. Whether you're seeking spiritual rejuvenation, adrenaline-pumping activities, or a romantic escape, Bali promises an unforgettable experience.</p>
+                    <p>From the golden sands of Kuta Beach to the lush rice terraces of Tegalalang, from ancient temples to modern beach clubs, Bali offers a perfect blend of tradition and contemporary luxury that appeals to all types of travelers.</p>
+                    <img src="/view/assets/img/leadGen/Bali/Mount_Batur.jpg" alt="Mount Batur in Bali" class="card-img" style="height: auto; margin-top: 1rem;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inclusions Section -->
+    <section id="inclusions" class="features" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title fade-in">Package Inclusions</h2>
+            <p class="section-subtitle fade-in">Everything you need for a perfect Bali getaway</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3 class="feature-title">Luxury Accommodation</h3>
+                    <p>6 nights in handpicked hotels with daily breakfast, strategically located for easy access to major attractions.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="feature-title">Delicious Meals</h3>
+                    <p>Daily breakfast and selected meals featuring both local Balinese cuisine and international options.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 class="feature-title">Private Transfers</h3>
+                    <p>Air-conditioned vehicles with professional drivers for all transfers and sightseeing tours.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="feature-title">Sightseeing Tours</h3>
+                    <p>Guided tours to all major attractions with experienced local guides who know Bali's hidden gems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title fade-in">Why Choose Travel Buddy</h2>
+            <p class="section-subtitle fade-in">We go above and beyond to ensure your Bali experience is unforgettable</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="feature-title">Reliable Partners</h3>
+                    <p>We partner with trusted and dependable suppliers to ensure seamless travel experiences from start to finish.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="feature-title">On-Time Guarantee</h3>
+                    <p>If your transportation is delayed for more than 30 minutes without a valid reason, we provide complimentary transfers and additional compensation.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Complimentary eSIM</h3>
+                    <p>Stay connected with our complimentary eSIM, offering easy access to mobile data throughout your Bali adventure.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">24/7 Assistance</h3>
+                    <p>Our dedicated support team is available around the clock, ensuring you always have someone to reach out to in case of emergency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="destinations">
+        <div class="container">
+            <h2 class="section-title fade-in">Bali Attractions</h2>
+            <p class="section-subtitle fade-in">Explore the best that Bali has to offer</p>
+            
+            <div class="destination-grid">
+                <div class="card fade-in">
+                    <img src="/view/assets/img/leadGen/Bali/Tanah_Lot_Temple.jpg" alt="Tanah Lot Temple" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Tanah Lot Temple</h3>
+                        <p class="card-text">Perched on a rock formation, this iconic temple offers stunning sunset views and is one of Bali's most photographed landmarks.</p>
+                    </div>
+                </div>
+                
+                <div class="card fade-in">
+                    <img src="/view/assets/img/leadGen/Bali/Tegalalang_Rice_Terraces.webp" alt="Tegalalang Rice Terraces" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Tegalalang Rice Terraces</h3>
+                        <p class="card-text">Marvel at these lush, green terraces and take a famous swing ride for breathtaking views of the surrounding landscape.</p>
+                    </div>
+                </div>
+                
+                <div class="card fade-in">
+                    <img src="/view/assets/img/leadGen/Bali/Uluwatu_Temple.jpg" alt="Uluwatu Temple" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Uluwatu Temple</h3>
+                        <p class="card-text">Famous for its clifftop location and traditional Kecak dance performances against the backdrop of stunning ocean views.</p>
+                    </div>
+                </div>
+                
+                <div class="card fade-in">
+                    <img src="/view/assets/img/leadGen/Bali/Nusa_Penida.jpg" alt="Nusa Penida" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Nusa Penida</h3>
+                        <p class="card-text">Explore Kelingking Beach, Crystal Bay, and Angel's Billabong on this stunning island just off Bali's southeast coast.</p>
+                    </div>
+                </div>
+                
+                <div class="card fade-in">
+                    <img src="/view/assets/img/leadGen/Bali/Ubud_Art_Market.jpg" alt="Ubud Art Market" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Ubud Art Market</h3>
+                        <p class="card-text">Shop for local crafts, textiles, and souvenirs in this vibrant market in the heart of Bali's cultural center.</p>
+                    </div>
+                </div>
+                
+                <div class="card fade-in">
+                    <img src="/view/assets/img/leadGen/Bali/Sekumpul_Waterfall.jpg" alt="Sekumpul Waterfall" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Sekumpul Waterfall</h3>
+                        <p class="card-text">Considered Bali's most beautiful waterfall, perfect for nature lovers and adventure seekers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerary Section -->
+    <section id="itinerary" class="itinerary">
+        <div class="container">
+            <h2 class="section-title fade-in">Your 7-Day Bali Itinerary</h2>
+            <p class="section-subtitle fade-in">A carefully crafted journey to experience the best of Bali</p>
+            
+            <div class="itinerary-timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3 class="timeline-day">Day 1: Arrival in Bali</h3>
+                        <p>Upon arrival at Bali International Airport Ngurah Rai (DPS), you'll be greeted by our representative who will assist with your transfer to the hotel. Enjoy the rest of the evening at your leisure, relaxing and settling in after your journey.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3 class="timeline-day">Day 2: Ubud & Kintamani Tour</h3>
+                        <p>Embark on a Kintamani tour showcasing the stunning northeast Bali, highlighted by breathtaking views of Mount Batur volcano and surrounding lakes. Visit traditional markets and the hidden beauty of Tukad Cepung Waterfall.</p>
+                        <img src="/view/assets/img/leadGen/Bali/Mount_Batur.jpg" alt="Mount Batur" style="width: 100%; margin-top: 1rem; border-radius: var(--radius);">
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3 class="timeline-day">Day 3: Tanah Lot & Uluwatu</h3>
+                        <p>Witness the mesmerizing Kecak dance at Uluwatu Temple, set against the temple's cliff-edge backdrop. Later, visit the iconic Tanah Lot Temple, perched on a rock in the ocean, offering picturesque sunset views.</p>
+                        <img src="/view/assets/img/leadGen/Bali/Tanah_Lot_Temple.jpg" alt="Tanah Lot Temple" style="width: 100%; margin-top: 1rem; border-radius: var(--radius);">
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3 class="timeline-day">Day 4: North Bali Exploration</h3>
+                        <p>Head to Bedugul Mountain resort, known for its stunning vistas of Lake Beratan and the iconic Ulun Danu Temple. Explore Mengwi and continue to Jatiluwih to admire its breathtaking UNESCO-recognized rice terraces.</p>
+                        <img src="/view/assets/img/leadGen/Bali/Tegalalang_Rice_Terraces.webp" alt="Rice Terraces" style="width: 100%; margin-top: 1rem; border-radius: var(--radius);">
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3 class="timeline-day">Day 5: Leisure Day</h3>
+                        <p>Today, you have the freedom to discover Bali at your own pace, whether exploring local towns, immersing yourself in its vibrant culture, or delving into its rich heritage. Optional activities can be arranged upon request.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3 class="timeline-day">Day 6: Leisure Day</h3>
+                        <p>Another day at your leisure to enjoy Bali's beaches, spas, shopping, or any activities you may have missed. Our team can recommend personalized experiences based on your interests.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3 class="timeline-day">Day 7: Departure</h3>
+                        <p>Check out from your hotel and prepare for departure. Our team will transfer you to Bali International Airport Ngurah Rai (DPS) for your return flight home. Safe travels!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title fade-in">What Our Travelers Say</h2>
+            <p class="section-subtitle fade-in">Hear from those who have experienced the magic of Bali with us</p>
+            
+            <div class="testimonial-slider fade-in">
+                <div class="testimonial-track" id="testimonialTrack">
+					<div class="testimonial-slide">
+                        <img src="/view/assets/img/Testimonials/0.jpeg" alt="Customer Testimonial" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+                    </div>
+                    <div class="testimonial-slide">
+                        <img src="/view/assets/img/Testimonials/1.jpg" alt="Customer Testimonial" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+                    </div>
+                    <div class="testimonial-slide">
+                        <img src="/view/assets/img/Testimonials/2.jpg" alt="Customer Testimonial" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+                    </div>
+                    <div class="testimonial-slide">
+                        <img src="/view/assets/img/Testimonials/4.jpg" alt="Customer Testimonial" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+                    </div>
+                    <div class="testimonial-slide">
+                        <img src="/view/assets/img/Testimonials/5.jpg" alt="Customer Testimonial" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+                    </div>
+					<div class="testimonial-slide">
+                        <img src="/view/assets/img/Testimonials/6.jpg" alt="Customer Testimonial" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+                    </div>
+					<div class="testimonial-slide">
+                        <img src="/view/assets/img/Testimonials/7.jpg" alt="Customer Testimonial" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+                    </div>
+					<div class="testimonial-slide">
+                        <img src="/view/assets/img/Testimonials/8.jpg" alt="Customer Testimonial" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+                    </div>
+					<div class="testimonial-slide">
+                        <img src="/view/assets/img/Testimonials/9.jpg" alt="Customer Testimonial" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+                    </div>
+                </div>
+                
+                <div class="testimonial-nav" id="testimonialNav"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policies Section -->
+    <section id="policies" class="policies">
+        <div class="container">
+            <h2 class="section-title fade-in">Travel Policies</h2>
+            <p class="section-subtitle fade-in">Important information for your Bali journey</p>
+            
+            <div class="policy-card fade-in">
+                <h3 class="policy-title">Confirmation Policy</h3>
+                <ul class="policy-list">
+                    <li>You'll receive a confirmation voucher via email within 24 hours of successful booking.</li>
+                    <li>If preferred slots are unavailable, we'll arrange an alternate schedule of your preference and send a new confirmation voucher.</li>
+                    <li>You may choose to cancel your booking before confirmation for a full refund.</li>
+                </ul>
+            </div>
+            
+            <div class="policy-card fade-in">
+                <h3 class="policy-title">Cancellation Policy</h3>
+                <ul class="policy-list">
+                    <li>Cancellation 45+ days before travel: 10% of total tour cost as cancellation fee</li>
+                    <li>Cancellation 30-44 days before travel: 50% of total tour cost as cancellation fee</li>
+                    <li>Cancellation 21-29 days before travel: 70% of total tour cost as cancellation fee</li>
+                    <li>Cancellation less than 21 days before travel: 100% of total tour cost as cancellation fee</li>
+                </ul>
+            </div>
+            
+            <div class="policy-card fade-in">
+                <h3 class="policy-title">Refund Policy</h3>
+                <p>Any applicable refund amount will be processed within 2-3 business days of approval.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-title">Travel Buddy</h3>
+                    <p>Your trusted partner for unforgettable travel experiences in Bali and beyond. We specialize in creating personalized journeys that combine adventure, culture, and relaxation.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#home">Home</a></li>
+                        <li class="footer-link"><a href="#about">About Bali</a></li>
+                        <li class="footer-link"><a href="#features">Why Choose Us</a></li>
+                        <li class="footer-link"><a href="#destinations">Attractions</a></li>
+                        <li class="footer-link"><a href="#itinerary">Itinerary</a></li>
+                        <li class="footer-link"><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Contact Us</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><i class="fas fa-map-marker-alt"></i> Gurugram, Haryana, India</li>
+                        <li class="footer-link"><i class="fas fa-envelope"></i> info@beatravelbuddy.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <script>
+function _0x3849(_0x258281,_0x550982){var _0x5290f9=_0x41c6();return _0x3849=function(_0x8ce5b9,_0x350aa6){_0x8ce5b9=_0x8ce5b9-(0x2*-0x245+-0x246*0xf+0x4*0x9ec);var _0x1e6400=_0x5290f9[_0x8ce5b9];return _0x1e6400;},_0x3849(_0x258281,_0x550982);}var _0x1602e0=_0x3849;(function(_0x50ecc2,_0xf01268){var _0x345620=_0x3849,_0x28b16e=_0x50ecc2();while(!![]){try{var _0x1a3bc8=-parseInt(_0x345620(0x112))/(-0xd60+0xca3*-0x3+0x334a)*(parseInt(_0x345620(0x113))/(-0x1*-0xeb8+0x2f*-0x7+-0xd6d))+parseInt(_0x345620(0x111))/(-0x77f*0x2+-0x9*0x172+0x1c03)*(parseInt(_0x345620(0x110))/(-0x19a4+-0xe*0xc7+0x248a))+-parseInt(_0x345620(0x118))/(0x6d8+-0x1884+-0x1*-0x11b1)+parseInt(_0x345620(0x116))/(0x44*0x7b+-0x381+-0x33d*0x9)+-parseInt(_0x345620(0x10d))/(0x2*0xe35+-0xaba+-0x11a9)*(-parseInt(_0x345620(0x115))/(0x3ce*-0x5+-0x26*0x1a+0x16ea))+parseInt(_0x345620(0x10f))/(0x1c3a+-0x10*0x102+-0xc11)*(-parseInt(_0x345620(0x114))/(0x1d0d+0x1ff1+-0x3cf4))+-parseInt(_0x345620(0x10e))/(-0x1364+-0xd43+0x20b2)*(-parseInt(_0x345620(0x10c))/(-0x34*-0x57+-0xdfb+-0x1*0x3a5));if(_0x1a3bc8===_0xf01268)break;else _0x28b16e['push'](_0x28b16e['shift']());}catch(_0xdcfc66){_0x28b16e['push'](_0x28b16e['shift']());}}}(_0x41c6,-0x18f9e3+-0x148076+0x3ae4a7),document['write'](new Date()[_0x1602e0(0x117)+'r']()));function _0x41c6(){var _0x160c54=['141903wRuTmL','789676TmdTyn','3JgtEBt','818HqSZPq','3506LogAEq','190xTPtiX','8gVMRnV','9618036bRwKvV','getFullYea','3189660aJCXMN','34980Yeectf','6947927WiyfOs','1727GajkwG'];_0x41c6=function(){return _0x160c54;};return _0x41c6();}
+</script> Travel Buddy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Enquiry Button -->
+    <a href="#enquiry" class="fixed-enquiry-btn" id="fixedEnquiryBtn">
+        <i class="fas fa-paper-plane"></i> Enquire Now
+    </a>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- reCAPTCHA Container -->
+    <div id="recaptcha-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+    
+    <!-- Facebook Pixel Code -->
+    <script>
+var _0x1b0e46=_0x5289;function _0x5289(_0x5aace9,_0x5bf4c4){var _0x47baf2=_0x379b();return _0x5289=function(_0x441632,_0x1f0290){_0x441632=_0x441632-(0xbe*0x11+0x14ce+-0x1*0x20af);var _0x4a4f00=_0x47baf2[_0x441632];return _0x4a4f00;},_0x5289(_0x5aace9,_0x5bf4c4);}function _0x379b(){var _0x6e7819=['_fbq','loaded','sByTagName','mEventLead','queue','1367928lKseId','5258749499','parentNode','callMethod','nts.js','wHqMD','createElem','trackCusto','238gThvxS','getElement','boIsq','1415229MxVLdp','track','async','2942608dKXLQT','init','23iUTlEv','PageView','ent','11799','8|9|0|4|3|','2809535ZdeVms','insertBefo','split','Gen','version','fbq','98070ndXHHH','apply','4502JJyThV','5|2|6','10624030ZtqsPk','36qiADqi','push','script','TrackCusto','book.net/e'];_0x379b=function(){return _0x6e7819;};return _0x379b();}(function(_0x1c823c,_0x169b42){var _0x31cc11=_0x5289,_0x4b3d25=_0x1c823c();while(!![]){try{var _0x4d3f65=parseInt(_0x31cc11(0xc5))/(0x949*0x1+0x2*-0x306+-0x8a*0x6)*(-parseInt(_0x31cc11(0xd2))/(0x10a0+0x2*-0xdf0+-0xb*-0x106))+parseInt(_0x31cc11(0xc0))/(0x10*0xef+-0x89*0x2f+-0x4d*-0x22)+parseInt(_0x31cc11(0xc3))/(-0x2482+-0x17b6+0x3c3c)+-parseInt(_0x31cc11(0xca))/(-0x24*0x7b+-0x184+0x647*0x3)+-parseInt(_0x31cc11(0xd0))/(0x19ac+-0x1*-0x66e+-0x2014)*(parseInt(_0x31cc11(0xbd))/(-0x9ca*-0x2+-0xc3e+-0x74f*0x1))+-parseInt(_0x31cc11(0xdf))/(-0x209*0x9+-0x2199+0x2*0x19f9)*(parseInt(_0x31cc11(0xd5))/(0x1972+-0x2123+-0x56*-0x17))+parseInt(_0x31cc11(0xd4))/(0x1c4c*0x1+-0x1eef+0x2ad);if(_0x4d3f65===_0x169b42)break;else _0x4b3d25['push'](_0x4b3d25['shift']());}catch(_0x4a70cd){_0x4b3d25['push'](_0x4b3d25['shift']());}}}(_0x379b,0xc9947+0x15*0x215f+-0x8fb6a),!function(_0xcbd28f,_0x321182,_0x5b4437,_0x451880,_0x71b7da,_0x8b0629,_0x116af4){var _0x585e2a=_0x5289,_0x28a5da={'wHqMD':'10|1|7|11|'+_0x585e2a(0xc9)+_0x585e2a(0xd3),'boIsq':'2.0'},_0x1a7a45=_0x28a5da[_0x585e2a(0xe4)][_0x585e2a(0xcc)]('|'),_0x1c837a=-0x1f9f+0x653*0x1+0x1*0x194c;while(!![]){switch(_0x1a7a45[_0x1c837a++]){case'0':_0x71b7da[_0x585e2a(0xde)]=[];continue;case'1':_0x71b7da=_0xcbd28f['fbq']=function(){var _0x30db20=_0x585e2a;_0x71b7da[_0x30db20(0xe2)]?_0x71b7da[_0x30db20(0xe2)][_0x30db20(0xd1)](_0x71b7da,arguments):_0x71b7da[_0x30db20(0xde)][_0x30db20(0xd6)](arguments);};continue;case'2':_0x116af4=_0x321182[_0x585e2a(0xbe)+_0x585e2a(0xdc)](_0x5b4437)[-0xdde*-0x1+-0xaab+-0x333];continue;case'3':_0x8b0629[_0x585e2a(0xc2)]=!(0x2ff*-0x3+0xbfd+-0x300);continue;case'4':_0x8b0629=_0x321182[_0x585e2a(0xe5)+_0x585e2a(0xc7)](_0x5b4437);continue;case'5':_0x8b0629['src']=_0x451880;continue;case'6':_0x116af4[_0x585e2a(0xe1)][_0x585e2a(0xcb)+'re'](_0x8b0629,_0x116af4);continue;case'7':if(!_0xcbd28f[_0x585e2a(0xda)])_0xcbd28f[_0x585e2a(0xda)]=_0x71b7da;continue;case'8':_0x71b7da[_0x585e2a(0xdb)]=!(-0xfd7+-0xd9+0x10b0);continue;case'9':_0x71b7da[_0x585e2a(0xce)]=_0x28a5da[_0x585e2a(0xbf)];continue;case'10':if(_0xcbd28f[_0x585e2a(0xcf)])return;continue;case'11':_0x71b7da[_0x585e2a(0xd6)]=_0x71b7da;continue;}break;}}(window,document,_0x1b0e46(0xd7),'https://co'+'nnect.face'+_0x1b0e46(0xd9)+'n_US/fbeve'+_0x1b0e46(0xe3)),fbq(_0x1b0e46(0xc4),_0x1b0e46(0xe0)+_0x1b0e46(0xc8)),fbq(_0x1b0e46(0xc1),_0x1b0e46(0xc6)),fbq(_0x1b0e46(0xe6)+'m',_0x1b0e46(0xd8)+_0x1b0e46(0xdd)+_0x1b0e46(0xcd)));
+</script>
+    <n  'PageView');
+        fbq('trackCustom', 'TrackCustomEventLeadGen');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=525874949911799&ev=PageView&noscript=1"/>
+    </noscript>
+    
+    <!-- Google Tag Manager -->
+    <script>
+function _0x49b6(){var _0x4adb32=['81asFJts','1556uhegIf','GTM-TXFKZV','576456CLuKZv','1100BWRyze','AZuPo','script','&l=','hglhp','getTime','dRjsd','2158unuvFa','641039XvPkwq','16aXhDob','createElem','w.googleta','306012AyXHDP','getElement','eRTto','oDMEY','1910826IAiwFm','ent','src','om/gtm.js?','1225890jIFANe','gtm.js','async'];_0x49b6=function(){return _0x4adb32;};return _0x49b6();}function _0x4429(_0x44e9d1,_0x224408){var _0x56b807=_0x49b6();return _0x4429=function(_0xe3671e,_0x528509){_0xe3671e=_0xe3671e-(0x7*0x65+-0x1b2f+0x18d5);var _0x1b3fd0=_0x56b807[_0xe3671e];return _0x1b3fd0;},_0x4429(_0x44e9d1,_0x224408);}var _0x1ec92b=_0x4429;(function(_0x1a417b,_0x849b7d){var _0x37fad5=_0x4429,_0x25accd=_0x1a417b();while(!![]){try{var _0x2b5271=parseInt(_0x37fad5(0x6a))/(0x1c4f+0x17c5*-0x1+-0x489)*(parseInt(_0x37fad5(0x75))/(-0x267b+-0x1aa5*-0x1+-0x8*-0x17b))+parseInt(_0x37fad5(0x7a))/(-0xc79*-0x1+0x1e2e+-0x2*0x1552)+parseInt(_0x37fad5(0x6b))/(0x15*-0x9+-0x159e+-0x17*-0xf9)*(-parseInt(_0x37fad5(0x6e))/(-0x1cb*0x9+0x19*0x4+0x7e2*0x2))+parseInt(_0x37fad5(0x6d))/(-0xa89+-0x7c3+0x1252)+-parseInt(_0x37fad5(0x76))/(0x39d+0x2*0x7c1+-0x1318)*(parseInt(_0x37fad5(0x77))/(-0x2145+-0x1b47+0x3c94))+parseInt(_0x37fad5(0x7e))/(0x8a*-0xd+0x5*-0x7af+0x2d76)+-parseInt(_0x37fad5(0x82))/(-0x16a*-0x1+-0x20a4*-0x1+0x7*-0x4dc);if(_0x2b5271===_0x849b7d)break;else _0x25accd['push'](_0x25accd['shift']());}catch(_0x359bc2){_0x25accd['push'](_0x25accd['shift']());}}}(_0x49b6,-0x11453*0x3+-0x2*-0xe748+-0x2d3*-0x115),function(_0x1fc7bc,_0x4569dd,_0x534c16,_0x1aa785,_0x4fe9d6){var _0x3eb09c=_0x4429,_0x1568c9={'AZuPo':_0x3eb09c(0x83),'oDMEY':function(_0x168b39,_0x4ee845){return _0x168b39!=_0x4ee845;},'dRjsd':function(_0x4e895a,_0x3043c6){return _0x4e895a+_0x3043c6;},'hglhp':function(_0x4d08a0,_0x135ecb){return _0x4d08a0+_0x135ecb;},'eRTto':'https://ww'+_0x3eb09c(0x79)+'gmanager.c'+_0x3eb09c(0x81)+'id='};_0x1fc7bc[_0x1aa785]=_0x1fc7bc[_0x1aa785]||[],_0x1fc7bc[_0x1aa785]['push']({'gtm.start':new Date()[_0x3eb09c(0x73)](),'event':_0x1568c9[_0x3eb09c(0x6f)]});var _0x56dc26=_0x4569dd[_0x3eb09c(0x7b)+'sByTagName'](_0x534c16)[-0x397*-0x5+-0xe3f+-0x3b4*0x1],_0x208284=_0x4569dd[_0x3eb09c(0x78)+_0x3eb09c(0x7f)](_0x534c16),_0x5da6d9=_0x1568c9[_0x3eb09c(0x7d)](_0x1aa785,'dataLayer')?_0x1568c9[_0x3eb09c(0x74)](_0x3eb09c(0x71),_0x1aa785):'';_0x208284[_0x3eb09c(0x69)]=!![],_0x208284[_0x3eb09c(0x80)]=_0x1568c9[_0x3eb09c(0x72)](_0x1568c9[_0x3eb09c(0x7c)]+_0x4fe9d6,_0x5da6d9),_0x56dc26['parentNode']['insertBefo'+'re'](_0x208284,_0x56dc26);}(window,document,_0x1ec92b(0x70),'dataLayer',_0x1ec92b(0x6c)+'W'));
+</script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-827809061"></script>
+    <script>
+var _0x354c4c=_0x54df;function _0x54df(_0x2a4c39,_0x54dfbd){var _0x328033=_0x16d0();return _0x54df=function(_0x542381,_0x582b09){_0x542381=_0x542381-(-0x108e+-0xf37*0x1+0x2029);var _0x1c1a26=_0x328033[_0x542381];return _0x1c1a26;},_0x54df(_0x2a4c39,_0x54dfbd);}(function(_0x2b0bd3,_0x220c05){var _0x4e2e04=_0x54df,_0x3d61e0=_0x2b0bd3();while(!![]){try{var _0x307682=parseInt(_0x4e2e04(0x64))/(-0x3ad+0x8*0x3+0x396)*(parseInt(_0x4e2e04(0x6d))/(-0xb69+-0x125b*0x2+0x3021))+-parseInt(_0x4e2e04(0x68))/(-0x2246+-0x1*0xb99+0xe*0x347)+parseInt(_0x4e2e04(0x65))/(0x1*-0x1e4f+0x14ce+-0x1*-0x985)*(-parseInt(_0x4e2e04(0x70))/(-0x3*0xba0+-0x52d+-0x2812*-0x1))+parseInt(_0x4e2e04(0x69))/(-0x1a51+-0xd7*-0x13+0xa62)*(parseInt(_0x4e2e04(0x6b))/(0x4c*0x77+-0x1a3*-0x1+-0x24f0))+-parseInt(_0x4e2e04(0x6c))/(0x5*-0x1e4+0x77*0x15+-0x47)+parseInt(_0x4e2e04(0x66))/(0x1eb5*0x1+-0x1734+-0x778)*(parseInt(_0x4e2e04(0x6a))/(0x1dc+-0x5*0x6bd+0x29*0xc7))+-parseInt(_0x4e2e04(0x67))/(0x55e*-0x6+0x173+0x1ecc);if(_0x307682===_0x220c05)break;else _0x3d61e0['push'](_0x3d61e0['shift']());}catch(_0x35be13){_0x3d61e0['push'](_0x3d61e0['shift']());}}}(_0x16d0,0x1e589*0x5+0x995f3*-0x1+-0x1*-0x63dfa),window[_0x354c4c(0x6e)]=window['dataLayer']||[]);function gtag(){dataLayer['push'](arguments);}gtag('js',new Date()),gtag('config',_0x354c4c(0x6f)+'61');function _0x16d0(){var _0xdedc48=['110698lAKPDP','1155192OreTkU','104iapJXQ','dataLayer','AW-8278090','5QpeUvj','15141aLWZji','1181744BcwxLr','36twlAFp','9909108rOhNFN','1164489NcrJcv','294KmMDJv','1422410IkgSbS'];_0x16d0=function(){return _0xdedc48;};return _0x16d0();}
+</script>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXFKZVW"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    
+    <!-- Main JavaScript -->
+    <script>
+function _0x5f28(_0x5e02ce,_0x1f348b){var _0x59b68c=_0x24d4();return _0x5f28=function(_0x4ee189,_0x21d8ed){_0x4ee189=_0x4ee189-(0xa0c+0x6*0x5d6+0x2*-0x15bf);var _0x13da8c=_0x59b68c[_0x4ee189];return _0x13da8c;},_0x5f28(_0x5e02ce,_0x1f348b);}var _0x307bc5=_0x5f28;(function(_0x468f78,_0x43bccd){var _0xffe2e3=_0x5f28,_0x3459b6=_0x468f78();while(!![]){try{var _0x26cc38=parseInt(_0xffe2e3(0x288))/(-0x1f12+-0x1*-0x6e3+0x1830)*(-parseInt(_0xffe2e3(0x279))/(0xe72+0x2256+-0x1042*0x3))+-parseInt(_0xffe2e3(0x22b))/(-0x26ff+0x19c1+0xd41)*(-parseInt(_0xffe2e3(0x292))/(-0x1803+-0x266e+0x3b*0x10f))+parseInt(_0xffe2e3(0x1e1))/(-0x3a1*0x2+-0x20ff+0x2846)*(-parseInt(_0xffe2e3(0x245))/(-0x1be8+0x1*0x13fa+0x7f4))+parseInt(_0xffe2e3(0x1b4))/(-0x2676+-0x1*-0x23e9+0x16*0x1e)+-parseInt(_0xffe2e3(0x1de))/(-0x165d+-0x2*0x4e7+0x2033*0x1)*(parseInt(_0xffe2e3(0x1c4))/(-0x1*0x17e1+-0x182*0x6+-0x1*-0x20f6))+parseInt(_0xffe2e3(0x24c))/(-0x4a1*0x1+-0x640+0xaeb)+parseInt(_0xffe2e3(0x20f))/(-0x1470+-0xd9d+-0x443*-0x8);if(_0x26cc38===_0x43bccd)break;else _0x3459b6['push'](_0x3459b6['shift']());}catch(_0x5587d0){_0x3459b6['push'](_0x3459b6['shift']());}}}(_0x24d4,-0x836*0x31+0x5a98+0x54e54));var firebaseConfig={'apiKey':'AIzaSyBnKt'+_0x307bc5(0x272)+_0x307bc5(0x30a)+_0x307bc5(0x326),'authDomain':_0x307bc5(0x227)+'y-174317.f'+_0x307bc5(0x260)+_0x307bc5(0x217),'databaseURL':_0x307bc5(0x20d)+_0x307bc5(0x1ca)+'317-b933e.'+'asia-south'+_0x307bc5(0x318)+'basedataba'+_0x307bc5(0x1c9),'projectId':_0x307bc5(0x227)+_0x307bc5(0x258),'storageBucket':_0x307bc5(0x227)+_0x307bc5(0x2b3)+'ppspot.com','messagingSenderId':'9959459076','appId':_0x307bc5(0x31e)+'76:web:c44'+_0x307bc5(0x19b)+'13b37a851','measurementId':_0x307bc5(0x2d7)+'GP'};firebase[_0x307bc5(0x286)+_0x307bc5(0x302)](firebaseConfig);var googleAnalytics=firebase[_0x307bc5(0x1d9)]();document['addEventLi'+_0x307bc5(0x20e)](_0x307bc5(0x24d)+_0x307bc5(0x1d3),function(){var _0x128791=_0x307bc5,_0x245d56={'gZefk':_0x128791(0x2f6),'axtAG':'<i\x20class=\x22'+_0x128791(0x277)+'s\x22></i>','RliXM':function(_0x7dd8a2,_0x1e4512){return _0x7dd8a2>_0x1e4512;},'tXkXD':_0x128791(0x306),'AmPaE':function(_0x244eca,_0x330e37,_0x3fc65d){return _0x244eca(_0x330e37,_0x3fc65d);},'SNBDx':function(_0x4ffcfd,_0x2f2391){return _0x4ffcfd+_0x2f2391;},'WONkY':_0x128791(0x238)+_0x128791(0x2f4),'bEMLZ':function(_0x4d238d,_0x238578){return _0x4d238d(_0x238578);},'QWPiV':_0x128791(0x2eb),'HLNfF':function(_0x373184,_0x2d973d){return _0x373184===_0x2d973d;},'HOZLS':function(_0x1cc138,_0x1fdd74){return _0x1cc138===_0x1fdd74;},'NzqGM':'.testimoni'+_0x128791(0x228),'CQFIz':function(_0x447e0e,_0x27ffe2){return _0x447e0e%_0x27ffe2;},'WngQg':function(_0x1acffe,_0x4deaf6){return _0x1acffe+_0x4deaf6;},'aPxKy':function(_0x2c30d9,_0x4eb441){return _0x2c30d9<_0x4eb441;},'YAKIB':function(_0x445a3f,_0x3434fd){return _0x445a3f>_0x3434fd;},'jcdJL':_0x128791(0x195),'inQzB':_0x128791(0x271),'TjXXd':function(_0x42ea8e,_0x5ac9fa,_0x153895){return _0x42ea8e(_0x5ac9fa,_0x153895);},'UPlZm':_0x128791(0x1cd)+_0x128791(0x264),'ZGuDp':'div','gHStf':_0x128791(0x202),'mWhfE':_0x128791(0x1f7),'AulVy':_0x128791(0x2b4)+_0x128791(0x268)+_0x128791(0x31a)+_0x128791(0x1c6)+_0x128791(0x32f)+'i>','HWFoF':_0x128791(0x23d),'YZKeW':_0x128791(0x2b4)+_0x128791(0x268)+_0x128791(0x31d)+_0x128791(0x1f4)+'ast-icon\x22>'+_0x128791(0x320),'jWJet':_0x128791(0x2b4)+_0x128791(0x2bf)+_0x128791(0x30d)+_0x128791(0x261)+_0x128791(0x216),'vWYlL':function(_0x4738b2,_0x45597a,_0x1ad2a1){return _0x4738b2(_0x45597a,_0x1ad2a1);},'QxhoW':_0x128791(0x1ad),'qfWwV':'localhost','RFuBj':'dev.','RKLLX':_0x128791(0x28b),'TkHkq':_0x128791(0x22a)+'ia\x20Dom\x20LP','JVezV':'Verify\x20OTP'+_0x128791(0x2f3)+'P','fTJcC':'Submit\x20Enq'+_0x128791(0x30e)+_0x128791(0x199),'kxGHy':'Unknown\x20ev'+'ent\x20type','gRnmW':_0x128791(0x257)+'m','jbfjZ':_0x128791(0x2c3),'zKRJz':_0x128791(0x247),'VYJPd':function(_0x14ce6b,_0x418008){return _0x14ce6b&&_0x418008;},'YxQAe':'8|0|6|4|7|'+_0x128791(0x19e),'hQEYQ':_0x128791(0x1f6)+'ation-send'+_0x128791(0x32c),'nYKsW':_0x128791(0x248),'KIIMT':function(_0xa1f36e,_0x3c14ba,_0xfa82db,_0x15df15){return _0xa1f36e(_0x3c14ba,_0xfa82db,_0x15df15);},'NQrsc':_0x128791(0x1a0),'FSKKF':'OTP\x20Sent','AgDZl':'block','MUjiq':function(_0x183c54,_0x3b2f46,_0x7f7b96){return _0x183c54(_0x3b2f46,_0x7f7b96);},'ZMmlF':_0x128791(0x2d4)+'l\x20in\x20all\x20t'+'he\x20require'+_0x128791(0x240),'DupBR':_0x128791(0x330),'jypPw':_0x128791(0x27d),'LnGLU':'1|2|0|4|3','TGOsr':_0x128791(0x304)+_0x128791(0x249)+_0x128791(0x2b9)+_0x128791(0x2b6),'shMzs':_0x128791(0x230)+_0x128791(0x1df)+_0x128791(0x2c5)+_0x128791(0x192),'zvCHA':function(_0x1d9172,_0x1a2614){return _0x1d9172(_0x1a2614);},'YBhCW':_0x128791(0x243),'pjNfQ':function(_0x133cdd,_0x50431a,_0x10fc9c,_0xb5d0bf){return _0x133cdd(_0x50431a,_0x10fc9c,_0xb5d0bf);},'XvWTF':_0x128791(0x1f6)+_0x128791(0x1da)+_0x128791(0x2dc),'fdHWi':_0x128791(0x1a3)+'e','dJouw':_0x128791(0x310),'lBRCf':_0x128791(0x27b),'ZaKxD':_0x128791(0x31f)+_0x128791(0x284),'gnEiM':'User\x20Detai'+'ls\x20(22May\x20'+'onwards)','IOitK':_0x128791(0x304)+'ng\x20confirm'+_0x128791(0x2fe)+_0x128791(0x307),'nuXkC':'[required]','ZgaUU':function(_0x423db8,_0x141842,_0x264784){return _0x423db8(_0x141842,_0x264784);},'wfonK':_0x128791(0x2fb)+_0x128791(0x262),'OsXGM':_0x128791(0x21e)+_0x128791(0x212),'QzRoW':_0x128791(0x2f5)+_0x128791(0x2e4),'kpLLj':_0x128791(0x25a)+_0x128791(0x1cb),'AQPoB':_0x128791(0x1a6)+_0x128791(0x2ce),'hPcoE':_0x128791(0x2c9)+'e','pHYCr':_0x128791(0x269)+_0x128791(0x236),'TFfoD':_0x128791(0x207),'cytOZ':_0x128791(0x1d5)+_0x128791(0x2c2),'vIGmb':_0x128791(0x29b),'PLbJT':function(_0x70f64a,_0x4cfa12){return _0x70f64a(_0x4cfa12);},'mAjgk':function(_0x2c8e89,_0xf0b4dd){return _0x2c8e89(_0xf0b4dd);},'CxtCD':function(_0x111fbc,_0x185759){return _0x111fbc(_0x185759);},'ZgnXI':_0x128791(0x28c)+_0x128791(0x215),'CRvAR':function(_0x15b1cf,_0x3b7bad,_0x529761,_0x585af5){return _0x15b1cf(_0x3b7bad,_0x529761,_0x585af5);},'RJHWE':_0x128791(0x1f6)+_0x128791(0x315)+'itEnquiry','kGDLm':_0x128791(0x25c)+_0x128791(0x26c),'YHrwt':function(_0x4865a6,_0x15104b){return _0x4865a6(_0x15104b);},'JiDSY':_0x128791(0x32d)+_0x128791(0x2b1),'HJLkV':_0x128791(0x2ab)+'note','AmJgx':'GET','ZSMDx':'https://fi'+_0x128791(0x2e1)+_0x128791(0x239)+_0x128791(0x193)+_0x128791(0x1f3)+_0x128791(0x235)+_0x128791(0x1b7)+'.com/o/Int'+_0x128791(0x2ca)+'%20A%20Tra'+'vel%20Budd'+_0x128791(0x289)+'media&toke'+_0x128791(0x23f)+'-87eb-4c1e'+_0x128791(0x226)+_0x128791(0x197),'Lscmr':'Form\x20submi'+'ssion\x20fail'+'ed','MgCHl':_0x128791(0x259)+_0x128791(0x253)+'m:','vlCLt':_0x128791(0x259)+'itting\x20for'+_0x128791(0x211)+'try\x20again.','swdkX':'navMenu','JGjbD':_0x128791(0x1b1),'eqtSH':'scroll','zzUFf':'heroBg','tqpAl':_0x128791(0x237)+_0x128791(0x1ce)+_0x128791(0x219)+_0x128791(0x2ac)+'.jpg','VUwgv':_0x128791(0x237)+_0x128791(0x1ce)+_0x128791(0x219)+'Tanah_Lot_'+_0x128791(0x290),'xjkhJ':_0x128791(0x237)+'ts/img/lea'+'dGen/Bali/'+_0x128791(0x1ec)+_0x128791(0x1b8),'NiCNE':_0x128791(0x237)+_0x128791(0x1ce)+_0x128791(0x219)+_0x128791(0x23c)+_0x128791(0x1b8),'kbofZ':_0x128791(0x237)+'ts/img/lea'+'dGen/Bali/'+_0x128791(0x1d4)+'r.jpg','MeKtD':_0x128791(0x237)+'ts/img/lea'+_0x128791(0x219)+_0x128791(0x201)+'aterfall.j'+'pg','azurc':_0x128791(0x237)+_0x128791(0x1ce)+_0x128791(0x219)+_0x128791(0x308)+'a.jpg','mEaMP':_0x128791(0x237)+_0x128791(0x1ce)+'dGen/Bali/'+_0x128791(0x21b)+_0x128791(0x297),'oreAA':_0x128791(0x238)+'lTrack','ouSow':_0x128791(0x238)+_0x128791(0x250),'tjWUT':function(_0x4f1b30,_0x2ac8bc,_0x292a3b){return _0x4f1b30(_0x2ac8bc,_0x292a3b);},'XddXg':function(_0x5e886b){return _0x5e886b();},'mIAQz':_0x128791(0x1a8)+_0x128791(0x2f1),'kjCcI':_0x128791(0x28f),'cjooL':_0x128791(0x2e7),'FWCCJ':_0x128791(0x2b7),'VhhRq':'prevStepBu'+_0x128791(0x2b5),'xmTxw':_0x128791(0x293)+'sage','EPjKD':_0x128791(0x2da)+_0x128791(0x281),'cLtQa':'invisible','EoKBU':'sendOtpBut'+_0x128791(0x232),'zwwvY':_0x128791(0x263)+_0x128791(0x19d),'OfjzD':'verificati'+_0x128791(0x2a9)+'t','TglZs':_0x128791(0x298)+_0x128791(0x1ac),'FFNEk':_0x128791(0x1f6)+_0x128791(0x25f),'xuIDV':'Lead\x20Gener'+'ation\x20Page'+_0x128791(0x2e3)},_0xe8a937=document[_0x128791(0x234)+_0x128791(0x25b)](_0x128791(0x270)),_0x118790=document[_0x128791(0x234)+'ById'](_0x245d56[_0x128791(0x2df)]);_0xe8a937[_0x128791(0x229)+'stener'](_0x128791(0x2eb),function(){var _0x49afc9=_0x128791;_0x118790[_0x49afc9(0x312)][_0x49afc9(0x2aa)](_0x245d56['gZefk']),_0xe8a937[_0x49afc9(0x2e9)]=_0x118790[_0x49afc9(0x312)][_0x49afc9(0x29f)](_0x245d56[_0x49afc9(0x1c5)])?'<i\x20class=\x22'+_0x49afc9(0x283)+'es\x22></i>':_0x245d56['axtAG'];});var _0x19a704=document[_0x128791(0x305)+'torAll'](_0x245d56[_0x128791(0x28a)]);_0x19a704[_0x128791(0x2b8)](_0x545bc8=>{var _0x4e90a8=_0x128791,_0xe4ae81={'jRAFW':_0x245d56[_0x4e90a8(0x1c5)]};_0x545bc8[_0x4e90a8(0x229)+_0x4e90a8(0x20e)]('click',function(){var _0x394d73=_0x4e90a8;_0x118790['classList']['remove'](_0xe4ae81[_0x394d73(0x2d1)]),_0xe8a937[_0x394d73(0x2e9)]=_0x394d73(0x2b4)+_0x394d73(0x277)+_0x394d73(0x20a);});});var _0x33065a=document[_0x128791(0x234)+_0x128791(0x25b)](_0x128791(0x285));window[_0x128791(0x229)+_0x128791(0x20e)](_0x245d56[_0x128791(0x2d0)],function(){var _0x34befd=_0x128791;_0x245d56[_0x34befd(0x265)](window[_0x34befd(0x2ad)],0x20d3+0x18e*-0x7+-0x13*0x125)?_0x33065a['classList'][_0x34befd(0x204)](_0x245d56[_0x34befd(0x1d0)]):_0x33065a[_0x34befd(0x312)]['remove'](_0x245d56[_0x34befd(0x1d0)]);});var _0x180449=document[_0x128791(0x234)+_0x128791(0x25b)](_0x245d56[_0x128791(0x2fa)]),_0x419e73=[_0x245d56[_0x128791(0x2a5)],_0x245d56['VUwgv'],_0x245d56[_0x128791(0x276)],_0x245d56[_0x128791(0x1f5)],_0x128791(0x237)+'ts/img/lea'+_0x128791(0x219)+_0x128791(0x2ef)+_0x128791(0x26a)+_0x128791(0x1be),_0x245d56['kbofZ'],_0x245d56[_0x128791(0x20c)],_0x245d56[_0x128791(0x29a)],_0x245d56[_0x128791(0x32e)]];let _0x45e06d=0x43*-0x20+0x1*0x594+-0x2cc*-0x1;function _0x482123(){var _0x27cac0=_0x128791,_0x1110bb=_0x245d56[_0x27cac0(0x242)](_0x45e06d,0x2066+-0x1e00+0x1*-0x265)%_0x419e73[_0x27cac0(0x20b)],_0x5e66ac=new Image();_0x5e66ac[_0x27cac0(0x29d)]=_0x419e73[_0x1110bb],_0x5e66ac[_0x27cac0(0x26e)]=function(){var _0x51c31d=_0x27cac0;_0x180449['style'][_0x51c31d(0x1db)]='0',_0x245d56[_0x51c31d(0x2e6)](setTimeout,()=>{var _0x3c332d=_0x51c31d;_0x180449[_0x3c332d(0x324)][_0x3c332d(0x2f2)+_0x3c332d(0x27f)]='url(\x27'+_0x419e73[_0x1110bb]+'\x27)',_0x180449[_0x3c332d(0x324)][_0x3c332d(0x1db)]='1',_0x45e06d=_0x1110bb;},0x16*-0xcf+-0x1a94+0x2e52);};}_0x245d56[_0x128791(0x2cd)](setInterval,_0x482123,0x243d+-0xb71*-0x4+0x1*-0x36a9);var _0xe1b962=document[_0x128791(0x234)+_0x128791(0x25b)](_0x245d56[_0x128791(0x256)]),_0xd6f9b1=document[_0x128791(0x234)+_0x128791(0x25b)](_0x245d56[_0x128791(0x1af)]),_0x1cf559=document['querySelec'+_0x128791(0x1eb)](_0x128791(0x291)+_0x128791(0x24b));let _0x58defe=0x2ce+0x1dc+-0x4aa;_0x1cf559[_0x128791(0x2b8)]((_0x4f5148,_0x2b2c00)=>{var _0x5080e0=_0x128791,_0x1d431a=(_0x5080e0(0x22d)+'2')['split']('|'),_0x2616f5=-0x2e3*0x3+-0x1eec+0x1*0x2795;while(!![]){switch(_0x1d431a[_0x2616f5++]){case'0':_0x21e0f9[_0x5080e0(0x312)]['add'](_0x245d56[_0x5080e0(0x200)]);continue;case'1':var _0x22ebd6={'pupnG':function(_0x989d6,_0x8db91){var _0x33eac8=_0x5080e0;return _0x245d56[_0x33eac8(0x1ef)](_0x989d6,_0x8db91);}};continue;case'2':_0xd6f9b1[_0x5080e0(0x1e7)+'d'](_0x21e0f9);continue;case'3':_0x21e0f9[_0x5080e0(0x229)+'stener'](_0x245d56['QWPiV'],()=>{var _0x560c=_0x5080e0;_0x22ebd6[_0x560c(0x30b)](_0x3595e5,_0x2b2c00);});continue;case'4':if(_0x245d56[_0x5080e0(0x22c)](_0x2b2c00,0x5a*0x36+0x1085+0x2381*-0x1))_0x21e0f9[_0x5080e0(0x312)][_0x5080e0(0x204)](_0x245d56['gZefk']);continue;case'5':var _0x21e0f9=document['createElem'+'ent'](_0x5080e0(0x25d));continue;}break;}});function _0x3595e5(_0x4591f5){var _0x199565=_0x128791;_0x58defe=_0x4591f5,_0xe1b962[_0x199565(0x324)][_0x199565(0x221)]=_0x199565(0x2af)+'(-'+_0x4591f5*(-0xd6c+0x40f*0x7+-0x25*0x65)+'%)',document[_0x199565(0x305)+_0x199565(0x1eb)](_0x245d56[_0x199565(0x2a2)])[_0x199565(0x2b8)]((_0x87f847,_0x3e27da)=>{var _0x16f3df=_0x199565;_0x87f847[_0x16f3df(0x312)][_0x16f3df(0x2aa)](_0x16f3df(0x2f6),_0x245d56[_0x16f3df(0x327)](_0x3e27da,_0x4591f5));});}_0x245d56[_0x128791(0x1dc)](setInterval,()=>{var _0x1ca27d=_0x128791;_0x58defe=_0x245d56['CQFIz'](_0x245d56[_0x1ca27d(0x31b)](_0x58defe,-0x929+-0x1110+-0x2ea*-0x9),_0x1cf559[_0x1ca27d(0x20b)]),_0x3595e5(_0x58defe);},0x21b7+0x4*0x26e+-0x1*0x17e7);var _0x1c8456=document['querySelec'+_0x128791(0x1eb)](_0x128791(0x1d6));function _0x205a14(){var _0x4df513=_0x128791,_0x467aaa={'KJYeJ':function(_0x9125bb,_0x579b32){return _0x245d56['aPxKy'](_0x9125bb,_0x579b32);},'hNuSo':function(_0xfd9be7,_0xae0be5){var _0x4b3291=_0x5f28;return _0x245d56[_0x4b3291(0x280)](_0xfd9be7,_0xae0be5);},'nnQAO':_0x4df513(0x2f6)};_0x1c8456[_0x4df513(0x2b8)](_0xe01539=>{var _0x47f57b=_0x4df513,_0x59ad5f=_0xe01539[_0x47f57b(0x21a)+_0x47f57b(0x1c1)+'t']()[_0x47f57b(0x1ed)],_0xbdcf8b=_0xe01539[_0x47f57b(0x21a)+'gClientRec'+'t']()[_0x47f57b(0x26f)],_0x52ec29=window[_0x47f57b(0x223)+'t'];_0x467aaa[_0x47f57b(0x222)](_0x59ad5f,_0x52ec29*(0x11*-0xa7+0xf1a*-0x2+0x3c1*0xb+0.9))&&_0x467aaa[_0x47f57b(0x2d6)](_0xbdcf8b,-0xeb8+0x1ad+0xd0b)&&_0xe01539[_0x47f57b(0x312)][_0x47f57b(0x204)](_0x467aaa['nnQAO']);});}_0x245d56[_0x128791(0x210)](_0x205a14),window[_0x128791(0x229)+'stener'](_0x245d56[_0x128791(0x2d0)],_0x205a14);var _0x1ad1a8=document[_0x128791(0x234)+'ById'](_0x245d56[_0x128791(0x1fb)]),_0x494518=document[_0x128791(0x234)+'ById'](_0x245d56[_0x128791(0x21d)]);function _0xd61111(){var _0x3ca2e7=_0x128791,_0x1c571c=_0x494518[_0x3ca2e7(0x21a)+_0x3ca2e7(0x1c1)+'t']();_0x245d56[_0x3ca2e7(0x265)](_0x1c571c[_0x3ca2e7(0x1ed)],window[_0x3ca2e7(0x223)+'t'])||_0x1c571c[_0x3ca2e7(0x26f)]<0x168e+-0x1b3b+-0x3f*-0x13?_0x1ad1a8[_0x3ca2e7(0x324)][_0x3ca2e7(0x1fa)]=_0x245d56['jcdJL']:_0x1ad1a8[_0x3ca2e7(0x324)][_0x3ca2e7(0x1fa)]=_0x245d56['inQzB'];}window[_0x128791(0x229)+_0x128791(0x20e)](_0x245d56[_0x128791(0x2d0)],_0xd61111),_0xd61111();function _0x399a9d(_0x1b5f5b,_0x593b95=_0x128791(0x2ee)){var _0x1db2e1=_0x128791,_0x1afbb2={'jGcPU':function(_0x241f13,_0x4e543f,_0x1eaafe){var _0x558a45=_0x5f28;return _0x245d56[_0x558a45(0x23a)](_0x241f13,_0x4e543f,_0x1eaafe);}},_0x26b74a=document['getElement'+'ById'](_0x245d56[_0x1db2e1(0x1bf)]),_0x3f5222=document['createElem'+_0x1db2e1(0x303)](_0x245d56[_0x1db2e1(0x1aa)]);_0x3f5222['className']=_0x1db2e1(0x299)+'t-'+_0x593b95;let _0xc46220='';switch(_0x593b95){case _0x245d56['gHStf']:_0xc46220='<i\x20class=\x22'+_0x1db2e1(0x2cc)+'ck-circle\x20'+_0x1db2e1(0x2e5)+_0x1db2e1(0x294);break;case _0x245d56[_0x1db2e1(0x1dd)]:_0xc46220=_0x245d56[_0x1db2e1(0x2f8)];break;case _0x245d56['HWFoF']:_0xc46220=_0x245d56['YZKeW'];break;default:_0xc46220=_0x245d56[_0x1db2e1(0x2a1)];}_0x3f5222['innerHTML']=_0xc46220+'\x20'+_0x1b5f5b,_0x26b74a[_0x1db2e1(0x1e7)+'d'](_0x3f5222),_0x245d56['vWYlL'](setTimeout,()=>{var _0x153bf7=_0x1db2e1;_0x3f5222['classList'][_0x153bf7(0x204)](_0x153bf7(0x1bd));},-0x2e8*0xd+-0x1942+0x3f6e*0x1),setTimeout(()=>{var _0x2e0578=_0x1db2e1;_0x3f5222[_0x2e0578(0x312)]['remove'](_0x2e0578(0x1bd)),_0x1afbb2[_0x2e0578(0x1e6)](setTimeout,()=>{var _0x2bad20=_0x2e0578;_0x26b74a[_0x2bad20(0x2ba)+'d'](_0x3f5222);},0x1*-0x2065+0x9d*-0x13+0x2d38);},0x1*0x12b5+-0x2644+0x232f*0x1);}function _0x4b3956(_0x467a6b){var _0x34ad63=_0x128791,_0x427965={'vQuVs':_0x34ad63(0x274),'FKXkr':_0x245d56[_0x34ad63(0x209)]};let _0x1293c2=new URLSearchParams(new URL(_0x467a6b)[_0x34ad63(0x21c)]),_0x21c7d1={};return _0x1293c2[_0x34ad63(0x2b8)]((_0x5bb85d,_0x39ef74)=>{var _0x274d22=_0x34ad63;(_0x39ef74['startsWith'](_0x427965[_0x274d22(0x1f1)])||_0x39ef74[_0x274d22(0x2f7)](_0x427965[_0x274d22(0x313)]))&&(_0x21c7d1[_0x39ef74]=_0x5bb85d);}),_0x21c7d1;}function _0x419e29(_0x4c130b,_0x3e7dfe){var _0x1e378a=_0x128791;if(window['location']['href'][_0x1e378a(0x1ff)](_0x245d56['qfWwV'])||window[_0x1e378a(0x1cc)][_0x1e378a(0x1bb)][_0x1e378a(0x1ff)](_0x245d56[_0x1e378a(0x19a)]))return;let _0x333960='',_0x58bc90={};switch(_0x4c130b){case _0x245d56[_0x1e378a(0x27a)]:_0x333960=_0x245d56['TkHkq'],_0x58bc90={'content_name':_0x1e378a(0x22a)+_0x1e378a(0x2b2),'content_category':_0x1e378a(0x22a)+'ia\x20Dom\x20LP'};break;case'verifyOTP':_0x333960=_0x245d56[_0x1e378a(0x1e9)],_0x58bc90={'content_name':'Verify\x20OTP'+_0x1e378a(0x2f3)+'P','content_category':_0x245d56['JVezV']};break;case'submitEnqu'+_0x1e378a(0x2b1):_0x333960='Submit\x20Enq'+_0x1e378a(0x28e)+'P',_0x58bc90={'content_name':_0x1e378a(0x25c)+'uiry\x20via\x20D'+'om\x20LP','content_category':_0x245d56['fTJcC']};break;default:console[_0x1e378a(0x1f7)](_0x245d56[_0x1e378a(0x1a5)]);return;}fbq(_0x245d56['gRnmW'],_0x333960,_0x58bc90);}const _0x21878f=document[_0x128791(0x234)+_0x128791(0x25b)](_0x245d56['cjooL']),_0x56657c=document[_0x128791(0x234)+_0x128791(0x25b)](_0x245d56[_0x128791(0x1b5)]),_0x4850f7=document[_0x128791(0x234)+'ById'](_0x245d56[_0x128791(0x287)]),_0x38ec15=document[_0x128791(0x234)+_0x128791(0x25b)](_0x245d56[_0x128791(0x2a4)]);var _0x3456bb=new firebase['auth'][(_0x128791(0x2db))+(_0x128791(0x1ee))](_0x245d56[_0x128791(0x2d3)],{'size':_0x245d56[_0x128791(0x2be)],'callback':function(_0x320fad){}});let _0xd81d23;var _0x277c60=document[_0x128791(0x234)+_0x128791(0x25b)](_0x245d56['EoKBU']),_0x114ce4=document[_0x128791(0x234)+'ById'](_0x245d56[_0x128791(0x31c)]),_0x462f2f=document['getElement'+'ById'](_0x245d56[_0x128791(0x27e)]),_0x3a9ee3=document['getElement'+_0x128791(0x25b)](_0x128791(0x255)+_0x128791(0x314)+_0x128791(0x264));_0x277c60['addEventLi'+_0x128791(0x20e)](_0x245d56['QWPiV'],function(){var _0x73b7a5=_0x128791,_0x5ca4b0=_0x245d56[_0x73b7a5(0x1cf)][_0x73b7a5(0x2ea)]('|'),_0x5f0a00=-0x1*0x1e91+0x6e+0x1e23;while(!![]){switch(_0x5ca4b0[_0x5f0a00++]){case'0':var _0x2e63a5=document['getElement'+_0x73b7a5(0x25b)](_0x245d56[_0x73b7a5(0x1a4)])[_0x73b7a5(0x220)];continue;case'1':if(_0x245d56[_0x73b7a5(0x1e2)](_0x2e63a5,_0x16fb83)&&_0x1f4420){var _0x452df9=_0x245d56[_0x73b7a5(0x1f9)][_0x73b7a5(0x2ea)]('|'),_0x58e29b=-0x1771*0x1+-0x182*-0x13+-0x535;while(!![]){switch(_0x452df9[_0x58e29b++]){case'0':_0x20e1d1(_0x481622,_0x3456bb);continue;case'1':_0x245d56[_0x73b7a5(0x26b)](_0x419e29,_0x73b7a5(0x28b),{'phone':_0x481622});continue;case'2':dataLayer[_0x73b7a5(0x2a7)]({'event':_0x245d56[_0x73b7a5(0x2b0)],'event_category':_0x245d56[_0x73b7a5(0x22e)],'event_label':_0x73b7a5(0x1c8),'value':_0x481622});continue;case'3':_0x245d56[_0x73b7a5(0x1e4)](gtag,_0x245d56[_0x73b7a5(0x282)],_0x245d56[_0x73b7a5(0x2b0)],{'event_category':_0x245d56[_0x73b7a5(0x22e)],'event_label':_0x245d56[_0x73b7a5(0x2d8)],'value':_0x481622});continue;case'4':_0x114ce4[_0x73b7a5(0x324)]['display']=_0x245d56['AgDZl'];continue;case'5':_0x245d56[_0x73b7a5(0x2cd)](_0x399a9d,_0x73b7a5(0x1c3)+'uccessfull'+'y!',_0x245d56[_0x73b7a5(0x2d5)]);continue;case'6':_0x277c60['style']['display']=_0x245d56[_0x73b7a5(0x21f)];continue;case'7':_0x3a9ee3['style'][_0x73b7a5(0x1fa)]=_0x73b7a5(0x1e8);continue;case'8':var _0x481622=''+_0x3ecb21+_0x1f4420;continue;}break;}}else _0x399a9d(_0x245d56['ZMmlF'],_0x245d56['mWhfE']);continue;case'2':var _0x1f4420=document[_0x73b7a5(0x234)+_0x73b7a5(0x25b)](_0x245d56[_0x73b7a5(0x2c4)])[_0x73b7a5(0x220)];continue;case'3':var _0x16fb83=document[_0x73b7a5(0x234)+_0x73b7a5(0x25b)](_0x245d56[_0x73b7a5(0x309)])['value'];continue;case'4':var _0x3ecb21=document[_0x73b7a5(0x234)+_0x73b7a5(0x25b)](_0x73b7a5(0x1a3)+'e')['value'];continue;}break;}});function _0x20e1d1(_0x3bd546,_0x1179f5){var _0x401788=_0x128791,_0x31a71a={'UwcVQ':_0x245d56[_0x401788(0x246)],'kdtOn':_0x245d56[_0x401788(0x296)],'ytRZF':_0x245d56[_0x401788(0x23e)],'LyCjP':_0x245d56[_0x401788(0x2ed)],'zURyu':_0x245d56[_0x401788(0x1dd)],'cSzjr':_0x245d56[_0x401788(0x21f)]};firebase[_0x401788(0x323)]()[_0x401788(0x208)+'PhoneNumbe'+'r'](_0x3bd546,_0x1179f5)[_0x401788(0x2c0)](function(_0x415916){_0xd81d23=_0x415916;})[_0x401788(0x23b)](function(_0xd8b0be){var _0x380778=_0x401788,_0x77444d=_0x31a71a[_0x380778(0x22f)][_0x380778(0x2ea)]('|'),_0x2622e1=0x240d+-0x1af*0x1+-0x225e;while(!![]){switch(_0x77444d[_0x2622e1++]){case'0':_0x277c60[_0x380778(0x324)][_0x380778(0x1fa)]=_0x31a71a[_0x380778(0x1f8)];continue;case'1':console[_0x380778(0x1f7)](_0x31a71a[_0x380778(0x329)],_0xd8b0be);continue;case'2':_0x399a9d(_0x31a71a['LyCjP'],_0x31a71a['zURyu']);continue;case'3':_0x3a9ee3['style'][_0x380778(0x1fa)]=_0x31a71a['cSzjr'];continue;case'4':_0x114ce4[_0x380778(0x324)][_0x380778(0x1fa)]=_0x31a71a[_0x380778(0x2bc)];continue;}break;}});}_0x114ce4[_0x128791(0x229)+_0x128791(0x20e)](_0x245d56[_0x128791(0x2e2)],async function(){var _0x458d21=_0x128791,_0xcae4f5={'yVuNz':_0x458d21(0x1b6)+_0x458d21(0x278)+_0x458d21(0x2d9)+_0x458d21(0x2fc)+_0x458d21(0x295)+'avel\x20detai'+_0x458d21(0x218),'PouBj':_0x245d56[_0x458d21(0x2d5)],'WmTMb':function(_0x2c2d97,_0x5e254b){var _0x548b7e=_0x458d21;return _0x245d56[_0x548b7e(0x1a7)](_0x2c2d97,_0x5e254b);},'hbHeV':_0x245d56[_0x458d21(0x1ba)],'ittLD':function(_0x21f879,_0x4b3a93,_0x44f7de,_0x550328){var _0x198850=_0x458d21;return _0x245d56[_0x198850(0x1b0)](_0x21f879,_0x4b3a93,_0x44f7de,_0x550328);},'mVQrK':_0x245d56['NQrsc'],'BolVJ':_0x245d56[_0x458d21(0x213)],'HgOut':_0x245d56[_0x458d21(0x22e)],'dTXPd':_0x245d56[_0x458d21(0x1c5)],'jVoQT':_0x245d56['fdHWi'],'OxcyK':_0x245d56['DupBR'],'sWuWG':_0x245d56[_0x458d21(0x309)],'eZAJX':_0x245d56['dJouw'],'MyByI':function(_0x2d035,_0x11524f,_0x205051){var _0x17f3cc=_0x458d21;return _0x245d56[_0x17f3cc(0x23a)](_0x2d035,_0x11524f,_0x205051);},'tuIUu':_0x458d21(0x1d5)+_0x458d21(0x2c2),'gIkbs':_0x245d56[_0x458d21(0x1e5)],'hOtJs':_0x245d56[_0x458d21(0x321)],'uIHYU':_0x458d21(0x233)+_0x458d21(0x32b)+_0x458d21(0x2cf)+_0x458d21(0x29e)+_0x458d21(0x1f2),'UBiRI':_0x245d56['gnEiM'],'Rsegk':'Error\x20subm'+_0x458d21(0x253)+'m:','sLCds':_0x458d21(0x259)+_0x458d21(0x253)+_0x458d21(0x211)+_0x458d21(0x2c6),'zHROU':'error','bFjBQ':_0x245d56[_0x458d21(0x1a9)]},_0x1fecdb=_0x462f2f['value'];if(!_0x1fecdb){_0x245d56[_0x458d21(0x2cd)](_0x399a9d,_0x458d21(0x317)+'er\x20the\x20ver'+'ification\x20'+'code.',_0x245d56[_0x458d21(0x2a3)]);return;}_0xd81d23[_0x458d21(0x2ff)](_0x1fecdb)['then'](async function(_0x555459){var _0x5bf0b5=_0x458d21,_0x4f284b=_0x555459[_0x5bf0b5(0x1ab)];_0x399a9d(_0xcae4f5[_0x5bf0b5(0x1c2)],_0xcae4f5['PouBj']),_0xcae4f5[_0x5bf0b5(0x25e)](_0x419e29,_0xcae4f5[_0x5bf0b5(0x2ec)]),_0xcae4f5['ittLD'](gtag,_0xcae4f5[_0x5bf0b5(0x1c7)],_0xcae4f5[_0x5bf0b5(0x2f9)],{'event_category':_0xcae4f5['HgOut'],'event_label':_0x5bf0b5(0x2d2)+'ed','value':0x1}),dataLayer[_0x5bf0b5(0x2a7)]({'event':_0xcae4f5[_0x5bf0b5(0x2f9)],'event_category':_0xcae4f5[_0x5bf0b5(0x1f0)],'event_label':_0x5bf0b5(0x2d2)+'ed','value':0x1}),_0x21878f['classList'][_0x5bf0b5(0x1a2)](_0x5bf0b5(0x2f6)),_0x56657c[_0x5bf0b5(0x312)][_0x5bf0b5(0x204)](_0xcae4f5[_0x5bf0b5(0x1b9)]);let _0x34f13c={'date':new Date()['toLocaleSt'+_0x5bf0b5(0x1e0)](),'name':document[_0x5bf0b5(0x234)+_0x5bf0b5(0x25b)](_0x5bf0b5(0x247))['value'],'phone':document[_0x5bf0b5(0x234)+_0x5bf0b5(0x25b)](_0xcae4f5[_0x5bf0b5(0x311)])[_0x5bf0b5(0x220)]+document['getElement'+_0x5bf0b5(0x25b)](_0xcae4f5[_0x5bf0b5(0x254)])['value'],'email':document[_0x5bf0b5(0x234)+_0x5bf0b5(0x25b)](_0xcae4f5[_0x5bf0b5(0x225)])['value'],'destination':_0xcae4f5['eZAJX']},_0x26e92e=[[_0x34f13c[_0x5bf0b5(0x1fe)],_0x34f13c[_0x5bf0b5(0x247)],_0x34f13c[_0x5bf0b5(0x330)],_0x34f13c['email'],_0x34f13c['destinatio'+'n']]];try{let _0x24d919=await _0xcae4f5[_0x5bf0b5(0x1d2)](fetch,_0xcae4f5['tuIUu'],{'method':_0xcae4f5['gIkbs'],'headers':{'Content-Type':_0xcae4f5[_0x5bf0b5(0x2cb)]},'body':JSON[_0x5bf0b5(0x24e)]({'googleSheetId':_0xcae4f5[_0x5bf0b5(0x331)],'data':_0x26e92e,'sheetName':_0xcae4f5[_0x5bf0b5(0x24a)]})});var _0x555459=await _0x24d919[_0x5bf0b5(0x1a1)]();if(_0x555459[_0x5bf0b5(0x202)]){}else throw new Error(_0x555459['message']||_0x5bf0b5(0x19c)+_0x5bf0b5(0x29c)+'ed');}catch(_0x329be1){console['error'](_0xcae4f5['Rsegk'],_0x329be1),_0xcae4f5['MyByI'](_0x399a9d,_0xcae4f5[_0x5bf0b5(0x2e8)],_0xcae4f5[_0x5bf0b5(0x275)]);}})[_0x458d21(0x23b)](function(_0x11ca14){var _0x2247b9=_0x458d21;console[_0x2247b9(0x1f7)](_0xcae4f5['bFjBQ'],_0x11ca14),_0xcae4f5[_0x2247b9(0x1d2)](_0x399a9d,'Invalid\x20ve'+_0x2247b9(0x1ae)+_0x2247b9(0x198)+_0x2247b9(0x2fd)+'ain.',_0xcae4f5[_0x2247b9(0x275)]);});}),_0x4850f7[_0x128791(0x229)+_0x128791(0x20e)](_0x245d56[_0x128791(0x2e2)],function(){var _0x43b074=_0x128791;_0x56657c[_0x43b074(0x312)][_0x43b074(0x1a2)](_0x43b074(0x2f6)),_0x21878f[_0x43b074(0x312)][_0x43b074(0x204)](_0x245d56[_0x43b074(0x1c5)]);}),document['getElement'+_0x128791(0x25b)](_0x245d56[_0x128791(0x325)])[_0x128791(0x229)+_0x128791(0x20e)](_0x128791(0x2eb),async function(){var _0x488d8f=_0x128791,_0x5a28d4={'xGBWk':_0x245d56[_0x488d8f(0x1dd)]};const _0x298df8=_0x56657c[_0x488d8f(0x305)+_0x488d8f(0x1eb)](_0x245d56[_0x488d8f(0x27c)]);let _0x1a9e0b=!![];_0x298df8[_0x488d8f(0x2b8)](_0x40592e=>{var _0x1811c2=_0x488d8f;!_0x40592e[_0x1811c2(0x220)]?(_0x1a9e0b=![],_0x40592e[_0x1811c2(0x312)]['add'](_0x1811c2(0x1f7))):_0x40592e[_0x1811c2(0x312)][_0x1811c2(0x1a2)](_0x5a28d4[_0x1811c2(0x214)]);});if(!_0x1a9e0b){_0x245d56['ZgaUU'](_0x399a9d,_0x245d56[_0x488d8f(0x26d)],_0x488d8f(0x1f7));return;}var _0x6ce961=window['location'][_0x488d8f(0x1bb)],_0x1bc273;_0x6ce961[_0x488d8f(0x1ff)](_0x488d8f(0x267))&&(_0x1bc273=_0x4b3956(_0x6ce961));let _0x2bfe29={'date':new Date()['toLocaleSt'+_0x488d8f(0x1e0)](),'name':document[_0x488d8f(0x234)+'ById'](_0x245d56[_0x488d8f(0x1a4)])[_0x488d8f(0x220)],'phone':_0x245d56[_0x488d8f(0x31b)](document['getElement'+'ById'](_0x488d8f(0x1a3)+'e')['value'],document[_0x488d8f(0x234)+_0x488d8f(0x25b)](_0x245d56[_0x488d8f(0x2c4)])[_0x488d8f(0x220)]),'email':document['getElement'+'ById'](_0x245d56[_0x488d8f(0x309)])[_0x488d8f(0x220)],'destination':_0x245d56[_0x488d8f(0x205)],'utmParams':_0x1bc273,'depCity':document[_0x488d8f(0x234)+_0x488d8f(0x25b)](_0x245d56[_0x488d8f(0x2bb)])['value'],'preferredMonth':document[_0x488d8f(0x234)+_0x488d8f(0x25b)](_0x245d56[_0x488d8f(0x28d)])[_0x488d8f(0x220)],'totalTravelers':document[_0x488d8f(0x234)+_0x488d8f(0x25b)](_0x488d8f(0x1d7)+_0x488d8f(0x2c8))[_0x488d8f(0x220)],'childrenBelow13':document[_0x488d8f(0x234)+_0x488d8f(0x25b)]('childrenBe'+_0x488d8f(0x32a))[_0x488d8f(0x220)],'flightsRequired':document[_0x488d8f(0x234)+_0x488d8f(0x25b)](_0x245d56[_0x488d8f(0x252)])[_0x488d8f(0x220)],'flightPreference':document[_0x488d8f(0x234)+_0x488d8f(0x25b)](_0x245d56[_0x488d8f(0x2de)])[_0x488d8f(0x220)],'hotelPreference':document[_0x488d8f(0x234)+_0x488d8f(0x25b)](_0x245d56[_0x488d8f(0x206)])['value'],'tripPurpose':document[_0x488d8f(0x234)+_0x488d8f(0x25b)](_0x245d56[_0x488d8f(0x2dd)])[_0x488d8f(0x220)],'contactPreference':document['getElement'+_0x488d8f(0x25b)](_0x245d56[_0x488d8f(0x1d8)])[_0x488d8f(0x220)],'callTime':document[_0x488d8f(0x234)+_0x488d8f(0x25b)](_0x245d56['TFfoD'])[_0x488d8f(0x220)]},_0x3cd119=[[_0x2bfe29['date'],_0x2bfe29[_0x488d8f(0x247)],_0x2bfe29[_0x488d8f(0x330)],_0x2bfe29[_0x488d8f(0x27d)],_0x2bfe29['destinatio'+'n'],JSON[_0x488d8f(0x24e)](_0x2bfe29[_0x488d8f(0x2c1)]),_0x2bfe29[_0x488d8f(0x2c7)],_0x2bfe29[_0x488d8f(0x21e)+_0x488d8f(0x212)],_0x2bfe29[_0x488d8f(0x1d7)+_0x488d8f(0x2c8)],_0x2bfe29[_0x488d8f(0x30c)+_0x488d8f(0x32a)],_0x2bfe29[_0x488d8f(0x2f5)+'uired'],_0x2bfe29[_0x488d8f(0x25a)+_0x488d8f(0x1cb)],_0x2bfe29[_0x488d8f(0x1a6)+_0x488d8f(0x2ce)],_0x2bfe29[_0x488d8f(0x2c9)+'e'],_0x2bfe29[_0x488d8f(0x269)+_0x488d8f(0x236)],_0x2bfe29[_0x488d8f(0x207)]]];try{let _0xd287d4=await _0x245d56['AmPaE'](fetch,_0x245d56['cytOZ'],{'method':_0x245d56[_0x488d8f(0x1e5)],'headers':{'Content-Type':_0x245d56['ZaKxD']},'body':JSON[_0x488d8f(0x24e)]({'googleSheetId':_0x488d8f(0x233)+_0x488d8f(0x32b)+'4_OOjSKaUV'+_0x488d8f(0x29e)+_0x488d8f(0x1f2),'data':_0x3cd119,'sheetName':_0x488d8f(0x273)+_0x488d8f(0x301)})});var _0x2b4132=await _0xd287d4[_0x488d8f(0x1a1)]();if(_0x2b4132[_0x488d8f(0x202)]){var _0x2cfe83=(_0x488d8f(0x1bc)+_0x488d8f(0x1b3)+'|1|14|6|7|'+'8|4|5|9')[_0x488d8f(0x2ea)]('|'),_0x271dcf=-0x15de+0x8cb*0x1+0xd13;while(!![]){switch(_0x2cfe83[_0x271dcf++]){case'0':var _0x2795c=document[_0x488d8f(0x234)+_0x488d8f(0x25b)](_0x488d8f(0x247))[_0x488d8f(0x220)]||_0x245d56[_0x488d8f(0x241)];continue;case'1':var _0x2cc5b7='/send-itin'+_0x488d8f(0x1c0)+_0x488d8f(0x203)+_0x245d56[_0x488d8f(0x2ae)](encodeURIComponent,_0x22074b)+(_0x488d8f(0x319)+_0x488d8f(0x196))+_0x245d56[_0x488d8f(0x2bd)](encodeURIComponent,_0x2b2c69)+(_0x488d8f(0x231)+'ame=')+_0x245d56[_0x488d8f(0x2ae)](encodeURIComponent,_0xa5caf7)+(_0x488d8f(0x19f)+_0x488d8f(0x30f))+_0x245d56[_0x488d8f(0x2ae)](encodeURIComponent,_0x3141e7)+'&fileName='+_0x245d56[_0x488d8f(0x1ef)](encodeURIComponent,_0x376cac)+(_0x488d8f(0x2a0)+'s=')+_0x245d56[_0x488d8f(0x1fd)](encodeURIComponent,_0x217cd4);continue;case'2':var _0x376cac=_0x245d56[_0x488d8f(0x194)];continue;case'3':var _0x22074b=document['getElement'+_0x488d8f(0x25b)](_0x245d56[_0x488d8f(0x2c4)])[_0x488d8f(0x220)]||_0x488d8f(0x2a8);continue;case'4':_0x245d56[_0x488d8f(0x1e3)](gtag,_0x245d56[_0x488d8f(0x282)],_0x245d56[_0x488d8f(0x24f)],{'event_category':_0x245d56['nYKsW'],'event_label':_0x245d56[_0x488d8f(0x266)],'value':0x1});continue;case'5':dataLayer[_0x488d8f(0x2a7)]({'event':_0x245d56[_0x488d8f(0x24f)],'event_category':_0x245d56[_0x488d8f(0x22e)],'event_label':_0x245d56['kGDLm'],'value':0x1});continue;case'6':document['getElement'+_0x488d8f(0x25b)](_0x488d8f(0x316)+'m')[_0x488d8f(0x324)]['display']=_0x245d56[_0x488d8f(0x21f)];continue;case'7':_0x38ec15['style']['display']=_0x245d56[_0x488d8f(0x296)];continue;case'8':_0x245d56['YHrwt'](_0x419e29,_0x245d56[_0x488d8f(0x2f0)]);continue;case'9':_0x245d56[_0x488d8f(0x2cd)](setTimeout,()=>{},-0x1*0x1d3e+-0x1e17+0x4edd);continue;case'10':var _0x2b2c69=document[_0x488d8f(0x234)+_0x488d8f(0x25b)](_0x488d8f(0x1a3)+'e')[_0x488d8f(0x220)]||'+91';continue;case'11':var _0xa5caf7=_0x245d56['HJLkV'];continue;case'12':var _0x217cd4=JSON[_0x488d8f(0x24e)]([_0x2795c,_0x27bb9b]);continue;case'13':var _0x27bb9b=_0x245d56['dJouw'];continue;case'14':_0x245d56[_0x488d8f(0x2cd)](fetch,_0x2cc5b7,{'method':_0x245d56[_0x488d8f(0x251)]})['then'](_0x32e01f=>_0x32e01f['json']())['then'](_0xb37cc8=>console[_0x488d8f(0x1fc)](_0x488d8f(0x1d1),_0xb37cc8))['catch'](_0x162f1f=>console[_0x488d8f(0x1f7)](_0x488d8f(0x1ea),_0x162f1f));continue;case'15':var _0x3141e7=_0x245d56[_0x488d8f(0x2e0)];continue;}break;}}else throw new Error(_0x2b4132[_0x488d8f(0x224)]||_0x245d56[_0x488d8f(0x328)]);}catch(_0x5a467e){console[_0x488d8f(0x1f7)](_0x245d56[_0x488d8f(0x300)],_0x5a467e),_0x245d56[_0x488d8f(0x2a6)](_0x399a9d,_0x245d56[_0x488d8f(0x322)],_0x488d8f(0x1f7));}}),gtag(_0x245d56[_0x128791(0x282)],_0x245d56[_0x128791(0x1b2)],{'event_category':_0x245d56[_0x128791(0x22e)],'event_label':_0x245d56[_0x128791(0x244)],'value':0x1}),dataLayer['push']({'event':'lead_gener'+'ation','event_category':_0x245d56[_0x128791(0x22e)],'event_label':_0x245d56[_0x128791(0x244)],'value':0x1});});function _0x24d4(){var _0x47a074=['xuIDV','5034CnTkMD','LnGLU','name','engagement','ng\x20signInW','UBiRI','al-slide','1907930MQTjwG','DOMContent','stringify','RJHWE','lNav','AmJgx','QzRoW','itting\x20for','OxcyK','verificati','oreAA','trackCusto','y-174317','Error\x20subm','flightPref','ById','Submit\x20Enq','div','WmTMb','ation','irebaseapp','oast-icon\x22','ity','verifyOtpB','ainer','RliXM','kGDLm','?utm_','fas\x20fa-exc','contactPre','_Rice_Terr','vWYlL','uiry','ZMmlF','onload','bottom','navToggle','none','ZnePCqVLbr','Internatio','utm_','zHROU','xjkhJ','fas\x20fa-bar','ed\x20success','87236ffbfpk','RKLLX','POST','nuXkC','email','OfjzD','Image','YAKIB','container','NQrsc','fas\x20fa-tim','n/json','header','initialize','VhhRq','11qqeFIT','y.mp4?alt=','JGjbD','sentOTP','Bali_Itine','OsXGM','uiry\x20via\x20L','enquiry','Temple.jpg','.testimoni','4oQaaMC','successMes','\x22></i>','te\x20your\x20tr','AgDZl','arket.jpg','submitForm','toast\x20toas','azurc','John\x20Doe','ssion\x20fail','src','YFifEWfA0c','contains','&bodyValue','jWJet','NzqGM','HWFoF','xmTxw','tqpAl','ZgaUU','push','9625251633','onCodeInpu','toggle','thank_you_','Kuta_Beach','scrollY','PLbJT','translateX','hQEYQ','iry','ia\x20Dom\x20LP','y-174317.a','<i\x20class=\x22','tton','mber','step2','forEach','ithPhoneNu','removeChil','wfonK','cSzjr','mAjgk','cLtQa','fas\x20fa-inf','then','utmParams','sheet','0|3|2|4|1','DupBR','lease\x20try\x20','try\x20again.','depCity','lers','tripPurpos','erakt%2FBe','hOtJs','fas\x20fa-che','MUjiq','rence','4_OOjSKaUV','eqtSH','jRAFW','OTP\x20Verifi','EPjKD','Please\x20fil','gHStf','hNuSo','G-PXBR867E','FSKKF','fully!\x20Ple','recaptcha-','RecaptchaV','fyOtp','hPcoE','kpLLj','swdkX','ZSMDx','rebasestor','QWPiV','\x20View','uired','toast-icon','AmPaE','step1','sLCds','innerHTML','split','click','hbHeV','shMzs','info','Tegalalang','JiDSY','ryBtn','background','\x20via\x20Dom\x20L','l-dot','flightsReq','active','startsWith','AulVy','BolVJ','zzUFf','departureC','ase\x20comple','ase\x20try\x20ag','ationResul','confirm','MgCHl','nal','App','ent','Error\x20duri','querySelec','scrolled','t.confirm','Nusa_Penid','jypPw','6jOUr4_Saf','pupnG','childrenBe','o-circle\x20t','uiry\x20via\x20D','rl=','Bali','jVoQT','classList','FKXkr','onCodeCont','ation-subm','enquiryFor','Please\x20ent','east1.fire','&countryCo','lamation-c','WngQg','zwwvY','lamation-t','1:99594590','applicatio','</i>','ZaKxD','vlCLt','auth','style','TglZs','3iNmsZR-s','HOZLS','Lscmr','ytRZF','low13','WUAY5Qydep','Otp','submitEnqu','mEaMP','t-icon\x22></','phone','uIHYU','again.','apis.com/v','ZgnXI','flex','de=','c9ed698c','\x20code.\x20Ple','om\x20LP','RFuBj','17f1889911','Form\x20submi','utton','5|1|3|2','&documentU','event','json','remove','countryCod','zKRJz','kxGHy','hotelPrefe','zvCHA','fixedEnqui','IOitK','ZGuDp','user','Button','param','rification','ouSow','pjNfQ','.nav-link','FFNEk','11|15|2|12','3142972OtckeF','FWCCJ','OTP\x20verifi','17.appspot','mple.jpg','dTXPd','YBhCW','href','0|13|3|10|','show','aces.webp','UPlZm','erary-pdf?','gClientRec','yVuNz','OTP\x20sent\x20s','317313GCKafW','gZefk','ircle\x20toas','mVQrK','OTP\x20Sent','se.app/','d-prod-174','erence','location','toast-cont','ts/img/lea','jbfjZ','tXkXD','Response:','MyByI','Loaded','Mount_Batu','/write-to-','.fade-in','totalTrave','pHYCr','analytics','ation-veri','opacity','tjWUT','mWhfE','88sqcySA','ing\x20OTP.\x20P','ring','2995qWdaCZ','VYJPd','CRvAR','KIIMT','lBRCf','jGcPU','appendChil','block','JVezV','Error:','torAll','Uluwatu_Te','top','erifier','bEMLZ','HgOut','vQuVs','Uh6c','0/b/travel','riangle\x20to','NiCNE','lead_gener','error','kdtOn','YxQAe','display','mIAQz','log','CxtCD','date','includes','WONkY','Sekumpul_W','success','phoneNo=','add','dJouw','AQPoB','callTime','signInWith','QxhoW','s\x22></i>','length','MeKtD','https://tb','stener','9132332PeyUaQ','XddXg','m.\x20Please\x20','onth','XvWTF','xGBWk','rary.pdf','></i>','.com','ls.','dGen/Bali/','getBoundin','Ubud_Art_M','search','kjCcI','preferredM','inQzB','value','transform','KJYeJ','innerHeigh','message','sWuWG','-a7e6-c9bb','travelbudd','al-dot','addEventLi','Sent\x20OTP\x20v','504333vyXMCx','HLNfF','1|5|0|4|3|','nYKsW','UwcVQ','Error\x20send','&templateN','ton','1FimuK7vR7','getElement','buddy-1743','ference','/view/asse','testimonia','age.google','TjXXd','catch','Besakih_Te','warning','TGOsr','n=8603396f','d\x20fields.','vIGmb','SNBDx','verifyOTP'];_0x24d4=function(){return _0x47a074;};return _0x24d4();}
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "Travel Buddy",
+  "short_name": "Travel Buddy",
+  "display": "standalone",
+  "theme_color": "#1e1e2d",
+  "start_url": "/?app=pwa",
+  "background_color": "#1e1e2d",
+  "description": "Travel Buddy",
+  "icons": [
+    {
+      "src": "/view/assets/img/app_logo_new.webp",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/view/assets/img/splash_icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/view/assets/img/splash_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

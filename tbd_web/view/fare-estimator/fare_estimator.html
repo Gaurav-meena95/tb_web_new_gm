@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Fare Estimator – Find Cheapest Days to Fly | Travel Buddy</title>
+
+	<!-- Google Fonts: Inter + JetBrains Mono -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect"
+		href="https://fonts.gstatic.com" crossorigin />
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" />
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+	<!-- Chart.js v4 -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js">
+	</script>
+
+	<!-- Local Styles -->
+	<link rel="stylesheet"
+		href="/view/fare-estimator/fare_estimator_style.css?v=__APP_VERSION__" />
+		
+	<link rel="icon"
+		href="https://beatravelbuddy.com/view/assets/img/app_logo_new.webp"
+		type="image/x-icon">
+
+	<!-- GEO: AI-readable summary -->
+	<meta name="summary"
+		content="Fare Estimator helps travelers discover the cheapest days to fly using interactive price trends, calendar heatmaps and smart deal detection across 3, 6 and 9 months of airfare data.">
+
+	<!-- Primary SEO -->
+	<meta name="description"
+		content="Flight fare estimator tool that compares airfare across 3, 6 and 9 months. Discover cheapest days to fly using interactive price trend graphs, calendar heatmaps and automatic best-deal detection. Free travel pricing intelligence by Travel Buddy.">
+
+	<!-- GEO-Optimized Keywords -->
+	<meta name="keywords" content="
+		flight fare estimator tool,
+		airfare prediction system,
+		flight price analytics platform,
+		travel pricing intelligence,
+		calendar-based airfare comparison,
+		cheapest days to fly finder,
+		flight price forecasting tool,
+		airfare trend analysis,
+		flight calendar heatmap,
+		multi-month fare comparison,
+		smart flight search engine,
+		best days to book flights,
+		flight deal detection,
+		airfare dashboard,
+		travel planning tool,
+		cheap flights india,
+		domestic flights india,
+		international flight fares,
+		delhi to mumbai flights,
+		bangalore cheap flights,
+		flight booking insights,
+		air ticket price estimator
+	">
+
+	<meta name="author" content="Travel Buddy">
+	<meta name="robots" content="index, follow">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, interactive-widget=resizes-content">
+
+	<!-- Theme -->
+	<meta name="theme-color" content="#020617">
+
+	<!-- Canonical -->
+	<link rel="canonical"
+		href="https://beatravelbuddy.com/fare-estimator" />
+
+	<!-- Open Graph (WhatsApp / Facebook / LinkedIn) -->
+	<meta property="og:title"
+		content="Fare Estimator – Flight Price Prediction Tool | Find Cheapest Days to Fly">
+	<meta property="og:description"
+		content="Free flight fare estimator with interactive price trends, calendar heatmaps and smart deal detection. Compare airfare across 3–9 months instantly.">
+	<meta property="og:type" content="website">
+	<meta property="og:url"
+		content="https://beatravelbuddy.com/fare-estimator">
+	<meta property="og:image"
+		content="https://prodmedia.beatravelbuddy.com/fare-estimator-preview.jpg.webp">
+	<meta property="og:site_name" content="Travel Buddy">
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title"
+		content="Fare Estimator – Smart Flight Pricing Intelligence">
+	<meta name="twitter:description"
+		content="Compare airfare across months using price trends, calendar heatmaps and automatic deal detection. Free tool by Travel Buddy.">
+	<meta name="twitter:image"
+		content="https://prodmedia.beatravelbuddy.com/fare-estimator-preview.jpg.webp">
+
+	<!-- Apple / iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style"
+		content="black-translucent">
+	
+	<!-- GEO / Schema: SoftwareApplication -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "SoftwareApplication",
+		"name": "Fare Estimator",
+		"alternateName": "Travel Buddy Fare Estimator",
+		"applicationCategory": "TravelApplication",
+		"operatingSystem": "Web",
+		"url": "https://beatravelbuddy.com/fare-estimator",
+		"description": "Flight fare estimator tool that helps travelers find the cheapest days to fly by analyzing airfare across multiple months using price trend graphs, interactive calendar heatmaps and automatic best-deal detection.",
+		"featureList": [
+			"Flight price trend graph across 3, 6 and 9 months",
+			"Interactive calendar heatmap showing cheapest departure dates",
+			"Automatic best-deal detection and ranking",
+			"Multi-month airfare comparison and forecasting",
+			"Smart fare insights powered by historical pricing data",
+			"Support for Economy, Premium Economy, Business and First Class"
+		],
+		"offers": {
+			"@type": "Offer",
+			"price": "0",
+			"priceCurrency": "INR"
+		},
+		"provider": {
+			"@type": "Organization",
+			"name": "Travel Buddy",
+			"url": "https://beatravelbuddy.com"
+		}
+	}
+	</script>
+
+	<!-- GEO / Schema: FAQPage -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		"mainEntity": [
+			{
+				"@type": "Question",
+				"name": "What is Fare Estimator?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Fare Estimator is a free flight price forecasting tool by Travel Buddy that helps travelers find the cheapest days to fly by analyzing airfare across 3, 6 and 9 months using interactive price trend graphs, calendar heatmaps and automatic best-deal detection."
+				}
+			},
+			{
+				"@type": "Question",
+				"name": "How does Fare Estimator work?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Fare Estimator uses live airline pricing data to generate interactive price trend graphs, color-coded calendar heatmaps showing cheap vs expensive days, and automatically ranked best-deal recommendations for any route."
+				}
+			},
+			{
+				"@type": "Question",
+				"name": "Can Fare Estimator predict flight prices?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Yes. Fare Estimator provides future fare estimates based on available airline data and historical pricing trends, helping you identify the cheapest travel dates up to 9 months in advance."
+				}
+			},
+			{
+				"@type": "Question",
+				"name": "Is Fare Estimator free to use?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Yes, Fare Estimator is completely free. Simply enter your origin, destination and cabin class to instantly compare fares across multiple months."
+				}
+			},
+			{
+				"@type": "Question",
+				"name": "What cabin classes does Fare Estimator support?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Fare Estimator supports all major cabin classes: Economy, Premium Economy, Business and First Class. You can compare fares for any class on any route."
+				}
+			}
+		]
+	}
+	</script>
+	
+</head>
+<body>
+
+	<!-- World map ambient background -->
+	<div class="fare-board__world-map"></div>
+
+	<!-- Starfield ambient dots -->
+	<div class="fare-board__stars"></div>
+
+	<!-- Back Button (fixed) -->
+	<button class="fare-board__back" id="fareBoardBack">
+		<i class="fas fa-arrow-left"></i>
+	</button>
+
+	<!-- Brand Header -->
+	<header class="brand-header" id="brandHeader">
+		<a class="brand-header__logo"
+			href="https://beatravelbuddy.com">
+			<img
+				src="https://beatravelbuddy.com/view/assets/img/app_logo_new.webp"
+				alt="Travel Buddy logo"
+				class="brand-header__icon" />
+			<span class="brand-header__name">
+				Travel Buddy
+				<span class="brand-header__tagline">
+					&mdash; Never Feel Alone
+				</span>
+			</span>
+		</a>
+	</header>
+
+	<!-- Search Landing Canvas -->
+	<div class="fare-board__search" id="fareBoardSearch">
+
+		<!-- Hero Headline -->
+		<div class="hero">
+			<h1 class="hero__title">
+				Find the <span class="hero__accent">smartest
+				</span> day to fly
+			</h1>
+			<p class="hero__subtitle">
+				Compare fares across months.
+				Spot the cheapest dates instantly.
+			</p>
+		</div>
+
+		<!-- Search Card (with floating pills) -->
+		<div class="fare-board__search-card-wrap">
+
+			<!-- Feature Pills (desktop only) -->
+			<div class="feature-pills">
+				<span class="feature-pill feature-pill--tl">
+					<i class="fas fa-chart-line"></i>
+					Price Trends
+				</span>
+				<span class="feature-pill feature-pill--bl">
+					<i class="fas fa-calendar-alt"></i>
+					Calendar Heatmap
+				</span>
+				<span class="feature-pill feature-pill--tr">
+					<i class="fas fa-bolt"></i>
+					Best Deals
+				</span>
+				<span class="feature-pill feature-pill--br">
+					<i class="fas fa-lightbulb"></i>
+					Smart Insights
+				</span>
+			</div>
+
+			<div class="fare-board__search-card">
+				<div class="fare-board__search-form"
+					id="fareBoardSearchForm">
+					<div class="fare-board__search-row">
+						<div class="fare-board__search-field">
+							<label for="inputOrigin">
+								<i class="fas
+									fa-plane-departure">
+								</i> Origin
+							</label>
+							<div class="airport-input-wrap">
+								<input type="text"
+									id="inputOrigin"
+									placeholder="City or airport code"
+									autocomplete="off"
+									spellcheck="false" />
+								<div class="airport-dropdown"
+									id="originDropdown"></div>
+							</div>
+						</div>
+
+						<button class="fare-board__swap-btn"
+							id="swapCities" type="button">
+							<i class="fas fa-exchange-alt">
+							</i>
+						</button>
+
+						<div class="fare-board__search-field">
+							<label for="inputDestination">
+								<i class="fas
+									fa-plane-arrival">
+								</i> Destination
+							</label>
+							<div class="airport-input-wrap">
+								<input type="text"
+									id="inputDestination"
+									placeholder="City or airport code"
+									autocomplete="off"
+									spellcheck="false" />
+								<div class="airport-dropdown"
+									id="destinationDropdown">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="fare-board__search-row">
+						<div class="fare-board__search-field fare-board__search-field--month"
+							id="travelMonthField">
+							<label for="inputTravelMonth">
+								<i class="fas fa-calendar-alt"></i>
+								Travel month
+							</label>
+							<input type="month"
+								id="inputTravelMonth"
+								title="Pick the month to see fares for" />
+						</div>
+						<div class="fare-board__search-field
+							fare-board__search-field--cabin">
+							<label for="inputCabinClass">
+								<i class="fas fa-chair"></i>
+								Cabin Class
+							</label>
+							<select id="inputCabinClass">
+								<option value="2">
+									Economy
+								</option>
+								<option value="3">
+									Premium Economy
+								</option>
+								<option value="4">
+									Business
+								</option>
+								<option value="5">
+									Premium Business
+								</option>
+								<option value="6">
+									First Class
+								</option>
+								<option value="1">
+									All Classes
+								</option>
+							</select>
+						</div>
+					</div>
+
+					<button class="fare-board__search-btn"
+						id="fareSearchBtn" type="button">
+						<i class="fas fa-search"></i>
+						Explore Fares
+					</button>
+
+					<!-- Recent Searches -->
+					<div class="recent" id="recentSearches"
+						style="display:none;"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Trust Strip -->
+		<div class="trust-strip">
+			<span class="trust-strip__item">
+				<i class="fas fa-users"></i>
+				Used by 10,000+ travelers
+			</span>
+			<span class="trust-strip__divider"></span>
+			<span class="trust-strip__item">
+				<i class="fas fa-satellite-dish"></i>
+				Live airline pricing
+			</span>
+			<span class="trust-strip__divider"></span>
+			<span class="trust-strip__item">
+				<i class="fas fa-sync-alt"></i>
+				Updated hourly
+			</span>
+		</div>
+
+		<!-- Preview Sections (ghost) -->
+		<div class="preview-sections">
+			<div class="preview-section">
+				<div class="preview-section__icon">
+					<i class="fas fa-chart-line"></i>
+				</div>
+				<div class="preview-section__label">
+					Price Trend
+				</div>
+				<div class="preview-section__bar">
+					<div class="preview-section__wave">
+					</div>
+				</div>
+			</div>
+			<div class="preview-section">
+				<div class="preview-section__icon">
+					<i class="fas fa-calendar-alt"></i>
+				</div>
+				<div class="preview-section__label">
+					Calendar Heatmap
+				</div>
+				<div class="preview-section__grid">
+					<span></span><span></span><span></span>
+					<span></span><span></span><span></span>
+					<span></span><span></span><span></span>
+					<span></span><span></span><span></span>
+					<span></span><span></span><span></span>
+					<span></span><span></span><span></span>
+					<span></span><span></span><span></span>
+				</div>
+			</div>
+			<div class="preview-section">
+				<div class="preview-section__icon">
+					<i class="fas fa-tags"></i>
+				</div>
+				<div class="preview-section__label">
+					Best Deals
+				</div>
+				<div class="preview-section__cards">
+					<div class="preview-section__card"></div>
+					<div class="preview-section__card"></div>
+					<div class="preview-section__card"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Premium Membership Banner -->
+		<div class="premium-banner" id="premiumBanner">
+			<div class="premium-banner__icon">
+				<i class="fas fa-crown"></i>
+			</div>
+			<div class="premium-banner__text">
+				<span class="premium-banner__headline">
+					Book all flights with
+					0 convenience fees
+				</span>
+				<span class="premium-banner__sub">
+					Travel Buddy Premium starts at
+					<strong>&#8377;499/month</strong>
+				</span>
+			</div>
+			<span class="premium-banner__cta">
+				Go Premium
+				<i class="fas fa-arrow-right"></i>
+			</span>
+		</div>
+
+		<!-- Coupon Slider -->
+		<div class="coupon-slider">
+			<div class="coupon-slider__title">
+				<i class="fas fa-ticket-alt"></i>
+				Available Offers
+			</div>
+			<div class="coupon-slider__track">
+				<div class="coupon-card">
+					<div class="coupon-card__badge">
+						75% OFF
+					</div>
+					<div class="coupon-card__code"
+						data-code="LASTMINUTE">
+						LASTMINUTE
+						<button class="coupon-card__copy"
+							title="Copy code">
+							<i class="fas fa-copy"></i>
+						</button>
+					</div>
+					<div class="coupon-card__desc">
+						75% off convenience fees
+						up to &#8377;2,500
+					</div>
+				</div>
+				<div class="coupon-card">
+					<div class="coupon-card__badge">
+						&#8377;500 OFF
+					</div>
+					<div class="coupon-card__code"
+						data-code="IND500">
+						IND500
+						<button class="coupon-card__copy"
+							title="Copy code">
+							<i class="fas fa-copy"></i>
+						</button>
+					</div>
+					<div class="coupon-card__desc">
+						Flat &#8377;500 off on
+						your booking
+					</div>
+				</div>
+				<div class="coupon-card">
+					<div class="coupon-card__badge">
+						&#8377;250 OFF
+					</div>
+					<div class="coupon-card__code"
+						data-code="TBNEW">
+						TBNEW
+						<button class="coupon-card__copy"
+							title="Copy code">
+							<i class="fas fa-copy"></i>
+						</button>
+					</div>
+					<div class="coupon-card__desc">
+						Flat &#8377;250 off for
+						new users
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Main Wrapper -->
+	<div class="fare-board" id="fareBoard">
+
+		<!-- Loading / Skeleton -->
+		<div class="fare-board__loading" id="fareBoardLoading"
+			style="display:none;">
+			<div class="skeleton skeleton--header"></div>
+			<div class="skeleton skeleton--tabs"></div>
+			<div class="skeleton skeleton--chart"></div>
+			<div class="skeleton-row">
+				<div class="skeleton skeleton--heatmap"></div>
+				<div class="skeleton skeleton--heatmap"></div>
+				<div class="skeleton skeleton--heatmap"></div>
+			</div>
+			<div class="skeleton-row">
+				<div class="skeleton skeleton--deal"></div>
+				<div class="skeleton skeleton--deal"></div>
+				<div class="skeleton skeleton--deal"></div>
+			</div>
+		</div>
+
+		<!-- Content (hidden until data loads) -->
+		<div class="fare-board__content" id="fareBoardContent"
+			style="display:none;">
+
+			<!-- AI Insight -->
+			<div class="fare-board__ai-insight" id="fareBoardAI"></div>
+
+			<!-- Header: Route + Summary Pills -->
+			<div class="fare-board__header" id="fareBoardHeader"></div>
+
+			<!-- Range Tabs: 3 / 6 / 9 months -->
+			<div class="fare-board__range-tabs" id="fareBoardRangeTabs">
+				<button class="range-tab active" data-months="3">
+					3 Months
+				</button>
+				<button class="range-tab" data-months="6">
+					6 Months
+				</button>
+				<button class="range-tab" data-months="9">
+					9 Months
+				</button>
+				<div class="range-tab__underline"></div>
+			</div>
+
+			<!-- Chart -->
+			<div class="fare-board__card">
+				<h3 class="fare-board__section-title">
+					<i class="fas fa-chart-line"></i>
+					Price Trend
+				</h3>
+				<div class="fare-board__chart-container"
+					id="fareBoardChartContainer">
+					<canvas id="fareBoardChart"></canvas>
+				</div>
+			</div>
+
+			<!-- Heatmap -->
+			<div class="fare-board__card">
+				<h3 class="fare-board__section-title">
+					<i class="fas fa-calendar-alt"></i>
+					Calendar Heatmap
+				</h3>
+				<div class="fare-board__heatmap"
+					id="fareBoardHeatmap"></div>
+			</div>
+
+			<!-- Best Deals -->
+			<div class="fare-board__card">
+				<h3 class="fare-board__section-title">
+					<i class="fas fa-tags"></i>
+					Best Deals
+				</h3>
+				<div class="fare-board__deals"
+					id="fareBoardDeals"></div>
+			</div>
+
+			<!-- Premium Banner (results page) -->
+			<div class="premium-banner premium-banner--results">
+				<div class="premium-banner__icon">
+					<i class="fas fa-crown"></i>
+				</div>
+				<div class="premium-banner__text">
+					<span class="premium-banner__headline">
+						Book all flights with
+						0 convenience fees
+					</span>
+					<span class="premium-banner__sub">
+						Travel Buddy Premium starts at
+						<strong>&#8377;499/month</strong>
+					</span>
+				</div>
+				<span class="premium-banner__cta">
+					Go Premium
+					<i class="fas fa-arrow-right"></i>
+				</span>
+			</div>
+
+			<!-- Coupon Slider (results page) -->
+			<div class="coupon-slider">
+				<div class="coupon-slider__title">
+					<i class="fas fa-ticket-alt"></i>
+					Available Offers
+				</div>
+				<div class="coupon-slider__track">
+					<div class="coupon-card">
+						<div class="coupon-card__badge">
+							75% OFF
+						</div>
+						<div class="coupon-card__code"
+							data-code="LASTMINUTE">
+							LASTMINUTE
+							<button
+								class="coupon-card__copy"
+								title="Copy code">
+								<i class="fas fa-copy">
+								</i>
+							</button>
+						</div>
+						<div class="coupon-card__desc">
+							75% off convenience fees
+							up to &#8377;2,500
+						</div>
+					</div>
+					<div class="coupon-card">
+						<div class="coupon-card__badge">
+							&#8377;500 OFF
+						</div>
+						<div class="coupon-card__code"
+							data-code="IND500">
+							IND500
+							<button
+								class="coupon-card__copy"
+								title="Copy code">
+								<i class="fas fa-copy">
+								</i>
+							</button>
+						</div>
+						<div class="coupon-card__desc">
+							Flat &#8377;500 off on
+							your booking
+						</div>
+					</div>
+					<div class="coupon-card">
+						<div class="coupon-card__badge">
+							&#8377;250 OFF
+						</div>
+						<div class="coupon-card__code"
+							data-code="TBNEW">
+							TBNEW
+							<button
+								class="coupon-card__copy"
+								title="Copy code">
+								<i class="fas fa-copy">
+								</i>
+							</button>
+						</div>
+						<div class="coupon-card__desc">
+							Flat &#8377;250 off for
+							new users
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bottom Drawer -->
+	<div class="fare-board__drawer-overlay" id="fareDrawerOverlay">
+		<div class="fare-board__drawer" id="fareDrawer">
+			<div class="fare-board__drawer-handle"></div>
+			<div class="fare-board__drawer-content"
+				id="fareDrawerContent"></div>
+		</div>
+	</div>
+
+	<!-- Error State -->
+	<div class="fare-board__error" id="fareBoardError"
+		style="display:none;">
+		<i class="fas fa-exclamation-triangle"></i>
+		<h2>Unable to fetch fares</h2>
+		<p id="fareBoardErrorMsg">
+			Something went wrong. Please try again.
+		</p>
+		<button class="fare-board__retry-btn"
+			id="fareBoardRetry">
+			<i class="fas fa-redo"></i> Retry
+		</button>
+	</div>
+
+	<!-- GEO: AI-Readable Content Sections -->
+	<footer class="geo-content" id="geoContent">
+
+		<!-- Product Summary -->
+		<section class="geo-content__section"
+			id="product-summary">
+			<h2 class="geo-content__heading">
+				<i class="fas fa-plane"></i>
+				Fare Estimator – Flight Price
+				Prediction Tool
+			</h2>
+			<p class="geo-content__description">
+				Fare Estimator by
+				<strong>Travel Buddy</strong> is a free
+				flight price forecasting tool that helps
+				travelers find the cheapest days to fly.
+				It analyzes airfare data across multiple
+				months and presents it through intuitive
+				visualizations.
+			</p>
+			<ul class="geo-content__features">
+				<li>
+					<i class="fas fa-chart-line"></i>
+					Compare flight prices across 3, 6 and
+					9 months with interactive price trend
+					graphs
+				</li>
+				<li>
+					<i class="fas fa-calendar-alt"></i>
+					Interactive calendar heatmap showing
+					cheapest days to fly, color-coded by
+					fare level
+				</li>
+				<li>
+					<i class="fas fa-tags"></i>
+					Automatic best-deal detection and
+					ranking of the top 3 cheapest
+					departure dates
+				</li>
+				<li>
+					<i class="fas fa-lightbulb"></i>
+					Smart fare insights powered by
+					historical airline pricing data
+				</li>
+				<li>
+					<i class="fas fa-chair"></i>
+					Supports Economy, Premium Economy,
+					Business and First Class cabin
+					comparison
+				</li>
+			</ul>
+		</section>
+
+		<div class="geo-content__divider"></div>
+
+		<!-- Use Cases -->
+		<section class="geo-content__section"
+			id="use-cases">
+			<h3 class="geo-content__subheading">
+				<i class="fas fa-compass"></i>
+				Use Cases
+			</h3>
+			<div class="geo-content__use-cases">
+				<div class="geo-content__use-case">
+					<i class="fas fa-calendar-check"></i>
+					<span>Finding the cheapest travel dates
+						for upcoming trips</span>
+				</div>
+				<div class="geo-content__use-case">
+					<i class="fas fa-binoculars"></i>
+					<span>Planning trips months in advance
+						with fare forecasting</span>
+				</div>
+				<div class="geo-content__use-case">
+					<i class="fas fa-chart-bar"></i>
+					<span>Comparing airline fare trends
+						across seasons</span>
+				</div>
+				<div class="geo-content__use-case">
+					<i class="fas fa-fire"></i>
+					<span>Detecting high-demand travel days
+						to avoid</span>
+				</div>
+				<div class="geo-content__use-case">
+					<i class="fas fa-briefcase"></i>
+					<span>Optimizing business travel budgets
+						with data-driven decisions</span>
+				</div>
+				<div class="geo-content__use-case">
+					<i class="fas fa-users"></i>
+					<span>Coordinating group travel on
+						the most affordable dates</span>
+				</div>
+			</div>
+		</section>
+
+		<div class="geo-content__divider"></div>
+
+		<!-- FAQ -->
+		<section class="geo-content__section" id="faq">
+			<h3 class="geo-content__subheading">
+				<i class="fas fa-question-circle"></i>
+				Frequently Asked Questions
+			</h3>
+
+			<details class="geo-content__faq-item">
+				<summary>What is Fare Estimator?</summary>
+				<p>Fare Estimator is a free flight price
+					forecasting tool by Travel Buddy
+					that helps travelers find the cheapest
+					days to fly by analyzing airfare across
+					3, 6 and 9 months using interactive
+					price trend graphs, calendar heatmaps
+					and automatic best-deal detection.</p>
+			</details>
+
+			<details class="geo-content__faq-item">
+				<summary>How does Fare Estimator
+					work?</summary>
+				<p>It uses live airline pricing data to
+					generate interactive price trend graphs,
+					color-coded calendar heatmaps showing
+					cheap vs expensive days, and
+					automatically ranked best-deal
+					recommendations for any route.</p>
+			</details>
+
+			<details class="geo-content__faq-item">
+				<summary>Can Fare Estimator predict flight
+					prices?</summary>
+				<p>Yes. Fare Estimator provides future fare
+					estimates based on available airline
+					data and historical pricing trends,
+					helping you identify the cheapest travel
+					dates up to 9 months in advance.</p>
+			</details>
+
+			<details class="geo-content__faq-item">
+				<summary>Is Fare Estimator free to
+					use?</summary>
+				<p>Yes, Fare Estimator is completely free.
+					Simply enter your origin, destination
+					and cabin class to instantly compare
+					fares across multiple months.</p>
+			</details>
+
+			<details class="geo-content__faq-item">
+				<summary>What cabin classes does Fare
+					Estimator support?</summary>
+				<p>Fare Estimator supports all major cabin
+					classes: Economy, Premium Economy,
+					Business and First Class. You can
+					compare fares for any class on any
+					route.</p>
+			</details>
+		</section>
+
+		<div class="geo-content__footer-bar">
+			<span>
+				<i class="fas fa-globe"></i>
+				Powered by
+				<strong>Travel Buddy</strong>
+			</span>
+			<span class="geo-content__footer-dot"></span>
+			<span>Free to use</span>
+			<span class="geo-content__footer-dot"></span>
+			<span>Live airline data</span>
+		</div>
+
+	</footer>
+
+	<!-- jQuery -->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+	</script>
+
+	<!-- Local JS (order matters: helpers first, then render, then main) -->
+	<script
+		src="/view/fare-estimator/fare_estimator_helper.js?v=__APP_VERSION__">
+	</script>
+	<script
+		src="/view/fare-estimator/fare_estimator_render.js?v=__APP_VERSION__">
+	</script>
+	<script
+		src="/view/fare-estimator/fare_estimator.js?v=__APP_VERSION__">
+	</script>
+</body>
+</html>

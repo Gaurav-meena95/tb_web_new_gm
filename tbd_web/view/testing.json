@@ -1,0 +1,32 @@
+
+    14630161183939: {
+      "messages": {
+        "1691930851": {
+          "isDeleted": false,
+          "isMedia": false,
+          "isSeen": false,
+          "isStarred": false,
+          "message": "Hi Ranjith",
+          "postId": 4545654,
+          "media": {
+            "mediaType": "image", // image | video  | audio | file
+            "mediaUrl": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+          },
+          "userMeta": {
+            "userId": 1,
+            "profileImage": "",
+            "name": "Ranjith",
+          },
+          "postMeta": { // meetup
+            "datetime": 1692078383,
+            "location": "",
+            "title": "",
+            "pricing": 1000,
+            "currency": "INR",
+          },
+          "senderId": "590160e75e66a9d4b9cb3679c446b1a71e192902d09e5ed925641747b7d037ea",
+          "timeStamp": 1691930851,
+          "toId": "31bd2c5ea355e0bd05e6ce752d127c23a569e8cc13fa64a58ff2e01f5c8b42e5",
+          "type": "share" // share | find | ask | exp | meetup | services | profile
+        }
+    }

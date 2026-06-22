@@ -1,0 +1,12 @@
+[
+	{
+		"relation": ["delegate_permission/common.handle_all_urls"],
+		"target": {
+			"namespace": "android_app",
+			"package_name": "com.beatravelbuddy.travelbuddy",
+			"sha256_cert_fingerprints": [
+				"C6:3B:BA:2A:44:F7:A8:B4:C8:54:9F:02:8A:D1:77:46:80:57:8F:B3:79:BC:44:21:CE:73:20:FD:1F:AC:30:81"
+			]
+		}
+	}
+]

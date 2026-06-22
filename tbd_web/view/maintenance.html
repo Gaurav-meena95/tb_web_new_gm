@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Under Maintenance - Travel Buddy</title>
+    <link rel="icon" href="/view/assets/img/app_logo_new.webp" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #333;
+            overflow-x: hidden;
+            position: relative;
+            margin: 0;
+        }
+
+        /* Video Background Container */
+        #maintenance-video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .maintenance-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .maintenance-video.hidden {
+            opacity: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .maintenance-video.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.4) 0%, rgba(118, 75, 162, 0.4) 50%, rgba(240, 147, 251, 0.4) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Animated Background Elements */
+        .background-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            opacity: 0.6;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .cloud:before,
+        .cloud:after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+        }
+
+        .cloud1 {
+            width: 100px;
+            height: 40px;
+            top: 20%;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .cloud1:before {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            left: 10px;
+        }
+
+        .cloud1:after {
+            width: 60px;
+            height: 60px;
+            top: -35px;
+            right: 10px;
+        }
+
+        .cloud2 {
+            width: 120px;
+            height: 50px;
+            top: 60%;
+            left: -120px;
+            animation-delay: 5s;
+        }
+
+        .cloud2:before {
+            width: 60px;
+            height: 60px;
+            top: -30px;
+            left: 15px;
+        }
+
+        .cloud2:after {
+            width: 70px;
+            height: 70px;
+            top: -40px;
+            right: 15px;
+        }
+
+        .cloud3 {
+            width: 80px;
+            height: 35px;
+            top: 40%;
+            left: -80px;
+            animation-delay: 10s;
+        }
+
+        .cloud3:before {
+            width: 40px;
+            height: 40px;
+            top: -20px;
+            left: 10px;
+        }
+
+        .cloud3:after {
+            width: 50px;
+            height: 50px;
+            top: -30px;
+            right: 10px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+            50% {
+                transform: translateX(calc(100vw + 200px)) translateY(-20px);
+            }
+            100% {
+                transform: translateX(calc(100vw + 200px)) translateY(0);
+            }
+        }
+
+        .airplane {
+            position: absolute;
+            font-size: 40px;
+            top: 30%;
+            left: -50px;
+            animation: fly 25s infinite linear;
+            opacity: 0.3;
+        }
+
+        @keyframes fly {
+            0% {
+                transform: translateX(0) translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateX(25vw) translateY(-30px) rotate(5deg);
+            }
+            50% {
+                transform: translateX(50vw) translateY(-10px) rotate(0deg);
+            }
+            75% {
+                transform: translateX(75vw) translateY(-25px) rotate(-5deg);
+            }
+            100% {
+                transform: translateX(calc(100vw + 100px)) translateY(0) rotate(0deg);
+            }
+        }
+
+        .maintenance-container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(30px) saturate(180%);
+            -webkit-backdrop-filter: blur(30px) saturate(180%);
+            border-radius: 30px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3), 
+                        0 0 0 1px rgba(255, 255, 255, 0.4),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            max-width: 700px;
+            width: 100%;
+            padding: 60px 50px;
+            text-align: center;
+            position: relative;
+            z-index: 3;
+            animation: fadeInUp 0.8s ease-out;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Desktop Landscape Layout */
+        @media (min-width: 1024px) {
+            .maintenance-container {
+                max-width: 1200px;
+                padding: 50px 60px;
+                text-align: left;
+            }
+
+            .maintenance-content-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1.2fr;
+                gap: 60px;
+                align-items: start;
+            }
+
+            .maintenance-left {
+                text-align: center;
+            }
+
+            .maintenance-right {
+                text-align: left;
+            }
+
+            .logo-container {
+                margin-bottom: 25px;
+            }
+
+            .travel-icon {
+                font-size: 70px;
+                margin-bottom: 15px;
+            }
+
+            h1 {
+                font-size: 38px;
+                margin-bottom: 15px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+                margin-bottom: 25px;
+            }
+
+            .message {
+                font-size: 15px;
+                margin: 20px 0;
+            }
+
+            .countdown-container {
+                margin: 25px 0;
+                padding: 30px 25px;
+            }
+
+            .navigation-section {
+                margin-top: 0;
+                padding-top: 0;
+                border-top: none;
+            }
+
+            .navigation-title {
+                text-align: left;
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+
+            .navigation-subtitle {
+                text-align: left;
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
+
+            .navigation-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                margin-bottom: 0;
+            }
+
+            .nav-card {
+                padding: 18px 15px;
+            }
+
+            .nav-card-icon {
+                font-size: 32px;
+            }
+
+            .nav-card-title {
+                font-size: 14px;
+            }
+
+            .nav-card-subtitle {
+                font-size: 11px;
+            }
+
+            .contact-info {
+                margin-top: 30px;
+                padding-top: 25px;
+                text-align: center;
+            }
+
+            .contact-info::before {
+                left: 50%;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .logo {
+            max-width: 140px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-10px) scale(1.02);
+            }
+        }
+
+        .travel-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: bounce 2s ease-in-out infinite;
+            filter: drop-shadow(0 5px 15px rgba(102, 126, 234, 0.3));
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-10px) rotate(-5deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(0deg);
+            }
+            75% {
+                transform: translateY(-10px) rotate(5deg);
+            }
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4), 0 0 30px rgba(102, 126, 234, 0.3);
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 40px;
+            line-height: 1.8;
+            font-weight: 400;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .countdown-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 35px 30px;
+            margin: 35px 0;
+            color: white;
+            display: none;
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .countdown-container.active {
+            display: block;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .countdown-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .countdown-display {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px 25px;
+            min-width: 90px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .countdown-value {
+            font-size: 36px;
+            font-weight: 700;
+            display: block;
+            line-height: 1;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .countdown-unit {
+            font-size: 11px;
+            text-transform: uppercase;
+            opacity: 0.9;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+            display: block;
+        }
+
+        .message {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.9;
+            margin: 35px 0;
+            font-weight: 400;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navigation-section {
+            margin-top: 45px;
+            padding-top: 35px;
+            border-top: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .navigation-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navigation-subtitle {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 25px;
+            text-align: center;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navigation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .nav-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.95);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-card:hover::before {
+            left: 100%;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(25px) saturate(200%);
+            -webkit-backdrop-filter: blur(25px) saturate(200%);
+        }
+
+        .nav-card-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-card:hover .nav-card-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .nav-card-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 5px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-card-subtitle {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.85);
+            opacity: 0.9;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info {
+            margin-top: 45px;
+            padding-top: 35px;
+            border-top: 2px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .contact-info::before {
+            content: '✉️';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 0 15px;
+            font-size: 24px;
+        }
+
+        .contact-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 15px;
+            margin-top: 10px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-email {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.95);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            word-break: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+            box-sizing: border-box;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-email:hover {
+            color: rgba(255, 255, 255, 1);
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .maintenance-complete {
+            display: none;
+            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 25px;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+        }
+
+        .maintenance-complete.active {
+            display: block;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        .decorative-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+            border-radius: 30px;
+        }
+
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .circle1 {
+            width: 200px;
+            height: 200px;
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .circle2 {
+            width: 150px;
+            height: 150px;
+            bottom: -75px;
+            left: -75px;
+            animation-delay: 2s;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.3;
+            }
+        }
+
+        /* Mobile Portrait Layout */
+        @media (max-width: 600px) {
+            .maintenance-container {
+                padding: 40px 30px;
+                border-radius: 25px;
+            }
+
+            .maintenance-content-wrapper {
+                display: block;
+            }
+
+            .maintenance-left,
+            .maintenance-right {
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .travel-icon {
+                font-size: 60px;
+            }
+
+            .countdown-display {
+                gap: 12px;
+            }
+
+            .countdown-item {
+                min-width: 75px;
+                padding: 15px 18px;
+            }
+
+            .countdown-value {
+                font-size: 28px;
+            }
+
+            .countdown-unit {
+                font-size: 10px;
+            }
+
+            .message {
+                font-size: 15px;
+            }
+
+            .navigation-section {
+                margin-top: 35px;
+                padding-top: 35px;
+                border-top: 2px solid rgba(255, 255, 255, 0.3);
+            }
+
+            .navigation-title {
+                text-align: center;
+            }
+
+            .navigation-subtitle {
+                text-align: center;
+            }
+
+            .navigation-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 12px;
+            }
+
+            .nav-card {
+                padding: 15px;
+            }
+
+            .nav-card-icon {
+                font-size: 28px;
+            }
+
+            .nav-card-title {
+                font-size: 13px;
+            }
+
+            .nav-card-subtitle {
+                font-size: 11px;
+            }
+
+            .contact-info {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .contact-email {
+                font-size: 16px;
+                padding: 8px 15px;
+                word-break: break-all;
+                display: block;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .contact-title {
+                font-size: 15px;
+            }
+        }
+
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background Container -->
+    <div id="maintenance-video-container"></div>
+    <div class="video-overlay"></div>
+    
+    <div class="background-elements">
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="cloud cloud3"></div>
+        <div class="airplane">✈️</div>
+    </div>
+
+        <div class="maintenance-container">
+        <div class="decorative-elements">
+            <div class="decorative-circle circle1"></div>
+            <div class="decorative-circle circle2"></div>
+        </div>
+
+        <div class="maintenance-content-wrapper">
+            <div class="maintenance-left">
+                <div class="logo-container">
+                    <img src="/view/assets/img/app_logo_new.webp" alt="Travel Buddy Logo" class="logo" onerror="this.style.display='none'">
+                </div>
+
+                <h1>We're Upgrading Your Journey!</h1>
+                <p class="subtitle" id="maintenance-message">
+                    We're performing scheduled maintenance to make your travel experience even better. We'll be back shortly!
+                </p>
+
+                <div class="countdown-container" id="countdown-container">
+                    <div class="countdown-label">Estimated Time Remaining</div>
+                    <div class="countdown-display">
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="hours">00</span>
+                            <span class="countdown-unit">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="minutes">00</span>
+                            <span class="countdown-unit">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="seconds">00</span>
+                            <span class="countdown-unit">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="maintenance-complete" id="maintenance-complete">
+                    ✨ Maintenance complete! We're ready for your next adventure!
+                </div>
+
+                <div class="message">
+                    Thank you for your patience. We're working hard to bring you an even better travel experience with new features and improvements.
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-title">Need immediate assistance?</div>
+                    <a href="mailto:support@beatravelbuddy.com" class="contact-email">support@beatravelbuddy.com</a>
+                </div>
+            </div>
+
+            <div class="maintenance-right">
+                <div class="navigation-section">
+                    <h2 class="navigation-title">Explore Our Pages</h2>
+                    <p class="navigation-subtitle">While we're upgrading, check out these available pages</p>
+                    <div class="navigation-grid" id="navigationGrid">
+                        <!-- Cards will be generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // Get maintenance data from server
+            let maintenanceEndTime = null;
+            let maintenanceMessage = "We're performing scheduled maintenance to make your travel experience even better. We'll be back shortly!";
+            let countdownInterval = null;
+
+            // Parse maintenance data from meta tag or fetch from API
+            function initMaintenanceData() {
+                // Try to get data from meta tag (set by server)
+                const metaEndTime = document.querySelector('meta[name="maintenance-end-time"]');
+                const metaMessage = document.querySelector('meta[name="maintenance-message"]');
+
+                if (metaEndTime) {
+                    maintenanceEndTime = new Date(metaEndTime.content);
+                }
+
+                if (metaMessage) {
+                    maintenanceMessage = metaMessage.content;
+                    document.getElementById('maintenance-message').textContent = maintenanceMessage;
+                }
+
+                // If end time is set, show countdown
+                if (maintenanceEndTime && !isNaN(maintenanceEndTime.getTime())) {
+                    const countdownContainer = document.getElementById('countdown-container');
+                    countdownContainer.classList.add('active');
+                    startCountdown();
+                }
+            }
+
+            // Start countdown timer
+            function startCountdown() {
+                if (countdownInterval) {
+                    clearInterval(countdownInterval);
+                }
+
+                countdownInterval = setInterval(updateCountdown, 1000);
+                updateCountdown(); // Initial update
+            }
+
+            // Update countdown display
+            function updateCountdown() {
+                if (!maintenanceEndTime) return;
+
+                const now = new Date().getTime();
+                const endTime = maintenanceEndTime.getTime();
+                const difference = endTime - now;
+
+                if (difference <= 0) {
+                    // Maintenance time has passed
+                    clearInterval(countdownInterval);
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    
+                    // Show completion message
+                    const completeMsg = document.getElementById('maintenance-complete');
+                    completeMsg.classList.add('active');
+                    return;
+                }
+
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            // Initialize on page load
+            initMaintenanceData();
+        })();
+
+        // Navigation Cards Setup
+        (function() {
+            'use strict';
+
+            // Define available static pages with friendly names, icons, and route paths
+            // Note: Luxe is placed first and renamed to "Travel Buddy Luxe" for display only
+            const staticPages = [
+                {
+                    route: '/luxe',
+                    title: 'Travel Buddy Luxe',
+                    subtitle: 'Premium Experience',
+                    icon: '✨'
+                },
+                {
+                    route: '/rajasthan/tour-packages',
+                    title: 'Rajasthan Tours',
+                    subtitle: 'Explore India',
+                    icon: '🏔️'
+                },
+                {
+                    route: '/kerela/tour-packages',
+                    title: 'Kerala Packages',
+                    subtitle: 'God\'s Own Country',
+                    icon: '🌴'
+                },
+                {
+                    route: '/kashmir/tour-packages',
+                    title: 'Kashmir Tours',
+                    subtitle: 'Paradise on Earth',
+                    icon: '🏔️'
+                },
+                {
+                    route: '/dubai/tour-packages',
+                    title: 'Dubai Packages',
+                    subtitle: 'Worldwide Destinations',
+                    icon: '🌍'
+                },
+                {
+                    route: '/bali/tour-packages',
+                    title: 'Bali Packages',
+                    subtitle: 'Tropical Paradise',
+                    icon: '🏝️'
+                },
+                {
+                    route: '/maldives/tour-packages',
+                    title: 'Maldives Tours',
+                    subtitle: 'Crystal Clear Waters',
+                    icon: '🏖️'
+                },
+                {
+                    route: '/srilanka/tour-packages',
+                    title: 'Sri Lanka Tours',
+                    subtitle: 'Pearl of the Indian Ocean',
+                    icon: '🐘'
+                },
+                {
+                    route: '/thailand/tour-packages',
+                    title: 'Thailand Packages',
+                    subtitle: 'Land of Smiles',
+                    icon: '🙏'
+                }
+            ];
+
+            function createNavigationCards() {
+                const grid = document.getElementById('navigationGrid');
+                if (!grid) return;
+
+                staticPages.forEach(page => {
+                    const card = document.createElement('a');
+                    card.href = page.route;
+                    card.className = 'nav-card';
+                    card.innerHTML = `
+                        <span class="nav-card-icon">${page.icon}</span>
+                        <div class="nav-card-title">${page.title}</div>
+                        <div class="nav-card-subtitle">${page.subtitle}</div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+
+            // Initialize navigation cards on page load
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', createNavigationCards);
+            } else {
+                createNavigationCards();
+            }
+        })();
+
+        // ===== VIDEO PLAYLIST SYSTEM =====
+        // Define your video playlist here - using the same videos as luxe page
+        const maintenanceVideoPlaylist = [
+            '/view/assets/img/scenes.mp4',
+            '/view/assets/img/northern-lights.mp4',
+            '/view/assets/img/merged-bg-video-new.mp4',
+            '/view/assets/img/northern-two.mp4',
+        ];
+        
+        // Video playlist manager
+        class MaintenanceVideoPlaylistManager {
+            constructor(playlist, containerId) {
+                this.playlist = playlist;
+                this.container = document.getElementById(containerId);
+                this.currentIndex = 0;
+                this.videos = [];
+                this.isInitialized = false;
+                
+                if (!this.container) {
+                    console.error(`Video container with ID "${containerId}" not found`);
+                    return;
+                }
+                
+                this.init();
+            }
+            
+            init() {
+                if (this.playlist.length === 0) {
+                    console.warn('Video playlist is empty');
+                    return;
+                }
+                
+                // Create video elements for each video in playlist
+                this.playlist.forEach((videoSrc, index) => {
+                    const video = document.createElement('video');
+                    video.className = 'maintenance-video';
+                    video.id = `maintenance-video-${index}`;
+                    video.muted = true;
+                    video.playsInline = true;
+                    video.loop = false;
+                    video.preload = 'auto';
+                    
+                    const source = document.createElement('source');
+                    source.src = videoSrc;
+                    source.type = 'video/mp4';
+                    video.appendChild(source);
+                    
+                    // Set initial state
+                    if (index === 0) {
+                        video.classList.add('active');
+                    } else {
+                        video.classList.add('hidden');
+                    }
+                    
+                    // Add event listeners
+                    video.addEventListener('ended', () => this.handleVideoEnd(index));
+                    video.addEventListener('loadeddata', () => {
+                        console.log(`Maintenance video ${index + 1} (${videoSrc}) loaded and ready`);
+                        if (index === 0 && !this.isInitialized) {
+                            this.startPlayback();
+                        }
+                    });
+                    
+                    // Preload next video when current video can play
+                    video.addEventListener('canplay', () => {
+                        const nextIndex = (index + 1) % this.playlist.length;
+                        this.preloadVideo(nextIndex);
+                    });
+                    
+                    this.container.appendChild(video);
+                    this.videos.push(video);
+                });
+                
+                // Preload all videos for smooth transitions
+                this.videos.forEach((video, index) => {
+                    if (index === 0) {
+                        // Load first video immediately
+                        video.load();
+                    } else {
+                        // Preload other videos after a short delay
+                        setTimeout(() => {
+                            video.load();
+                        }, index * 500);
+                    }
+                });
+            }
+            
+            preloadVideo(index) {
+                if (this.videos[index] && this.videos[index].readyState === 0) {
+                    this.videos[index].load();
+                }
+            }
+            
+            startPlayback() {
+                if (this.videos[0]) {
+                    this.videos[0].play().catch(e => {
+                        console.log('Video autoplay prevented:', e);
+                    });
+                    this.isInitialized = true;
+                }
+            }
+            
+            handleVideoEnd(endedIndex) {
+                // Calculate next video index (with infinite loop)
+                this.currentIndex = (endedIndex + 1) % this.playlist.length;
+                const nextIndex = this.currentIndex;
+                
+                console.log(`Maintenance video ${endedIndex + 1} ended, switching to video ${nextIndex + 1}`);
+                
+                // Hide current video
+                this.videos[endedIndex].classList.remove('active');
+                this.videos[endedIndex].classList.add('hidden');
+                this.videos[endedIndex].pause();
+                this.videos[endedIndex].currentTime = 0;
+                
+                // Show and play next video
+                this.videos[nextIndex].classList.remove('hidden');
+                this.videos[nextIndex].classList.add('active');
+                
+                // Ensure next video is loaded
+                if (this.videos[nextIndex].readyState === 0) {
+                    this.videos[nextIndex].load();
+                }
+                
+                this.videos[nextIndex].play().catch(e => {
+                    console.log(`Video ${nextIndex + 1} autoplay prevented:`, e);
+                });
+                
+                // Preload the video after next for smooth transition
+                const preloadIndex = (nextIndex + 1) % this.playlist.length;
+                this.preloadVideo(preloadIndex);
+            }
+        }
+        
+        // Initialize video playlist manager
+        let maintenanceVideoManager = null;
+        window.addEventListener('load', () => {
+            maintenanceVideoManager = new MaintenanceVideoPlaylistManager(maintenanceVideoPlaylist, 'maintenance-video-container');
+            
+            // Ensure page is scrolled to top on load
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        });
+
+        // Prevent scroll on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        });
+
+        // Also ensure scroll position on any scroll event (prevent unwanted scrolling)
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            // Only allow scrolling if user intentionally scrolls down
+            if (scrollTop < 0) {
+                window.scrollTo(0, 0);
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+</html>

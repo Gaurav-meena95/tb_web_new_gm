@@ -1,0 +1,2166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover the Wonders of Bali | Travel Buddy</title>
+    <meta name="description" content="Bali offers an enchanting blend of cultural heritage, natural beauty, and warm hospitality that captivates every traveler">
+    <meta name="keywords" content="Bali, Indonesia, travel, tourism, vacation, holiday, paradise">
+    <meta property="og:title" content="Discover the Wonders of Bali">
+    <meta property="og:description" content="Bali offers an enchanting blend of cultural heritage, natural beauty, and warm hospitality that captivates every traveler">
+    <meta property="og:image" content="https://beatravelbuddy.com/view/assets/img/leadGen/Bali/Kuta_Beach.jpg">
+    <link rel="icon" href="/view/assets/img/app_logo_new.webp" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="image_src" href="/view/assets/img/leadGen/Bali/Kuta_Beach.jpg">
+    <style>
+        :root {
+            --primary: #00A896;
+            --primary-light: #02C39A;
+            --primary-dark: #028090;
+            --secondary: #F9C80E;
+            --secondary-light: #F9E04C;
+            --secondary-dark: #F8A100;
+            --accent: #F94144;
+            --dark: #2D3142;
+            --light: #F7F9F9;
+            --gray: #BFC0C0;
+            --gray-light: #E5E5E5;
+            --gray-dark: #4F5D75;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+            --radius: 8px;
+            --radius-lg: 16px;
+            --radius-full: 9999px;
+            --header-height: 70px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--header-height);
+        }
+
+        body {
+            font-family: 'Montserrat';
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat';
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-dark);
+            color: var(--dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-lg {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0;
+            color: var(--primary-dark);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            padding-top: calc(var(--header-height) + 2rem);
+            padding-bottom: 3rem;
+            overflow: visible;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+        }
+
+        .hero-content {
+            max-width: 550px;
+            color: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            background-color: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 1s ease-in-out;
+            margin-bottom: 2rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-text {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Enquiry Form */
+        .enquiry-form-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-bottom: 2rem;
+        }
+
+        .enquiry-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--gray-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--gray-light);
+            border-radius: var(--radius);
+            font-family: 'Montserrat';
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 168, 150, 0.2);
+        }
+
+        .phone-input {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .country-code {
+            width: 40%;
+        }
+
+        .phone-number {
+            width: 60%;
+        }
+
+        .verification-code {
+            display: none;
+            margin-top: 1rem;
+        }
+
+        /* Form Steps */
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .form-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .form-progress::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--gray-light);
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .progress-step {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: white;
+            border: 2px solid var(--gray-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--gray-dark);
+            position: relative;
+            z-index: 2;
+        }
+
+        .progress-step.active {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .progress-step.completed {
+            background-color: var(--primary-light);
+            border-color: var(--primary-light);
+            color: white;
+        }
+
+        .form-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .form-category {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .form-category-title {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .form-grid .form-group {
+            margin-bottom: 0.75rem;
+        }
+
+        .form-grid-full {
+            grid-column: 1 / -1;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--primary-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--gray-dark);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 0;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-dark);
+        }
+
+        .card-text {
+            color: var(--gray-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Features */
+        .features {
+            background-color: var(--light);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-dark);
+        }
+
+        /* Destinations */
+        .destinations {
+            background-color: #f8f9fa;
+        }
+
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Itinerary */
+        .itinerary-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .itinerary-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary-light);
+            border-radius: var(--radius-full);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-content {
+            position: relative;
+            width: calc(50% - 30px);
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: auto;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary);
+            border: 4px solid white;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-day {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--light);
+        }
+
+        .testimonial-slider {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            flex: 0 0 100%;
+            padding: 1rem;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 3px solid var(--primary);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--gray-dark);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            gap: 0.5rem;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonial-dot.active {
+            background-color: var(--primary);
+            transform: scale(1.2);
+        }
+
+        /* Policies */
+        .policies {
+            background-color: #f8f9fa;
+        }
+
+        .policy-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .policy-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .policy-list {
+            list-style-position: inside;
+            margin-bottom: 1rem;
+        }
+
+        .policy-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-title {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-link {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-link a {
+            color: var(--gray);
+            transition: var(--transition);
+        }
+
+        .footer-link a:hover {
+            color: var(--primary-light);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Toast Notifications */
+        #toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .toast {
+            display: flex;
+            align-items: center;
+            background-color: var(--dark);
+            color: white;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.3s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .toast-icon {
+            margin-right: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .toast-success {
+            background-color: #28a745;
+        }
+
+        .toast-error {
+            background-color: #dc3545;
+        }
+
+        .toast-warning {
+            background-color: #ffc107;
+            color: var(--dark);
+        }
+
+        .toast-info {
+            background-color: var(--primary);
+        }
+
+        /* Fixed Enquiry Button */
+        .fixed-enquiry-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-lg);
+            z-index: 900;
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .fixed-enquiry-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Success Message */
+        .success-message {
+            text-align: center;
+            padding: 2rem;
+            display: none;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .success-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .success-text {
+            margin-bottom: 2rem;
+            color: var(--gray-dark);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.25rem;
+            }
+
+            .itinerary-timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item::before {
+                left: 30px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                height: calc(100vh - var(--header-height));
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+
+            .hero {
+                flex-direction: column;
+                height: auto;
+                padding: calc(var(--header-height) + 2rem) 0 3rem;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                margin-bottom: 3rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+
+            .enquiry-form-container {
+                max-width: 100%;
+            }
+
+            .feature-grid,
+            .destination-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .hero .container {
+                max-width: 1200px;
+                padding: 0 2rem;
+            }
+            
+            .hero-content {
+                margin-right: 2rem;
+            }
+        }
+
+        @media (max-width: 992px) and (min-width: 769px) {
+            .hero .container {
+                justify-content: center;
+            }
+            
+            .hero-content, .enquiry-form-container {
+                max-width: 45%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="/view/assets/img/app_logo_new.webp" alt="Travel Buddy Logo">
+                <h1>Travel Buddy</h1>
+            </a>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About Bali</a></li>
+                <li><a href="#features" class="nav-link">Why Choose Us</a></li>
+                <li><a href="#destinations" class="nav-link">Attractions</a></li>
+                <li><a href="#itinerary" class="nav-link">Itinerary</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg" id="heroBg" style="background-image: url('/view/assets/img/leadGen/Bali/Kuta_Beach.jpg');"></div>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; padding-top: 2rem;">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover the Magic of Bali</h1>
+                <h2 class="hero-subtitle">Where Paradise Meets Adventure</h2>
+                <p class="hero-text">Experience the enchanting blend of cultural heritage, breathtaking landscapes, and warm hospitality that makes Bali a dream destination for travelers worldwide.</p>
+                <a href="#enquiry" class="btn btn-secondary btn-lg">Book Your Experience</a>
+            </div>
+            
+            <div class="enquiry-form-container" id="enquiry">
+                <div class="enquiry-form">
+                    <h3 class="form-title">Start Your Bali Journey</h3>
+                    
+                    <!-- Success Message (shown after form submission) -->
+                    <div class="success-message" id="successMessage">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h4 class="success-title">Thank You!</h4>
+                        <p class="success-text">Your information has been submitted successfully. Our team will get in touch with you within the next 24 hours.</p>
+                        <a href="https://beatravelbuddy.com/community" class="btn btn-primary">Explore Our Community</a>
+                    </div>
+                    
+                    <form id="enquiryForm">
+                        <!-- Step 1: Basic Contact Information -->
+                        <div class="form-step active" id="step1">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <div class="phone-input">
+                                    <select id="countryCode" name="countryCode" class="form-control country-code" required>
+                                        <option value="+91">+91 India</option>
+                                    </select>
+                                    <input type="tel" id="phone" name="phone" class="form-control phone-number" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group verification-code" id="verificationCodeContainer">
+                                <label for="verificationCodeInput" class="form-label">Verification Code</label>
+                                <input type="text" id="verificationCodeInput" class="form-control" placeholder="Enter the OTP sent to your phone">
+                            </div>
+                            
+                            <button type="button" id="sendOtpButton" class="btn btn-primary btn-block">Request OTP</button>
+                            <button type="button" id="verifyOtpButton" class="btn btn-secondary btn-block" style="display: none;">Verify OTP</button>
+                        </div>
+                        
+                        <!-- Step 2: Travel Preferences -->
+                        <div class="form-step" id="step2">
+                            <div class="form-progress">
+                                <div class="progress-step completed">1</div>
+                                <div class="progress-step active">2</div>
+                            </div>
+                            
+                            <div class="form-category">
+                                <h4 class="form-category-title"><i class="fas fa-map-marker-alt"></i> Travel Details</h4>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="departureCity" class="form-label">Departure City</label>
+                                        <input type="text" id="departureCity" name="departureCity" class="form-control" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="preferredMonth" class="form-label">Travel Month</label>
+                                        <select id="preferredMonth" name="preferredMonth" class="form-control" required>
+                                            <option value="" disabled selected>Select month</option>
+                                            <option value="January">January</option>
+                                            <option value="February">February</option>
+                                            <option value="March">March</option>
+                                            <option value="April">April</option>
+                                            <option value="May">May</option>
+                                            <option value="June">June</option>
+                                            <option value="July">July</option>
+                                            <option value="August">August</option>
+                                            <option value="September">September</option>
+                                            <option value="October">October</option>
+                                            <option value="November">November</option>
+                                            <option value="December">December</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="totalTravelers" class="form-label">Total Travelers</label>
+                                        <input type="number" id="totalTravelers" name="totalTravelers" class="form-control" min="1" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="childrenBelow13" class="form-label">Child Below 13 Yrs</label>
+                                        <select id="childrenBelow13" name="childrenBelow13" class="form-control" required>
+                                            <option value="" disabled selected>Select option</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-category">
+                                <h4 class="form-category-title"><i class="fas fa-plane"></i> Flight & Accommodation</h4>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="flightsRequired" class="form-label">Flights Required</label>
+                                        <select id="flightsRequired" name="flightsRequired" class="form-control" required>
+                                            <option value="" disabled selected>Select option</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="flightPreference" class="form-label">Flight Preference</label>
+                                        <select id="flightPreference" name="flightPreference" class="form-control" required>
+                                            <option value="" disabled selected>Select preference</option>
+                                            <option value="Direct">Direct</option>
+                                            <option value="Layover">Layover</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="hotelPreference" class="form-label">Hotel Preference</label>
+                                        <select id="hotelPreference" name="hotelPreference" class="form-control" required>
+                                            <option value="" disabled selected>Select preference</option>
+                                            <option value="3 Star">3 Star</option>
+                                            <option value="4 Star">4 Star</option>
+                                            <option value="5 Star">5 Star</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group form-grid-full">
+                                        <label for="tripPurpose" class="form-label">Purpose of Trip</label>
+                                        <input type="text" id="tripPurpose" name="tripPurpose" class="form-control" placeholder="Family Vacation/Honeymoon/Anniversary etc." required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-category">
+                                <h4 class="form-category-title"><i class="fas fa-phone-alt"></i> Contact Preference</h4>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="contactPreference" class="form-label">How Shall We Contact You</label>
+                                        <select id="contactPreference" name="contactPreference" class="form-control" required>
+                                            <option value="" disabled selected>Select preference</option>
+                                            <option value="Call">Call</option>
+                                            <option value="Whatsapp Only">Whatsapp Only</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="callTime" class="form-label">Preferred Time to Call</label>
+                                        <select id="callTime" name="callTime" class="form-control" required>
+                                            <option value="" disabled selected>Select time</option>
+                                            <option value="10am to 1pm">10am to 1pm</option>
+                                            <option value="1pm to 5pm">1pm to 5pm</option>
+                                            <option value="5pm to 7pm">5pm to 7pm</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-navigation">
+                                <button type="button" id="prevStepButton" class="btn btn-outline">Back</button>
+                                <button type="button" id="submitFormButton" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Bali Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title fade-in">About Bali</h2>
+            <p class="section-subtitle fade-in">Discover the Island of the Gods</p>
+            
+            <div class="card fade-in">
+                <div class="card-body">
+                    <p>Nestled in the heart of Indonesia, Bali is a tropical haven that captivates travelers with its breathtaking landscapes, vibrant culture, and serene beaches. Whether you're seeking spiritual rejuvenation, adrenaline-pumping activities, or a romantic escape, Bali promises an unforgettable experience.</p>
+                    <p>From the golden sands of Kuta Beach to the lush rice terraces of Tegalalang, from ancient temples to modern beach clubs, Bali offers a perfect blend of tradition and contemporary luxury that appeals to all types of travelers.</p>
+                    <img src="/view/assets/img/leadGen/Bali/Mount_Batur.jpg" alt="Mount Batur in Bali" class="card-img" style="height: auto; margin-top: 1rem;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inclusions Section -->
+    <section id="inclusions" class="features" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title fade-in">Package Inclusions</h2>
+            <p class="section-subtitle fade-in">Everything you need for a perfect Bali getaway</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3 class="feature-title">Luxury Accommodation</h3>
+                    <p>6 nights in handpicked hotels with daily breakfast, strategically located for easy access to major attractions.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="feature-title">Delicious Meals</h3>
+                    <p>Daily breakfast and selected meals featuring both local Balinese cuisine and international options.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 class="feature-title">Private Transfers</h3>
+                    <p>Air-conditioned vehicles with professional drivers for all transfers and sightseeing tours.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="feature-title">Sightseeing Tours</h3>
+                    <p>Guided tours to all major attractions with experienced local guides who know Bali's hidden gems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title fade-in">Why Choose Travel Buddy</h2>
+            <p class="section-subtitle fade-in">We go above and beyond to ensure your Bali experience is unforgettable</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="feature-title">Reliable Partners</h3>
+                    <p>We partner with trusted and dependable suppliers to ensure seamless travel experiences from start to finish.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="feature-title">On-Time Guarantee</h3>
+                    <p>If your transportation is delayed for more than 30 minutes without a valid reason, we provide complimentary transfers and additional compensation.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Complimentary eSIM</h3>
+                    <p>Stay connected with our complimentary eSIM, offering easy access to mobile data throughout your Bali adventure.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">24/7 Assistance</h3>
+                    <p>Our dedicated support team is available around the clock, ensuring you always have someone to reach out to in case of emergency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="destinations">
+        <div class="container">
+            <h2 class="section-title fade-in">Bali Attractions</h2>
+            <p class="section-subtitle fade-in">Explore the best that Bali has to offer</p>
+            
+            <div class="destination-grid">
+                <div class="card fade-in">
+                    <img src="/view/assets/img/leadGen/Bali/Tanah_Lot_Temple.jpg" alt="Tanah Lot Temple" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Tanah Lot Temple</h3>
+                        <p class="card-text">Perched on a rock formation, this iconic temple offers stunning sunset views and is one of Bali's most photographed landmarks.</p>
+                    </div>
+                </div>
+                
+                <div class="card fade-in">
+                    <img src="/view/assets/img/leadGen/Bali/Tegalalang_Rice_Terraces.webp" alt="Tegalalang Rice Terraces" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Tegalalang Rice Terraces</h3>
+                        <p class="card-text">Marvel at these lush, green terraces and take a famous swing ride for breathtaking views of the surrounding landscape.</p>
+                    </div>
+                </div>
+                
+                <div class="card fade-in">
+                    <img src="/view/assets/img/leadGen/Bali/Uluwatu_Temple.jpg" alt="Uluwatu Temple" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Uluwatu Temple</h3>
+                        <p class="card-text">Famous for its clifftop location and traditional Kecak dance performances against the backdrop of stunning ocean views.</p>
+                    </div>
+                </div>
+                
+                <div class="card fade-in">
+                    <img src="/view/assets/img/leadGen/Bali/Nusa_Penida.jpg" alt="Nusa Penida" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Nusa Penida</h3>
+                        <p class="card-text">Explore Kelingking Beach, Crystal Bay, and Angel's Billabong on this stunning island just off Bali's southeast coast.</p>
+                    </div>
+                </div>
+                
+                <div class="card fade-in">
+                    <img src="/view/assets/img/leadGen/Bali/Ubud_Art_Market.jpg" alt="Ubud Art Market" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Ubud Art Market</h3>
+                        <p class="card-text">Shop for local crafts, textiles, and souvenirs in this vibrant market in the heart of Bali's cultural center.</p>
+                    </div>
+                </div>
+                
+                <div class="card fade-in">
+                    <img src="/view/assets/img/leadGen/Bali/Sekumpul_Waterfall.jpg" alt="Sekumpul Waterfall" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Sekumpul Waterfall</h3>
+                        <p class="card-text">Considered Bali's most beautiful waterfall, perfect for nature lovers and adventure seekers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerary Section -->
+    <section id="itinerary" class="itinerary">
+        <div class="container">
+            <h2 class="section-title fade-in">Your 7-Day Bali Itinerary</h2>
+            <p class="section-subtitle fade-in">A carefully crafted journey to experience the best of Bali</p>
+            
+            <div class="itinerary-timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3 class="timeline-day">Day 1: Arrival in Bali</h3>
+                        <p>Upon arrival at Bali International Airport Ngurah Rai (DPS), you'll be greeted by our representative who will assist with your transfer to the hotel. Enjoy the rest of the evening at your leisure, relaxing and settling in after your journey.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3 class="timeline-day">Day 2: Ubud & Kintamani Tour</h3>
+                        <p>Embark on a Kintamani tour showcasing the stunning northeast Bali, highlighted by breathtaking views of Mount Batur volcano and surrounding lakes. Visit traditional markets and the hidden beauty of Tukad Cepung Waterfall.</p>
+                        <img src="/view/assets/img/leadGen/Bali/Mount_Batur.jpg" alt="Mount Batur" style="width: 100%; margin-top: 1rem; border-radius: var(--radius);">
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3 class="timeline-day">Day 3: Tanah Lot & Uluwatu</h3>
+                        <p>Witness the mesmerizing Kecak dance at Uluwatu Temple, set against the temple's cliff-edge backdrop. Later, visit the iconic Tanah Lot Temple, perched on a rock in the ocean, offering picturesque sunset views.</p>
+                        <img src="/view/assets/img/leadGen/Bali/Tanah_Lot_Temple.jpg" alt="Tanah Lot Temple" style="width: 100%; margin-top: 1rem; border-radius: var(--radius);">
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3 class="timeline-day">Day 4: North Bali Exploration</h3>
+                        <p>Head to Bedugul Mountain resort, known for its stunning vistas of Lake Beratan and the iconic Ulun Danu Temple. Explore Mengwi and continue to Jatiluwih to admire its breathtaking UNESCO-recognized rice terraces.</p>
+                        <img src="/view/assets/img/leadGen/Bali/Tegalalang_Rice_Terraces.webp" alt="Rice Terraces" style="width: 100%; margin-top: 1rem; border-radius: var(--radius);">
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3 class="timeline-day">Day 5: Leisure Day</h3>
+                        <p>Today, you have the freedom to discover Bali at your own pace, whether exploring local towns, immersing yourself in its vibrant culture, or delving into its rich heritage. Optional activities can be arranged upon request.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3 class="timeline-day">Day 6: Leisure Day</h3>
+                        <p>Another day at your leisure to enjoy Bali's beaches, spas, shopping, or any activities you may have missed. Our team can recommend personalized experiences based on your interests.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3 class="timeline-day">Day 7: Departure</h3>
+                        <p>Check out from your hotel and prepare for departure. Our team will transfer you to Bali International Airport Ngurah Rai (DPS) for your return flight home. Safe travels!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title fade-in">What Our Travelers Say</h2>
+            <p class="section-subtitle fade-in">Hear from those who have experienced the magic of Bali with us</p>
+            
+            <div class="testimonial-slider fade-in">
+                <div class="testimonial-track" id="testimonialTrack">
+					<div class="testimonial-slide">
+                        <img src="/view/assets/img/Testimonials/0.jpeg" alt="Customer Testimonial" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+                    </div>
+                    <div class="testimonial-slide">
+                        <img src="/view/assets/img/Testimonials/1.jpg" alt="Customer Testimonial" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+                    </div>
+                    <div class="testimonial-slide">
+                        <img src="/view/assets/img/Testimonials/2.jpg" alt="Customer Testimonial" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+                    </div>
+                    <div class="testimonial-slide">
+                        <img src="/view/assets/img/Testimonials/4.jpg" alt="Customer Testimonial" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+                    </div>
+                    <div class="testimonial-slide">
+                        <img src="/view/assets/img/Testimonials/5.jpg" alt="Customer Testimonial" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+                    </div>
+					<div class="testimonial-slide">
+                        <img src="/view/assets/img/Testimonials/6.jpg" alt="Customer Testimonial" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+                    </div>
+					<div class="testimonial-slide">
+                        <img src="/view/assets/img/Testimonials/7.jpg" alt="Customer Testimonial" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+                    </div>
+					<div class="testimonial-slide">
+                        <img src="/view/assets/img/Testimonials/8.jpg" alt="Customer Testimonial" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+                    </div>
+					<div class="testimonial-slide">
+                        <img src="/view/assets/img/Testimonials/9.jpg" alt="Customer Testimonial" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: var(--radius);">
+                    </div>
+                </div>
+                
+                <div class="testimonial-nav" id="testimonialNav"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policies Section -->
+    <section id="policies" class="policies">
+        <div class="container">
+            <h2 class="section-title fade-in">Travel Policies</h2>
+            <p class="section-subtitle fade-in">Important information for your Bali journey</p>
+            
+            <div class="policy-card fade-in">
+                <h3 class="policy-title">Confirmation Policy</h3>
+                <ul class="policy-list">
+                    <li>You'll receive a confirmation voucher via email within 24 hours of successful booking.</li>
+                    <li>If preferred slots are unavailable, we'll arrange an alternate schedule of your preference and send a new confirmation voucher.</li>
+                    <li>You may choose to cancel your booking before confirmation for a full refund.</li>
+                </ul>
+            </div>
+            
+            <div class="policy-card fade-in">
+                <h3 class="policy-title">Cancellation Policy</h3>
+                <ul class="policy-list">
+                    <li>Cancellation 45+ days before travel: 10% of total tour cost as cancellation fee</li>
+                    <li>Cancellation 30-44 days before travel: 50% of total tour cost as cancellation fee</li>
+                    <li>Cancellation 21-29 days before travel: 70% of total tour cost as cancellation fee</li>
+                    <li>Cancellation less than 21 days before travel: 100% of total tour cost as cancellation fee</li>
+                </ul>
+            </div>
+            
+            <div class="policy-card fade-in">
+                <h3 class="policy-title">Refund Policy</h3>
+                <p>Any applicable refund amount will be processed within 2-3 business days of approval.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-title">Travel Buddy</h3>
+                    <p>Your trusted partner for unforgettable travel experiences in Bali and beyond. We specialize in creating personalized journeys that combine adventure, culture, and relaxation.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#home">Home</a></li>
+                        <li class="footer-link"><a href="#about">About Bali</a></li>
+                        <li class="footer-link"><a href="#features">Why Choose Us</a></li>
+                        <li class="footer-link"><a href="#destinations">Attractions</a></li>
+                        <li class="footer-link"><a href="#itinerary">Itinerary</a></li>
+                        <li class="footer-link"><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Contact Us</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><i class="fas fa-map-marker-alt"></i> Gurugram, Haryana, India</li>
+                        <li class="footer-link"><i class="fas fa-envelope"></i> info@beatravelbuddy.com</li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Travel Buddy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Enquiry Button -->
+    <a href="#enquiry" class="fixed-enquiry-btn" id="fixedEnquiryBtn">
+        <i class="fas fa-paper-plane"></i> Enquire Now
+    </a>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- reCAPTCHA Container -->
+    <div id="recaptcha-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+    
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '525874949911799');
+        fbq('track', 'PageView');
+        fbq('trackCustom', 'TrackCustomEventLeadGen');
+    </script>
+    <n  'PageView');
+        fbq('trackCustom', 'TrackCustomEventLeadGen');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=525874949911799&ev=PageView&noscript=1"/>
+    </noscript>
+    
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TXFKZVW');
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-827809061"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-827809061');
+    </script>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXFKZVW"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    
+    <!-- Main JavaScript -->
+    <script>
+        // Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBnKtZnePCqVLbr6jOUr4_Saf3iNmsZR-s",
+            authDomain: "travelbuddy-174317.firebaseapp.com",
+            databaseURL: "https://tbd-prod-174317-b933e.asia-southeast1.firebasedatabase.app/",
+            projectId: "travelbuddy-174317",
+            storageBucket: "travelbuddy-174317.appspot.com",
+            messagingSenderId: "9959459076",
+            appId: "1:9959459076:web:c4417f188991113b37a851",
+            measurementId: "G-PXBR867EGP"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var googleAnalytics = firebase.analytics();
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navigation toggle
+            var navToggle = document.getElementById('navToggle');
+            var navMenu = document.getElementById('navMenu');
+            
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                navToggle.innerHTML = navMenu.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Close menu when clicking on a nav link
+            var navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+            
+            // Header scroll effect
+            var header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Hero background rotation
+            var heroBg = document.getElementById('heroBg');
+            var heroImages = [
+                '/view/assets/img/leadGen/Bali/Kuta_Beach.jpg',
+                '/view/assets/img/leadGen/Bali/Tanah_Lot_Temple.jpg',
+                '/view/assets/img/leadGen/Bali/Uluwatu_Temple.jpg',
+                '/view/assets/img/leadGen/Bali/Besakih_Temple.jpg',
+                '/view/assets/img/leadGen/Bali/Tegalalang_Rice_Terraces.webp',
+                '/view/assets/img/leadGen/Bali/Mount_Batur.jpg',
+                '/view/assets/img/leadGen/Bali/Sekumpul_Waterfall.jpg',
+                '/view/assets/img/leadGen/Bali/Nusa_Penida.jpg',
+                '/view/assets/img/leadGen/Bali/Ubud_Art_Market.jpg'
+            ];
+            
+            let currentImageIndex = 0;
+            
+            function changeHeroBackground() {
+                var nextIndex = (currentImageIndex + 1) % heroImages.length;
+                
+                // Create a new image element to preload the next image
+                var nextImage = new Image();
+                nextImage.src = heroImages[nextIndex];
+                
+                // Once the next image is loaded, fade out the current one and fade in the new one
+                nextImage.onload = function() {
+                    heroBg.style.opacity = '0';
+                    
+                    setTimeout(() => {
+                        heroBg.style.backgroundImage = `url('${heroImages[nextIndex]}')`;
+                        heroBg.style.opacity = '1';
+                        currentImageIndex = nextIndex;
+                    }, 500);
+                };
+            }
+            
+            // Change background every 7 seconds
+            setInterval(changeHeroBackground, 7000);
+            
+            // Testimonial slider
+            var testimonialTrack = document.getElementById('testimonialTrack');
+            var testimonialNav = document.getElementById('testimonialNav');
+            var testimonialSlides = document.querySelectorAll('.testimonial-slide');
+            let currentSlide = 0;
+            
+            // Create navigation dots
+            testimonialSlides.forEach((_, index) => {
+                var dot = document.createElement('div');
+                dot.classList.add('testimonial-dot');
+                if (index === 0) dot.classList.add('active');
+                
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                });
+                
+                testimonialNav.appendChild(dot);
+            });
+            
+            function goToSlide(index) {
+                currentSlide = index;
+                testimonialTrack.style.transform = `translateX(-${index * 100}%)`;
+                
+                // Update active dot
+                document.querySelectorAll('.testimonial-dot').forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+            
+            // Auto-advance slides every 5 seconds
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % testimonialSlides.length;
+                goToSlide(currentSlide);
+            }, 5000);
+            
+            // Scroll animations
+            var fadeElements = document.querySelectorAll('.fade-in');
+            
+            function checkFade() {
+                fadeElements.forEach(element => {
+                    var elementTop = element.getBoundingClientRect().top;
+                    var elementBottom = element.getBoundingClientRect().bottom;
+                    var windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight * 0.9 && elementBottom > 0) {
+                        element.classList.add('active');
+                    }
+                });
+            }
+            
+            // Check on initial load
+            checkFade();
+            
+            // Check on scroll
+            window.addEventListener('scroll', checkFade);
+            
+            // Fixed enquiry button
+            var fixedEnquiryBtn = document.getElementById('fixedEnquiryBtn');
+            var enquirySection = document.getElementById('enquiry');
+            
+            function checkEnquiryVisibility() {
+                var enquiryRect = enquirySection.getBoundingClientRect();
+                
+                if (enquiryRect.top > window.innerHeight || enquiryRect.bottom < 0) {
+                    fixedEnquiryBtn.style.display = 'flex';
+                } else {
+                    fixedEnquiryBtn.style.display = 'none';
+                }
+            }
+            
+            window.addEventListener('scroll', checkEnquiryVisibility);
+            checkEnquiryVisibility();
+            
+            // Toast notification function
+            function showToast(message, type = 'info') {
+                var toastContainer = document.getElementById('toast-container');
+                var toast = document.createElement('div');
+                toast.className = `toast toast-${type}`;
+                
+                let icon = '';
+                switch (type) {
+                    case 'success': icon = '<i class="fas fa-check-circle toast-icon"></i>'; break;
+                    case 'error': icon = '<i class="fas fa-exclamation-circle toast-icon"></i>'; break;
+                    case 'warning': icon = '<i class="fas fa-exclamation-triangle toast-icon"></i>'; break;
+                    default: icon = '<i class="fas fa-info-circle toast-icon"></i>';
+                }
+                
+                toast.innerHTML = `${icon} ${message}`;
+                toastContainer.appendChild(toast);
+                
+                // Show the toast
+                setTimeout(() => {
+                    toast.classList.add('show');
+                }, 100);
+                
+                // Hide the toast after 4 seconds
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => {
+                        toastContainer.removeChild(toast);
+                    }, 300);
+                }, 4000);
+            }
+            
+            // Get UTM parameters function
+            function getUTMParameters(url) {
+                let urlParams = new URLSearchParams(new URL(url).search);
+                let utmParams = {};
+                
+                urlParams.forEach((value, key) => {
+                    if (key.startsWith('utm_') || key.startsWith('param')) {
+                        utmParams[key] = value;
+                    }
+                });
+                
+                return utmParams;
+            }
+            
+            // Facebook event tracking
+            function fbEvent(event, data) {
+                if (window.location.href.includes('localhost') || window.location.href.includes('dev.')) {
+                    return;
+                }
+                let trackEvent = '';
+                let params = {};
+
+                switch (event) {
+                    case 'sentOTP':
+                        trackEvent = 'Sent OTP via Dom LP';
+                        params = {
+                            content_name: 'Sent OTP via Dom LP',
+                            content_category: 'Sent OTP via Dom LP',
+                        };
+                        break;
+                    case 'verifyOTP':
+                        trackEvent = 'Verify OTP via Dom LP';
+                        params = {
+                            content_name: 'Verify OTP via Dom LP',
+                            content_category: 'Verify OTP via Dom LP',
+                        };
+                        break;  
+					case 'submitEnquiry':
+						trackEvent = 'Submit Enquiry via LP';
+						params = {
+							content_name: 'Submit Enquiry via Dom LP',
+							content_category: 'Submit Enquiry via Dom LP',
+						};
+						break;
+					default:
+						console.error('Unknown event type');
+						return;	  
+                }
+                // Call fbq with the prepared parameters
+                fbq('trackCustom', trackEvent, params);
+            }
+            
+            // Form steps navigation
+            const step1 = document.getElementById('step1');
+            const step2 = document.getElementById('step2');
+            const prevStepButton = document.getElementById('prevStepButton');
+            const successMessage = document.getElementById('successMessage');
+            
+            // Initialize reCAPTCHA verifier
+            var appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+                'size': 'invisible',
+                'callback': function(response) {
+                    // reCAPTCHA solved, allow signInWithPhoneNumber.
+                }
+            });
+            
+            let confirmationResult;
+            
+            // OTP Send Button Click Handler
+            var sendOtpButton = document.getElementById('sendOtpButton');
+            var verifyOtpButton = document.getElementById('verifyOtpButton');
+            var verificationCodeInput = document.getElementById('verificationCodeInput');
+            var verificationCodeContainer = document.getElementById('verificationCodeContainer');
+            
+            sendOtpButton.addEventListener('click', function() {
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var phone = document.getElementById('phone').value;
+                var countryCode = document.getElementById('countryCode').value;
+                
+                if (name && email && phone) {
+                    var fullPhoneNumber = `${countryCode}${phone}`;
+                    sendOTP(fullPhoneNumber, appVerifier);
+                    sendOtpButton.style.display = 'none';
+                    verifyOtpButton.style.display = 'block';
+                    verificationCodeContainer.style.display = 'block';
+                    showToast('OTP sent successfully!', 'success');
+                    fbEvent('sentOTP', { phone: fullPhoneNumber });
+                    
+                    // Send event to Google Analytics
+                    gtag('event', 'lead_generation-sendOtp', {
+                        'event_category': 'engagement',
+                        'event_label': 'OTP Sent',
+                        'value': fullPhoneNumber
+                    });
+                    
+                    // Send event to Google Tag Manager
+                    dataLayer.push({
+                        'event': 'lead_generation-sendOtp',
+                        'event_category': 'engagement',
+                        'event_label': 'OTP Sent',
+                        'value': fullPhoneNumber
+                    });
+                } else {
+                    showToast('Please fill in all the required fields.', 'error');
+                }
+            });
+            
+            function sendOTP(phoneNumber, appVerifier) {
+                firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+                    .then(function(result) {
+                        confirmationResult = result;
+                    }).catch(function(error) {
+                        console.error('Error during signInWithPhoneNumber', error);
+                        showToast('Error sending OTP. Please try again.', 'error');
+                        sendOtpButton.style.display = 'block';
+                        verifyOtpButton.style.display = 'none';
+                        verificationCodeContainer.style.display = 'none';
+                    });
+            }
+            
+            // OTP Verification Button Click Handler
+            verifyOtpButton.addEventListener('click', async function() {
+                var code = verificationCodeInput.value;
+                
+                if (!code) {
+                    showToast('Please enter the verification code.', 'warning');
+                    return;
+                }
+                
+                confirmationResult.confirm(code).then(async function(result) {
+                    var user = result.user;
+                    showToast('OTP verified successfully! Please complete your travel details.', 'success');
+                    fbEvent('verifyOTP');
+                    
+                    // Send event to Google Analytics
+                    gtag('event', 'lead_generation-verifyOtp', {
+                        'event_category': 'engagement',
+                        'event_label': 'OTP Verified',
+                        'value': 1
+                    });
+                    
+                    // Send event to Google Tag Manager
+                    dataLayer.push({
+                        'event': 'lead_generation-verifyOtp',
+                        'event_category': 'engagement',
+                        'event_label': 'OTP Verified',
+                        'value': 1
+                    });
+                    
+                    // Move to step 2 after OTP verification
+                    step1.classList.remove('active');
+                    step2.classList.add('active');
+					
+					let formData = {
+						date: new Date().toLocaleString(),
+						name: document.getElementById('name').value,
+						phone: document.getElementById('countryCode').value + document.getElementById('phone').value,
+						email: document.getElementById('email').value,
+						destination: 'Bali',
+					};
+					
+					// Update the User Details once the OTP is verified
+					let dataArray = [
+						[
+							formData.date,
+							formData.name,
+							formData.phone,
+							formData.email,
+							formData.destination,
+						]
+					];
+					
+					try {
+						let response = await fetch('/write-to-sheet', {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json'
+							},
+							body: JSON.stringify({
+								googleSheetId: '1FimuK7vR7WUAY5Qydep4_OOjSKaUVYFifEWfA0cUh6c',
+								data: dataArray,
+								sheetName: 'User Details (22May onwards)'
+							})
+						});
+						
+						var result = await response.json();
+						
+						if (result.success) {
+						} else {
+							throw new Error(result.message || 'Form submission failed');
+						}
+					} catch (error) {
+						console.error('Error submitting form:', error);
+						showToast('Error submitting form. Please try again.', 'error');
+					}
+                    
+                }).catch(function(error) {
+                    console.error('Error during confirmationResult.confirm', error);
+                    showToast('Invalid verification code. Please try again.', 'error');
+                });
+            });
+            
+            // Previous step button handler
+            prevStepButton.addEventListener('click', function() {
+                step2.classList.remove('active');
+                step1.classList.add('active');
+            });
+            
+            // Submit form button handler
+            document.getElementById('submitFormButton').addEventListener('click', async function() {
+                // Check if all required fields in step 2 are filled
+                const step2Fields = step2.querySelectorAll('[required]');
+                let allFieldsFilled = true;
+                
+                step2Fields.forEach(field => {
+                    if (!field.value) {
+                        allFieldsFilled = false;
+                        field.classList.add('error');
+                    } else {
+                        field.classList.remove('error');
+                    }
+                });
+                
+                if (!allFieldsFilled) {
+                    showToast('Please fill in all the required fields.', 'error');
+                    return;
+                }
+                
+                // Prepare form data for submission
+                var url = window.location.href;
+                var utmParams;
+                if (url.includes('?utm_')) {
+                    utmParams = getUTMParameters(url);
+                }
+                
+                let formData = {
+                    date: new Date().toLocaleString(),
+                    name: document.getElementById('name').value,
+                    phone: document.getElementById('countryCode').value + document.getElementById('phone').value,
+                    email: document.getElementById('email').value,
+                    destination: 'Bali',
+                    utmParams: utmParams,
+                    depCity: document.getElementById('departureCity').value,
+                    preferredMonth: document.getElementById('preferredMonth').value,
+                    totalTravelers: document.getElementById('totalTravelers').value,
+                    childrenBelow13: document.getElementById('childrenBelow13').value,
+                    flightsRequired: document.getElementById('flightsRequired').value,
+                    flightPreference: document.getElementById('flightPreference').value,
+                    hotelPreference: document.getElementById('hotelPreference').value,
+                    tripPurpose: document.getElementById('tripPurpose').value,
+                    contactPreference: document.getElementById('contactPreference').value,
+                    callTime: document.getElementById('callTime').value
+                };
+                
+                // Convert to 2D array format required by Google Sheets
+                let dataArray = [
+                    [
+                        formData.date,
+                        formData.name,
+                        formData.phone,
+                        formData.email,
+                        formData.destination,
+                        JSON.stringify(formData.utmParams),
+                        formData.depCity,
+                        formData.preferredMonth,
+                        formData.totalTravelers,
+                        formData.childrenBelow13,
+                        formData.flightsRequired,
+                        formData.flightPreference,
+                        formData.hotelPreference,
+                        formData.tripPurpose,
+                        formData.contactPreference,
+                        formData.callTime
+                    ]
+                ];
+                
+                try {
+                    let response = await fetch('/write-to-sheet', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            googleSheetId: '1FimuK7vR7WUAY5Qydep4_OOjSKaUVYFifEWfA0cUh6c',
+                            data: dataArray,
+                            sheetName: 'International'
+                        })
+                    });
+                    
+                    var result = await response.json();
+                    
+                    if (result.success) {
+                        // Prepare variables dynamically
+                        var userName = document.getElementById("name").value || "John Doe"; // Default name
+                        var placeName = 'Bali'; // Place name
+                        var phoneNo = document.getElementById("phone").value || "9625251633"; // Default phone number
+                        var countryCode = document.getElementById("countryCode").value || "+91"; // Default country code
+                        var templateName = "thank_you_note"; // Template name
+                        var documentUrl = "https://firebasestorage.googleapis.com/v0/b/travelbuddy-174317.appspot.com/o/Interakt%2FBe%20A%20Travel%20Buddy.mp4?alt=media&token=8603396f-87eb-4c1e-a7e6-c9bbc9ed698c"; // Document URL
+                        var fileName = "Bali_Itinerary.pdf"; // File name
+                        var bodyValues = JSON.stringify([userName, placeName]); // Body values (e.g., user name)
+                        
+                        // Construct the query string dynamically
+                        var queryString = `/send-itinerary-pdf?phoneNo=${encodeURIComponent(phoneNo)}&countryCode=${encodeURIComponent(countryCode)}&templateName=${encodeURIComponent(templateName)}&documentUrl=${encodeURIComponent(documentUrl)}&fileName=${encodeURIComponent(fileName)}&bodyValues=${encodeURIComponent(bodyValues)}`;
+                        
+                        // Make the API call
+                        fetch(queryString, {
+                            method: "GET",
+                        })
+                            .then((response) => response.json())
+                            .then((data) => console.log("Response:", data))
+                            .catch((error) => console.error("Error:", error));
+                        
+                        // Show success message
+                        document.getElementById('enquiryForm').style.display = 'none';
+                        successMessage.style.display = 'block';
+						
+						fbEvent('submitEnquiry');
+						
+						// Send event to Google Analytics
+						gtag('event', 'lead_generation-submitEnquiry', {
+							'event_category': 'engagement',
+							'event_label': 'Submit Enquiry',
+							'value': 1
+						});
+						
+						// Send event to Google Tag Manager
+						dataLayer.push({
+							'event': 'lead_generation-submitEnquiry',
+							'event_category': 'engagement',
+							'event_label': 'Submit Enquiry',
+							'value': 1
+						});
+                        
+                        // Redirect to community page after a short delay
+                        setTimeout(() => {
+                            //window.open('https://beatravelbuddy.com/community', '_self');
+                        }, 5000);
+                    } else {
+                        throw new Error(result.message || 'Form submission failed');
+                    }
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    showToast('Error submitting form. Please try again.', 'error');
+                }
+            });
+            
+            // Send page view event to Google Analytics
+            gtag('event', 'lead_generation', {
+                'event_category': 'engagement',
+                'event_label': 'Lead Generation Page View',
+                'value': 1
+            });
+            
+            // Send page view event to Google Tag Manager
+            dataLayer.push({
+                'event': 'lead_generation',
+                'event_category': 'engagement',
+                'event_label': 'Lead Generation Page View',
+                'value': 1
+            });
+        });
+    </script>
+</body>
+</html>

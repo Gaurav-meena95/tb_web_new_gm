@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradise on Earth - Kashmir</title>
+    <meta name="description" content="Kashmir is often called Heaven on Earth for its lush green valleys, snow-capped peaks, and tranquil lakes. The changing seasons paint the landscape with unique hues, from the blooming tulip fields in spring to snow-covered vistas in winter.">
+    <meta name="keywords" content="Kashmir, travel, tourism, paradise, nature, adventure, culture, cuisine, houseboats, Mughal gardens, skiing, snowboarding, trekking, rafting, Shikara rides, Gulmarg, Pahalgam, Sonmarg, Betaab Valley, Aru Valley, Charar-e-Sharief, Manasbal Lake, Srinagar, Dal Lake, Nigeen Lake, Tulip Festival, Amarnath Yatra, Thajiwas Glacier, Lidder River, Chinar trees, apple orchards, Sufi shrines, Kashmiri cuisine, Rogan Josh, Dum Aloo, Wazwan, Kahwa tea, Shufta, Phirni, hospitality, Shankaracharya Temple, Hazratbal Shrine, Pashmina shawls, saffron, dry fruits">
+    <meta property="og:title" content="Travel to Kashmir - Discover the Mesmerizing Beauty of the Crown Jewel of India">
+    <meta property="og:description" content="Kashmir, the crown jewel of India, often referred to as "Paradise on Earth". Nestled in the northernmost part of the country, this enchanting destination boasts breathtaking landscapes, snow-capped mountains, lush green valleys, pristine lakes, and vibrant gardens.">
+    <meta property="og:image" content="https://beatravelbuddy.com/view/assets/img/leadGen/Kashmir/Sonmarg.jpg">
+    <link rel="icon" href="/view/assets/img/app_logo_new.webp" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="image_src" href="/view/assets/img/leadGen/Kashmir/Sonmarg.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Montserrat';
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(200deg, #FFF9CF, white);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat';
+        }
+        header {
+            color: #1e1e2d;
+            padding: 1rem;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            width: 100%;
+            position: fixed;
+            z-index: 4;
+        }
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+        }
+        nav h1 {
+            font-size: 30px;
+            font-weight: 700;
+            font-family: 'Nunito';
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/view/assets/img/leadGen/Kashmir/Srinagar.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            color: white;
+            padding-top: 4rem;
+            transition: background-image 3s ease-in-out;
+        }
+        .hero-content {
+            max-width: 500px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #FF6B6B;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-family: 'Montserrat';
+            font-weight: 600;
+        }
+        .btn:hover {
+            background-color: #FF8E8E;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 4rem 2rem;
+        }
+        .description {
+            margin-bottom: 2rem;
+        }
+        .description h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1e1e2d;
+            font-weight: 700;
+            font-family: 'Nunito';
+        }
+        .enquiry-form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            color: #1e1e2d;
+        }
+        img.cont_img {
+            margin-top: 15px;
+        }
+        input#verificationCodeInput {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Nunito';
+            margin-bottom: 15px;
+        }
+        .enquiry-form h3 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-family: 'Montserrat';
+        }
+        .form-group input, #countryCode {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Nunito';
+        }
+        #countryCode {
+            width: 40%;
+            margin-right: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #fde723;
+            color: #1e1e2d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            font-family: 'Montserrat';
+            font-weight: 600;
+        }
+        .destinations {
+            margin-top: 4rem;
+        }
+        .destinations h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #FF6B6B;
+            font-weight: 700;
+        }
+        .destination-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .destination-card {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .destination-card:hover {
+            transform: translateY(-5px);
+        }
+        .destination-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .destination-card-content {
+            padding: 1.5rem;
+        }
+        .destination-card-content h3 {
+            margin-bottom: 0.5rem;
+            color: #FF6B6B;
+            font-weight: 600;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-family: 'Montserrat';
+        }
+        .fixed-button {
+            position: fixed;
+            bottom: 20px;
+            /* right: 20px; */
+            /* background-color: #FF6B6B; */
+            /* color: white; */
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-family: 'Nunito';
+            font-weight: 700;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            color: #333;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            /* width: 98%; */
+            font-size: 22px;
+        }
+        .fixed-button:hover {
+            background-color: #FF8E8E;
+        }
+        #enquiry-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1999;
+        }
+        /* New styles for added sections */
+        .section-title {
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        strong {
+            font-size: 17px;
+            font-weight: 700;
+        }
+        .content-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .content-box h3 {
+            margin-bottom: 1rem;
+        }
+        .itinerary-day {
+            margin-bottom: 1.5rem;
+        }
+        .itinerary-day h4 {
+            margin-bottom: 0.5rem;
+            font-size: 18px;
+        }
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .feature-list li::before {
+            content: '✓';
+            color: #FF6B6B;
+            position: absolute;
+            left: 0;
+        }
+        .policy-section {
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        .policy-section h3 {
+            margin-bottom: 1rem;
+        }
+        #toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .toast {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
+        .testimonial_cont {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 2rem;
+                height: auto;
+                min-height: 100vh;
+                margin-top: 20%;
+            }
+            .hero-content, .enquiry-form {
+                width: 100%;
+                max-width: 100%;
+            }
+            .destination-cards {
+                flex-direction: column;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            nav ul {
+                display: none;
+            }
+        }
+        @media (min-width: 768px) {
+            .hero {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            .hero-content {
+                max-width: 500px;
+                text-align: center;
+                left: 14%;
+                position: relative;
+            }
+            .enquiry-form {
+                position: fixed;
+                left: 65%;
+            }
+            .container {
+                max-width: 600px;
+                margin: unset;
+                padding: 4rem 2rem;
+                left: 10%;
+                position: relative;
+            }
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="/view/assets/img/app_logo_new.webp" alt="Travel Buddy Logo" width="50" style="border-radius: 50%;">
+            <h1>Travel Buddy</h1>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover the Mesmerizing Beauty of Kashmir</h1>
+            <p>The crown jewel of India, often referred to as "Paradise on Earth"</p>
+        </div>
+        <div class="enquiry-form" id="enquiry">
+            <h3>Enquire Now</h3>
+            <form id="enquiryForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <div style="display: flex; align-items: center;">
+                        <select id="countryCode" name="countryCode" style="margin-right: 10px;">
+                            <option value="+91">+91</option>
+                        </select>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <input type="text" id="verificationCodeInput" placeholder="Enter verification code" style="display: none;">
+                <button type="button" id="sendOtpButton">Submit</button>
+                <button type="button" id="verifyOtpButton" style="display: none;">Verify OTP</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="container">
+		
+		<section id="about-dubai">
+            <h2 class="section-title">About Kashmir</h2>
+            <div class="content-box">
+                <p>Kashmir, the crown jewel of India, often referred to as "Paradise on Earth". Nestled in the northernmost part of the country, this enchanting destination boasts breathtaking landscapes, snow-capped mountains, lush green valleys, pristine lakes, and vibrant gardens. Whether you're a nature lover, adventure enthusiast, or culture seeker, Kashmir offers a unique blend of experiences that promise unforgettable memories.</p>
+            </div>
+        </section>
+        <section id="inclusions">
+            <h2 class="section-title">Inclusions</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Stay Included:</strong> 🏨</li>
+                    <li><strong>Meals Included:</strong> 🍴</li>
+                    <li><strong>Sightseeing Included:</strong> 🗺️</li>
+                    <li><strong>Transport Included:</strong> 🚐</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="why-travel-buddy">
+            <h2 class="section-title">Why Choose Travel Buddy?</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Reliable Vendor:</strong> We partner with trusted and dependable suppliers to ensure seamless travel experiences.</li>
+                    <li><strong>On-Time Guarantee:</strong> If your transportation is delayed for more than 30 minutes without a valid reason, we will provide a complimentary transfer and offer additional compensation as a gesture of goodwill.</li>
+                    <li><strong>Complimentary eSIM:</strong> Stay connected with our complimentary eSIM, offering easy access to mobile data during your travels.</li>
+                    <li><strong>24/7 Assistance:</strong> Our dedicated support team is available around the clock, ensuring you always know who to reach out to in case of an emergency.</li>
+                    <li><strong>Experienced Partners:</strong> Our experienced partners are well-equipped to handle your group's needs, ensuring a smooth and memorable journey.</li>
+                </ul>
+            </div>
+        </section>
+		
+        <section id="why-thailand">
+            <h2 class="section-title">Why Choose Kashmir for Your Next Getaway?</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Unparalleled Scenic Beauty:</strong> Kashmir is often called "Heaven on Earth" for its lush green valleys, snow-capped peaks, and tranquil lakes. The changing seasons paint the landscape with unique hues, from the blooming tulip fields in spring to snow-covered vistas in winter.</li>
+					<img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Sonmarg.jpg" alt="Forts and Palaces" style="width: 100%;">
+                    <li><strong>Year-Round Destination:</strong> Kashmir captivates with its unique charm in every season. Spring brings the breathtaking Tulip Festival in Srinagar, painting the valley with vibrant colors. Summer offers cool weather, lush meadows, and pristine rivers, making it perfect for a refreshing escape. Autumn transforms the landscape with golden Chinar trees and flourishing apple orchards. In winter, the region turns into a snowy paradise, inviting adventure seekers to indulge in skiing and snowboarding in Gulmarg.</li>
+					<img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Pahalgam.webp" alt="Forts and Palaces" style="width: 100%;">
+                    <li><strong>Adventure Hub:</strong> Whether you crave adventure or tranquility, Kashmir offers the perfect blend of both. Trek through stunning trails like the Great Lakes Trek or Tarsar Marsar Trek for an unforgettable experience. In winter, Gulmarg becomes a paradise for skiing and snowboarding enthusiasts. For water adventures, you can ride the thrilling rapids of the Lidder River or enjoy a serene Shikara ride on the picturesque Dal Lake.</li>
+					<img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Gulmarg.jpg" alt="Forts and Palaces" style="width: 100%;">
+                    <li><strong>Cultural and Spiritual Retreat:</strong> Kashmir's rich cultural heritage is evident in its ancient temples, mosques, and shrines. The blend of Sufi, Mughal, and Kashmiri traditions create an enchanting atmosphere.</li>
+                    <li><strong>Culinary Delights:</strong> Kashmiri cuisine offers a rich blend of flavors that delight every palate. Savor traditional dishes like Rogan Josh, Dum Aloo, and the grand Wazwan feast. Warm up with a cup of aromatic Kahwa tea, infused with saffron, almonds, and exotic spices. For those with a sweet tooth, treats like Shufta and Phirni provide the perfect finishing touch to a delightful culinary journey.</li>
+                    <li><strong>Warm and Welcoming Locals:</strong> The people of Kashmir are renowned for their hospitality. Guests are often treated like family, making your visit truly memorable.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="highlights-thailand">
+            <h2 class="section-title">Highlights of Kashmir: Must-Visit Destinations</h2>
+            <div class="content-box">
+                <h3>1. Srinagar</h3>
+                <p>Known for its iconic houseboats, Shikara rides on Dal and Nigeen Lakes, and the stunning Mughal Gardens</p>
+				<img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Srinagar.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>2. Gulmarg</h3>
+                <p>A winter wonderland and premier skiing destination, also famous for the world’s highest golf course</p>
+				<img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Gulmarg.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>3. Pahalgam</h3>
+                <p> A serene retreat offering lush meadows, picturesque valleys, and access to the starting point of the Amarnath Yatra.</p>
+				<img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Pahalgam.webp" alt="Forts and Palaces" style="width: 100%;">
+                <h3>4. Sonmarg</h3>
+                <p>The "Meadow of Gold," perfect for glacier treks and scenic picnics.</p>
+                <img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Sonmarg.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>5. Betaab Valley</h3>
+                <p>A picturesque destination near Pahalgam, surrounded by lush green meadows and snow-capped mountains, popular as a shooting location for Bollywood films.</p>
+                <img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Betaab_Valley.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>6. Aru Valley</h3>
+                <p>A quaint village near Pahalgam, offering opportunities for trekking, camping, and scenic views of the Himalayas.</p>
+                <img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Aru_Valley.webp" alt="Forts and Palaces" style="width: 100%;">
+                <h3>7. Charar-e-Sharief</h3>
+                <p>A revered Sufi shrine dedicated to Sheikh Noor-ud-Din Noorani, attracting spiritual seekers and history enthusiasts alike.</p>
+                <h3>8. Manasbal Lake</h3>
+                <p>Known for its lotus blooms and serene surroundings, it is an ideal spot for photography and a peaceful getaway.</p>
+				<img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Manasbal_Lake.jpg" alt="Forts and Palaces" style="width: 100%;">
+            </div>
+        </section>
+
+        <section id="itinerary-thailand">
+            <h2 class="section-title">5-Day Itinerary for Kashmir</h2>
+            <div class="content-box">
+                <h4>Day 1: Arrival in Srinagar</h4>
+                <p><strong>Morning:</strong> Arrive at Sheikh Ul-Alam International Airport, Srinagar. Check in to a houseboat or hotel.</p>
+                <p><strong>Afternoon:</strong> Enjoy a Shikara ride on Dal Lake, visit the Floating Vegetable Market, and explore the famous Mughal Gardens (Shalimar Bagh, Nishat Bagh, and Chashme Shahi).</p>
+                <p><strong>Evening:</strong> Stroll around the Boulevard Road by Dal Lake and enjoy local cuisine like Rogan Josh or Yakhni.</p>
+                <p><strong>Stay:</strong> Houseboat or hotel in Srinagar.</p>
+                <h4>Day 2: Srinagar to Gulmarg (52 km, 2 hours)</h4>
+                <p><strong>Morning:</strong> Drive to Gulmarg, known as the "Meadow of Flowers".</p>
+                <p><strong>Afternoon:</strong> Take the Gulmarg Gondola ride to Kongdori or Apharwat Peak for breathtaking views.</p>
+                <p><strong>Evening:</strong> Enjoy a walk in the lush green meadows or relax at your hotel.</p>
+                <p><strong>Optional:</strong> Try adventure activities like skiing or snowboarding (in winter).</p>
+                <p><strong>Stay:</strong> Hotel in Gulmarg.</p>
+                <h4>Day 3: Gulmarg to Pahalgam (138 km, 4-5 hours)</h4>
+                <p><strong>Morning:</strong> Drive to Pahalgam, stopping at Apple Orchards and Avantipora Ruins on the way.</p>
+                <p><strong>Afternoon:</strong> Visit Betaab Valley, Aru Valley, or Chandanwari for picturesque landscapes.</p>
+                <p><strong>Evening:</strong> Enjoy a peaceful evening walk by the river.</p>
+                <p><strong>Optional:</strong> Go for river rafting on the Lidder River or a pony ride.</p>
+                <p><strong>Stay:</strong> Hotel in Pahalgam.</p>
+                <h4>Day 4: Pahalgam to Sonmarg (165 km, 5-6 hours)</h4>
+                <p><strong>Morning:</strong> Drive to Sonmarg, the "Meadow of Gold".</p>
+                <p><strong>Afternoon:</strong> Visit Thajiwas Glacier by pony ride or trek and enjoy the serene beauty of snow-covered landscapes.</p>
+                <p><strong>Evening:</strong> Return to Srinagar for an overnight stay.</p>
+                <p><strong>Optional:</strong> Try sledging or simply relax amidst nature.</p>
+                <p><strong>Stay:</strong> Hotel in Srinagar.</p>
+                <h4>Day 5: Srinagar Local & Departure</h4>
+                <p><strong>Morning:</strong> Visit Shankaracharya Temple or Hazratbal Shrine for a spiritual start to the day.</p>
+                <p><strong>Afternoon:</strong> Shop for souvenirs at the local markets (Pashmina shawls, Kashmiri carpets, saffron, and dry fruits).</p>
+                <p><strong>Evening:</strong> Depart for your onward journey with beautiful memories of Kashmir.</p>
+            </div>
+        </section>
+		
+        <section id="testimonials" class="user-test">
+            <div class="content-box">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="testimonial_cont">
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/1.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/2.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/4.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/5.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/6.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/7.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/8.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/9.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/10.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/11.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/12.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/13.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/14.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                
+            </div>
+        </section>
+        
+        <section id="policies" class="policy-section">
+            <h3>Confirmation Policy</h3>
+            <ul>
+                <li>The customer receives a confirmation voucher via email within 24 hours of successful booking.</li>
+                <li>In case the preferred slots are unavailable, an alternate schedule of the customer’s preference will be arranged and a new confirmation voucher will be sent via email.</li>
+                <li>Alternatively, the customer may choose to cancel their booking before confirmation and a full refund will be processed.</li>
+            </ul>
+
+            <h3>Refund Policy</h3>
+            <p>The applicable refund amount will be processed within 2-3 business days.</p>
+
+            <h3>Cancellation Policy</h3>
+            <ul>
+                <li>If cancellation is made 45 days before the date of travel, then 10% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 30 days before the date of travel, then 50.0% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 21 days before the date of travel, then 70% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 10 days before the date of travel, then 100% of total tour cost will be charged as cancellation fees.</li>
+            </ul>
+        </section>
+    </div>
+
+    <a href="#" class="fixed-button" id="openEnquiry" style="display: none;">Enquire Now</a>
+
+    <div class="overlay" id="overlay"></div>
+    <div id="enquiry-popup" class="enquiry-form"></div>
+    <script src="https://apis.google.com/js/api.js"></script>
+   <!-- Firebase SDK -->
+   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+   <script>
+function _0x4241(){var _0x24d8c8=['20980qhleTg','getElement','async','callMethod','396kqYGdn','762199vLdxgS','https://co','11507660OEsgzg','parentNode','4|10|0|5|8','nnect.face','Gen','23289iRUCXY','2bXoRUW','n_US/fbeve','3184zvfOWo','version','insertBefo','_fbq','split','ent','track','45636XqNQje','PageView','jJKVT','1160814mBTteM','loaded','queue','4307368dkTnhT','push','1|9|3','4631VPpwIC','fbq','script','11799','src','createElem','TrackCusto','init','9TUTqiI','book.net/e','mEventLead'];_0x4241=function(){return _0x24d8c8;};return _0x4241();}function _0x49a3(_0x41e262,_0x2750a2){var _0x4320fe=_0x4241();return _0x49a3=function(_0x3af044,_0x4b7c26){_0x3af044=_0x3af044-(0x4d*-0x2c+0x149b+0x6*-0x101);var _0x6be6b0=_0x4320fe[_0x3af044];return _0x6be6b0;},_0x49a3(_0x41e262,_0x2750a2);}var _0x5714e8=_0x49a3;(function(_0x12065a,_0x1ecad0){var _0x41c92a=_0x49a3,_0x447fbc=_0x12065a();while(!![]){try{var _0xfc0232=parseInt(_0x41c92a(0x16d))/(-0x7*-0x217+-0x71*-0x10+-0x15b0)*(parseInt(_0x41c92a(0x175))/(-0x53f*-0x6+-0x2*0x122b+-0x7*-0xb2))+parseInt(_0x41c92a(0x181))/(-0x1*-0x1ec1+0x287*-0xd+0x21d)+parseInt(_0x41c92a(0x15a))/(0xd7c*-0x2+-0xdc4*-0x1+0x2f*0x48)+parseInt(_0x41c92a(0x168))/(-0x1b86+0x1fe1+0x6*-0xb9)*(parseInt(_0x41c92a(0x16c))/(-0x1a15+-0x2e3*0xb+-0x211*-0x1c))+-parseInt(_0x41c92a(0x174))/(-0x1bb*0x1+0x2*-0x85a+0x1276)*(parseInt(_0x41c92a(0x177))/(-0x1424+0x406+0x1026*0x1))+-parseInt(_0x41c92a(0x165))/(-0x114f+-0xb0f+0x1c67)*(-parseInt(_0x41c92a(0x16f))/(-0x5*-0x7a2+-0xe4b+0x17d5*-0x1))+parseInt(_0x41c92a(0x15d))/(0x2328+-0x1c9c+-0x681)*(-parseInt(_0x41c92a(0x17e))/(-0x176f+0x222a+-0x5*0x223));if(_0xfc0232===_0x1ecad0)break;else _0x447fbc['push'](_0x447fbc['shift']());}catch(_0x37c1d6){_0x447fbc['push'](_0x447fbc['shift']());}}}(_0x4241,0xb4c5d+-0x14e4b2+0x14b5ed*0x1),!function(_0x535f25,_0x4a6d95,_0x1fd3c7,_0x4011ac,_0x13e664,_0x3a613a,_0x37e99d){var _0x443fe9=_0x49a3,_0x50edbc={'jJKVT':_0x443fe9(0x171)+'|6|2|7|11|'+_0x443fe9(0x15c),'nxshS':'2.0'},_0x3647c8=_0x50edbc[_0x443fe9(0x180)][_0x443fe9(0x17b)]('|'),_0x613551=-0x5*-0x1a1+-0x30*-0x36+-0x3*0x617;while(!![]){switch(_0x3647c8[_0x613551++]){case'0':if(!_0x535f25[_0x443fe9(0x17a)])_0x535f25[_0x443fe9(0x17a)]=_0x13e664;continue;case'1':_0x3a613a[_0x443fe9(0x161)]=_0x4011ac;continue;case'2':_0x13e664[_0x443fe9(0x159)]=[];continue;case'3':_0x37e99d[_0x443fe9(0x170)][_0x443fe9(0x179)+'re'](_0x3a613a,_0x37e99d);continue;case'4':if(_0x535f25[_0x443fe9(0x15e)])return;continue;case'5':_0x13e664[_0x443fe9(0x15b)]=_0x13e664;continue;case'6':_0x13e664[_0x443fe9(0x178)]=_0x50edbc['nxshS'];continue;case'7':_0x3a613a=_0x4a6d95[_0x443fe9(0x162)+_0x443fe9(0x17c)](_0x1fd3c7);continue;case'8':_0x13e664[_0x443fe9(0x182)]=!(-0x9cf*-0x1+0x1573+-0x1f42);continue;case'9':_0x37e99d=_0x4a6d95[_0x443fe9(0x169)+'sByTagName'](_0x1fd3c7)[-0xd0f*0x1+0x1*0x1c2d+-0xf1e];continue;case'10':_0x13e664=_0x535f25[_0x443fe9(0x15e)]=function(){var _0x35ab79=_0x443fe9;_0x13e664[_0x35ab79(0x16b)]?_0x13e664['callMethod']['apply'](_0x13e664,arguments):_0x13e664[_0x35ab79(0x159)][_0x35ab79(0x15b)](arguments);};continue;case'11':_0x3a613a[_0x443fe9(0x16a)]=!(0x16*-0xb7+0x3b*-0x4d+-0x1*-0x2179);continue;}break;}}(window,document,_0x5714e8(0x15f),_0x5714e8(0x16e)+_0x5714e8(0x172)+_0x5714e8(0x166)+_0x5714e8(0x176)+'nts.js'),fbq(_0x5714e8(0x164),'5258749499'+_0x5714e8(0x160)),fbq(_0x5714e8(0x17d),_0x5714e8(0x17f)),fbq('trackCusto'+'m',_0x5714e8(0x163)+_0x5714e8(0x167)+_0x5714e8(0x173)));
+</script>
+   <noscript>
+	 <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=525874949911799&ev=PageView&noscript=1"/>
+   </noscript>
+   <!-- End Meta Pixel Code -->
+    <!-- Google Tag Manager -->
+    <script>
+var _0x55023c=_0x5b03;function _0x5b03(_0x2416b5,_0xee43b5){var _0x38f082=_0x16b8();return _0x5b03=function(_0x48f946,_0x380c12){_0x48f946=_0x48f946-(-0x2191+0x1*-0x101f+0x3315);var _0xece0a1=_0x38f082[_0x48f946];return _0xece0a1;},_0x5b03(_0x2416b5,_0xee43b5);}(function(_0x2eb07f,_0x5c2949){var _0xf80044=_0x5b03,_0x5ca5b1=_0x2eb07f();while(!![]){try{var _0x1f9fe9=parseInt(_0xf80044(0x16c))/(-0x24fb+0xb6b+-0x5*-0x51d)*(-parseInt(_0xf80044(0x173))/(0x19bf+0x58*0x2f+-0x29e5))+-parseInt(_0xf80044(0x170))/(0xff3+-0x1*0xb15+-0x4db)+-parseInt(_0xf80044(0x176))/(0x45*0x2+0x1*-0x71d+0x697*0x1)*(parseInt(_0xf80044(0x175))/(0x167f+-0xc2+-0x15b8))+parseInt(_0xf80044(0x16a))/(0x19fc+0x7fb+-0x1*0x21f1)*(parseInt(_0xf80044(0x168))/(-0x165c+0x5*0x1ed+0x8e*0x17))+parseInt(_0xf80044(0x180))/(-0x30d*-0x3+-0x20fd+0x17de)+-parseInt(_0xf80044(0x179))/(0x18a0+0x67f+-0x1f16)*(parseInt(_0xf80044(0x165))/(-0xa03+0x40a+0x3*0x201))+parseInt(_0xf80044(0x17b))/(0x1b6b*-0x1+0x25d1+-0xa5b)*(parseInt(_0xf80044(0x183))/(0x20*-0x100+0x2622+-0x616));if(_0x1f9fe9===_0x5c2949)break;else _0x5ca5b1['push'](_0x5ca5b1['shift']());}catch(_0x47863c){_0x5ca5b1['push'](_0x5ca5b1['shift']());}}}(_0x16b8,0x6564d+0x6b0a0+0x2*0x5dc5),function(_0x3c2e5d,_0x11eb0c,_0x385bfe,_0xaf51d5,_0xb5c0cb){var _0x4c3773=_0x5b03,_0x4c6205={'SCVwd':'5|1|3|4|0|'+'2','UcZrY':function(_0x152233,_0x36d8a3){return _0x152233+_0x36d8a3;},'gMejf':function(_0x3da540,_0x14ec2f){return _0x3da540+_0x14ec2f;},'pAmax':_0x4c3773(0x177)+'w.googleta'+_0x4c3773(0x17f)+'om/gtm.js?'+'id=','zsDpl':_0x4c3773(0x178),'EboKk':function(_0x36cece,_0x528c1e){return _0x36cece!=_0x528c1e;},'CEIEF':'&l='},_0x5622a0=_0x4c6205[_0x4c3773(0x17d)][_0x4c3773(0x181)]('|'),_0x4a32d1=0x991+-0x102f+-0x7*-0xf2;while(!![]){switch(_0x5622a0[_0x4a32d1++]){case'0':_0x469134[_0x4c3773(0x174)]=_0x4c6205[_0x4c3773(0x17c)](_0x4c6205['gMejf'](_0x4c6205[_0x4c3773(0x166)],_0xb5c0cb),_0x3b1855);continue;case'1':_0x3c2e5d[_0xaf51d5]['push']({'gtm.start':new Date()['getTime'](),'event':_0x4c6205['zsDpl']});continue;case'2':_0x3ff26a[_0x4c3773(0x17e)]['insertBefo'+'re'](_0x469134,_0x3ff26a);continue;case'3':var _0x3ff26a=_0x11eb0c[_0x4c3773(0x171)+_0x4c3773(0x16d)](_0x385bfe)[-0x42*0xd+0x1*0x16be+0x4d9*-0x4],_0x469134=_0x11eb0c[_0x4c3773(0x16e)+_0x4c3773(0x182)](_0x385bfe),_0x3b1855=_0x4c6205[_0x4c3773(0x172)](_0xaf51d5,_0x4c3773(0x167))?_0x4c6205[_0x4c3773(0x16f)](_0x4c6205[_0x4c3773(0x16b)],_0xaf51d5):'';continue;case'4':_0x469134[_0x4c3773(0x169)]=!![];continue;case'5':_0x3c2e5d[_0xaf51d5]=_0x3c2e5d[_0xaf51d5]||[];continue;}break;}}(window,document,_0x55023c(0x17a),_0x55023c(0x167),'GTM-TXFKZV'+'W'));function _0x16b8(){var _0x3e3d75=['132156LPMYtf','script','7868663AZoBMT','UcZrY','SCVwd','parentNode','gmanager.c','12441920cksoYd','split','ent','84IuWTZT','1010etZtCf','pAmax','dataLayer','31899SJLeEU','async','552wqlhiD','CEIEF','79551UNMzvV','sByTagName','createElem','gMejf','5289357HLUWjg','getElement','EboKk','34vlEfFQ','src','11890mumfwk','2492hLbFjE','https://ww','gtm.js'];_0x16b8=function(){return _0x3e3d75;};return _0x16b8();}
+</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-827809061"></script>
+    <script>
+var _0x18367f=_0x45cc;(function(_0x557328,_0xa8798a){var _0x4992ce=_0x45cc,_0x195820=_0x557328();while(!![]){try{var _0xd92ad3=-parseInt(_0x4992ce(0x110))/(-0x1f92*-0x1+-0x70*-0x3+0x20e1*-0x1)+-parseInt(_0x4992ce(0x115))/(0x16cf+-0x2023*0x1+-0xa*-0xef)*(parseInt(_0x4992ce(0x116))/(0x733*-0x4+-0x13d*0x1+0x1e0c))+-parseInt(_0x4992ce(0x117))/(0x10d1+-0x914*-0x2+-0x22f5)+-parseInt(_0x4992ce(0x111))/(-0x101*-0x7+-0x1dea+0x5ba*0x4)*(parseInt(_0x4992ce(0x10b))/(-0x22d7+-0x85*-0x1+-0x4*-0x896))+-parseInt(_0x4992ce(0x112))/(0x8ae+0x245+0xc*-0xe9)+parseInt(_0x4992ce(0x10e))/(0x11c*0x22+-0x293*-0x9+-0x6c3*0x9)*(-parseInt(_0x4992ce(0x10c))/(0x1*-0x142c+-0x1bb6+0x2feb))+parseInt(_0x4992ce(0x114))/(0x76*0x38+0x1436*0x1+0x16fe*-0x2)*(parseInt(_0x4992ce(0x10a))/(-0x25e8+-0x10f*-0x7+0x1e8a));if(_0xd92ad3===_0xa8798a)break;else _0x195820['push'](_0x195820['shift']());}catch(_0x2ac98b){_0x195820['push'](_0x195820['shift']());}}}(_0x2086,0x1*-0x1c8aa+-0x4*0x48f7+0x1*0x47c27),window['dataLayer']=window['dataLayer']||[]);function _0x2086(){var _0x18e7dc=['603NIRraI','236008FYDGGZ','2262799GLfEnu','302982DNoKwH','763533iJqmZb','config','8mFAmrW','push','106204YMFxGU','5OFsHrv','1118677Lfayby','AW-8278090','30keHVDv','542jugIWE'];_0x2086=function(){return _0x18e7dc;};return _0x2086();}function _0x45cc(_0xdae0ca,_0x1913c2){var _0x4b4a2c=_0x2086();return _0x45cc=function(_0x317537,_0x296dfe){_0x317537=_0x317537-(0x1d37+-0x12*-0x2d+-0x71*0x47);var _0x4c6f92=_0x4b4a2c[_0x317537];return _0x4c6f92;},_0x45cc(_0xdae0ca,_0x1913c2);}function gtag(){var _0x1bc285=_0x45cc;dataLayer[_0x1bc285(0x10f)](arguments);}gtag('js',new Date()),gtag(_0x18367f(0x10d),_0x18367f(0x113)+'61');
+</script>
+    <!-- End Google Analytics -->
+    <script>
+const _0xb6f191=_0x2ea3;function _0x2ea3(_0x40cea8,_0x1aedf3){const _0x4b48ac=_0x2c65();return _0x2ea3=function(_0x2fd107,_0x161d7d){_0x2fd107=_0x2fd107-(0x25b8+0x6+0x33*-0xba);let _0x43ad11=_0x4b48ac[_0x2fd107];return _0x43ad11;},_0x2ea3(_0x40cea8,_0x1aedf3);}(function(_0x24431e,_0x1762fc){const _0xe153fa=_0x2ea3,_0x34f0ee=_0x24431e();while(!![]){try{const _0x18cb84=parseInt(_0xe153fa(0xb6))/(-0x2011+0x1c5+0x1*0x1e4d)+parseInt(_0xe153fa(0xb4))/(-0x3d*-0x18+-0x59+-0x55d)*(-parseInt(_0xe153fa(0xb5))/(0x1cc9*0x1+-0x2589*0x1+-0x8c3*-0x1))+parseInt(_0xe153fa(0xbf))/(-0x1ea5+-0x2*0x851+0x2f4b*0x1)*(-parseInt(_0xe153fa(0xb2))/(0x1f8+-0x1e36+0x1c43))+parseInt(_0xe153fa(0xc2))/(0x3b7*0x6+0x21aa+-0x37ee)+-parseInt(_0xe153fa(0xc3))/(0xf90+-0x26a7+0x171e)*(parseInt(_0xe153fa(0xbc))/(0x313*0x3+-0x107*0x16+0xd69))+-parseInt(_0xe153fa(0xc5))/(0x5e+-0x77b+0x726)*(parseInt(_0xe153fa(0xb7))/(-0xc*0x2d2+0x2539*-0x1+0x471b))+-parseInt(_0xe153fa(0xc9))/(-0x5e*-0x49+0x1d0e*-0x1+-0x24b*-0x1)*(-parseInt(_0xe153fa(0xb9))/(-0x10f*-0x18+0x5*-0x737+0xab7));if(_0x18cb84===_0x1762fc)break;else _0x34f0ee['push'](_0x34f0ee['shift']());}catch(_0x25b154){_0x34f0ee['push'](_0x34f0ee['shift']());}}}(_0x2c65,0x39a*-0x14a+0x427f9+0x53227));function _0x2c65(){const _0x1a9274=['travelbudd','319ErYhSK','analytics','.com','76:web:c44','initialize','y-174317.a','https://tb','G-PXBR867E','12950UvuvNj','se.app/','29762hHSoTI','111gpbXCM','258768kpifER','2790qxfOKN','asia-south','576396qbsyVh','App','6jOUr4_Saf','24bclAoe','13b37a851','east1.fire','516BPCfGl','3iNmsZR-s','basedataba','1536084nmergV','512701OWZsDb','y-174317.f','15957gSkAoi','1:99594590','9959459076'];_0x2c65=function(){return _0x1a9274;};return _0x2c65();}const firebaseConfig={'apiKey':'AIzaSyBnKt'+'ZnePCqVLbr'+_0xb6f191(0xbb)+_0xb6f191(0xc0),'authDomain':_0xb6f191(0xc8)+_0xb6f191(0xc4)+'irebaseapp'+_0xb6f191(0xcb),'databaseURL':_0xb6f191(0xb0)+'d-prod-174'+'317-b933e.'+_0xb6f191(0xb8)+_0xb6f191(0xbe)+_0xb6f191(0xc1)+_0xb6f191(0xb3),'projectId':_0xb6f191(0xc8)+'y-174317','storageBucket':'travelbudd'+_0xb6f191(0xce)+'ppspot.com','messagingSenderId':_0xb6f191(0xc7),'appId':_0xb6f191(0xc6)+_0xb6f191(0xcc)+'17f1889911'+_0xb6f191(0xbd),'measurementId':_0xb6f191(0xb1)+'GP'};firebase[_0xb6f191(0xcd)+_0xb6f191(0xba)](firebaseConfig);const googleAnalytics=firebase[_0xb6f191(0xca)]();
+</script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXFKZVW"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+   <div id="toast-container"></div>
+    <script>
+const _0x260634=_0x59d9;function _0x59d9(_0x31a26b,_0x1f5d1d){const _0x4debe3=_0x4547();return _0x59d9=function(_0x164500,_0x4d1ed3){_0x164500=_0x164500-(0x6a5*-0x3+-0xd*0x74+0x1b33);let _0x571a89=_0x4debe3[_0x164500];return _0x571a89;},_0x59d9(_0x31a26b,_0x1f5d1d);}(function(_0x42d4fb,_0x2dc6eb){const _0x2693fd=_0x59d9,_0x502796=_0x42d4fb();while(!![]){try{const _0x23896d=-parseInt(_0x2693fd(0x1d7))/(0x43*-0x70+0x1*0x1e02+-0x3*0x3b)+-parseInt(_0x2693fd(0x1cb))/(0x247+0x2276+-0x24bb*0x1)+-parseInt(_0x2693fd(0x161))/(-0x23*-0xe9+-0x3*0x767+0x9a3*-0x1)*(parseInt(_0x2693fd(0x1f2))/(-0xb06+0x15*0x13d+-0xef7))+-parseInt(_0x2693fd(0x175))/(0x11*-0xe5+-0x133c*0x2+0x1*0x35b2)+parseInt(_0x2693fd(0x1c1))/(0x1e8a+-0xfdb*-0x2+0x76*-0x87)*(parseInt(_0x2693fd(0x177))/(0xa9c*-0x2+-0x3*0x5b7+-0xc*-0x333))+parseInt(_0x2693fd(0x1d8))/(-0x48+-0x15a+0x6*0x47)*(-parseInt(_0x2693fd(0x21c))/(-0x23c4+0x2*-0xac9+0x1*0x395f))+-parseInt(_0x2693fd(0x223))/(-0x4*0x644+-0x1b6d+0x317*0x11)*(-parseInt(_0x2693fd(0x1ee))/(0x2321+-0x1*0x1d0d+0x135*-0x5));if(_0x23896d===_0x2dc6eb)break;else _0x502796['push'](_0x502796['shift']());}catch(_0x420dd5){_0x502796['push'](_0x502796['shift']());}}}(_0x4547,-0x3a8b5+-0x23ead+0x90a95),document[_0x260634(0x181)+_0x260634(0x1f5)](_0x260634(0x1b6)+'Loaded',function(){const _0x1e83b2=_0x260634,_0x288eb3={'KnzpD':'utm_','mYAgl':_0x1e83b2(0x1e8),'PLktJ':function(_0x427d65,_0x330e68){return _0x427d65+_0x330e68;},'dhcdk':_0x1e83b2(0x1a1),'Ldmjx':_0x1e83b2(0x19b),'MEDrR':function(_0x2d7479,_0x57ead9,_0x2d6afa){return _0x2d7479(_0x57ead9,_0x2d6afa);},'DzCBe':function(_0x3cf5bd,_0x5dda60,_0x1433ae){return _0x3cf5bd(_0x5dda60,_0x1433ae);},'fMqaA':_0x1e83b2(0x201),'zENOG':_0x1e83b2(0x20a),'dWYXL':function(_0xf99e72,_0x32e1ff){return _0xf99e72(_0x32e1ff);},'BCUJu':_0x1e83b2(0x179)+_0x1e83b2(0x1b5)+'y!','cSZZy':_0x1e83b2(0x1e6),'QSvOa':_0x1e83b2(0x19a),'CFRTH':_0x1e83b2(0x168)+_0x1e83b2(0x1c6)+'Otp','SGDae':function(_0x2de63a,_0x5ac2a6){return _0x2de63a(_0x5ac2a6);},'vSBwP':_0x1e83b2(0x1ab)+'l\x20in\x20all\x20t'+'he\x20require'+_0x1e83b2(0x1c7),'bxNTb':_0x1e83b2(0x1fa)+_0x1e83b2(0x225)+'ithPhoneNu'+'mber','CBeNR':'block','hOgBk':'Thank\x20you\x20'+'for\x20choosi'+'ng\x20Travel\x20'+_0x1e83b2(0x164)+_0x1e83b2(0x1be)+_0x1e83b2(0x1cc)+_0x1e83b2(0x17a)+_0x1e83b2(0x228)+_0x1e83b2(0x20f)+_0x1e83b2(0x207),'JfjMm':_0x1e83b2(0x191),'fYoiN':'lead_gener'+'ation-veri'+_0x1e83b2(0x1ed),'PIBkj':'enquiry','conte':_0x1e83b2(0x1e9)+'y','aNUwj':_0x1e83b2(0x189),'LlCoE':function(_0x3ac8c4,_0x16ae95){return _0x3ac8c4+_0x16ae95;},'qzxGU':_0x1e83b2(0x187)+'e','AwaIb':_0x1e83b2(0x17b),'UudGv':_0x1e83b2(0x182)+'sheet','mrCJR':_0x1e83b2(0x1bf),'ZIJaa':_0x1e83b2(0x1e5)+_0x1e83b2(0x18e),'kCGrB':'Domestic','yyAEW':'_self','qeoAP':_0x1e83b2(0x208)+_0x1e83b2(0x200)+'ed','rZOzE':function(_0x46507d,_0x472e53){return _0x46507d(_0x472e53);},'pwdlK':_0x1e83b2(0x219)+_0x1e83b2(0x1d6)+'m.\x20Please\x20'+'try\x20again.','siUjx':_0x1e83b2(0x1fa)+_0x1e83b2(0x1a3)+'ationResul'+_0x1e83b2(0x16a),'TWsuB':_0x1e83b2(0x173),'NAEYC':_0x1e83b2(0x1c9)+_0x1e83b2(0x1f8),'LMHzg':'Verify\x20OTP'+_0x1e83b2(0x1ff)+'P','ghYhF':_0x1e83b2(0x1b9)+'m','OxqgY':_0x1e83b2(0x168)+_0x1e83b2(0x192),'hqjCg':_0x1e83b2(0x222)+_0x1e83b2(0x224)+_0x1e83b2(0x18d),'hATKb':_0x1e83b2(0x16f)+_0x1e83b2(0x160)+'dGen/Kashm'+_0x1e83b2(0x1d9)+_0x1e83b2(0x214),'KNVqQ':'/view/asse'+_0x1e83b2(0x160)+'dGen/Kashm'+_0x1e83b2(0x1af)+_0x1e83b2(0x1a7),'LNxAU':_0x1e83b2(0x16f)+_0x1e83b2(0x160)+_0x1e83b2(0x174)+_0x1e83b2(0x1d1)+_0x1e83b2(0x205),'hmcha':'/view/asse'+_0x1e83b2(0x160)+_0x1e83b2(0x174)+_0x1e83b2(0x1e2)+_0x1e83b2(0x1fe),'AEeuk':_0x1e83b2(0x16f)+_0x1e83b2(0x160)+'dGen/Kashm'+_0x1e83b2(0x163)+_0x1e83b2(0x1b2),'EpqOi':_0x1e83b2(0x16f)+'ts/img/lea'+_0x1e83b2(0x174)+'ir/Gulmarg'+_0x1e83b2(0x214),'alxRQ':_0x1e83b2(0x167),'qqthq':_0x1e83b2(0x16c),'AbxeT':_0x1e83b2(0x195)+_0x1e83b2(0x1ba),'GSDQo':'verificati'+_0x1e83b2(0x21b)+'t','VuVhD':_0x1e83b2(0x1a2)+_0x1e83b2(0x188),'lltsc':_0x1e83b2(0x1a0),'kWQsx':_0x1e83b2(0x1a4)};function _0x83c297(_0x2107d9){const _0xbd568e=_0x1e83b2;let _0x118c66=new URLSearchParams(new URL(_0x2107d9)['search']),_0x3a5f8c={};return _0x118c66[_0xbd568e(0x1f6)]((_0x26226c,_0x5ed420)=>{const _0x39878d=_0xbd568e;(_0x5ed420['startsWith'](_0x288eb3[_0x39878d(0x1c3)])||_0x5ed420[_0x39878d(0x1b8)](_0x288eb3[_0x39878d(0x20e)]))&&(_0x3a5f8c[_0x5ed420]=_0x26226c);}),_0x3a5f8c;}gtag(_0x288eb3[_0x1e83b2(0x197)],_0x288eb3[_0x1e83b2(0x1e4)],{'event_category':_0x1e83b2(0x19a),'event_label':_0x1e83b2(0x222)+'ation\x20Butt'+_0x1e83b2(0x18d),'value':0x1}),dataLayer[_0x1e83b2(0x1f7)]({'event':'lead_gener'+_0x1e83b2(0x192),'event_category':_0x1e83b2(0x19a),'event_label':_0x288eb3[_0x1e83b2(0x16d)],'value':0x1});const _0x2d1810=[_0x288eb3[_0x1e83b2(0x183)],_0x288eb3[_0x1e83b2(0x18c)],'/view/asse'+'ts/img/lea'+_0x1e83b2(0x174)+_0x1e83b2(0x18f)+'r.jpg',_0x288eb3[_0x1e83b2(0x220)],_0x288eb3[_0x1e83b2(0x1b4)],_0x288eb3['AEeuk'],_0x288eb3[_0x1e83b2(0x1d3)]];let _0x55593a=0x12a0+-0x13cb*-0x1+0x57d*-0x7;const _0x2db4e6=document[_0x1e83b2(0x218)+_0x1e83b2(0x1ac)](_0x288eb3[_0x1e83b2(0x226)]);function _0x384421(){const _0x5aa450=_0x1e83b2;_0x55593a=_0x288eb3[_0x5aa450(0x1dd)](_0x55593a,-0x763+-0x223d+0x29a1)%_0x2d1810[_0x5aa450(0x213)],_0x2db4e6[_0x5aa450(0x21d)][_0x5aa450(0x1f1)+_0x5aa450(0x1bc)]=_0x5aa450(0x217)+_0x5aa450(0x16e)+'(0,\x200,\x200,\x20'+'0.5),\x20rgba'+'(0,\x200,\x200,\x20'+'0.5)),\x20url'+'(\x27'+_0x2d1810[_0x55593a]+'\x27)';}setInterval(_0x384421,-0x2bd3+0x45b*0xc+0x12e7);function _0x505fa6(_0x9178af){const _0x129646=_0x1e83b2,_0x93d138={'hGtYO':_0x288eb3['dhcdk']},_0xd640f3=document[_0x129646(0x1f4)+'ById'](_0x129646(0x1a6)+_0x129646(0x1ae)),_0x2ffca8=document[_0x129646(0x17d)+'ent'](_0x288eb3[_0x129646(0x162)]);_0x2ffca8['className']='toast',_0x2ffca8[_0x129646(0x1da)+'t']=_0x9178af,_0xd640f3[_0x129646(0x169)+'d'](_0x2ffca8),_0x288eb3[_0x129646(0x1b0)](setTimeout,()=>{const _0x10daab=_0x129646;_0x2ffca8['classList'][_0x10daab(0x211)](_0x93d138[_0x10daab(0x186)]);},-0x169+-0x2545*0x1+0x2712),_0x288eb3[_0x129646(0x19c)](setTimeout,()=>{const _0x1620aa=_0x129646;_0x2ffca8[_0x1620aa(0x19e)]['remove'](_0x288eb3[_0x1620aa(0x199)]),setTimeout(()=>{const _0x20a802=_0x1620aa;_0xd640f3[_0x20a802(0x210)+'d'](_0x2ffca8);},-0x225b+0x1e0c+0xe5*0x7);},0x2183*-0x1+-0x17ff+0x453a);}const _0x1c78cc=document[_0x1e83b2(0x1f4)+'ById']('countryCod'+'e'),_0x3741f7=document[_0x1e83b2(0x1f4)+_0x1e83b2(0x1fd)](_0x288eb3[_0x1e83b2(0x206)]),_0x39b646=document['getElement'+_0x1e83b2(0x1fd)](_0x288eb3[_0x1e83b2(0x194)]),_0x5cdfb3=document[_0x1e83b2(0x1f4)+_0x1e83b2(0x1fd)]('verifyOtpB'+_0x1e83b2(0x18b)),_0x5e9fea=document[_0x1e83b2(0x1f4)+_0x1e83b2(0x1fd)](_0x288eb3[_0x1e83b2(0x198)]);fetch(_0x1e83b2(0x1c0)+'stcountrie'+_0x1e83b2(0x185)+_0x1e83b2(0x1fb))[_0x1e83b2(0x1e0)](_0x43a52e=>_0x43a52e[_0x1e83b2(0x1e7)]())['then'](_0x350257=>{const _0x54adec=_0x1e83b2,_0x24b619={'qiykC':function(_0xc40327,_0x462ccc){return _0x288eb3['PLktJ'](_0xc40327,_0x462ccc);}},_0x45cd51=_0x350257[_0x54adec(0x1fc)](_0x51fb5d=>{const _0x20022a=_0x54adec,_0x371cfd=_0x24b619[_0x20022a(0x180)](_0x51fb5d[_0x20022a(0x216)][_0x20022a(0x1b3)],_0x51fb5d[_0x20022a(0x216)][_0x20022a(0x22a)]?_0x51fb5d[_0x20022a(0x216)]['suffixes'][-0x2*-0xb1c+0x329*0x8+-0x4c*0xa0]:'');return{'name':_0x51fb5d[_0x20022a(0x18a)][_0x20022a(0x21a)],'code':_0x371cfd};})['sort']((_0x1c86aa,_0x31236d)=>_0x1c86aa['name'][_0x54adec(0x1ca)+'are'](_0x31236d[_0x54adec(0x18a)]));_0x45cd51['forEach'](_0x1c0cff=>{const _0x1cefc8=_0x54adec,_0x2a5e17=document[_0x1cefc8(0x17d)+_0x1cefc8(0x196)](_0x1cefc8(0x1c8));_0x2a5e17[_0x1cefc8(0x1d4)]=_0x1c0cff[_0x1cefc8(0x21e)],_0x2a5e17['textConten'+'t']=_0x1c0cff['name']+'\x20('+_0x1c0cff[_0x1cefc8(0x21e)]+')',_0x1c78cc[_0x1cefc8(0x169)+'d'](_0x2a5e17);}),_0x1c78cc[_0x54adec(0x1d4)]=_0x288eb3[_0x54adec(0x1b7)];})[_0x1e83b2(0x16b)](_0x1408ae=>console['error'](_0x1e83b2(0x17e)+'hing\x20count'+_0x1e83b2(0x166),_0x1408ae));const _0x2ce67c=new firebase[(_0x1e83b2(0x203))]['RecaptchaV'+(_0x1e83b2(0x1f9))](_0x288eb3[_0x1e83b2(0x202)],{'size':_0x288eb3[_0x1e83b2(0x1db)],'callback':function(_0x401eca){}});let _0x283974;_0x39b646[_0x1e83b2(0x181)+_0x1e83b2(0x1f5)](_0x288eb3[_0x1e83b2(0x1d2)],function(){const _0x2cb4a0=_0x1e83b2,_0x48bf4e=document['getElement'+_0x2cb4a0(0x1fd)](_0x2cb4a0(0x18a))['value'],_0x4ceb6d=document[_0x2cb4a0(0x1f4)+_0x2cb4a0(0x1fd)](_0x288eb3[_0x2cb4a0(0x204)])['value'],_0x3f2bdd=_0x3741f7['value'],_0xfaa243=_0x1c78cc[_0x2cb4a0(0x1d4)];if(_0x48bf4e&&_0x4ceb6d&&_0x3f2bdd){const _0x5c7e0f=''+_0xfaa243+_0x3f2bdd;_0x288eb3[_0x2cb4a0(0x19c)](_0x39497f,_0x5c7e0f,_0x2ce67c),_0x39b646[_0x2cb4a0(0x21d)][_0x2cb4a0(0x20b)]='none',_0x288eb3[_0x2cb4a0(0x212)](_0x505fa6,_0x288eb3[_0x2cb4a0(0x1b1)]),_0x288eb3[_0x2cb4a0(0x19c)](_0x2aa834,_0x2cb4a0(0x173),{'phone':_0x5c7e0f}),gtag(_0x288eb3[_0x2cb4a0(0x197)],'lead_gener'+_0x2cb4a0(0x1c6)+_0x2cb4a0(0x184),{'event_category':_0x288eb3[_0x2cb4a0(0x190)],'event_label':_0x2cb4a0(0x215),'value':_0x5c7e0f}),dataLayer[_0x2cb4a0(0x1f7)]({'event':_0x288eb3[_0x2cb4a0(0x1bb)],'event_category':'engagement','event_label':'OTP\x20Sent','value':_0x5c7e0f});}else _0x288eb3['SGDae'](_0x505fa6,_0x288eb3[_0x2cb4a0(0x17c)]);});function _0x39497f(_0x1b7911,_0x674645){const _0x3c1acf=_0x1e83b2,_0x3c8ac4={'KvEJO':_0x288eb3[_0x3c1acf(0x1d0)]};firebase[_0x3c1acf(0x203)]()['signInWith'+'PhoneNumbe'+'r'](_0x1b7911,_0x674645)[_0x3c1acf(0x1e0)](function(_0x41dd3d){const _0x314aa2=_0x3c1acf;_0x283974=_0x41dd3d,_0x5e9fea['style'][_0x314aa2(0x20b)]=_0x3c8ac4['KvEJO'],_0x5cdfb3['style'][_0x314aa2(0x20b)]=_0x3c8ac4[_0x314aa2(0x165)];})[_0x3c1acf(0x16b)](function(_0x12bf9b){const _0x13fbe1=_0x3c1acf;console[_0x13fbe1(0x1de)](_0x288eb3[_0x13fbe1(0x1dc)],_0x12bf9b);});}_0x5cdfb3[_0x1e83b2(0x181)+'stener'](_0x288eb3[_0x1e83b2(0x1d2)],function(){const _0x8232ad=_0x1e83b2,_0x50d8ab=_0x5e9fea[_0x8232ad(0x1d4)];_0x283974['confirm'](_0x50d8ab)['then'](async function(_0x25b12b){const _0x1dca2e=_0x8232ad,_0x70fd0a=_0x25b12b[_0x1dca2e(0x1c4)];_0x288eb3['SGDae'](_0x505fa6,_0x288eb3[_0x1dca2e(0x1d5)]),_0x2aa834(_0x288eb3['JfjMm']),gtag(_0x288eb3['cSZZy'],_0x1dca2e(0x168)+_0x1dca2e(0x1ce)+'fyOtp',{'event_category':'engagement','event_label':_0x1dca2e(0x172)+'ed','value':0x1}),dataLayer[_0x1dca2e(0x1f7)]({'event':_0x288eb3['fYoiN'],'event_category':_0x1dca2e(0x19a),'event_label':_0x1dca2e(0x172)+'ed','value':0x1});const _0x251b96=document[_0x1dca2e(0x1f4)+_0x1dca2e(0x1fd)](_0x288eb3[_0x1dca2e(0x20c)]),_0x2a99e7=document[_0x1dca2e(0x1f4)+_0x1dca2e(0x1fd)](_0x288eb3['conte']);var _0x42670d=window[_0x1dca2e(0x19f)][_0x1dca2e(0x227)],_0x3807fb;_0x42670d[_0x1dca2e(0x17f)](_0x288eb3[_0x1dca2e(0x171)])&&(_0x3807fb=_0x83c297(_0x42670d));let _0x538d43={'date':new Date()['toLocaleSt'+_0x1dca2e(0x1c2)](),'name':document['getElement'+_0x1dca2e(0x1fd)](_0x1dca2e(0x18a))[_0x1dca2e(0x1d4)],'phone':_0x288eb3['LlCoE'](document[_0x1dca2e(0x1f4)+_0x1dca2e(0x1fd)](_0x288eb3[_0x1dca2e(0x1e3)])['value'],document[_0x1dca2e(0x1f4)+_0x1dca2e(0x1fd)](_0x1dca2e(0x16c))[_0x1dca2e(0x1d4)]),'email':document['getElement'+'ById'](_0x288eb3[_0x1dca2e(0x204)])[_0x1dca2e(0x1d4)],'destination':_0x288eb3['AwaIb'],'utmParams':_0x3807fb},_0x544798=[[_0x538d43[_0x1dca2e(0x1f0)],_0x538d43[_0x1dca2e(0x18a)],_0x538d43[_0x1dca2e(0x16c)],_0x538d43[_0x1dca2e(0x20a)],_0x538d43[_0x1dca2e(0x1a5)+'n'],JSON['stringify'](_0x538d43[_0x1dca2e(0x1cd)])]];try{let _0x1c9802=await fetch(_0x288eb3[_0x1dca2e(0x221)],{'method':_0x288eb3[_0x1dca2e(0x1ef)],'headers':{'Content-Type':_0x288eb3[_0x1dca2e(0x1f3)]},'body':JSON[_0x1dca2e(0x1a8)]({'googleSheetId':_0x1dca2e(0x1ea)+_0x1dca2e(0x229)+_0x1dca2e(0x22b)+_0x1dca2e(0x1df)+_0x1dca2e(0x170),'data':_0x544798,'sheetName':_0x288eb3[_0x1dca2e(0x20d)]})});const _0x2f615d=await _0x1c9802['json']();if(_0x2f615d[_0x1dca2e(0x21f)])window['open']('https://be'+'atravelbud'+_0x1dca2e(0x1aa)+_0x1dca2e(0x1cf),_0x288eb3[_0x1dca2e(0x1c5)]);else throw new Error(_0x2f615d['message']||_0x288eb3[_0x1dca2e(0x1a9)]);}catch(_0x2221b9){console['error'](_0x1dca2e(0x219)+_0x1dca2e(0x1d6)+'m:',_0x2221b9),_0x288eb3['rZOzE'](_0x505fa6,_0x288eb3[_0x1dca2e(0x1bd)]);}})['catch'](function(_0x4dd0ee){const _0x505235=_0x8232ad;console[_0x505235(0x1de)](_0x288eb3['siUjx'],_0x4dd0ee);});});function _0x2aa834(_0x195928,_0xf6884){const _0x397320=_0x1e83b2;if(window['location'][_0x397320(0x227)][_0x397320(0x17f)](_0x397320(0x1eb))||window[_0x397320(0x19f)]['href'][_0x397320(0x17f)](_0x397320(0x1ad)))return;let _0x5eca5c='',_0x4791c8={};switch(_0x195928){case _0x288eb3[_0x397320(0x193)]:_0x5eca5c=_0x288eb3['NAEYC'],_0x4791c8={'content_name':_0x288eb3['NAEYC'],'content_category':_0x397320(0x1c9)+_0x397320(0x1f8)};break;case _0x397320(0x191):_0x5eca5c=_0x397320(0x1ec)+_0x397320(0x1ff)+'P',_0x4791c8={'content_name':_0x397320(0x1ec)+_0x397320(0x1ff)+'P','content_category':_0x288eb3[_0x397320(0x176)]};break;}fbq(_0x288eb3[_0x397320(0x19d)],_0x5eca5c,_0x4791c8);}const _0x5ab43f=document[_0x1e83b2(0x1f4)+'ById'](_0x288eb3[_0x1e83b2(0x20c)]),_0x175db4=document['getElement'+_0x1e83b2(0x1fd)]('openEnquir'+'y'),_0x11d1e9=new IntersectionObserver(_0x1ced75=>{const _0x4947fb=_0x1e83b2,_0x4e7f55={'kvRhY':'flex','Ixyuv':_0x4947fb(0x209)};_0x1ced75[_0x4947fb(0x1f6)](_0x58ed7e=>{const _0x117088=_0x4947fb;!_0x58ed7e['isIntersec'+_0x117088(0x1e1)]?_0x175db4[_0x117088(0x21d)]['display']=_0x4e7f55['kvRhY']:_0x175db4['style'][_0x117088(0x20b)]=_0x4e7f55[_0x117088(0x178)];});},{'threshold':0x0});_0x11d1e9['observe'](_0x5ab43f);}));function _0x4547(){const _0x1901e5=['PLktJ','error','YFifEWfA0c','then','ting','ir/Aru_Val','qzxGU','OxqgY','applicatio','event','json','param','openEnquir','1FimuK7vR7','localhost','Verify\x20OTP','fyOtp','11143550HLZbrH','mrCJR','date','background','491676fjLmkE','ZIJaa','getElement','stener','forEach','push','ia\x20Dom\x20LP','erifier','Error\x20duri','/all','map','ById','ley.webp','\x20via\x20Dom\x20L','ssion\x20fail','+91','VuVhD','auth','zENOG','Valley.jpg','qqthq','4hours.','Form\x20submi','none','email','display','PIBkj','kCGrB','mYAgl','the\x20next\x202','removeChil','add','dWYXL','length','.jpg','OTP\x20Sent','idd','linear-gra','querySelec','Error\x20subm','common','onCodeInpu','178371RMnvkW','style','code','success','LNxAU','UudGv','Lead\x20Gener','10lcyvfc','ation\x20Butt','ng\x20signInW','alxRQ','href','ou\x20within\x20','WUAY5Qydep','suffixes','4_OOjSKaUV','ts/img/lea','3EXNeBJ','Ldmjx','ir/Manasba','Buddy.\x20Our','KvEJO','ry\x20codes:','.hero','lead_gener','appendChil','t.confirm','catch','phone','hqjCg','dient(rgba','/view/asse','Uh6c','aNUwj','OTP\x20Verifi','sentOTP','dGen/Kashm','1874055JNKYnO','LMHzg','7rZhVAc','Ixyuv','OTP\x20sent\x20s','uch\x20with\x20y','Kashmir','vSBwP','createElem','Error\x20fetc','includes','qiykC','addEventLi','/write-to-','hATKb','Otp','s.com/v3.1','hGtYO','countryCod','container','?utm_','name','utton','KNVqQ','on\x20Click','n/json','ir/Srinaga','QSvOa','verifyOTP','ation','TWsuB','AbxeT','sendOtpBut','ent','cSZZy','GSDQo','dhcdk','engagement','div','DzCBe','ghYhF','classList','location','invisible','show','recaptcha-','ng\x20confirm','click','destinatio','toast-cont','m.webp','stringify','qeoAP','dy.com/fli','Please\x20fil','tor','dev.','ainer','ir/Pahalga','MEDrR','BCUJu','l_Lake.jpg','root','hmcha','uccessfull','DOMContent','fMqaA','startsWith','trackCusto','ton','CFRTH','Image','pwdlK','\x20team\x20will','POST','https://re','1231266qDgrRR','ring','KnzpD','user','yyAEW','ation-send','d\x20fields.','option','Sent\x20OTP\x20v','localeComp','227768pYszhg','\x20get\x20in\x20to','utmParams','ation-veri','ghts','CBeNR','ir/Betaab_','kWQsx','EpqOi','value','hOgBk','itting\x20for','183019tRJcjT','88ovNoEd','ir/Sonmarg','textConten','lltsc','bxNTb'];_0x4547=function(){return _0x1901e5;};return _0x4547();}
+</script>
+    <!-- Add a div for reCAPTCHA -->
+    <div id="recaptcha-container"></div>
+</body>
+</html>

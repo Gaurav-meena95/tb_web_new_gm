@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradise on Earth - Kashmir</title>
+    <meta name="description" content="Kashmir is often called Heaven on Earth for its lush green valleys, snow-capped peaks, and tranquil lakes. The changing seasons paint the landscape with unique hues, from the blooming tulip fields in spring to snow-covered vistas in winter.">
+    <meta name="keywords" content="Kashmir, travel, tourism, paradise, nature, adventure, culture, cuisine, houseboats, Mughal gardens, skiing, snowboarding, trekking, rafting, Shikara rides, Gulmarg, Pahalgam, Sonmarg, Betaab Valley, Aru Valley, Charar-e-Sharief, Manasbal Lake, Srinagar, Dal Lake, Nigeen Lake, Tulip Festival, Amarnath Yatra, Thajiwas Glacier, Lidder River, Chinar trees, apple orchards, Sufi shrines, Kashmiri cuisine, Rogan Josh, Dum Aloo, Wazwan, Kahwa tea, Shufta, Phirni, hospitality, Shankaracharya Temple, Hazratbal Shrine, Pashmina shawls, saffron, dry fruits">
+    <meta property="og:title" content="Travel to Kashmir - Discover the Mesmerizing Beauty of the Crown Jewel of India">
+    <meta property="og:description" content="Kashmir, the crown jewel of India, often referred to as "Paradise on Earth". Nestled in the northernmost part of the country, this enchanting destination boasts breathtaking landscapes, snow-capped mountains, lush green valleys, pristine lakes, and vibrant gardens.">
+    <meta property="og:image" content="https://beatravelbuddy.com/view/assets/img/leadGen/Kashmir/Sonmarg.jpg">
+    <link rel="icon" href="/view/assets/img/app_logo_new.webp" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="image_src" href="/view/assets/img/leadGen/Kashmir/Sonmarg.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Montserrat';
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(200deg, #FFF9CF, white);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat';
+        }
+        header {
+            color: #1e1e2d;
+            padding: 1rem;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            width: 100%;
+            position: fixed;
+            z-index: 4;
+        }
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+        }
+        nav h1 {
+            font-size: 31px;
+            font-weight: 700;
+            font-family: 'Nunito';
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/view/assets/img/leadGen/Kashmir/Srinagar.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            color: white;
+            padding-top: 4rem;
+            transition: background-image 3s ease-in-out;
+        }
+        .hero-content {
+            max-width: 500px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #FF6B6B;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-family: 'Montserrat';
+            font-weight: 600;
+        }
+        .btn:hover {
+            background-color: #FF8E8E;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 4rem 2rem;
+        }
+        .description {
+            margin-bottom: 2rem;
+        }
+        .description h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1e1e2d;
+            font-weight: 700;
+            font-family: 'Nunito';
+        }
+        .enquiry-form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            color: #1e1e2d;
+        }
+        img.cont_img {
+            margin-top: 15px;
+        }
+        input#verificationCodeInput {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Nunito';
+            margin-bottom: 15px;
+        }
+        .enquiry-form h3 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-family: 'Montserrat';
+        }
+        .form-group input, #countryCode {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Nunito';
+        }
+        #countryCode {
+            width: 40%;
+            margin-right: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #fde723;
+            color: #1e1e2d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            font-family: 'Montserrat';
+            font-weight: 600;
+        }
+        .destinations {
+            margin-top: 4rem;
+        }
+        .destinations h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #FF6B6B;
+            font-weight: 700;
+        }
+        .destination-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .destination-card {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .destination-card:hover {
+            transform: translateY(-5px);
+        }
+        .destination-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .destination-card-content {
+            padding: 1.5rem;
+        }
+        .destination-card-content h3 {
+            margin-bottom: 0.5rem;
+            color: #FF6B6B;
+            font-weight: 600;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-family: 'Montserrat';
+        }
+        .fixed-button {
+            position: fixed;
+            bottom: 20px;
+            /* right: 20px; */
+            /* background-color: #FF6B6B; */
+            /* color: white; */
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-family: 'Nunito';
+            font-weight: 700;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            color: #333;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            /* width: 98%; */
+            font-size: 22px;
+        }
+        .fixed-button:hover {
+            background-color: #FF8E8E;
+        }
+        #enquiry-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1999;
+        }
+        /* New styles for added sections */
+        .section-title {
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        strong {
+            font-size: 17px;
+            font-weight: 700;
+        }
+        .content-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .content-box h3 {
+            margin-bottom: 1rem;
+        }
+        .itinerary-day {
+            margin-bottom: 1.5rem;
+        }
+        .itinerary-day h4 {
+            margin-bottom: 0.5rem;
+            font-size: 18px;
+        }
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .feature-list li::before {
+            content: '✓';
+            color: #FF6B6B;
+            position: absolute;
+            left: 0;
+        }
+        .policy-section {
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        .policy-section h3 {
+            margin-bottom: 1rem;
+        }
+        #toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .toast {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
+        .testimonial_cont {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 2rem;
+                height: auto;
+                min-height: 100vh;
+                margin-top: 20%;
+            }
+            .hero-content, .enquiry-form {
+                width: 100%;
+                max-width: 100%;
+            }
+            .destination-cards {
+                flex-direction: column;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            nav ul {
+                display: none;
+            }
+        }
+        @media (min-width: 768px) {
+            .hero {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            .hero-content {
+                max-width: 500px;
+                text-align: center;
+                left: 14%;
+                position: relative;
+            }
+            .enquiry-form {
+                position: fixed;
+                left: 65%;
+            }
+            .container {
+                max-width: 600px;
+                margin: unset;
+                padding: 4rem 2rem;
+                left: 10%;
+                position: relative;
+            }
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="/view/assets/img/app_logo_new.webp" alt="Travel Buddy Logo" width="50" style="border-radius: 50%;">
+            <h1>Travel Buddy</h1>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover the Mesmerizing Beauty of Kashmir</h1>
+            <p>The crown jewel of India, often referred to as "Paradise on Earth"</p>
+        </div>
+        <div class="enquiry-form" id="enquiry">
+            <h3>Enquire Now</h3>
+            <form id="enquiryForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <div style="display: flex; align-items: center;">
+                        <select id="countryCode" name="countryCode" style="margin-right: 10px;">
+                            <option value="+91">+91</option>
+                        </select>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <input type="text" id="verificationCodeInput" placeholder="Enter verification code" style="display: none;">
+                <button type="button" id="sendOtpButton">Submit</button>
+                <button type="button" id="verifyOtpButton" style="display: none;">Verify OTP</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="container">
+		
+		<section id="about-dubai">
+            <h2 class="section-title">About Kashmir</h2>
+            <div class="content-box">
+                <p>Kashmir, the crown jewel of India, often referred to as "Paradise on Earth". Nestled in the northernmost part of the country, this enchanting destination boasts breathtaking landscapes, snow-capped mountains, lush green valleys, pristine lakes, and vibrant gardens. Whether you're a nature lover, adventure enthusiast, or culture seeker, Kashmir offers a unique blend of experiences that promise unforgettable memories.</p>
+            </div>
+        </section>
+        <section id="inclusions">
+            <h2 class="section-title">Inclusions</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Stay Included:</strong> 🏨</li>
+                    <li><strong>Meals Included:</strong> 🍴</li>
+                    <li><strong>Sightseeing Included:</strong> 🗺️</li>
+                    <li><strong>Transport Included:</strong> 🚐</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="why-travel-buddy">
+            <h2 class="section-title">Why Choose Travel Buddy?</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Reliable Vendor:</strong> We partner with trusted and dependable suppliers to ensure seamless travel experiences.</li>
+                    <li><strong>On-Time Guarantee:</strong> If your transportation is delayed for more than 30 minutes without a valid reason, we will provide a complimentary transfer and offer additional compensation as a gesture of goodwill.</li>
+                    <li><strong>Complimentary eSIM:</strong> Stay connected with our complimentary eSIM, offering easy access to mobile data during your travels.</li>
+                    <li><strong>24/7 Assistance:</strong> Our dedicated support team is available around the clock, ensuring you always know who to reach out to in case of an emergency.</li>
+                    <li><strong>Experienced Partners:</strong> Our experienced partners are well-equipped to handle your group's needs, ensuring a smooth and memorable journey.</li>
+                </ul>
+            </div>
+        </section>
+		
+        <section id="why-thailand">
+            <h2 class="section-title">Why Choose Kashmir for Your Next Getaway?</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Unparalleled Scenic Beauty:</strong> Kashmir is often called "Heaven on Earth" for its lush green valleys, snow-capped peaks, and tranquil lakes. The changing seasons paint the landscape with unique hues, from the blooming tulip fields in spring to snow-covered vistas in winter.</li>
+					<img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Sonmarg.jpg" alt="Forts and Palaces" style="width: 100%;">
+                    <li><strong>Year-Round Destination:</strong> Kashmir captivates with its unique charm in every season. Spring brings the breathtaking Tulip Festival in Srinagar, painting the valley with vibrant colors. Summer offers cool weather, lush meadows, and pristine rivers, making it perfect for a refreshing escape. Autumn transforms the landscape with golden Chinar trees and flourishing apple orchards. In winter, the region turns into a snowy paradise, inviting adventure seekers to indulge in skiing and snowboarding in Gulmarg.</li>
+					<img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Pahalgam.webp" alt="Forts and Palaces" style="width: 100%;">
+                    <li><strong>Adventure Hub:</strong> Whether you crave adventure or tranquility, Kashmir offers the perfect blend of both. Trek through stunning trails like the Great Lakes Trek or Tarsar Marsar Trek for an unforgettable experience. In winter, Gulmarg becomes a paradise for skiing and snowboarding enthusiasts. For water adventures, you can ride the thrilling rapids of the Lidder River or enjoy a serene Shikara ride on the picturesque Dal Lake.</li>
+					<img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Gulmarg.jpg" alt="Forts and Palaces" style="width: 100%;">
+                    <li><strong>Cultural and Spiritual Retreat:</strong> Kashmir's rich cultural heritage is evident in its ancient temples, mosques, and shrines. The blend of Sufi, Mughal, and Kashmiri traditions create an enchanting atmosphere.</li>
+                    <li><strong>Culinary Delights:</strong> Kashmiri cuisine offers a rich blend of flavors that delight every palate. Savor traditional dishes like Rogan Josh, Dum Aloo, and the grand Wazwan feast. Warm up with a cup of aromatic Kahwa tea, infused with saffron, almonds, and exotic spices. For those with a sweet tooth, treats like Shufta and Phirni provide the perfect finishing touch to a delightful culinary journey.</li>
+                    <li><strong>Warm and Welcoming Locals:</strong> The people of Kashmir are renowned for their hospitality. Guests are often treated like family, making your visit truly memorable.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="highlights-thailand">
+            <h2 class="section-title">Highlights of Kashmir: Must-Visit Destinations</h2>
+            <div class="content-box">
+                <h3>1. Srinagar</h3>
+                <p>Known for its iconic houseboats, Shikara rides on Dal and Nigeen Lakes, and the stunning Mughal Gardens</p>
+				<img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Srinagar.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>2. Gulmarg</h3>
+                <p>A winter wonderland and premier skiing destination, also famous for the world’s highest golf course</p>
+				<img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Gulmarg.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>3. Pahalgam</h3>
+                <p> A serene retreat offering lush meadows, picturesque valleys, and access to the starting point of the Amarnath Yatra.</p>
+				<img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Pahalgam.webp" alt="Forts and Palaces" style="width: 100%;">
+                <h3>4. Sonmarg</h3>
+                <p>The "Meadow of Gold," perfect for glacier treks and scenic picnics.</p>
+                <img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Sonmarg.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>5. Betaab Valley</h3>
+                <p>A picturesque destination near Pahalgam, surrounded by lush green meadows and snow-capped mountains, popular as a shooting location for Bollywood films.</p>
+                <img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Betaab_Valley.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>6. Aru Valley</h3>
+                <p>A quaint village near Pahalgam, offering opportunities for trekking, camping, and scenic views of the Himalayas.</p>
+                <img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Aru_Valley.webp" alt="Forts and Palaces" style="width: 100%;">
+                <h3>7. Charar-e-Sharief</h3>
+                <p>A revered Sufi shrine dedicated to Sheikh Noor-ud-Din Noorani, attracting spiritual seekers and history enthusiasts alike.</p>
+                <h3>8. Manasbal Lake</h3>
+                <p>Known for its lotus blooms and serene surroundings, it is an ideal spot for photography and a peaceful getaway.</p>
+				<img class= "cont_img"src="/view/assets/img/leadGen/Kashmir/Manasbal_Lake.jpg" alt="Forts and Palaces" style="width: 100%;">
+            </div>
+        </section>
+
+        <section id="itinerary-thailand">
+            <h2 class="section-title">5-Day Itinerary for Kashmir</h2>
+            <div class="content-box">
+                <h4>Day 1: Arrival in Srinagar</h4>
+                <p><strong>Morning:</strong> Arrive at Sheikh Ul-Alam International Airport, Srinagar. Check in to a houseboat or hotel.</p>
+                <p><strong>Afternoon:</strong> Enjoy a Shikara ride on Dal Lake, visit the Floating Vegetable Market, and explore the famous Mughal Gardens (Shalimar Bagh, Nishat Bagh, and Chashme Shahi).</p>
+                <p><strong>Evening:</strong> Stroll around the Boulevard Road by Dal Lake and enjoy local cuisine like Rogan Josh or Yakhni.</p>
+                <p><strong>Stay:</strong> Houseboat or hotel in Srinagar.</p>
+                <h4>Day 2: Srinagar to Gulmarg (52 km, 2 hours)</h4>
+                <p><strong>Morning:</strong> Drive to Gulmarg, known as the "Meadow of Flowers".</p>
+                <p><strong>Afternoon:</strong> Take the Gulmarg Gondola ride to Kongdori or Apharwat Peak for breathtaking views.</p>
+                <p><strong>Evening:</strong> Enjoy a walk in the lush green meadows or relax at your hotel.</p>
+                <p><strong>Optional:</strong> Try adventure activities like skiing or snowboarding (in winter).</p>
+                <p><strong>Stay:</strong> Hotel in Gulmarg.</p>
+                <h4>Day 3: Gulmarg to Pahalgam (138 km, 4-5 hours)</h4>
+                <p><strong>Morning:</strong> Drive to Pahalgam, stopping at Apple Orchards and Avantipora Ruins on the way.</p>
+                <p><strong>Afternoon:</strong> Visit Betaab Valley, Aru Valley, or Chandanwari for picturesque landscapes.</p>
+                <p><strong>Evening:</strong> Enjoy a peaceful evening walk by the river.</p>
+                <p><strong>Optional:</strong> Go for river rafting on the Lidder River or a pony ride.</p>
+                <p><strong>Stay:</strong> Hotel in Pahalgam.</p>
+                <h4>Day 4: Pahalgam to Sonmarg (165 km, 5-6 hours)</h4>
+                <p><strong>Morning:</strong> Drive to Sonmarg, the "Meadow of Gold".</p>
+                <p><strong>Afternoon:</strong> Visit Thajiwas Glacier by pony ride or trek and enjoy the serene beauty of snow-covered landscapes.</p>
+                <p><strong>Evening:</strong> Return to Srinagar for an overnight stay.</p>
+                <p><strong>Optional:</strong> Try sledging or simply relax amidst nature.</p>
+                <p><strong>Stay:</strong> Hotel in Srinagar.</p>
+                <h4>Day 5: Srinagar Local & Departure</h4>
+                <p><strong>Morning:</strong> Visit Shankaracharya Temple or Hazratbal Shrine for a spiritual start to the day.</p>
+                <p><strong>Afternoon:</strong> Shop for souvenirs at the local markets (Pashmina shawls, Kashmiri carpets, saffron, and dry fruits).</p>
+                <p><strong>Evening:</strong> Depart for your onward journey with beautiful memories of Kashmir.</p>
+            </div>
+        </section>
+		
+        <section id="testimonials" class="user-test">
+            <div class="content-box">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="testimonial_cont">
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/1.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/2.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/4.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/5.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/6.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/7.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/8.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/9.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/10.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/11.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/12.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/13.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/14.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                
+            </div>
+        </section>
+        
+        <section id="policies" class="policy-section">
+            <h3>Confirmation Policy</h3>
+            <ul>
+                <li>The customer receives a confirmation voucher via email within 24 hours of successful booking.</li>
+                <li>In case the preferred slots are unavailable, an alternate schedule of the customer’s preference will be arranged and a new confirmation voucher will be sent via email.</li>
+                <li>Alternatively, the customer may choose to cancel their booking before confirmation and a full refund will be processed.</li>
+            </ul>
+
+            <h3>Refund Policy</h3>
+            <p>The applicable refund amount will be processed within 2-3 business days.</p>
+
+            <h3>Cancellation Policy</h3>
+            <ul>
+                <li>If cancellation is made 45 days before the date of travel, then 10% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 30 days before the date of travel, then 50.0% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 21 days before the date of travel, then 70% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 10 days before the date of travel, then 100% of total tour cost will be charged as cancellation fees.</li>
+            </ul>
+        </section>
+    </div>
+
+    <a href="#" class="fixed-button" id="openEnquiry" style="display: none;">Enquire Now</a>
+
+    <div class="overlay" id="overlay"></div>
+    <div id="enquiry-popup" class="enquiry-form"></div>
+    <script src="https://apis.google.com/js/api.js"></script>
+   <!-- Firebase SDK -->
+   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+   <script>
+	   !function(f,b,e,v,n,t,s)
+	   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+	   if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+	   n.queue=[];t=b.createElement(e);t.async=!0;
+	   t.src=v;s=b.getElementsByTagName(e)[0];
+	   s.parentNode.insertBefore(t,s)}(window, document,'script',
+	   'https://connect.facebook.net/en_US/fbevents.js');
+	   fbq('init', '525874949911799');
+	   fbq('track', 'PageView');
+	   fbq('trackCustom', 'TrackCustomEventLeadGen');
+   </script>
+   <noscript>
+	 <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=525874949911799&ev=PageView&noscript=1"/>
+   </noscript>
+   <!-- End Meta Pixel Code -->
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TXFKZVW'); // Replace GTM-XXXXXX with your GTM container ID
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-827809061"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-827809061');
+    </script>
+    <!-- End Google Analytics -->
+    <script>
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBnKtZnePCqVLbr6jOUr4_Saf3iNmsZR-s",
+            authDomain: "travelbuddy-174317.firebaseapp.com",
+            databaseURL: "https://tbd-prod-174317-b933e.asia-southeast1.firebasedatabase.app/",
+            projectId: "travelbuddy-174317",
+            storageBucket: "travelbuddy-174317.appspot.com",
+            messagingSenderId: "9959459076",
+            appId: "1:9959459076:web:c4417f188991113b37a851",
+            measurementId: "G-PXBR867EGP"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const googleAnalytics = firebase.analytics();
+    </script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXFKZVW"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+   <div id="toast-container"></div>
+    <script>
+        // Your existing JavaScript code here
+		document.addEventListener('DOMContentLoaded', function() {
+            function getUTMParameters(url) {
+                let urlParams = new URLSearchParams(new URL(url).search);
+                let utmParams = {};
+            
+                urlParams.forEach((value, key) => {
+                    if (key.startsWith('utm_') || key.startsWith('param')) {
+                        utmParams[key] = value;
+                    }
+                });
+            
+                return utmParams;
+            }
+        
+        // Send event to Google Analytics
+        gtag('event', 'lead_generation', {
+                'event_category': 'engagement',
+                'event_label': 'Lead Generation Button Click',
+                'value': 1
+            });
+
+        // Send event to Google Tag Manager
+        dataLayer.push({
+            'event': 'lead_generation',
+            'event_category': 'engagement',
+            'event_label': 'Lead Generation Button Click',
+            'value': 1
+        });
+        
+        // Array of background images
+        const heroImages = [
+                '/view/assets/img/leadGen/Kashmir/Sonmarg.jpg',
+                '/view/assets/img/leadGen/Kashmir/Pahalgam.webp',
+                '/view/assets/img/leadGen/Kashmir/Srinagar.jpg',
+                '/view/assets/img/leadGen/Kashmir/Betaab_Valley.jpg',
+                '/view/assets/img/leadGen/Kashmir/Aru_Valley.webp',
+                '/view/assets/img/leadGen/Kashmir/Manasbal_Lake.jpg',
+                '/view/assets/img/leadGen/Kashmir/Gulmarg.jpg',
+            ];
+
+        let currentImageIndex = 0;
+        const heroSection = document.querySelector('.hero');
+
+        // Function to change the background image
+        function changeHeroBackground() {
+            currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+            heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${heroImages[currentImageIndex]}')`;
+        }
+
+        // Change the background image every 20 seconds
+        setInterval(changeHeroBackground, 7000);
+        
+        // Add this JavaScript to show a toast message
+        function showToast(message) {
+            const toastContainer = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            toastContainer.appendChild(toast);
+
+            // Show the toast
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+
+            // Hide the toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    toastContainer.removeChild(toast);
+                }, 500);
+            }, 3000);
+        }
+        
+        const countryCodeSelect = document.getElementById('countryCode');
+        const phoneInput = document.getElementById('phone');
+        const sendOtpButton = document.getElementById('sendOtpButton');
+        const verifyOtpButton = document.getElementById('verifyOtpButton');
+        const verificationCodeInput = document.getElementById('verificationCodeInput');
+
+        // Fetch country codes from a free API
+        fetch('https://restcountries.com/v3.1/all')
+            .then(response => response.json())
+            .then(data => {
+                const countryCodes = data.map(country => {
+                    const callingCode = country.idd.root + (country.idd.suffixes ? country.idd.suffixes[0] : '');
+                    return {
+                        name: country.name.common,
+                        code: callingCode
+                    };
+                }).sort((a, b) => a.name.localeCompare(b.name));
+
+                // Populate the select element with country codes
+                countryCodes.forEach(country => {
+                    const option = document.createElement('option');
+                    option.value = country.code;
+                    option.textContent = `${country.name} (${country.code})`;
+                    countryCodeSelect.appendChild(option);
+                });
+
+                // Set default country code to +91
+                countryCodeSelect.value = '+91';
+            })
+            .catch(error => console.error('Error fetching country codes:', error));
+
+        // Initialize reCAPTCHA verifier
+        const appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+            'size': 'invisible',
+            'callback': function(response) {
+                // reCAPTCHA solved, allow signInWithPhoneNumber.
+            }
+        });
+
+        let confirmationResult;
+
+        sendOtpButton.addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = phoneInput.value;
+            const countryCode = countryCodeSelect.value;
+
+            if (name && email && phone) {
+                const fullPhoneNumber = `${countryCode}${phone}`;
+                sendOTP(fullPhoneNumber, appVerifier);
+                sendOtpButton.style.display = 'none';
+                showToast('OTP sent successfully!');
+                fbEvent('sentOTP', { phone: fullPhoneNumber });
+                // Send event to Google Analytics
+                gtag('event', 'lead_generation-sendOtp', {
+                    'event_category': 'engagement',
+                    'event_label': 'OTP Sent',
+                    'value': fullPhoneNumber,
+                    
+                });
+
+                // Send event to Google Tag Manager
+                dataLayer.push({
+                    'event': 'lead_generation-sendOtp',
+                    'event_category': 'engagement',
+                    'event_label': 'OTP Sent',
+                    'value': fullPhoneNumber,
+                });
+            } else {
+                showToast('Please fill in all the required fields.');
+            }
+        });
+
+        function sendOTP(phoneNumber, appVerifier) {
+            firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+                .then(function(result) {
+                    confirmationResult = result;
+                    verificationCodeInput.style.display = 'block';
+                    verifyOtpButton.style.display = 'block';
+                }).catch(function(error) {
+                    console.error('Error during signInWithPhoneNumber', error);
+                });
+        }
+
+        verifyOtpButton.addEventListener('click', function() {
+            const code = verificationCodeInput.value;
+            confirmationResult.confirm(code).then( async function(result) {
+                const user = result.user;
+                showToast('Thank you for choosing Travel Buddy. Our team will get in touch with you within the next 24hours.');
+                fbEvent('verifyOTP');
+                // Send event to Google Analytics
+                gtag('event', 'lead_generation-verifyOtp', {
+                    'event_category': 'engagement',
+                    'event_label': 'OTP Verified',
+                    'value': 1
+                });
+                
+                // Send event to Google Tag Manager
+                dataLayer.push({
+                    'event': 'lead_generation-verifyOtp',
+                    'event_category': 'engagement',
+                    'event_label': 'OTP Verified',
+                    'value': 1
+                });
+                
+                // Remove the enquiry form and open enquiry button
+                const enquiryForm = document.getElementById('enquiry');
+                const openEnquiryButton = document.getElementById('openEnquiry');
+                // Proceed with form submission or other actions
+                
+                // Check For UTM
+                var url = window.location.href;
+                var utmParams;
+                // Example usage
+                if (url.includes('?utm_')) {
+                    utmParams = getUTMParameters(url);
+                }
+                
+                let formData = {
+                    date: new Date().toLocaleString(),
+                    name: document.getElementById('name').value,
+                    phone: document.getElementById('countryCode').value + document.getElementById('phone').value,
+                    email: document.getElementById('email').value,
+                    destination: 'Kashmir',
+                    utmParams: utmParams
+                };
+
+                // Convert to 2D array format required by Google Sheets
+                let dataArray = [
+                    [
+                        formData.date,
+                        formData.name,
+                        formData.phone,
+                        formData.email,
+                        formData.destination,
+                        JSON.stringify(formData.utmParams)
+                    ]
+                ];
+
+                try {
+                    let response = await fetch('/write-to-sheet', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            googleSheetId: '1FimuK7vR7WUAY5Qydep4_OOjSKaUVYFifEWfA0cUh6c',
+                            data: dataArray,
+                            sheetName: 'Domestic'
+                        })
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        // Open beatravelbuddy.com/flights
+                        window.open('https://beatravelbuddy.com/flights', '_self');
+                        //console.log('Form submitted successfully');
+                    } else {
+                        throw new Error(result.message || 'Form submission failed');
+                    }
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    showToast('Error submitting form. Please try again.');
+                }
+                
+                
+            }).catch(function(error) {
+                console.error('Error during confirmationResult.confirm', error);
+            });
+            
+            // if (enquiryForm) enquiryForm.remove();
+            // if (openEnquiryButton) openEnquiryButton.remove();
+        });
+        
+        function fbEvent(event, data) {
+	        if (window.location.href.includes('localhost') || window.location.href.includes('dev.')) {
+                return;
+            }
+            let trackEvent = '';
+            let params = {};
+
+            switch (event) {
+                case 'sentOTP':
+                    trackEvent = 'Sent OTP via Dom LP';
+                    params = {
+                        content_name: 'Sent OTP via Dom LP',
+                        content_category: 'Sent OTP via Dom LP',
+                    };
+                    break;
+                case 'verifyOTP':
+                    trackEvent = 'Verify OTP via Dom LP';
+                    params = {
+                        content_name: 'Verify OTP via Dom LP',
+                        content_category: 'Verify OTP via Dom LP',
+                    };
+                    break;    
+            }
+            // Call fbq with the prepared parameters
+            fbq('trackCustom', trackEvent, params);
+        }
+        
+        const enquiryForm = document.getElementById('enquiry');
+        const fixedEnquiryButton = document.getElementById('openEnquiry');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    fixedEnquiryButton.style.display = 'flex';
+                } else {
+                    fixedEnquiryButton.style.display = 'none';
+                }
+            });
+        }, { threshold: 0 });
+
+        observer.observe(enquiryForm);
+        
+        
+        
+    });
+    </script>
+    <!-- Add a div for reCAPTCHA -->
+    <div id="recaptcha-container"></div>
+</body>
+</html>

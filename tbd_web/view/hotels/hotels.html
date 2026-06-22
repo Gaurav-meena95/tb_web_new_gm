@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, interactive-widget=resizes-content">
+		<title>%%SEO_TITLE%%</title>
+
+		<!-- SEO / GEO Meta -->
+		<meta name="description" content="%%META_DESCRIPTION%%" />
+		<meta name="keywords" content="hotel booking India, book hotels online, cheap hotels, luxury hotels, Travel Buddy, hotel deals, travel booking" />
+
+		<link rel="icon" type="image/webp" href="https://beatravelbuddy.com/view/assets/img/app_logo_new.webp" />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content="%%OG_TITLE%%" />
+		<meta property="og:description" content="%%OG_DESCRIPTION%%" />
+		<meta property="og:image" content="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&h=630&fit=crop" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="%%OG_URL%%" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="%%OG_TITLE%%" />
+		<meta name="twitter:description" content="%%OG_DESCRIPTION%%" />
+		<meta name="twitter:image" content="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&h=630&fit=crop" />
+		
+		<!-- Apple / iOS -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		
+		<!-- WhatsApp -->
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:type" content="image/jpeg" />
+		<meta property="og:image:alt" content="Hotel Booking Preview" />
+		<meta property="og:image:secure_url" content="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&h=630&fit=crop" />
+
+		<!-- Structured Data -->
+		<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "TravelAgency",
+		  "name": "Travel Buddy",
+		  "url": "https://beatravelbuddy.com",
+		  "logo": "https://beatravelbuddy.com/view/assets/img/app_logo_new.webp",
+		  "description": "Travel Buddy helps you discover and book hotels with flexible dates, transparent pricing, and instant confirmations.",
+		  "sameAs": []
+		}
+		</script>
+
+		<!-- FAQ Structured Data -->
+		<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "FAQPage",
+		  "mainEntity": [
+		    {
+		      "@type": "Question",
+		      "name": "How can I book a hotel online?",
+		      "acceptedAnswer": {
+		        "@type": "Answer",
+		        "text": "Search your destination, select check-in and check-out dates, choose your room, and complete secure payment to confirm your booking instantly."
+		      }
+		    },
+		    {
+		      "@type": "Question",
+		      "name": "Can I cancel my hotel booking?",
+		      "acceptedAnswer": {
+		        "@type": "Answer",
+		        "text": "Yes, many hotels offer free cancellation before a specific date. Always check the cancellation policy before confirming your booking."
+		      }
+		    },
+		    {
+		      "@type": "Question",
+		      "name": "Are there any hidden charges?",
+		      "acceptedAnswer": {
+		        "@type": "Answer",
+		        "text": "No, all prices displayed include applicable charges. Any additional fees such as taxes or service fees are shown before payment."
+		      }
+		    },
+		    {
+		      "@type": "Question",
+		      "name": "How do I find the best hotel deals?",
+		      "acceptedAnswer": {
+		        "@type": "Answer",
+		        "text": "Use filters, sort by price or rating, and apply available coupon codes to get the best hotel deals."
+		      }
+		    }
+		  ]
+		}
+		</script>
+
+		<!-- Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+		/>
+
+		<!-- ✅ Added: Poppins Font (Corrected) -->
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+		/>
+
+		<!-- Your existing stylesheet link (left untouched) -->
+		<link
+			rel="stylesheet"
+			href="/view/hotels/hotels_style.css?v=%%APP_VERSION%%"
+		/>
+		
+		<script src='https://checkout.razorpay.com/v1/checkout.js' defer=''></script>
+	</head>
+
+	<body>
+		<!-- Global Loading Animation -->
+		<div class="global__loading" style="display: none;">
+			<div class="feed__loading" id="lottie__loading" style="width: 100%; height: 250px;"></div>
+			<div class="hold__horses"></div>
+		</div>
+		
+		<div class="page">
+			<!-- SEO Content -->
+			<section class="seo-content" style="display:none;">
+			  <h1>Book Hotels Online with Travel Buddy</h1>
+			  <p>
+			    Travel Buddy is your all‑in‑one hotel booking platform to discover destinations,
+			    compare room prices, manage guests, and confirm reservations instantly.
+			    Find budget stays, premium resorts, and luxury hotels across India with flexible
+			    check‑in dates and transparent pricing.
+			  </p>
+
+			  <h2>Why Book Hotels with Travel Buddy?</h2>
+			  <ul>
+			    <li>Real‑time hotel search with multiple destinations</li>
+			    <li>Easy room and guest selection</li>
+			    <li>Secure payments and instant confirmation</li>
+			    <li>Exclusive hotel deals and seasonal discounts</li>
+			  </ul>
+
+			  <h2>Popular Hotel Destinations</h2>
+			  <p>
+			    Explore trending destinations, beach escapes, city stays, romantic getaways,
+			    and relaxing retreats. Travel Buddy makes trip planning simple and fast.
+			  </p>
+			  <!-- Dynamic City SEO Content -->
+			  <div id="dynamicCitySEO">
+			    <h2 id="citySeoHeading">Hotels in India</h2>
+			    <p id="citySeoParagraph">
+			      Explore top-rated hotels across major Indian cities. Compare prices, read reviews, and book budget, luxury, or business hotels with instant confirmation.
+			    </p>
+			  </div>
+			</section>
+			<div class="bg__image">
+				<div class="parent-top-container hidden">
+					<div class="avatar-holder">
+						<img
+							src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Avatar"
+						/>
+					</div>
+
+					<div class="book-buddy-container">
+						<div class="Bookings active">
+							<h2>Bookings</h2>
+						</div>
+						<div class="Buddies">
+							<h2>Buddies</h2>
+						</div>
+					</div>
+
+					<div class="receipt-disscount">
+						<i class="fas fa-receipt"></i>
+					</div>
+
+					<div class="hamburger-button">
+						<svg width="30" height="30" viewBox="0 0 100 80" fill="#ffff">
+							<rect width="100" height="10" rx="5"></rect>
+							<rect y="30" width="100" height="10" rx="5"></rect>
+							<rect y="60" width="100" height="10" rx="5"></rect>
+						</svg>
+					</div>
+				</div>
+
+				<div class="travel-nav-container">
+					<div class="nav-item" data-target="https://beatravelbuddy.com/flights"><i class="fas fa-plane"></i> Flights</div>
+					<div class="nav-item active" data-target="https://beatravelbuddy.com/hotels">
+						<i class="fas fa-calendar-alt"></i> Hotel
+					</div>
+					<div class="nav-item" data-target="https://trips.beatravelbuddy.com/"><i class="fas fa-box-open"></i> Trips & Packages</div>
+				</div>
+				<div class="scroll-dots">
+					<div class="scroll-dot active"></div>
+					<div class="scroll-dot"></div>
+					<div class="scroll-dot"></div>
+				</div>
+
+				<div class="big__heading-container">
+					<h1 class="big__heading-text">
+						<span>Pick the place</span><br />
+						<span>we'll handle the magic!</span>
+					</h1>
+				</div>
+
+				<div class="trip-details">
+					<div class="location_box" id="locationBox">
+						<span class="top_label">location</span>
+						<span class="middle_label" id="selectedLocation"
+							>Mumbai, Maharashtra,India</span
+						>
+						<span class="bottom_label hidden" id="selectedDistrict"
+							>Jammu district</span
+						>
+					</div>
+					<div class="dates__container">
+						<div class="check-in__details" id="checkin-container">
+							<span class="top_label">Check-in</span>
+							<span class="middle_label" id="checkin-date">Select Date</span>
+							<span class="bottom_label">select date</span>
+						</div>
+
+						<div class="check-out__details" id="checkout-container">
+							<span class="top_label">Check-out</span>
+							<span class="middle_label" id="checkout-date">Select Date</span>
+							<span class="bottom_label">select date</span>
+						</div>
+					</div>
+					<!-- Guest Details Trigger -->
+					<div class="guest-details" id="guestDetails">
+						<span class="top_label">Guests</span>
+						<span class="middle_label" id="guestSummary">2 Persons</span>
+						<span class="bottom_label" id="guestBreakdown">1 Adult, 1 Child</span>
+					</div>
+
+					<div class="modal-overlay" id="modalOverlay">
+						<div class="modal-content">
+							<button class="modal-close" id="modalClose">&times;</button>
+							<div class="selector">
+								<h1 class="selector__title">Select rooms and guests</h1>
+
+								<div class="selector__item">
+									<div class="selector__label">
+										<span class="selector__label-title">Rooms</span>
+									</div>
+									<div class="counter">
+										<button
+											class="counter__button counter__button--decrease"
+											data-target="rooms"
+										>
+											−
+										</button>
+										<span class="counter__value" id="rooms-value">1</span>
+										<button
+											class="counter__button counter__button--increase"
+											data-target="rooms"
+										>
+											+
+										</button>
+									</div>
+								</div>
+
+								<div class="selector__item">
+									<div class="selector__label">
+										<span class="selector__label-title">Adults</span>
+									</div>
+									<div class="counter">
+										<button
+											class="counter__button counter__button--decrease"
+											data-target="adults"
+										>
+											−
+										</button>
+										<span class="counter__value" id="adults-value">1</span>
+										<button
+											class="counter__button counter__button--increase"
+											data-target="adults"
+										>
+											+
+										</button>
+									</div>
+								</div>
+
+								<div class="selector__item">
+									<div class="selector__label">
+										<span class="selector__label-title">Children</span>
+										<span class="selector__label-subtitle">Ages 0 - 17</span>
+									</div>
+									<div class="counter">
+										<button
+											class="counter__button counter__button--decrease"
+											data-target="children"
+										>
+											−
+										</button>
+										<span class="counter__value" id="children-value">0</span>
+										<button
+											class="counter__button counter__button--increase"
+											data-target="children"
+										>
+											+
+										</button>
+									</div>
+								</div>
+								<div id="child-ages-section" style="margin: 10px 0 0 0;">
+									<div id="child-ages-label" style="font-size: 15px; font-weight: 600; color: #333; margin-bottom: 4px; display: none;">Age of Children</div>
+									<div id="child-ages-container" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
+									<div id="child-ages-note" style="font-size: 13px; color: #888; margin-top: 4px; display: none;">Please provide right number of children along with their right age for best options and prices.</div>
+								</div>
+
+								<div class="toggle">
+									<div class="toggle__label hidden">Travelling with pets?</div>
+									<div class="toggle__switch hidden" id="pets-toggle">
+										<div class="toggle__slider" id="pets-slider"></div>
+									</div>
+								</div>
+								<div class="toggle__note hidden">
+									Assistance animals aren't considered pets.
+									<a href="#" class="toggle__link"
+										>Read more about travelling with assistance animals</a
+									>
+								</div>
+
+								<button class="selector__apply-btn" id="apply-btn">Apply</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="search-bar-button-for-trip" id="searchButton">Search</div>
+				</div>
+			</div>
+			<section class="travel-offer">
+				<div class="top-images">
+					<img
+						src="https://images.unsplash.com/photo-1546484458-6904289cd4f0?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						alt="Beach Party"
+					/>
+					<img
+						src="https://images.unsplash.com/photo-1541420937988-702d78cb9fa1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						alt="Lakeside"
+					/>
+					<img
+						src="https://images.unsplash.com/photo-1521750465-672a0f580901?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW5maW5pdHklMjBwb29sfGVufDB8fDB8fHww"
+						alt="Infinity Pool"
+					/>
+				</div>
+	
+				<div class="bottom-section">
+					<div class="offer-content">
+						<h2>UP TO<br /><span>50% OFF</span></h2>
+						<p>On Domestic and International hotels</p>
+	
+						<div class="coupon-wrapper">
+							<div class="coupon">
+								<span class="coupon-code">HOTEL200</span>
+								<button class="copy-button">Copy Code</button>
+				
+							</div>
+							<div class="coupon">
+								<span class="coupon-code">HOTEL500</span>
+								<button class="copy-button">Copy Code</button>
+							</div>
+						</div>
+	
+						
+					</div>
+					<div class="bottom-image">
+						<img
+							src="https://images.unsplash.com/photo-1625401586082-9a9b17bc4ce5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Mountain View Stay"
+						/>
+					</div>
+				</div>
+			</section>
+	
+			<div class="travel-vibe-destination hidden">
+				<!-- Heading section -->
+				<div class="first-div">
+					<h1 class="heading_for-vibe-box">Quick and easy trip planner</h1>
+					<h3 class="sub-heading">
+						Pick a vibe and explore the top destinations in India
+					</h3>
+				</div>
+	
+				<!-- Vibe tags + arrow -->
+				<div class="second-div">
+					<div class="vibe-cards">
+						<button class="vibe-button active">
+							<span class="icon">📁</span>
+							Beach
+						</button>
+						<button class="vibe-button">
+							<span class="icon">🏙️</span>
+							City
+						</button>
+						<button class="vibe-button">
+							<span class="icon">🧘</span>
+							Relax
+						</button>
+						<button class="vibe-button">
+							<span class="icon">⛰️</span>
+							Outdoors
+						</button>
+						<button class="vibe-button">
+							<span class="icon">🍽️</span>
+							Food
+						</button>
+						<button class="vibe-button">
+							<span class="icon">👩‍❤️‍👨</span>
+							Romance
+						</button>
+					</div>
+				</div>
+	
+				<!-- Destination image cards -->
+				<div class="third-divs">
+					<div class="vibe-img-container">
+						<div class="vibe-img-card">
+							<img
+								src="https://images.unsplash.com/photo-1606203627178-c7bec545dff1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+								alt="Agatti Island Beach"
+							/>
+							<p>
+								Agatti Island Beach,<br />
+								Lakshadweep
+							</p>
+						</div>
+						<div class="vibe-img-card">
+							<img
+								src="https://images.unsplash.com/photo-1606203627178-c7bec545dff1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+								alt="Agatti Island Beach"
+							/>
+							<p>
+								Agatti Island Beach,<br />
+								Lakshadweep
+							</p>
+						</div>
+						<div class="vibe-img-card">
+							<img
+								src="https://images.unsplash.com/photo-1606203627178-c7bec545dff1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+								alt="Agatti Island Beach"
+							/>
+							<p>
+								Agatti Island Beach,<br />
+								Lakshadweep
+							</p>
+						</div>
+						<div class="vibe-img-card">
+							<img
+								src="https://images.unsplash.com/photo-1606203627178-c7bec545dff1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+								alt="Agatti Island Beach"
+							/>
+							<p>
+								Agatti Island Beach,<br />
+								Lakshadweep
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<!-- Top Destinations in India (SEO Semantic Block) -->
+			<section class="top-destinations-india hidden" itemscope itemtype="https://schema.org/ItemList">
+			  <meta itemprop="name" content="Top Destinations in India" />
+			  <h2>Top Destinations in India</h2>
+			  <ul>
+			    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+			      <meta itemprop="position" content="1" />
+			      <span itemprop="name">Goa Hotels</span>
+			    </li>
+			    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+			      <meta itemprop="position" content="2" />
+			      <span itemprop="name">Mumbai Hotels</span>
+			    </li>
+			    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+			      <meta itemprop="position" content="3" />
+			      <span itemprop="name">Delhi Hotels</span>
+			    </li>
+			    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+			      <meta itemprop="position" content="4" />
+			      <span itemprop="name">Jaipur Hotels</span>
+			    </li>
+			    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+			      <meta itemprop="position" content="5" />
+			      <span itemprop="name">Bangalore Hotels</span>
+			    </li>
+			  </ul>
+			</section>
+	
+			<div class="trending-destinations-section hidden">
+				<div class="section-header-with-arrow">
+					<h2 class="destinations-section-title">Trending Destinations</h2>
+					<div class="arrow-button">
+						<button class="next-btn" aria-label="Next">➜</button>
+					</div>
+				</div>
+	
+				<div class="destinations-grid-container">
+					<!-- Top Row -->
+					<div class="destination-item-card destination-card-wide">
+						<img
+							class="destination-image"
+							src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Goa, India"
+						/>
+						<div class="destination-place-label">Goa, India</div>
+					</div>
+					<div class="destination-item-card destination-card-wide">
+						<img
+							class="destination-image"
+							src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Bali, Indonesia"
+						/>
+						<div class="destination-place-label">Bali, Indonesia</div>
+					</div>
+	
+					<!-- Bottom Row -->
+					<div class="destination-item-card">
+						<img
+							class="destination-image"
+							src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Milford Sound, New Zealand"
+						/>
+						<div class="destination-place-label">
+							Milford Sound,<br />New Zealand
+						</div>
+					</div>
+					<div class="destination-item-card">
+						<img
+							class="destination-image"
+							src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Sydney, Australia"
+						/>
+						<div class="destination-place-label">Sydney, Australia</div>
+					</div>
+				</div>
+			</div>
+	
+			<div class="perfect-escape-view-all hidden">
+				<div class="upper-div">
+					<div class="headings-div">
+						<h1>Find the perfect escape</h1>
+						<h2>
+							Tempora facere doloribus id aut. Ea maiores esse accusantium
+							laboriosam. Quos commodi non assumenda quam illum. Id omnis saepe
+							corrupti incidunt qui sed delectus. Eaque minus ducimus.
+						</h2>
+					</div>
+					<div class="view-all-button">View All</div>
+				</div>
+	
+				<div class="carousel-like-image">
+					<div class="travel-card">
+						<img
+							src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGZyYW5jZXxlbnwwfHwwfHx8MA%3D%3D"
+							alt="Island Destination"
+						/>
+						<div class="card-overlay">
+							<div class="card-tag">Adventure Travel</div>
+							<h3 class="card-title">Island</h3>
+							<p class="card-subtitle">22 Tours</p>
+						</div>
+					</div>
+	
+					<div class="travel-card">
+						<img
+							src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGZyYW5jZXxlbnwwfHwwfHx8MA%3D%3D"
+							alt="Nepal Destination"
+						/>
+						<div class="card-overlay">
+							<div class="card-tag">Adventure Travel</div>
+							<h3 class="card-title">Nepal</h3>
+							<p class="card-subtitle">15 Tours</p>
+						</div>
+					</div>
+	
+					<div class="travel-card">
+						<img
+							src="https://plus.unsplash.com/premium_photo-1661962958462-9e52fda9954d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dGhhaWxhbmR8ZW58MHx8MHx8fDA%3D"
+							alt="Thailand Destination"
+						/>
+						<div class="card-overlay">
+							<div class="card-tag">Adventure Travel</div>
+							<h3 class="card-title">Thailand</h3>
+							<p class="card-subtitle">28 Tours</p>
+						</div>
+					</div>
+	
+					<div class="travel-card">
+						<img
+							src="https://images.unsplash.com/photo-1517330357046-3ab5a5dd42a1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGluZGlhfGVufDB8fDB8fHww"
+							alt="Resort Destination"
+						/>
+						<div class="card-overlay">
+							<div class="card-tag">Adventure Travel</div>
+							<h3 class="card-title">Resort</h3>
+							<p class="card-subtitle">12 Tours</p>
+						</div>
+					</div>
+	
+					<div class="travel-card">
+						<img
+							src="https://images.unsplash.com/photo-1517330357046-3ab5a5dd42a1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGluZGlhfGVufDB8fDB8fHww"
+							alt="Island Paradise"
+						/>
+						<div class="card-overlay">
+							<div class="card-tag">Adventure Travel</div>
+							<h3 class="card-title">Island Paradise</h3>
+							<p class="card-subtitle">18 Tours</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- Location Popup Overlay -->
+		<div class="location-popup-overlay" id="locationPopupOverlay">
+			<div class="location-popup">
+				<div class="location-popup-header">
+					<div class="dropdown-title">Where do you want to go?</div>
+					<button class="close-location-popup" id="closeLocationPopup">
+						&times;
+					</button>
+				</div>
+
+				<div class="search__container">
+					<div class="search-input-wrapper">
+						<input
+							type="text"
+							id="placeAutocomplete"
+							placeholder="Search destinations..."
+						/>
+						<span class="clear-search" id="clearSearch" style="display: none"
+							>×</span
+						>
+					</div>
+				</div>
+
+				<div class="destinations-section">
+					<div class="section-title">Popular Destinations</div>
+					<div class="destination-list" id="destinationList"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Calendar Overlay -->
+		<div class="calendar-overlay" id="calendar-overlay">
+			<div class="calendar-container">
+				<div class="calendar-header">
+					<div class="calendar-title" id="calendar-title">
+						Select Check-in Date
+					</div>
+					<button class="close-calendar" id="close-calendar">&times;</button>
+				</div>
+
+				<div class="month-navigation">
+					<button class="month-nav-btn" id="prev-month">&larr;</button>
+					<div class="month-year-display" id="month-year"></div>
+					<button class="month-nav-btn" id="next-month">&rarr;</button>
+				</div>
+
+				<div class="calendar-grid" id="calendar-grid"></div>
+			</div>
+		</div>
+		<!--  -->
+
+		<!-- Calling API for hotel Details -->
+
+		<!-- 1) DEFINE ALL CLASSES BEFORE LOADING Google's API  -->
+		<script>
+			// Copy to clipboard functionality
+			const copyButton = document.querySelector(".copy-button");
+			const couponCode = document.querySelector(".coupon-code");
+
+			copyButton.addEventListener("click", function () {
+				const code = couponCode.textContent;
+				navigator.clipboard.writeText(code).then(() => {
+					copyButton.textContent = "Copied!";
+					setTimeout(() => {
+						copyButton.textContent = "Copy Code";
+					}, 2000);
+				});
+			});
+			// Scroll functionality for travel navigation
+			document.addEventListener("DOMContentLoaded", function () {
+				const navContainer = document.querySelector(".travel-nav-container");
+				const scrollDots = document.querySelectorAll(".scroll-dot");
+
+				// Update scroll dots based on scroll position
+				function updateScrollDots() {
+					const scrollPercentage =
+						navContainer.scrollLeft /
+						(navContainer.scrollWidth - navContainer.clientWidth);
+					const activeDotIndex = Math.round(
+						scrollPercentage * (scrollDots.length - 1)
+					);
+
+					scrollDots.forEach((dot, index) => {
+						dot.classList.toggle("active", index === activeDotIndex);
+					});
+				}
+
+				// Click on dots to scroll to specific position
+				scrollDots.forEach((dot, index) => {
+					dot.addEventListener("click", function () {
+						const scrollPercentage = index / (scrollDots.length - 1);
+						const scrollPosition =
+							scrollPercentage *
+							(navContainer.scrollWidth - navContainer.clientWidth);
+
+						navContainer.scrollTo({
+							left: scrollPosition,
+							behavior: "smooth",
+						});
+					});
+				});
+
+				// Update dots when scrolling
+				navContainer.addEventListener("scroll", function () {
+					updateScrollDots();
+				});
+				
+				// Add the event listener for travel-nav-container nav-item click
+				navContainer.addEventListener("click", function (e) {
+					var navItems = document.querySelectorAll(".travel-nav-container .nav-item");
+					if (e.target.classList.contains("nav-item")) {
+						navItems.forEach((el) => el.classList.remove("active"));
+						e.target.classList.add("active");
+						navContainer.scrollTo({
+							left: e.target.offsetLeft,
+							behavior: "smooth",
+						});
+						
+						// Redirect to the target page
+						const target = e.target.dataset.target;
+						if (target) {
+							window.location.href = target;
+						}
+					}	
+				});
+
+				// Initial state
+				updateScrollDots();
+
+				// Add keyboard navigation
+				navContainer.addEventListener("keydown", function (e) {
+					const scrollAmount = 200;
+					if (e.key === "ArrowLeft") {
+						e.preventDefault();
+						navContainer.scrollBy({
+							left: -scrollAmount,
+							behavior: "smooth",
+						});
+					} else if (e.key === "ArrowRight") {
+						e.preventDefault();
+						navContainer.scrollBy({
+							left: scrollAmount,
+							behavior: "smooth",
+						});
+					}
+				});
+
+				// Make container focusable for keyboard navigation
+				navContainer.setAttribute("tabindex", "0");
+			});
+		</script>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<!-- Google Maps API will be loaded dynamically via JavaScript -->
+	<script src="/view/hotels/hotels.js?v=%%APP_VERSION%%"></script>
+	<script src="/view/hotels/hotels_url_manager.js?v=%%APP_VERSION%%"></script>
+	<script src="/view/hotels/hotels_helper.js?v=%%APP_VERSION%%"></script>
+		<script src="/view/hotels/hotels_bem.js?v=%%APP_VERSION%%"></script>
+		<script src="/view/hotels/hotels_const.js?v=%%APP_VERSION%%"></script>
+		<script src="/view/hotels/hotels_render.js?v=%%APP_VERSION%%"></script>
+		<script src="/view/hotels/hotels_drillDown.js?v=%%APP_VERSION%%"></script>
+		<script src="/view/hotels/hotels_review.js?v=%%APP_VERSION%%"></script>
+
+	<!-- Hotel Search Results Section (initially hidden) -->
+	<div id="hotelResultsPage" class="hotel-results-page hidden">
+		<nav class="breadcrumb-nav" id="breadcrumbResults" aria-label="Breadcrumb"></nav>
+		<div class="results-header">
+				<div class="header-top">
+					<button class="results-back-btn" onclick="backToSearch()">
+						<i class="fas fa-arrow-left"></i>
+					</button>
+					<h2 id="resultsCount">
+						0 Properties in <span id="resultsLocation">Location</span>
+					</h2>
+					<div class="ai-label hidden">
+						<span>Your trip, AI-powered</span>
+						<i class="fas fa-chevron-right"></i>
+					</div>
+				</div>
+				<div class="results-filters">
+					<button class="filter-btn filter-primary" id="openSortSheet">
+						<i class="fas fa-sort"></i> Sort
+					</button>
+					<button class="filter-btn filter-secondary" id="openFilterSheet">
+						<i class="fas fa-sliders-h"></i> Filter
+					</button>
+				</div>
+			</div>
+			<div class="results-list" id="resultsList"></div>
+		</div>
+	<div id="drillContainer" class="container hidden">
+		<!-- Back to Results Button -->
+		<div class="drill-back-header">
+			<button class="drill-back-btn" onclick="backToResults()">
+				<i class="fas fa-arrow-left"></i> Back to Results
+			</button>
+		</div>
+		<nav class="breadcrumb-nav" id="breadcrumbDrill" aria-label="Breadcrumb"></nav>
+		<!-- Search Container -->
+			<div class="search-container drillDown" id="searchContainer">
+				<div class="search-overlay" id="searchOverlay"></div>
+				<div class="search-bar" id="searchBar">
+					<span class="search-bar__item">Anywhere</span>
+					<span class="search-bar__item">Anyweek</span>
+					<span class="search-bar__item">Add Guest</span>
+					<button class="search-bar__button">
+						<i class="fas fa-search"></i> Search
+					</button>
+				</div>
+				<div class="search-form" id="searchForm">
+					<button class="close-search" id="closeSearch">
+						<i class="fas fa-times"></i>
+					</button>
+					<div class="search-form-grid">
+						<div class="search-field" data-field="location">
+							<div class="search-field-label">Location</div>
+							<div class="search-field-value">Mumbai</div>
+							<div class="search-field-subtitle">Maharashtra, India</div>
+						</div>
+						<div class="search-field" data-field="guests">
+							<div class="search-field-label">Guests</div>
+							<div class="search-field-value">2 Person</div>
+							<div class="search-field-subtitle">2 Adults</div>
+						</div>
+						<div class="search-field" data-field="checkin">
+							<div class="search-field-label">Check-in</div>
+							<div class="search-field-value">24 July 2022</div>
+							<div class="search-field-subtitle">Select date</div>
+						</div>
+						<div class="search-field" data-field="checkout">
+							<div class="search-field-label">Check-out</div>
+							<div class="search-field-value">28 July 2022</div>
+							<div class="search-field-subtitle">Select date</div>
+						</div>
+					</div>
+					<button class="search-form-button" id="searchFormButton">
+						<i class="fas fa-search"></i> Search
+					</button>
+				</div>
+			</div>
+
+			<!-- Hotel Container -->
+			<div class="hotel-container">
+				<div class="title-share-save">
+					<h1>Grand Hyatt Mumbai</h1>
+					<div class="share-save hidden">
+						<span><i class="fas fa-share"></i> Share</span>
+						<span><i class="fas fa-heart"></i> Wishlist</span>
+					</div>
+				</div>
+				<div class="image-section">
+					<div class="main-image">
+						<img
+							src="https://plus.unsplash.com/premium_photo-1697729701846-e34563b06d47?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Main hotel view"
+						/>
+					</div>
+					<div class="side-images">
+						<img
+							src="https://plus.unsplash.com/premium_photo-1697729701846-e34563b06d47?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Hotel image 1"
+						/>
+						<img
+							src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Hotel image 2"
+						/>
+						<img
+							src="https://images.unsplash.com/photo-1584111728495-7d9599602355?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Hotel image 3"
+						/>
+						<div class="last-image">
+							<img
+								src="https://images.unsplash.com/photo-1584111728495-7d9599602355?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+								alt="Hotel image 4"
+							/>
+							<button class="show-more">
+								<i class="fas fa-images"></i> Show all photos
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Content Layout -->
+			<div class="content-layout">
+				<div class="content-with-reserve">
+					<!-- Main Content -->
+					<div class="main-content">
+						<div class="review-ratings hidden">
+							<div class="rating-summary">
+								<span class="rating"
+									><i class="fas fa-star"></i> 5.0 ★★★★★</span
+								>
+								<span class="review-count">39 Reviews</span>
+							</div>
+							<h2 class="hotel-title">Luxury Hotel in Mumbai, India</h2>
+							<p class="info-hotel">
+								<i class="fas fa-users"></i> 648 individually decorated
+								guestrooms
+							</p>
+							<div class="host-details">
+								<img
+									src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+									alt="Host"
+									class="host-img"
+								/>
+								<div>
+									<p class="host-name">
+										<strong>Hosted by Grand Hyatt</strong>
+									</p>
+									<p class="host-info">
+										<i class="fas fa-award"></i> Luxury Hotel · 5-Star Rating
+									</p>
+								</div>
+							</div>
+							<div class="features">
+								<div class="feature">
+									<i class="fas fa-key"></i>
+									<div>
+										<strong>Self check-in</strong>
+										<p>Check yourself in with the smartlock.</p>
+									</div>
+								</div>
+								<div class="feature">
+									<i class="fas fa-times-circle"></i>
+									<div>
+										<strong>Free cancellation before 2 Jun</strong>
+										<p>Get a full refund if you change your mind.</p>
+									</div>
+								</div>
+							</div>
+							<hr />
+							<div class="description">
+								<p>
+									A stay at Grand Hyatt Mumbai Hotel and Serviced Apartments
+									places you in the heart of Mumbai, a 4-minute drive from U.S.
+									Consulate General and 5 minutes from Lilavati Hospital. This
+									luxury hotel is 2.1 mi (3.4 km) from MMRDA Grounds and 3.2 mi
+									(5.1 km) from Juhu Beach.
+								</p>
+								<p>
+									Near University of Mumbai (0.4 mi), Linking Road (1.7 mi),
+									Juhu Beach (2.4 mi), and MMRDA Grounds (1.9 mi)
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Reserve Widget -->
+					<div class="reserve-widget" id="reserveWidget">
+						<div class="reserve-widget-header">
+							<div class="reserve-price">
+								<span class="currency">₹</span>7,699
+								<span class="period">per night</span>
+							</div>
+							<div class="reserve-rating">
+								<span class="stars">★</span> 5.0 · <span>39 reviews</span>
+							</div>
+						</div>
+						<div class="reserve-form">
+							<div class="reserve-dates">
+								<div class="reserve-date">
+									<div class="reserve-date-label">Check-in</div>
+									<div class="reserve-date-value">24 July 2022</div>
+								</div>
+								<div class="reserve-date">
+									<div class="reserve-date-label">Check-out</div>
+									<div class="reserve-date-value">28 July 2022</div>
+								</div>
+							</div>
+							<div class="reserve-guests">
+								<div class="reserve-guests-label">Guests</div>
+								<div class="reserve-guests-value">2 Person</div>
+							</div>
+							<button class="reserve-button">Select Rooms</button>
+							<div class="reserve-note">You won't be charged yet</div>
+						</div>
+						<div class="reserve-breakdown">
+							<div class="reserve-breakdown-item">
+								<span>₹7,699 × 4 nights</span>
+								<span>₹30,796</span>
+							</div>
+							<div class="reserve-breakdown-item">
+								<span>Cleaning fee</span>
+								<span>₹1,200</span>
+							</div>
+							<div class="reserve-breakdown-item">
+								<span>Service fee</span>
+								<span>₹3,100</span>
+							</div>
+							<div class="reserve-breakdown-item total">
+								<span>Total</span>
+								<span>₹35,096</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Amenities + Map Row -->
+					<div class="amenities-map-row">
+						<div class="hotel-amenities">
+							<h2 class="amenities-heading">What this place offers</h2>
+							<div class="amenities-list" id="amenitiesList">
+								<ul class="amenities-column">
+									<li class="amenity-item">Full-service spa</li>
+									<li class="amenity-item">Free WiFi</li>
+									<li class="amenity-item">Outdoor pool</li>
+									<li class="amenity-item">Health club</li>
+									<li class="amenity-item">Air conditioning</li>
+									<li class="amenity-item">4 restaurants</li>
+									<li class="amenity-item">Free valet parking</li>
+									<li class="amenity-item">Poolside bar</li>
+									<li class="amenity-item">24-hour front desk</li>
+									<li class="amenity-item">Business center</li>
+									<li class="amenity-item">Fitness center</li>
+									<li class="amenity-item">Spa services</li>
+									<li class="amenity-item">Room service</li>
+									<li class="amenity-item">Concierge service</li>
+									<li class="amenity-item">Laundry service</li>
+								</ul>
+							</div>
+							<button class="show-amenities" id="showAmenitiesBtn">
+								<i class="fas fa-chevron-down"></i> Show all amenities
+							</button>
+						</div>
+						<div class="maps-section">
+							<div class="map-header">
+								<h2>Where you'll be Mumbai,</h2>
+								<p>
+									<i class="fas fa-map-marker-alt"></i> Mumbai, India -
+									Santacruz East
+								</p>
+							</div>
+							<div id="map" class="loading">Loading map...</div>
+						</div>
+					</div>
+
+					<!-- Full width sections -->
+					<div class="full-width-section">
+					<!-- Room selection moved to #roomSelectionPage -->
+					<div class="room-selection hidden" id="roomSelection" style="display:none;">
+						<h2>Select Your Room Type</h2>
+						<div id="roomCardsContainer"></div>
+					</div>
+
+						<div class="review-section hidden">
+							<div class="review-box">
+								<div class="review-header">
+									<img
+										src="https://images.unsplash.com/photo-1488161628813-04466f872be2?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+										alt="Reviewer"
+										class="review-avatar"
+									/>
+									<div>
+										<p class="reviewer-name">
+											<strong>Sylvester Jude</strong>
+										</p>
+										<p class="review-date">
+											<span class="stars">★★★★★</span>
+											<strong>April 2025</strong>
+										</p>
+									</div>
+								</div>
+								<p class="review-text">
+									The property was a great stay. Everything was as listed and
+									mentioned. The place was clean and the staff did a great job
+									of coordinating the check in and check out.
+								</p>
+							</div>
+							<div class="review-box">
+								<div class="review-header">
+									<img
+										src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+										alt="Reviewer"
+										class="review-avatar"
+									/>
+									<div>
+										<p class="reviewer-name">
+											<strong>Maria Rodriguez</strong>
+										</p>
+										<p class="review-date">
+											<span class="stars">★★★★★</span>
+											<strong>March 2025</strong>
+										</p>
+									</div>
+								</div>
+								<p class="review-text">
+									Amazing location with beautiful city views. The amenities were
+									top-notch and the staff was very responsive. Would definitely
+									recommend this place!
+								</p>
+							</div>
+							<div class="review-box">
+								<div class="review-header">
+									<img
+										src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+										alt="Reviewer"
+										class="review-avatar"
+									/>
+									<div>
+										<p class="reviewer-name"><strong>James Wilson</strong></p>
+										<p class="review-date">
+											<span class="stars">★★★★☆</span>
+											<strong>February 2025</strong>
+										</p>
+									</div>
+								</div>
+								<p class="review-text">
+									Great value for money. The pool area was fantastic and the
+									room was spacious. Only minor issue was the WiFi speed, but
+									overall excellent experience.
+								</p>
+							</div>
+							<div class="review-box">
+								<div class="review-header">
+									<img
+										src="https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+										alt="Reviewer"
+										class="review-avatar"
+									/>
+									<div>
+										<p class="reviewer-name"><strong>Sarah Chen</strong></p>
+										<p class="review-date">
+											<span class="stars">★★★★★</span>
+											<strong>January 2025</strong>
+										</p>
+									</div>
+								</div>
+								<p class="review-text">
+									Perfect getaway spot! The wooden finishes and modern amenities
+									created the perfect ambiance. The location was convenient and
+									the staff provided excellent recommendations.
+								</p>
+							</div>
+						</div>
+						<div class="show-more-reviews hidden">
+							<h2><i class="fas fa-chevron-down"></i> Show more reviews</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mobile Reserve Widget -->
+		<div class="reserve-widget-mobile hidden" id="reserveWidgetMobile">
+			<div class="reserve-mobile-content">
+				<div class="reserve-mobile-price hidden">
+					₹7,699
+					<span style="font-size: 14px; font-weight: 400; color: #666"
+						>per night</span
+					>
+				</div>
+				<button class="reserve-mobile-button">See All Room Options</button>
+			</div>
+		</div>
+
+	<!-- Room Selection Page (initially hidden) -->
+	<div id="roomSelectionPage" class="room-selection-page hidden">
+		<div class="room-selection-page-header">
+			<button class="room-selection-back-btn" onclick="backToDrillDown()">
+				<i class="fas fa-arrow-left"></i> Back
+			</button>
+			<div class="room-selection-page-title">
+				<h2>Select Your Room</h2>
+				<p id="roomSelectionHotelName"></p>
+			</div>
+		</div>
+		<nav class="breadcrumb-nav" id="breadcrumbRooms" aria-label="Breadcrumb"></nav>
+		<div id="roomSelectionCardsContainer" class="room-selection-cards-container"></div>
+		</div>
+
+		<!-- Image Carousel Modal -->
+		<div class="carousel-modal" id="carouselModal">
+			<div class="carousel-overlay" id="carouselOverlay"></div>
+			<div class="carousel-container">
+				<button class="carousel-close" id="carouselClose">
+					<i class="fas fa-times"></i>
+				</button>
+				<button class="carousel-nav carousel-prev" id="carouselPrev">
+					<i class="fas fa-chevron-left"></i>
+				</button>
+				<button class="carousel-nav carousel-next" id="carouselNext">
+					<i class="fas fa-chevron-right"></i>
+				</button>
+				<div class="carousel-content">
+					<div class="carousel-image-container">
+						<img
+							class="carousel-image"
+							id="carouselImage"
+							src=""
+							alt="Hotel image"
+						/>
+					</div>
+					<div class="carousel-info">
+						<div class="carousel-counter">
+							<span id="currentImageIndex">1</span> of
+							<span id="totalImages">5</span>
+						</div>
+						<div class="carousel-title" id="carouselTitle">Hotel Image</div>
+					</div>
+				</div>
+				<div class="carousel-thumbnails" id="carouselThumbnails">
+					<!-- Thumbnails will be populated by JavaScript -->
+				</div>
+			</div>
+		</div>
+
+		<!-- Hotel Confirmation Page (initially hidden) -->
+		<div id="hotelConfirmationPage" class="confirmation-page hidden">
+			<!-- Loading State -->
+			<div class="loading-state" id="confirmationLoadingState">
+				<div class="loading-spinner"></div>
+			</div>
+
+			<!-- Main Confirmation Container -->
+			<div class="parent_page_container" id="confirmationContainer" style="display: none;">
+				<div class="header-div">
+					<button class="back-to-home-btn" onclick="hotelConfirmation.goBackToMainPage()">
+						<i class="fas fa-arrow-left"></i> Back to Home
+					</button>
+					<h1 class="main-heading">Your reservation is confirmed</h1>
+					<h3 class="sub-heading" id="confirmSubHeading">You're going to your destination</h3>
+				</div>
+
+				<div class="hotel-photo-container" id="confirmPhotoContainer">
+					<img id="confirmHotelImage" src="" alt="Hotel Image">
+				</div>
+
+				<div class="hotel_and_package">
+					<div>
+						<h2 id="confirmHotelName">Hotel Name</h2>
+						<div class="confirm-star-rating" id="confirmStarRating"></div>
+					</div>
+					<div class="booking-details__package-label" id="confirmPackageLabel" style="display: none;"></div>
+				</div>
+
+				<div class="hotel-related">
+					<div class="host-details">
+						<div class="host-info-div">
+							<p class="host-name" id="confirmHostName"></p>
+							<p class="host-info" id="confirmHostInfo"></p>
+						</div>
+					</div>
+					<div class="contact-hotel"><i class="fas fa-phone"></i> Contact hotel</div>
+				</div>
+
+				<hr>
+
+				<div class="booking-details__trip" id="confirmTripDetails">
+					<div class="booking-details__trip-section">
+						<p class="booking-details__trip-item">Check-in</p>
+						<p class="booking-details__trip-item" id="confirmCheckIn">--</p>
+					</div>
+					<div class="no-of-nights" id="confirmNights">-- Nights</div>
+					<div class="booking-details__trip-section">
+						<p class="booking-details__trip-item">Check-out</p>
+						<p class="booking-details__trip-item" id="confirmCheckOut">--</p>
+					</div>
+					<p class="booking-details__trip-item" id="confirmTripSummary"></p>
+				</div>
+
+				<!-- Guest Details Summary -->
+				<div class="guest-details-summary" id="confirmGuestDetails"></div>
+
+				<div class="download-button">Download Itinerary</div>
+
+				<div class="info-section">
+					<div class="info-row">
+						<div>
+							<p class="info-label">Address</p>
+							<p class="info-text" id="confirmAddress">--</p>
+						</div>
+						<a href="#" class="info-button" id="confirmDirectionsBtn">Get directions</a>
+					</div>
+
+					<div class="info-row">
+						<div>
+							<p class="info-label">Amount</p>
+							<p class="info-text" id="confirmAmount">--</p>
+						</div>
+						<a href="#" class="info-button">View receipt</a>
+					</div>
+
+					<div class="info-row">
+						<p class="info-label">Reservation Code</p>
+						<p class="info-value" id="confirmReservationCode">--</p>
+					</div>
+
+					<div class="info-row">
+						<p class="info-label">Booking Status</p>
+						<p class="booking-status confirmed" id="confirmBookingStatus">--</p>
+					</div>
+
+					<div class="info-row">
+						<p class="info-label">Invoice Number</p>
+						<p class="info-value invoice-number" id="confirmInvoiceNumber">--</p>
+					</div>
+
+					<div class="info-row">
+						<p class="info-label">Booking Reference</p>
+						<p class="info-value booking-ref" id="confirmBookingRef">--</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer>
+			<div class="container-footer">
+				<div class="footer-grid">
+					<div>
+						<h3 class="footer-title">Travel Buddy</h3>
+						<p>Your trusted partner for unforgettable travel experiences. We specialize in creating personalized journeys that combine adventure, culture, and relaxation.</p>
+						<div class="social-links">
+							<a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+							<a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+							<a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+							<a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+						</div>
+					</div>
+					
+					<div>
+						<h3 class="footer-title hidden">Quick Links</h3>
+						<ul class="footer-links hidden">
+							<li class="footer-link"><a href="#home">Home</a></li>
+							<li class="footer-link"><a href="#about">About Us</a></li>
+							<li class="footer-link"><a href="#features">Why Choose Us</a></li>
+							<li class="footer-link"><a href="#destinations">Destinations</a></li>
+							<li class="footer-link"><a href="#itinerary">Itinerary</a></li>
+							<li class="footer-link"><a href="#testimonials">Testimonials</a></li>
+						</ul>
+					</div>
+					
+					<div>
+						<h3 class="footer-title">Contact Us</h3>
+						<ul class="footer-links">
+							<li class="footer-link"><i class="fas fa-map-marker-alt"></i> Gurugram, Haryana, India</li>
+							<li class="footer-link"><i class="fas fa-envelope"></i> info@beatravelbuddy.com</li>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="footer-bottom">
+					<p>&copy; <script>document.write(new Date().getFullYear())</script> Travel Buddy. All rights reserved.</p>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Include the confirmation JavaScript -->
+		<script src="/view/hotels/hotels_confirm.js"></script>
+		<script>
+		function injectHotelResultsSchema(hotels = []) {
+		  if (!hotels.length) return;
+
+		  const itemList = hotels.map((hotel, index) => ({
+		    "@type": "ListItem",
+		    "position": index + 1,
+		    "url": hotel.url || "",
+		    "name": hotel.name || "",
+		    "description": hotel.description || ""
+		  }));
+
+		  const schema = {
+		    "@context": "https://schema.org",
+		    "@type": "ItemList",
+		    "name": "Hotel Search Results",
+		    "itemListElement": itemList
+		  };
+
+		  const script = document.createElement("script");
+		  script.type = "application/ld+json";
+		  script.text = JSON.stringify(schema);
+		  document.head.appendChild(script);
+		}
+
+		/*
+		Call this after rendering search results:
+		injectHotelResultsSchema(resultsArray);
+		*/
+		</script>
+		<script>
+		function updateCitySEO(cityName) {
+		  if (!cityName) return;
+		  const heading = document.getElementById("citySeoHeading");
+		  const paragraph = document.getElementById("citySeoParagraph");
+
+		  if (heading && paragraph) {
+		    heading.innerText = `Hotels in ${cityName}`;
+		    paragraph.innerText =
+		      `Book the best hotels in ${cityName}. Compare prices, explore top-rated stays, and enjoy secure online booking with instant confirmation.`;
+		  }
+		}
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js'></script>
+		
+		<!-- Load Lottie Animation -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function
+            () {
+                // Load the Lottie animation
+				//showLoader();
+            });
+        </script>
+		
+		
+<!-- Sort Bottom Sheet -->
+<div class="bottom-sheet-overlay" id="sortSheetOverlay"></div>
+<div class="bottom-sheet" id="sortSheet">
+	<div class="bottom-sheet-header">
+		<h3>Sort by</h3>
+		<button class="close-sheet" id="closeSortSheet">&times;</button>
+	</div>
+	<div class="bottom-sheet-content">
+		<label class="sheet-option">
+			<input id="sortPopular" type="radio" name="sortOption" value="popular" checked />
+			<span>Our top picks</span>
+		</label>
+		<label class="sheet-option">
+			<input id="sortLowHigh" type="radio" name="sortOption" value="price_low_high" />
+			<span>Price (lowest first)</span>
+		</label>
+		<label class="sheet-option">
+			<input id="sortHighLow" type="radio" name="sortOption" value="price_high_low" />
+			<span>Price (highest first)</span>
+		</label>
+		<label class="sheet-option">
+			<input id="sortRating" type="radio" name="sortOption" value="rating" />
+			<span>Guest rating + our picks</span>
+		</label>
+		<label class="sheet-option">
+			<input id="sortDistance" type="radio" name="sortOption" value="distance" />
+			<span>Distance from city center</span>
+		</label>
+	</div>
+</div>
+
+<!-- Filter Bottom Sheet -->
+<div class="bottom-sheet-overlay" id="filterSheetOverlay"></div>
+<div class="bottom-sheet" id="filterSheet">
+	<div class="bottom-sheet-header">
+		<h3>Filter</h3>
+		<button class="close-sheet" id="closeFilterSheet">&times;</button>
+	</div>
+	<div class="bottom-sheet-content">
+		<h4>Price per night</h4>
+		<label class="sheet-option">
+			<input id="price0_3k" type="checkbox" value="0-3000" />
+			<span>₹0 – ₹3,000</span>
+		</label>
+		<label class="sheet-option">
+			<input id="price3k_7k" type="checkbox" value="3000-7000" />
+			<span>₹3,000 – ₹7,000</span>
+		</label>
+		<label class="sheet-option">
+			<input id="price7k_15k" type="checkbox" value="7000-15000" />
+			<span>₹7,000 – ₹15,000</span>
+		</label>
+
+		<h4>Star rating</h4>
+		<label class="sheet-option">
+			<input id="star5" type="checkbox" value="5" />
+			<span>5 stars</span>
+		</label>
+		<label class="sheet-option">
+			<input id="star4" type="checkbox" value="4" />
+			<span>4 stars</span>
+		</label>
+		<label class="sheet-option">
+			<input id="star3" type="checkbox" value="3" />
+			<span>3 stars</span>
+		</label>
+
+		<h4>Property type</h4>
+		<label class="sheet-option">
+			<input id="typeHotel" type="checkbox" value="hotel" />
+			<span>Hotels</span>
+		</label>
+		<label class="sheet-option">
+			<input id="typeApartment" type="checkbox" value="apartment" />
+			<span>Apartments</span>
+		</label>
+		<label class="sheet-option">
+			<input id="typeResort" type="checkbox" value="resort" />
+			<span>Resorts</span>
+		</label>
+
+		<div class="sheet-actions">
+			<button class="clear-filters" id="clearFilters">Clear all</button>
+			<button class="apply-filters" id="applyFilters">Show results</button>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

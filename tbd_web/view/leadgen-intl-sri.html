@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover the Wonders of Sri Lanka</title>
+    <meta name="description" content="Sri Lanka offers an enchanting blend of cultural heritage, natural beauty, and warm hospitality that captivates every traveler">
+    <meta name="keywords" content="Sri Lanka, travel, tourism, culture, heritage, nature, wildlife, cuisine, adventure, relaxation">
+    <meta property="og:title" content="Discover the Wonders of Sri Lanka">
+    <meta property="og:description" content="Sri Lanka offers an enchanting blend of cultural heritage, natural beauty, and warm hospitality that captivates every traveler">
+    <meta property="og:image" content="https://beatravelbuddy.com/view/assets/img/leadGen/Srilanka/1.jpg">
+    <link rel="icon" href="/view/assets/img/app_logo_new.webp" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="image_src" href="/view/assets/img/leadGen/Srilanka/1.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Montserrat';
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(200deg, #FFF9CF, white);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat';
+        }
+        header {
+            color: #1e1e2d;
+            padding: 1rem;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            width: 100%;
+            position: fixed;
+            z-index: 4;
+        }
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+        }
+        nav h1 {
+            font-size: 31px;
+            font-weight: 700;
+            font-family: 'Nunito';
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/view/assets/img/leadGen/Srilanka/3.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            color: white;
+            padding-top: 4rem;
+            transition: background-image 3s ease-in-out;
+        }
+        .hero-content {
+            max-width: 500px;
+            text-align: center;
+        }
+        h4.day__name {
+            margin-top: 13px;
+            font-size: 18px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #FF6B6B;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-family: 'Montserrat';
+            font-weight: 600;
+        }
+        .btn:hover {
+            background-color: #FF8E8E;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 4rem 2rem;
+        }
+        .description {
+            margin-bottom: 2rem;
+        }
+        .description h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1e1e2d;
+            font-weight: 700;
+            font-family: 'Nunito';
+        }
+        .enquiry-form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            color: #1e1e2d;
+        }
+        img.cont_img {
+            margin-top: 15px;
+        }
+        input#verificationCodeInput {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Nunito';
+            margin-bottom: 15px;
+        }
+        .enquiry-form h3 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-family: 'Montserrat';
+        }
+        .form-group input, #countryCode {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Nunito';
+        }
+        #countryCode {
+            width: 40%;
+            margin-right: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #fde723;
+            color: #1e1e2d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            font-family: 'Montserrat';
+            font-weight: 600;
+        }
+        .destinations {
+            margin-top: 4rem;
+        }
+        .destinations h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #FF6B6B;
+            font-weight: 700;
+        }
+        .destination-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .destination-card {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .destination-card:hover {
+            transform: translateY(-5px);
+        }
+        .destination-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .destination-card-content {
+            padding: 1.5rem;
+        }
+        .destination-card-content h3 {
+            margin-bottom: 0.5rem;
+            color: #FF6B6B;
+            font-weight: 600;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-family: 'Montserrat';
+        }
+        .fixed-button {
+            position: fixed;
+            bottom: 20px;
+            /* right: 20px; */
+            /* background-color: #FF6B6B; */
+            /* color: white; */
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-family: 'Nunito';
+            font-weight: 700;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            color: #333;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            /* width: 98%; */
+            font-size: 22px;
+        }
+        .fixed-button:hover {
+            background-color: #FF8E8E;
+        }
+        #enquiry-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1999;
+        }
+        /* New styles for added sections */
+        .section-title {
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        strong {
+            font-size: 17px;
+            font-weight: 700;
+        }
+        .content-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .content-box h3 {
+            color: #FF6B6B;
+            margin-bottom: 1rem;
+        }
+        .itinerary-day {
+            margin-bottom: 1.5rem;
+        }
+        .itinerary-day h4 {
+            margin-bottom: 0.5rem;
+            font-size: 18px;
+        }
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .feature-list li::before {
+            content: '✓';
+            color: #FF6B6B;
+            position: absolute;
+            left: 0;
+        }
+        .policy-section {
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        .policy-section h3 {
+            margin-bottom: 1rem;
+        }
+        #toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .toast {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
+        .testimonial_cont {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 2rem;
+                height: auto;
+                min-height: 100vh;
+                margin-top: 20%;
+            }
+            .hero-content, .enquiry-form {
+                width: 100%;
+                max-width: 100%;
+            }
+            .destination-cards {
+                flex-direction: column;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            nav ul {
+                display: none;
+            }
+        }
+        @media (min-width: 768px) {
+            .hero {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            .hero-content {
+                max-width: 500px;
+                text-align: center;
+                left: 14%;
+                position: relative;
+            }
+            .enquiry-form {
+                position: fixed;
+                left: 65%;
+            }
+            .container {
+                max-width: 600px;
+                margin: unset;
+                padding: 4rem 2rem;
+                left: 10%;
+                position: relative;
+            }
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="/view/assets/img/app_logo_new.webp" alt="Travel Buddy Logo" width="50" style="border-radius: 50%;">
+            <h1>Travel Buddy</h1>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover the Wonders of Sri Lanka</h1>
+            <p>Sri Lanka offers an enchanting blend of cultural heritage, natural beauty, and warm hospitality that captivates every traveler</p>
+        </div>
+        <div class="enquiry-form" id="enquiry">
+            <h3>Enquire Now</h3>
+            <form id="enquiryForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <div style="display: flex; align-items: center;">
+                        <select id="countryCode" name="countryCode" style="margin-right: 10px;">
+                            <option value="+91">+91</option>
+                        </select>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <input type="text" id="verificationCodeInput" placeholder="Enter verification code" style="display: none;">
+                <button type="button" id="sendOtpButton">Submit</button>
+                <button type="button" id="verifyOtpButton" style="display: none;">Verify OTP</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="container">
+		
+		<section id="about-dubai">
+            <h2 class="section-title">About Srilanka</h2>
+            <div class="content-box">
+                <p>Welcome to the island nation of Sri Lanka, where pristine beaches, lush tea plantations, ancient ruins, and vibrant wildlife await your exploration. Known as the "Pearl of the Indian Ocean," Sri Lanka offers an enchanting blend of cultural heritage, natural beauty, and warm hospitality that captivates every traveler. Whether you're seeking adventure, relaxation, or cultural immersion, Sri Lanka has something for everyone.</p>
+				<p>Stay Included 🏨 Meals Included 🍴 Sightseeing Included 🗺️ Transport Included 🚐</p>
+            </div>
+        </section>
+        <section id="inclusions">
+            <h2 class="section-title">Inclusions</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Stay Included:</strong> 🏨</li>
+                    <li><strong>Meals Included:</strong> 🍴</li>
+                    <li><strong>Sightseeing Included:</strong> 🗺️</li>
+                    <li><strong>Transport Included:</strong> 🚐</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="why-travel-buddy">
+            <h2 class="section-title">Why Choose Travel Buddy?</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Reliable Vendor:</strong> We partner with trusted and dependable suppliers to ensure seamless travel experiences.</li>
+                    <li><strong>On-Time Guarantee:</strong> If your transportation is delayed for more than 30 minutes without a valid reason, we will provide a complimentary transfer and offer additional compensation as a gesture of goodwill.</li>
+                    <li><strong>Complimentary eSIM:</strong> Stay connected with our complimentary eSIM, offering easy access to mobile data during your travels.</li>
+                    <li><strong>24/7 Assistance:</strong> Our dedicated support team is available around the clock, ensuring you always know who to reach out to in case of an emergency.</li>
+                    <li><strong>Experienced Partners:</strong> Our experienced partners are well-equipped to handle your group's needs, ensuring a smooth and memorable journey.</li>
+                </ul>
+            </div>
+        </section>
+		
+        <section id="why-thailand">
+            <h2 class="section-title">Why Visit Sri Lanka?</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Rich Cultural Heritage:</strong>Sri Lanka boasts eight UNESCO World Heritage Sites, including the ancient cities of Anuradhapura and Polonnaruwa, the sacred city of Kandy, and the rock fortress of Sigiriya. These historical marvels provide a glimpse into the island's glorious past.</li>
+                    <img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/8.jpg" alt="Forts and Palaces" style="width: 100%;">
+					
+                    <li><strong>Breathtaking Landscapes:</strong>From the golden sands of Bentota to the rolling hills of Nuwara Eliya, Sri Lanka’s diverse terrain is a paradise for nature lovers. Don’t miss the chance to explore Horton Plains, Ella’s Nine Arches Bridge, and the verdant tea estates.</li>
+                    
+                    <img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/1.jpg" alt="Forts and Palaces" style="width: 100%;">
+					
+                    <li><strong>Wildlife Encounters:</strong>Sri Lanka is home to a stunning array of wildlife. Experience a thrilling safari at Yala National Park, known for its leopards, or visit Udawalawe to see herds of majestic elephants. Whale watching in Mirissa is another unforgettable experience.</li>
+                    <li><strong>Exotic Cuisine:</strong>Sri Lankan food is a burst of flavors. Relish local dishes like hoppers, kottu roti, and fragrant curries. The island’s tropical fruits and fresh seafood are a culinary delight.</li>
+					
+                    <li><strong>Adventure and Relaxation:</strong>Whether you’re hiking to Adam’s Peak, surfing in Arugam Bay, or unwinding at a luxurious spa, Sri Lanka offers both adrenaline-pumping activities and serene escapes.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="highlights-thailand">
+            <h2 class="section-title">Highlights of Srilanka: Must-Visit Destinations</h2>
+            <div class="content-box">
+                <h3>1. Sigiriya Rock Fortress</h3>
+                <p>Climb the iconic Lion Rock to explore ancient frescoes, landscaped gardens, and breathtaking panoramic views.</p>
+				<img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/7.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>2. Ella</h3>
+                <p>A picturesque hill town known for the Nine Arches Bridge, tea plantations, and scenic hikes to Little Adam's Peak.</p>
+				<img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/2.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>3. Yala National Park</h3>
+                <p>Witness incredible wildlife, including leopards, elephants, and exotic birds, on an unforgettable safari experience.</p>
+				<img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/4.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>4. Galle Fort</h3>
+                <p>Stroll through this UNESCO World Heritage Site, blending colonial architecture with quaint cafes and boutique shops.</p>
+                <img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/3.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>5. Temple of the Sacred Tooth Relic</h3>
+                <p>Visit this revered Buddhist temple in Kandy, housing a relic of Lord Buddha's tooth.</p>
+                <img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/5.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>6. Bentota Beach</h3>
+                <p>Unwind on golden sands, enjoy water sports, and explore the serene Bentota River with mangrove tours.</p>
+                <img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/6.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>7. Nuwara Eliya</h3>
+                <p>Known as "Little England," this charming town offers lush tea estates, cool weather, and the picturesque Gregory Lake.</p>
+                <img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/1.jpg" alt="Forts and Palaces" style="width: 100%;"> 
+                <h3>8. Mirissa</h3>
+                <p>A paradise for whale watching, relaxing on the beach, and experiencing Sri Lanka's vibrant coastal life</p> 
+                <h3>9. Polonnaruwa</h3>
+                <p>Step back in time to explore ancient ruins, temples, and stupas from Sri Lanka's rich historical heritage.</p>
+                <img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/8.jpg" alt="Forts and Palaces" style="width: 100%;"> 
+				
+        </section>
+
+        <section id="itinerary-thailand">
+            <h2 class="section-title">7-Day Itinerary for Srilanka</h2>
+            <div class="content-box">
+                <h4 class="day__name">Day 1: Arrival in Colombo</h4>
+                <p><strong>Morning:</strong> Highlights: Bandaranaike International Airport, Galle Face Green, and Colombo Fort.</p>
+                <p><strong>Activities:</strong> Arrive in Colombo, the vibrant capital city. Take a city tour to explore colonial-era architecture, bustling markets, and tranquil temples. Visit the National Museum and enjoy a sunset stroll along Galle Face Green.</p>
+                <p><strong>Accommodation:</strong> Overnight stay in Colombo.</p>
+                <h4 class="day__name">Day 2: Colombo to Sigiriya</h4>
+                <p><strong>Highlights:</strong> Travel to Sigiriya, a UNESCO World Heritage Site. Climb the iconic rock fortress to admire ancient frescoes and panoramic views. En route, visit the Dambulla Cave Temple, famous for its Buddhist statues and vibrant murals.</p>
+                <p><strong>Activities:</strong> Overnight stay in Sigiriya.</p>
+                <p><strong>Accommodation:</strong> Shop at MBK Center or Siam Paragon. Experience the vibrant nightlife at Khao San Road.</p>
+                <h4 class="day__name">Day 3: Sigiriya to Kandy</h4>
+                <p><strong>Highlights:</strong> Temple of the Tooth Relic and Kandy Lake.</p>
+                <p><strong>Activities:</strong> Journey to Kandy, the cultural capital of Sri Lanka. Explore the Temple of the Tooth Relic, a revered Buddhist site. Stroll around Kandy Lake and enjoy a traditional Kandyan dance performance in the evening.</p>
+                <p><strong>Accommodation:</strong> Overnight stay in Kandy.</p>
+                <h4 class="day__name">Day 4: Kandy to Nuwara Eliya</h4>
+                <p><strong>Highlights:</strong> Tea Plantations and Gregory Lake.</p>
+                <p><strong>Activities:</strong> Drive to Nuwara Eliya, known as "Little England" for its colonial charm. Visit a tea factory to learn about tea production and sample some of the world’s finest teas. Spend a peaceful evening at Gregory Lake.</p>
+                <p><strong>Accommodation:</strong> Overnight stay in Nuwara Eliya.</p>
+                <h4 class="day__name">Day 5: Nuwara Eliya to Ella</h4>
+                <p><strong>Highlights:</strong> Train Journey and Nine Arches Bridge.</p>
+                <p><strong>Activities:</strong> Board a scenic train to Ella, offering breathtaking views of lush greenery and waterfalls. Explore the picturesque Nine Arches Bridge and hike to Little Adam’s Peak for a spectacular sunset.</p>
+                <p><strong>Accommodation:</strong> Overnight stay in Ella.</p>
+                <h4 class="day__name">Day 6: Ella to Yala National Park</h4>
+                <p><strong>Highlights:</strong> Yala Safari.</p>
+                <p><strong>Activities:</strong> Travel to Yala National Park for an exhilarating wildlife safari. Spot leopards, elephants, crocodiles, and a variety of bird species in their natural habitat.</p>
+                <p><strong>Accommodation:</strong> Overnight stay near Yala National Park.</p>
+                <h4 class="day__name">Day 7: Yala to Galle & Departure</h4>
+                <p><strong>Highlights:</strong> Galle Fort and Mirissa.</p>
+                <p><strong>Activities:</strong> Visit the historic Galle Fort, a UNESCO World Heritage Site. Explore its cobblestone streets, boutique shops, and colonial buildings. If time permits, head to Mirissa for a relaxing beach experience or whale watching.</p>
+                <p><strong>Accommodation:</strong> Drive back to Colombo for your departure flight.</p>
+            </div>
+        </section>
+		
+        <section id="testimonials" class="user-test">
+            <div class="content-box">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="testimonial_cont">
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/1.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/2.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/4.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/5.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/6.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/7.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/8.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/9.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/10.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/11.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/12.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/13.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/14.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                
+            </div>
+        </section>
+        
+        <section id="policies" class="policy-section">
+            <h3>Confirmation Policy</h3>
+            <ul>
+                <li>The customer receives a confirmation voucher via email within 24 hours of successful booking.</li>
+                <li>In case the preferred slots are unavailable, an alternate schedule of the customer’s preference will be arranged and a new confirmation voucher will be sent via email.</li>
+                <li>Alternatively, the customer may choose to cancel their booking before confirmation and a full refund will be processed.</li>
+            </ul>
+
+            <h3>Refund Policy</h3>
+            <p>The applicable refund amount will be processed within 2-3 business days.</p>
+
+            <h3>Cancellation Policy</h3>
+            <ul>
+                <li>If cancellation is made 45 days before the date of travel, then 10% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 30 days before the date of travel, then 50.0% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 21 days before the date of travel, then 70% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 10 days before the date of travel, then 100% of total tour cost will be charged as cancellation fees.</li>
+            </ul>
+        </section>
+    </div>
+
+    <a href="#" class="fixed-button" id="openEnquiry" style="display: none;">Enquire Now</a>
+
+    <div class="overlay" id="overlay"></div>
+    <div id="enquiry-popup" class="enquiry-form"></div>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '525874949911799');
+        fbq('track', 'PageView');
+        fbq('trackCustom', 'TrackCustomEventLeadGen');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=525874949911799&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TXFKZVW'); // Replace GTM-XXXXXX with your GTM container ID
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-827809061"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-827809061');
+    </script>
+    <!-- End Google Analytics -->
+    <script>
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBnKtZnePCqVLbr6jOUr4_Saf3iNmsZR-s",
+            authDomain: "travelbuddy-174317.firebaseapp.com",
+            databaseURL: "https://tbd-prod-174317-b933e.asia-southeast1.firebasedatabase.app/",
+            projectId: "travelbuddy-174317",
+            storageBucket: "travelbuddy-174317.appspot.com",
+            messagingSenderId: "9959459076",
+            appId: "1:9959459076:web:c4417f188991113b37a851",
+            measurementId: "G-PXBR867EGP"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const googleAnalytics = firebase.analytics();
+    </script>
+    </head>
+    <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXFKZVW"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="toast-container"></div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        function getUTMParameters(url) {
+                let urlParams = new URLSearchParams(new URL(url).search);
+                let utmParams = {};
+            
+                urlParams.forEach((value, key) => {
+                    if (key.startsWith('utm_') || key.startsWith('param')) {
+                        utmParams[key] = value;
+                    }
+                });
+            
+                return utmParams;
+            }
+        
+        // Send event to Google Analytics
+        gtag('event', 'lead_generation', {
+                'event_category': 'engagement',
+                'event_label': 'Lead Generation Button Click',
+                'value': 1
+            });
+
+        // Send event to Google Tag Manager
+        dataLayer.push({
+            'event': 'lead_generation',
+            'event_category': 'engagement',
+            'event_label': 'Lead Generation Button Click',
+            'value': 1
+        });
+        
+        // Array of background images
+        const heroImages = [
+                '/view/assets/img/leadGen/Srilanka/1.jpg',
+                '/view/assets/img/leadGen/Srilanka/2.jpg',
+                '/view/assets/img/leadGen/Srilanka/3.jpg',
+                '/view/assets/img/leadGen/Srilanka/4.jpg',
+                '/view/assets/img/leadGen/Srilanka/5.jpg',
+                '/view/assets/img/leadGen/Srilanka/6.jpg',
+                '/view/assets/img/leadGen/Srilanka/7.jpg',
+                '/view/assets/img/leadGen/Srilanka/8.jpg'
+                
+        ];
+
+        let currentImageIndex = 0;
+        const heroSection = document.querySelector('.hero');
+
+        // Function to change the background image
+        function changeHeroBackground() {
+            currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+            heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${heroImages[currentImageIndex]}')`;
+        }
+
+        // Change the background image every 20 seconds
+        setInterval(changeHeroBackground, 7000);
+        
+        // Add this JavaScript to show a toast message
+        function showToast(message) {
+            const toastContainer = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            toastContainer.appendChild(toast);
+
+            // Show the toast
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+
+            // Hide the toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    toastContainer.removeChild(toast);
+                }, 500);
+            }, 3000);
+        }
+        
+        const countryCodeSelect = document.getElementById('countryCode');
+        const phoneInput = document.getElementById('phone');
+        const sendOtpButton = document.getElementById('sendOtpButton');
+        const verifyOtpButton = document.getElementById('verifyOtpButton');
+        const verificationCodeInput = document.getElementById('verificationCodeInput');
+
+        // Fetch country codes from a free API
+        fetch('https://restcountries.com/v3.1/all')
+            .then(response => response.json())
+            .then(data => {
+                const countryCodes = data.map(country => {
+                    const callingCode = country.idd.root + (country.idd.suffixes ? country.idd.suffixes[0] : '');
+                    return {
+                        name: country.name.common,
+                        code: callingCode
+                    };
+                }).sort((a, b) => a.name.localeCompare(b.name));
+
+                // Populate the select element with country codes
+                countryCodes.forEach(country => {
+                    const option = document.createElement('option');
+                    option.value = country.code;
+                    option.textContent = `${country.name} (${country.code})`;
+                    countryCodeSelect.appendChild(option);
+                });
+
+                // Set default country code to +91
+                countryCodeSelect.value = '+91';
+            })
+            .catch(error => console.error('Error fetching country codes:', error));
+
+        // Initialize reCAPTCHA verifier
+        const appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+            'size': 'invisible',
+            'callback': function(response) {
+                // reCAPTCHA solved, allow signInWithPhoneNumber.
+            }
+        });
+
+        let confirmationResult;
+
+        sendOtpButton.addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = phoneInput.value;
+            const countryCode = countryCodeSelect.value;
+
+            if (name && email && phone) {
+                const fullPhoneNumber = `${countryCode}${phone}`;
+                sendOTP(fullPhoneNumber, appVerifier);
+                sendOtpButton.style.display = 'none';
+                showToast('OTP sent successfully!');
+                fbEvent('sentOTP', { phone: fullPhoneNumber });
+                // Send event to Google Analytics
+                gtag('event', 'lead_generation-sendOtp', {
+                    'event_category': 'engagement',
+                    'event_label': 'OTP Sent',
+                    'value': fullPhoneNumber,
+                    
+                });
+
+                // Send event to Google Tag Manager
+                dataLayer.push({
+                    'event': 'lead_generation-sendOtp',
+                    'event_category': 'engagement',
+                    'event_label': 'OTP Sent',
+                    'value': fullPhoneNumber,
+                });
+            } else {
+                showToast('Please fill in all the required fields.');
+            }
+        });
+
+        function sendOTP(phoneNumber, appVerifier) {
+            firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+                .then(function(result) {
+                    confirmationResult = result;
+                    verificationCodeInput.style.display = 'block';
+                    verifyOtpButton.style.display = 'block';
+                }).catch(function(error) {
+                    console.error('Error during signInWithPhoneNumber', error);
+                });
+        }
+
+        verifyOtpButton.addEventListener('click', function() {
+            const code = verificationCodeInput.value;
+            confirmationResult.confirm(code).then( async function(result) {
+                const user = result.user;
+                showToast('Thank you for choosing Travel Buddy. Our team will get in touch with you within the next 24hours.');
+                fbEvent('verifyOTP');
+                
+                // Send event to Google Analytics
+                gtag('event', 'lead_generation-verifyOtp', {
+                    'event_category': 'engagement',
+                    'event_label': 'OTP Verified',
+                    'value': 1
+                });
+                
+                // Send event to Google Tag Manager
+                dataLayer.push({
+                    'event': 'lead_generation-verifyOtp',
+                    'event_category': 'engagement',
+                    'event_label': 'OTP Verified',
+                    'value': 1
+                });
+                return;
+                
+                // Remove the enquiry form and open enquiry button
+                const enquiryForm = document.getElementById('enquiry');
+                const openEnquiryButton = document.getElementById('openEnquiry');
+                // Proceed with form submission or other actions
+                
+                // Check For UTM
+                var url = window.location.href;
+                var utmParams;
+                // Example usage
+                if (url.includes('?utm_')) {
+                    utmParams = getUTMParameters(url);
+                }
+                
+                let formData = {
+                    date: new Date().toLocaleString(),
+                    name: document.getElementById('name').value,
+                    phone: document.getElementById('countryCode').value + document.getElementById('phone').value,
+                    email: document.getElementById('email').value,
+                    destination: 'Sri-Lanka',
+                    utmParams: utmParams
+                };
+
+                // Convert to 2D array format required by Google Sheets
+                let dataArray = [
+                    [
+                        formData.date,
+                        formData.name,
+                        formData.phone,
+                        formData.email,
+                        formData.destination,
+                        JSON.stringify(formData.utmParams)
+                    ]
+                ];
+
+                try {
+                    let response = await fetch('/write-to-sheet', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            googleSheetId: '1FimuK7vR7WUAY5Qydep4_OOjSKaUVYFifEWfA0cUh6c',
+                            data: dataArray,
+                            sheetName: 'International'
+                        })
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        // Open beatravelbuddy.com/flights
+                        window.open('https://beatravelbuddy.com/flights', '_self');
+                        //console.log('Form submitted successfully');
+                    } else {
+                        throw new Error(result.message || 'Form submission failed');
+                    }
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    showToast('Error submitting form. Please try again.');
+                }
+                
+                
+            }).catch(function(error) {
+                console.error('Error during confirmationResult.confirm', error);
+            });
+            
+            // if (enquiryForm) enquiryForm.remove();
+            // if (openEnquiryButton) openEnquiryButton.remove();
+        });
+        
+        function fbEvent(event, data) {
+	        if (window.location.href.includes('localhost') || window.location.href.includes('dev.')) {
+                return;
+            }
+            let trackEvent = '';
+            let params = {};
+
+            switch (event) {
+                case 'sentOTP':
+                    trackEvent = 'Sent OTP via Dom LP';
+                    params = {
+                        content_name: 'Sent OTP via Dom LP',
+                        content_category: 'Sent OTP via Dom LP',
+                    };
+                    break;
+                case 'verifyOTP':
+                    trackEvent = 'Verify OTP via Dom LP';
+                    params = {
+                        content_name: 'Verify OTP via Dom LP',
+                        content_category: 'Verify OTP via Dom LP',
+                    };
+                    break;    
+            }
+            // Call fbq with the prepared parameters
+            fbq('trackCustom', trackEvent, params);
+        }
+        
+        const enquiryForm = document.getElementById('enquiry');
+        const fixedEnquiryButton = document.getElementById('openEnquiry');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    fixedEnquiryButton.style.display = 'flex';
+                } else {
+                    fixedEnquiryButton.style.display = 'none';
+                }
+            });
+        }, { threshold: 0 });
+
+        observer.observe(enquiryForm);
+        
+        
+        
+    });
+    </script>
+    <!-- Add a div for reCAPTCHA -->
+    <div id="recaptcha-container"></div>
+</body>
+</html>

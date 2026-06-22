@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Buddy Privacy Policy</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+		
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 0;
+            margin: 0;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #4a90e2, #63b3ed);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .logo-container {
+            background: #111;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 16px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-container img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h3 {
+            font-size: 1rem;
+            font-weight: 400;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Main Content Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            margin-top: -2rem;
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Table of Contents */
+        .toc {
+            background-color: #f5f7fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #4a90e2;
+        }
+        
+        .toc h2 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .toc-list {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 0.5rem;
+        }
+        
+        .toc-item {
+            padding: 0.5rem 0;
+        }
+        
+        .toc-link {
+            color: #4a5568;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .toc-link:hover {
+            color: #4a90e2;
+            transform: translateX(5px);
+        }
+        
+        .toc-link::before {
+            content: "→";
+            margin-right: 0.5rem;
+            color: #4a90e2;
+        }
+        
+        /* Section Styles */
+        .section {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #edf2f7;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            background: linear-gradient(to right, #4a90e2, #63b3ed);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(74, 144, 226, 0.2);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 30px;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(to right, #4a90e2, #63b3ed);
+            transform: rotate(45deg);
+            z-index: -1;
+        }
+        
+        .section-content {
+            padding: 0 1rem;
+        }
+        
+        .section-content p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+        
+        .section-content ul {
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-content li {
+            margin-bottom: 0.8rem;
+        }
+        
+        /* Data Deletion Section Highlight */
+        .data-deletion {
+            background-color: #ebf8ff;
+            border: 1px solid #bee3f8;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .data-deletion::before {
+            content: "IMPORTANT";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background-color: #4a90e2;
+            color: white;
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .data-deletion h3 {
+            color: #2b6cb0;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .data-deletion p {
+            color: #2c5282;
+        }
+        
+        .data-deletion ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .data-deletion li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .data-deletion li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4a90e2;
+            font-weight: bold;
+        }
+        
+        .email-link {
+            color: #4a90e2;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px dashed #4a90e2;
+            transition: all 0.3s ease;
+        }
+        
+        .email-link:hover {
+            color: #2b6cb0;
+            border-bottom-style: solid;
+        }
+        
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .footer .email {
+            color: #63b3ed;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .footer .email:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4a90e2;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: #2b6cb0;
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header {
+                padding: 2rem 1rem;
+            }
+            
+            .container {
+                padding: 1.5rem;
+                margin-top: -1rem;
+            }
+            
+            .toc-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <div class="logo-container">
+            <img src="https://d2w2hi6m5h0cd0.cloudfront.net/logo-icon-small.png" alt="Travel Buddy Logo">
+        </div>
+        <h1>Terrainspotter Private Ltd.</h1>
+        <h2>CIN: U63030HR2020PTC084741</h2>
+        <h3>PRIVACY POLICY (Last Updated: April 28, 2025)</h3>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Table of Contents -->
+        <div class="toc" id="toc">
+            <h2>Table of Contents</h2>
+            <ul class="toc-list">
+                <li class="toc-item"><a href="#introduction" class="toc-link">Introduction</a></li>
+                <li class="toc-item"><a href="#personal-info" class="toc-link">Personal Information</a></li>
+                <li class="toc-item"><a href="#auto-collect" class="toc-link">Information We Collect Automatically</a></li>
+                <li class="toc-item"><a href="#use-disclosure" class="toc-link">Use & Disclosure of Personal Data</a></li>
+                <li class="toc-item"><a href="#data-quality" class="toc-link">Personal Data Quality</a></li>
+                <li class="toc-item"><a href="#data-security" class="toc-link">Personal Data Security</a></li>
+                <li class="toc-item"><a href="#data-deletion" class="toc-link">Data Deletion & Account Removal</a></li>
+                <li class="toc-item"><a href="#right-forgotten" class="toc-link">Right to be Forgotten</a></li>
+                <li class="toc-item"><a href="#changes" class="toc-link">Changes to this Policy</a></li>
+            </ul>
+        </div>
+        
+        <!-- Introduction Section -->
+        <div class="section" id="introduction">
+            <h2 class="section-title">Introduction</h2>
+            <div class="section-content">
+                <p><strong>Terrainspotter Pvt. Ltd. takes the issue of the privacy of your Personal Data very seriously.</strong></p>
+                <ul>
+                    <li>Personal data means any information relating to an identified or identifiable natural person ('Data Subject') and an identifiable person is one who can be identified, directly or indirectly, in particular by reference to an identification number or to one or more factors specific to his physical, physiological, mental, economic, cultural or social identity.</li>
+                    <li>This privacy policy applies to your permitted access to this website <a href="https://www.beatravelbuddy.com" class="email-link">https://www.beatravelbuddy.com</a> and/or the use of the Travel Buddy App as regards to any Personal Data that may be collected from you or provided by you during such access or as a result of your access to our website or as a result of your using the Travel Buddy App.</li>
+                    <li>This privacy policy has been published to provide you a clear and concise outline of how and when Personal Data is collected, stored and/or used by us.</li>
+                    <li>IF YOU USE ANY SERVICE PROVIDED BY OUR PLATFORM OR YOU PROVIDE VOLUNTARILY ANY PERSONAL DATA TO US THEN YOU SPECIFICALLY REPRESENT THAT YOU HAVE READ, UNDERSTOOD AND CONSENTED TO THE COLLECTION, USE AND STORAGE OF YOUR PERSONAL DATA.</li>
+                    <li>From time to time, we may change the provisions of this Privacy Policy without specific notice to you. We strongly recommend that you check this document on a regular basis to ensure that you understand the obligations detailed in this Privacy Policy. This Privacy Policy will be accessible by you either through our website <a href="https://www.beatravelbuddy.com" class="email-link">https://www.beatravelbuddy.com</a> or through the Travel Buddy App.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Personal Information Section -->
+        <div class="section" id="personal-info">
+            <h2 class="section-title">Personal Information that You Provide to Us</h2>
+            <div class="section-content">
+                <p>We do not generally collect Personal Data about you except when you provide that information voluntarily and in accordance with our various application forms that are available on this web site <a href="https://www.beatravelbuddy.com" class="email-link">https://www.beatravelbuddy.com</a> or through the Travel Buddy App. Once you have provided Personal Data it will only be used for purposes of registration so that we can forward to you the information that you have requested via the Travel Buddy App.</p>
+                <p>In other words, all collected Personal Data about you will be used solely for the purpose to which you have consented. Such information will not be transferred to other parties unless you are fully informed prior to such transference and you have agreed to such transference, unless we are required by law to transfer the information to an authorised organisation.</p>
+                <p>The above only relates to your Personal Data and does not relate to any aggregated or other information that may be developed or created internally by us, provided this other information cannot later be used or combined with other information to identify you in any way whatsoever and therefore maintains our privacy commitment to you.</p>
+                
+                <p><strong>The information we collect which we collectively call Personal data are:</strong></p>
+                <ul>
+                    <li>Basic user information, such as your name, username, gender, birth date, email and phone number;</li>
+                    <li>Messages and interactive post information from the Travel Buddy App feed, such as messages to other users and information you provide in connection with those activities and events;</li>
+                    <li>Other background, contact and demographic information, such other interests and self-descriptions you choose to provide;</li>
+                    <li>Debit and Credit card information which may be processed by a third party engaged by us to validate such credit and debit card information. We do not store such information as that information is passed through to our debit and credit card validator.</li>
+                    <li>Travel Buddy has a legitimate reason to add your email address to Travel Buddy's email marketing database at the time of account creation in Travel Buddy so that Travel Buddy can send you the Welcome Email which has instructions & tips for using the app for the first time. However as a subscriber you have always had and always will have the opportunity to unsubscribe at any time from the unsubscribe link at the bottom of all our emails.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Information We Collect Automatically Section -->
+        <div class="section" id="auto-collect">
+            <h2 class="section-title">Information We May Collect Automatically</h2>
+            <div class="section-content">
+                <p>When you access or use our Services, we may also automatically collect information about you, including:</p>
+                <ul>
+                    <li>Usage Information: We collect information about your activity through our services. For example, we may collect information about:
+                        <ul>
+                            <li>How you interact with our services, such as which posts you like, which hashtags you search on the feed, what type of groups or interests you use.</li>
+                            <li>How you communicate with other users, such as their names, the time and date of your communications, the number of messages you exchange with your friends, which friends you exchange messages with the most, and your interactions with messages;</li>
+                        </ul>
+                    </li>
+                    <li>Content Information: We collect content you create on our services, such as posts, meetups etc. and information about the content you create or provide, such as if recipients have viewed the content. We also collect the metadata that is associated with the content.</li>
+                    <li>Camera and Photos: Many of our services require us to collect images and other information from your device's camera and photos. For example, you won't be able to post on the feed or upload photos from your camera roll unless we can access your camera or photos.</li>
+                    <li>Location Information: We may collect information about your location when you access our mobile application or website, or otherwise consent to the collection of this information. With your permission, we may also collect information about your precise location using methods that include GPS, wireless networks, cell towers, Wi-Fi access points.</li>
+                    <li>Device Information: We may collect device-specific information when you access our Services, including your hardware model, operating system and version, unique device identifiers, mobile network information and information about the device's interaction with our Services, browser type, language and time zone, information about your wireless and mobile network connections, such as mobile phone number, service provider, and signal strength.</li>
+                    <li>Log Information: We may collect log information about how you access or use our Services, including your access times, browser type and language, Internet Service Provider and Internet Protocol address.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Use & Disclosure Section -->
+        <div class="section" id="use-disclosure">
+            <h2 class="section-title">Use & Disclosure of Personal Data</h2>
+            <div class="section-content">
+                <p>Unless you have advised us not to do so, your Personal Data is not be shared with other Travel Buddy users. It is our goal to only use the information you provide us in a manner that better provides our services to you such as:</p>
+                <ul>
+                    <li>Develop, operate, improve, deliver, maintain, and protect our products and services. send you communications, including by email. For example, we may use email to respond to support inquiries or to share information about our products, services, and promotional offers that we think may interest you</li>
+                    <li>Monitor and analyse trends and usage.</li>
+                    <li>Personalize our services by, among other things, suggesting friends or profile information, or customizing the content we show you, including ads.</li>
+                    <li>Contextualize your experience by, among other things, tagging post content using your precise location information (if, of course, you've given us permission to collect that information) and applying other labels based on the content.</li>
+                    <li>Provide and improve ad targeting and measurement, including through the use of your precise location information (again, if you've given us permission to collect that information), both on and off our services. See the sections below for more information and your choices.</li>
+                    <li>Enhance the safety and security of our products and services.</li>
+                    <li>Verify your identity and reduce the risk of fraud or other unauthorized or illegal activity.</li>
+                    <li>Use information we've collected from cookies and other technology to enhance our services and your experience with them.</li>
+                    <li>Enforce our Terms of Service and other usage policies.</li>
+                </ul>
+                
+                <p>In addition we undertake not to sell, rent or trade your Personal Data. We will not disclose information about you unless the disclosure is:</p>
+                <ul>
+                    <li>(a) required by law (eg the Indian Tax Office);</li>
+                    <li>(b) is authorised by law (eg to protect our interests or where we have a duty to make such disclosure); or</li>
+                    <li>(c) you have consented for us to disclose the information about you.</li>
+                </ul>
+                
+                <p>By sharing your details, you agree to receive updates on SMS, RCS, Email & Whatsapp and call.</p>
+            </div>
+        </div>
+        
+        <!-- Personal Data Quality Section -->
+        <div class="section" id="data-quality">
+            <h2 class="section-title">Personal Data Quality</h2>
+            <div class="section-content">
+                <p>It is our goal to ensure that your Personal Data is correct, accurate, relevant, timely and secure. For us to meet this goal would you please ensure that if there is any change to any of the details you have provided to us, you will promptly advise us so that we can continue to provide the services that we have agreed.</p>
+                <p>Further, if it comes to your attention that we possess certain information about you that is not correct, accurate, complete or up-to-date, then contact us and we will use all reasonable efforts to correct the information we have about you. Such corrections may take time as we will only correct such information once we have verified that the new information is correct.</p>
+            </div>
+        </div>
+        
+        <!-- Personal Data Security Section -->
+        <div class="section" id="data-security">
+            <h2 class="section-title">Personal Data Security</h2>
+            <div class="section-content">
+                <p>The Travel Buddy Team undertakes to use our best endeavours to keep secure your Personal Data and we further undertake to take all reasonable precautions to protect that information against any unauthorised loss, misuse or alteration.</p>
+                <p>Although we strive to employ reasonable protections for your information that are appropriate to its sensitivity, we do not guarantee or warrant the security of the information you share with us and we are not responsible for the theft, destruction, loss or inadvertent disclosure of your information or content. No system is 100% secure. The Services uses industry standard Secure Sockets Layer (SSL) technology to allow for the encryption of personal information</p>
+                
+                <p><strong>Access to Personal Information</strong></p>
+                <p>If you request us to provide you with access to personal information we hold about you, then we will provide such information to you in a timely manner in accordance with GDPR requirements. Please submit your request with the Subject: "Access To My Personal Travel Buddy Information" to the following address: <a href="mailto:support@beatravelbuddy.com" class="email-link">support@beatravelbuddy.com</a></p>
+                
+                <p><strong>Unauthorised Access to Personal Data (Data Breach)</strong></p>
+                <p>For the purposes of this Privacy Policy a "Data Breach" is a breach of the security concerning the protection of Personal Data which leads to the accidental or unlawful destruction, loss, alteration, unauthorised disclosure or access to your Personal Data transmitted, stored or otherwise processed by us. If you are:</p>
+                <ul>
+                    <li>A resident of a jurisdiction that is a member of the European Union and the GDPR applies to your Personal Data then we will without undue delay after we become aware of a Data Breach and where feasible within 72 hours after becoming aware of the Data Breach notify the Office of the Indian Information Commissioner in writing of the Data Breach unless the Data Breach is unlikely to result in risk to your rights and freedoms. Further we will attempt to notify you within a reasonable time after becoming aware of the Data Breach if the Data Breach involves your Personal Data.</li>
+                    <li>Not a resident of a jurisdiction that is a member of the European Union and the GDPR does not apply to your Personal Data then we will without undue delay after we become aware of a Data Breach notify the Office of the India Information Commissioner if the Data Breach involves your Personal Data and such breach is likely to result in serious harm to you. Further we will attempt to notify you within a reasonable time after becoming aware of the Data Breach if the Data Breach involves your Personal Data.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Data Deletion Section -->
+        <div class="section" id="data-deletion">
+            <h2 class="section-title">Data Deletion & Account Removal</h2>
+            <div class="section-content">
+                <div class="data-deletion">
+                    <h3>How to Delete Your User Data</h3>
+                    <p>We respect your right to control your data. You can delete your user data in the following ways:</p>
+                    <ul>
+                        <li><strong>Self-Service Option:</strong> You can delete your user data by deactivating your profile through the "Edit Profile" section in your account settings. This will remove your personal information from public view and mark your account for data deletion.</li>
+						<li><strong>Data Retention Period:</strong> After receiving your deletion request, we will process it within 30 days. Some information may be retained for legal or legitimate business purposes as required by law.</li>
+                        <li><strong>Third-Party Data:</strong> Please note that while we will delete your data from our systems, copies of your information may remain viewable in cached and archived pages or if other users have copied or stored your information.</li>
+                    </ul>
+                    <p>We are committed to handling your data with care and respecting your privacy choices. If you have any questions about data deletion, please contact our support team.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right to be Forgotten Section -->
+        <div class="section" id="right-forgotten">
+            <h2 class="section-title">Right to be Forgotten</h2>
+            <div class="section-content">
+                <p>If you are a resident of a jurisdiction that is a member of the European Union and the GDPR applies to your Personal Data, then:</p>
+                <ul>
+                    <li>you may by email to us advise us that your consent is withdrawn; and</li>
+                    <li>we will subject to the requirements of the GDPR and subject to any binding laws upon us to the contrary and subject to validating your request use all reasonable efforts to remove any Personal Data about you within a reasonable time commencing on the date that you advise us that your consent concerning the collection, storage and usage of your Personal Data is withdrawn.</li>
+                    <li>Nothing in this clause requires us to breach any law in India that requires us to keep your Personal Data such as taxation laws.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Changes to Policy Section -->
+        <div class="section" id="changes">
+            <h2 class="section-title">Changes to this Policy</h2>
+            <div class="section-content">
+                <p>We reserve the right to make changes to this privacy policy from time to time for any reason. We will accordingly make those changes and display those changes on this website.</p>
+                <p>This privacy statement was last amended on April 28, 2025</p>
+                <p>Contact us about privacy: If you would like to contact us as regards to anything concerning this privacy policy, or if you think that we have breached any aspect of this privacy policy, then please contact us by email at <a href="mailto:support@beatravelbuddy.com" class="email-link">support@beatravelbuddy.com</a>.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <p>SupremeWork,<br>Second floor, Eros City Square Mall,<br>Sector 49, Gurugram,<br>Haryana 122018</p>
+        <p>Email: <a href="mailto:support@beatravelbuddy.com" class="email">support@beatravelbuddy.com</a></p>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <a href="" class="back-to-top" id="backToTop">↑</a>
+    
+    <!-- jQuery Script for Interactive Elements -->
+    <script>
+        $(document).ready(function() {
+            // Smooth scrolling for anchor links
+            $('a[href^="#"]').on('click', function(event) {
+                event.preventDefault();
+                
+                var target = $(this.getAttribute('href'));
+                
+                if(target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 100
+                    }, 800);
+                }
+            });
+            
+            // Back to top button visibility
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 300) {
+                    $('#backToTop').addClass('visible');
+                } else {
+                    $('#backToTop').removeClass('visible');
+                }
+            });
+            
+            // Back to top button click
+            $('#backToTop').click(function(event) {
+                event.preventDefault();
+                $('html, body').animate({scrollTop: 0}, 800);
+            });
+            
+            // Highlight the current section in TOC
+            $(window).scroll(function() {
+                var scrollPosition = $(window).scrollTop();
+                
+                // Find the current section
+                $('.section').each(function() {
+                    var currentSection = $(this);
+                    var sectionTop = currentSection.offset().top - 150;
+                    
+                    if (scrollPosition >= sectionTop) {
+                        var currentId = currentSection.attr('id');
+                        
+                        // Remove active class from all links
+                        $('.toc-link').removeClass('active');
+                        
+                        // Add active class to current section link
+                        $('.toc-link[href="#' + currentId + '"]').addClass('active');
+                    }
+                });
+            });
+            
+            // Add hover effect to sections
+            $('.section').hover(
+                function() {
+                    $(this).css('transform', 'translateX(5px)');
+                    $(this).find('.section-title').css('box-shadow', '0 4px 15px rgba(74, 144, 226, 0.3)');
+                },
+                function() {
+                    $(this).css('transform', 'translateX(0)');
+                    $(this).find('.section-title').css('box-shadow', '0 2px 10px rgba(74, 144, 226, 0.2)');
+                }
+            );
+            
+            // Highlight the data deletion section initially
+            setTimeout(function() {
+                $('.data-deletion').css('box-shadow', '0 0 20px rgba(74, 144, 226, 0.4)');
+                setTimeout(function() {
+                    $('.data-deletion').css('box-shadow', 'none');
+                }, 2000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

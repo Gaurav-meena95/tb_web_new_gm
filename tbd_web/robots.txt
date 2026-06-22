@@ -1,0 +1,2 @@
+Sitemap: https://beatravelbuddy.com/sitemap.xml
+User-agent: *

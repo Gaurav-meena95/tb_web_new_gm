@@ -1,0 +1,18 @@
+{
+  "name": "@pqina/pintura-video",
+  "version": "1.5.0",
+  "browser": "pinturavideo.js",
+  "main": "pinturavideo.js",
+  "types": "pinturavideo.d.ts",
+  "author": "Rik Schennink at PQINA",
+  "homepage": "https://pqina.nl/pintura/",
+  "license": "https://pqina.nl/pintura/license/",
+  "description": "Adds video support to Pintura",
+  "type": "module",
+  "peerDependencies": {
+    "@pqina/pintura": "^8.62.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pqina.nl/"
+  }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+		<script src="/firebase/firebase-app-compat.js"></script>
+
+		<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+		<script src="/firebase/firebase-analytics-compat.js"></script>
+
+		<!-- Add Firebase products that you want to use -->
+		<script src="/firebase/firebase-auth-compat.js"></script>
+
+		<script>
+			// Your web app's Firebase configuration
+			// var firebaseConfig = {
+			// 	apiKey: "YOUR_API_KEY",
+			// 	authDomain: "YOUR_AUTH_DOMAIN",
+			// 	projectId: "YOUR_PROJECT_ID",
+			// 	storageBucket: "YOUR_STORAGE_BUCKET",
+			// 	messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+			// 	appId: "YOUR_APP_ID",
+			// };
+
+			// const firebaseConfig = {
+			// 	apiKey: "AIzaSyDEyi7tDJdu8Bv5T8p70UK_6Cp5y9PZPPU",
+			// 	authDomain: "travelbuddy-174317.firebaseapp.com",
+			// 	databaseURL: "https://travelbuddy-174317.firebaseio.com",
+			// 	projectId: "travelbuddy-174317",
+			// 	storageBucket: "travelbuddy-174317.appspot.com",
+			// 	messagingSenderId: "9959459076",
+			// 	appId: "1:9959459076:web:9aaea4618e26b62637a851",
+			// 	measurementId: "G-K2LQ971XLJ",
+			// };
+
+			const firebaseConfig = {
+				apiKey: "AIzaSyDa_sE9g0uVwrixMiN170O8-2hTv7DslBM",
+				authDomain: "lo-faro.firebaseapp.com",
+				projectId: "lo-faro",
+				storageBucket: "lo-faro.appspot.com",
+				messagingSenderId: "490330702191",
+				appId: "1:490330702191:web:0b34b6d52cf24404df289a",
+				measurementId: "G-73041WSLC6",
+			};
+
+			// Initialize Firebase
+			firebase.initializeApp(firebaseConfig);
+		</script>
+	</head>
+	<body>
+		<form id="phoneForm">
+			<input
+				type="text"
+				id="phoneNumber"
+				placeholder="Enter phone number with country code, e.g. +1234567890"
+			/>
+			<button type="button" onclick="sendOtp()">Send OTP</button>
+		</form>
+		<div id="otpSection" style="display: none">
+			<input type="text" id="otp" placeholder="Enter OTP" />
+			<button type="button" onclick="verifyOtp()">Verify OTP</button>
+		</div>
+		<div id="recaptcha-container"></div>
+		<script>
+			let recaptchaVerifier;
+			let confirmationResult;
+
+			function sendOtp() {
+				const phoneNumber =
+					document.getElementById("phoneNumber").value;
+
+				if (!recaptchaVerifier) {
+					recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+						"recaptcha-container",
+						{
+							size: "invisible",
+						}
+					);
+				}
+
+				firebase
+					.auth()
+					.signInWithPhoneNumber(phoneNumber, recaptchaVerifier)
+					.then(function (result) {
+						confirmationResult = result;
+						document.getElementById("otpSection").style.display =
+							"block";
+					})
+					.catch(function (error) {
+						console.error("SMS not sent", error);
+					});
+			}
+
+			function verifyOtp() {
+				const otp = document.getElementById("otp").value;
+
+				confirmationResult
+					.confirm(otp)
+					.then(function (result) {
+						const user = result.user;
+						console.log("Verified!", user);
+						// Handle successful verification here
+					})
+					.catch(function (error) {
+						console.error("Failed OTP Verification", error);
+						// Handle errors here
+					});
+			}
+		</script>
+	</body>
+</html>

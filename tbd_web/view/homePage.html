@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Buddy - Plan & Book Trips, Flights & Packages</title>
+    <meta name="description" content="Plan, Find, Book & Travel across the Globe. Visit exotic locations and experience diverse cultures. Enjoy the best cuisines the world has to offer. Make memories that will last a lifetime. #NeverFeelAlone">
+    <meta name="keywords" content="Travel, Buddy, Find, Connect, Book, Explore weekend, trips, travel quotes, travel bag, weekend trips from delhi, weekend trips from bangalore, cheap international trips from india, honeymoon packages, vietnam tour packages, thailand packages">
+    <meta property="og:title" content="Travel Buddy - Plan & Book Trips, Flights & Packages">
+    <meta property="og:description" content="Plan, Find, Book & Travel across the Globe. Visit exotic locations and experience diverse cultures. Enjoy the best cuisines the world has to offer. Make memories that will last a lifetime. #NeverFeelAlone">
+    <meta property="og:image" content="https://beatravelbuddy.com//view/assets/img/experiences__bg.webp">
+    <link rel="icon" href="/view/assets/img/app_logo_new.webp" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="image_src" href="/view/assets/img/experiences__bg.webp">
+    <style>
+		body {
+			margin: 0;
+			font-family: 'Montserrat';
+		}
+        /* Add your styles here */
+        .homepage {
+			background-image: url(/view/assets/img/bg-lp.webp);
+			background-repeat: round;
+			height: 100vh;
+			overflow-y: auto;
+			font-family: 'Montserrat';
+			display: none;
+		}
+
+
+		.homepage__container {
+			padding: 0 10px;
+		}
+
+		.premium-carousel.landingPage {
+			margin: 0;
+		}
+
+		.homepage.active {
+			display: block;
+		}
+
+		.homepage__header {
+			text-align: center;
+			/* margin-bottom: 2rem; */
+			background-image: url(/view/assets/img/conf-lp.webp);
+			height: 110px;
+			background-repeat: round;
+			display: flex;
+			flex-direction: column;
+			align-content: center;
+			align-items: center;
+			justify-content: center;
+			position: relative; /* Add this line */
+		}
+
+		.close_lp {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			background-color: #fff;
+			border-radius: 50%;
+			width: 21px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			font-size: 14px;
+			font-weight: 600;
+			color: #333;
+			padding: 2px;
+			font-family: 'Montserrat';
+		}
+
+		.homepage__title {
+			font-size: 30px;
+			font-weight: 900;
+			margin: 0;
+		}
+
+		.homepage__subtitle {
+			color: #333;
+			font-size: 14px;
+			font-weight: 600;
+			opacity: 0.8;
+			margin: 0;
+		}
+
+		.homepage__hero {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			/* margin-bottom: 3rem; */
+		}
+
+		.homepage__hero-title {
+			font-size: 24px;
+			width: 40%;
+		}
+
+		.homepage__hero-content {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+		}
+
+		.homepage__hero-title-sub {
+			color: #666;
+		}
+
+		.homepage__grid {
+			display: flex;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 8px;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+			margin-top: 5%;
+		}
+
+		.premium-carousel-indicators.landingPage {
+			bottom: 1%;
+		}
+
+		.homepage__card {
+			background: white;
+			border-radius: 10px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			height: 235px;
+			box-shadow: 2px 0px 7.5px -1px rgba(0, 0, 0, 0.11);
+			max-width: 49%;
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: flex-start;
+			transition: transform 0.3s ease-in-out;
+		}
+
+		.homepage__card.big {
+			transform: scale(1.2);
+			z-index: 10;
+		}
+
+		img.homepage__hero-image {
+			height: 100px;
+		}
+
+
+		.homepage__card-title {
+			margin: 0;
+			font-size: 18px;
+			font-weight: bolder;
+			background: linear-gradient(45deg, #0C0B00 0%, #FFE109 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			color: transparent;
+		}
+
+		.homepage__card-description {
+			color: #666;
+			margin: 0;
+			font-size: 10px;
+			font-weight: 600;
+		}
+
+		.homepage__badge {
+			display: inline-block;
+			/* background: #fff4d4; */
+			/* padding: 0.5rem 1rem; */
+			border-radius: 8px;
+			font-size: 8px;
+			/* font-weight: 500; */
+			background: linear-gradient(45deg, #FFE109 0%, #FFF 100%);
+			padding: 6px;
+		}
+
+		.homepage__card-image img {
+			width: 180px;
+			height: 120px;
+		}
+
+		.homepage__badge strong {
+			font-weight: 600;
+		}
+
+		.homepage__card-image {
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: stretch;
+		}
+
+		.text-container {
+			gap: 10px;
+			display: flex;
+			flex-direction: column;
+			padding: 17px 17px 0 17px;
+		}
+
+
+
+		/* #ai-lp {
+			height: 115px;
+			width: 137px;
+		}
+
+		#ai-lp svg {
+			margin-top: 8%;
+		} */
+		.hero__container {
+			display: flex;
+			flex-direction: column;
+			padding: 20px;
+			margin-bottom: 50%;
+			margin-top: 5%;
+		}
+
+		.hero__content {
+			display: flex;
+			flex-direction: column;
+			/* margin: 0 auto; */
+			width: 100%;
+		}
+
+		.hero__title-primary {
+			font-size: 48px;
+			color: #000;
+			font-weight: bolder;
+			/* margin-bottom: 20px; */
+			font-family: 'Nunito';
+			margin-bottom: -6%;
+		}
+
+		.hero__title-secondary {
+			display: flex;
+			flex-direction: row;
+			/* margin-bottom: 20px; */
+			gap: 5px;
+			align-items: center;
+		}
+
+		.hero__title-secondary--left {
+			font-size: 48px;
+			color: #000;
+			font-weight: 500;
+			font-family: 'Nunito';
+		}
+
+		.hero__title-secondary--right {
+			font-size: 60px;
+			color: #000;
+			font-weight: bold;
+			font-family: 'Nunito';
+		}
+
+		.hero__footer {
+		font-size: 24px;
+		color: #75757A;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-family: 'Nunito';
+		font-weight: 500;
+		}
+		.premium-carousel {
+			position: relative;
+			width: 100%;
+			margin: auto;
+			overflow-x: auto; /* Enable horizontal scrolling */
+			overflow-y: hidden; /* Disable vertical scrolling */
+			white-space: nowrap; /* Prevent line breaks */
+			margin-top: 15px;
+			cursor: pointer;
+			scroll-snap-type: x mandatory; /* Enable scroll snapping */
+			scroll-behavior: smooth; /* Smooth scrolling */
+		}
+		
+		.premium-carousel-inner {
+			display: inline-flex; /* Use inline-flex to keep items in a single line */
+			transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+			display: flex;
+			width: 100%;
+		}
+		
+		.premium-carousel-item {
+			min-width: 100%;
+			box-sizing: border-box;
+			display: inline-block; /* Ensure items are inline */
+			scroll-snap-align: start; /* Snap items to the start */
+		}
+		
+		.premium-carousel-item img {
+			width: 100%;
+			display: block;
+			border-radius: 10px;
+		}
+		.premium-carousel-item.landingPage {
+			max-height: 162px;
+		}
+
+
+
+		.premium-carousel-indicators {
+			position: absolute;
+			bottom: 25px;
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+			gap: 5px;
+		}
+
+		.premium-carousel-indicator {
+			width: 10px;
+			height: 10px;
+			background-color: #fff;
+			border-radius: 50%;
+			opacity: 0.5;
+			cursor: pointer;
+		}
+
+		.premium-carousel-indicator.active {
+			opacity: 1;
+		}
+		.premium-carousel-indicators.landingPage {
+			bottom: 1%;
+		}
+		.premium-carousel.landingPage {
+			margin: 0;
+		}
+		.footer__container {
+			display: flex;
+			background: #f5f5f5;
+			position: fixed;
+			bottom: 0%;
+			width: 100%;
+			z-index: 4;
+			box-shadow: 4px 0px 6.6px rgba(0, 0, 0, 0.3);
+			border-radius: 30px 30px 0 0;
+		}
+
+		.footer__content {
+			display: flex;
+			width: 100%;
+			justify-content: space-around;
+			align-items: center;
+		}
+
+		.footer__item {
+			display: flex;
+			flex-direction: column;
+			padding: 10px;
+			align-items: center;
+			gap: 5px;
+		}
+		.footer__item svg {
+			width: 20px;
+			height: 20px;
+		}
+		.footer__item p {
+			margin: 0;
+			font-size: 10px;
+			font-weight: 600;
+			padding: 0;
+		}
+		.footer__item.active {
+			animation: pulse 1s infinite;
+			animation-duration: 2s;
+			animation-iteration-count: 2;
+			background: #F9EA7D;
+			border-radius: 15px 15px 0 0;
+		}
+
+		@media (max-width: 720px) {
+			.homepage__grid {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 8px;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+				margin-top: 5%;
+				
+			}
+
+			.homepage__hero {
+				flex-direction: column;
+				text-align: center;
+			}
+
+			.homepage__card {
+				width: 100%;
+				max-width: unset;
+			}
+
+			.homepage__hero-title {
+				font-size: 16px;
+			}
+			.homepage__card-description {
+				font-size: 9px;
+			}
+			.homepage__badge {
+				font-size: 7px;
+			}
+		}
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+	<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+	<script>
+		// Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBnKtZnePCqVLbr6jOUr4_Saf3iNmsZR-s",
+            authDomain: "travelbuddy-174317.firebaseapp.com",
+            databaseURL: "https://tbd-prod-174317-b933e.asia-southeast1.firebasedatabase.app/",
+            projectId: "travelbuddy-174317",
+            storageBucket: "travelbuddy-174317.appspot.com",
+            messagingSenderId: "9959459076",
+            appId: "1:9959459076:web:c4417f188991113b37a851",
+            measurementId: "G-PXBR867EGP"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const googleAnalytics = firebase.analytics();
+		</script>
+	<script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '525874949911799');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=525874949911799&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
+     <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TXFKZVW'); // Replace GTM-XXXXXX with your GTM container ID
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-827809061"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-827809061');
+    </script>
+    <!-- End Google Analytics -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+		function guestMaster(state) {
+			guestUser = false;
+
+			if (state == 'set') {
+				localStorage.setItem('isGuestUser', true);
+			}
+			else if (state == 'clean') {
+				localStorage.removeItem('isGuestUser');
+			}
+			else {
+				if (localStorage.getItem('isGuestUser')) {
+					guestUser = true;
+
+					if (!jQuery('#app').hasClass('guestUser')) {
+						jQuery('#app').addClass('guestUser');
+					}
+				}
+			}
+
+			return guestUser;
+		}
+		function createPremiumCarousel(images, className) {
+			// Create the carousel container
+			let carouselContainer = document.createElement('div');
+			carouselContainer.className = 'premium-carousel ' + className; ;
+
+			// Create the carousel inner container
+			let carouselInner = document.createElement('div');
+			carouselInner.className = 'premium-carousel-inner';
+
+			// Add images to the carousel
+			images.forEach((imageSrc, index) => {
+				let carouselItem = document.createElement('div');
+				carouselItem.className = 'premium-carousel-item ' + className;
+				if (index === 0) {
+					carouselItem.classList.add('active');
+				}
+
+				let img = document.createElement('img');
+				img.src = imageSrc;
+				img.alt = `Slide ${index + 1}`;
+
+				carouselItem.appendChild(img);
+				carouselInner.appendChild(carouselItem);
+			});
+
+			carouselContainer.appendChild(carouselInner);
+
+			// Create indicators
+			let indicatorsContainer = document.createElement('div');
+			indicatorsContainer.className = 'premium-carousel-indicators ' + className;
+
+			images.forEach((_, index) => {
+				let indicator = document.createElement('span');
+				indicator.className = 'premium-carousel-indicator';
+				if (index === 0) {
+					indicator.classList.add('active');
+				}
+				indicatorsContainer.appendChild(indicator);
+			});
+
+			carouselContainer.appendChild(indicatorsContainer);
+
+			return carouselContainer;
+		}
+
+		function startAutoSlide(length) {
+			var carousel = document.querySelector('.premium-carousel');
+			var items = document.querySelectorAll('.premium-carousel-item');
+			let currentIndex = 0;
+
+			function scrollToItem(index) {
+				if (index >= 0 && index < items.length) {
+					var itemWidth = items[index].offsetWidth;
+					carousel.scrollTo({
+						left: itemWidth * index,
+						behavior: 'smooth'
+					});
+					currentIndex = index;
+				}
+			}
+
+			// Scroll to the next item
+			function scrollNext() {
+				if (currentIndex < items.length - 1) {
+					scrollToItem(currentIndex + 1);
+				}
+				else {
+					scrollToItem(0); // Loop back to the first item
+				}
+			}
+
+			// Scroll to the previous item
+			function scrollPrev() {
+				if (currentIndex > 0) {
+					scrollToItem(currentIndex - 1);
+				}
+			}
+
+			// Example: Automatically scroll to the next item every 3 seconds
+			setInterval(scrollNext, 3000);
+		}
+
+		function getFlightsCarouselImages(from) {
+			let images = [];
+			if (from == 'experiences') {
+				images = [
+					'/view/assets/img/exp_adv.webp',
+					'/view/assets/img/exp_intl.webp',
+					'/view/assets/img/exp_reli.webp'
+				];
+			}
+			else if (from == 'landingPage') {
+				images = [
+					'/view/assets/img/lp-find-banner.webp',
+					'/view/assets/img/lp-member-banner.webp',
+					'/view/assets/img/lp-flights-banner.webp',
+					
+				];
+			}
+			else {
+				images = [
+					'/view/assets/img/member_banner-three.webp',
+					'/view/assets/img/member_banner-two.webp',
+					'/view/assets/img/member_banner-one.webp',
+				];
+				
+			}
+			
+			return images;
+		}
+        function renderNewHomePage() {
+			var likeIcon = '<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.5108 1.39027C13.0589 0.655383 11.7228 0.731837 10.6362 1.15579C9.72144 1.51269 8.98728 2.1135 8.5 2.6737C8.01272 2.1135 7.27856 1.51269 6.36379 1.15579C5.27716 0.731837 3.9411 0.655383 2.48915 1.39027C0.605708 2.34355 -0.104749 4.0279 0.0122972 5.80513C0.128091 7.56346 1.04905 9.41381 2.41275 10.7942C3.68882 12.086 6.14596 14.4244 7.682 15.6795C8.16046 16.0704 8.83559 16.0896 9.32987 15.7092C11.0086 14.4168 13.2917 12.1057 14.579 10.8025L14.5872 10.7942C15.9509 9.41381 16.8719 7.56346 16.9877 5.80513C17.1048 4.0279 16.3943 2.34355 14.5108 1.39027Z" fill="#C82525"/><path d="M8.2378 2.88903C8.65607 2.28304 9.40616 1.54501 10.3737 1.13984C11.3312 0.738884 12.5067 0.660379 13.8117 1.36934C15.4742 2.27249 16.0934 3.83556 15.9888 5.54C15.8829 7.26505 15.0307 9.13239 13.7345 10.5408C12.424 11.9648 10.141 14.4444 8.47921 15.8175C8.20208 16.0465 7.82197 16.0386 7.54626 15.7968C6.01682 14.4554 3.54936 11.9358 2.26552 10.5408C0.969267 9.13239 0.117055 7.26505 0.0112163 5.54C-0.0933679 3.83556 0.525838 2.27249 2.18827 1.36934C3.49324 0.660379 4.66882 0.738884 5.62626 1.13984C6.59381 1.54501 7.34391 2.28304 7.76223 2.88903L8.00002 3.23353L8.2378 2.88903Z" fill="#D93030"/><path d="M13 0.964803C12.0698 0.715199 11.2238 0.852491 10.4973 1.17943C9.47936 1.63747 8.69021 2.4718 8.25017 3.15688L8 3.54631V5.16427C8.70609 3.42151 10.3447 1.1589 13 0.964803Z" fill="#D73A3A"/><path d="M4.93391 0.906967C4.12749 0.748802 3.2093 0.837486 2.21732 1.36934C0.532819 2.27249 -0.0946074 3.83556 0.0113652 5.54C0.118609 7.26505 0.982135 9.13239 2.2956 10.5409C3.59648 11.9358 6.0967 14.4555 7.64644 15.7968C7.92582 16.0386 8.31096 16.0465 8.59178 15.8175C8.72424 15.7095 8.86055 15.5947 9 15.474C7.30298 14.0875 5.053 12.0511 3.80486 10.8548C0.819095 7.99306 -0.176148 3.22353 3.80486 1.31574C4.19039 1.13097 4.56738 0.997176 4.93391 0.906967Z" fill="#EE5C5C"/><path d="M11.0861 7.99013C11.8609 8.47413 13.1005 7.72058 13.8548 6.30703C14.6091 4.89349 14.5924 3.35523 13.8176 2.87123C13.0428 2.38723 11.8033 3.14078 11.049 4.55432C10.2947 5.96787 10.3113 7.50613 11.0861 7.99013Z" fill="#EE5C5C"/></svg>';
+			
+			var flightsIcon = '<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.07766 15.973C5.92183 15.973 5.75891 15.9446 5.61016 15.8809C5.27725 15.7392 5.02225 15.463 4.90891 15.1159L4.59725 14.1809C4.45558 13.7559 4.58308 13.2246 4.89475 12.9059L6.50266 11.2909C6.52391 11.2696 6.55225 11.1917 6.55225 11.1563V9.40672L3.32225 10.8021C2.89016 10.9863 2.451 10.965 2.11808 10.7455C1.78516 10.5259 1.58683 10.1292 1.58683 9.6688V8.75505C1.58683 8.06088 2.08266 7.31713 2.71308 7.06922L6.54516 5.41172V3.40005C6.54516 2.54297 7.14725 1.55838 7.91225 1.16172C8.28058 0.977548 8.70558 0.977548 9.06683 1.16172C9.83891 1.55838 10.441 2.53588 10.441 3.39297V5.40463L14.2943 7.06213C14.9247 7.3313 15.4064 8.0538 15.4064 8.75505V9.6688C15.4064 10.1363 15.2152 10.5259 14.8752 10.7455C14.5352 10.965 14.1031 10.9863 13.671 10.8092L10.441 9.4138V11.1634C10.441 11.1917 10.4693 11.2625 10.4906 11.2838L12.1056 12.9059C12.4172 13.2175 12.5447 13.763 12.4031 14.1809L12.0914 15.1159C11.971 15.463 11.716 15.7392 11.376 15.8738C11.0431 16.0084 10.6747 15.9942 10.356 15.8384C10.3206 15.8171 10.2852 15.7959 10.2497 15.7675L8.59933 14.3792C8.54266 14.3296 8.42933 14.3367 8.37975 14.3792L6.72933 15.7675C6.701 15.7959 6.66558 15.8171 6.63016 15.8313C6.46016 15.9305 6.26891 15.973 6.07766 15.973ZM6.77183 8.24505C6.93475 8.24505 7.09058 8.28755 7.22516 8.37963C7.47308 8.54255 7.61475 8.8188 7.61475 9.14463V11.1634C7.61475 11.468 7.466 11.8292 7.2535 12.0417L5.64558 13.6567C5.61725 13.6921 5.58891 13.7984 5.60308 13.8409L5.91475 14.783C5.936 14.8538 5.98558 14.8821 6.01391 14.8963C6.03516 14.9034 6.07058 14.9176 6.11308 14.9034L7.69975 13.5646C8.146 13.1821 8.84725 13.1821 9.2935 13.5646L10.8731 14.8963C10.9227 14.9034 10.9581 14.8963 10.9793 14.8892C11.0077 14.875 11.0643 14.8467 11.0856 14.7759L11.3972 13.8409C11.4114 13.7913 11.3831 13.6851 11.3547 13.6567L9.74683 12.0417C9.53433 11.8434 9.3785 11.475 9.3785 11.1634V9.14463C9.3785 8.82588 9.51308 8.54963 9.75391 8.38672C9.99475 8.2238 10.3064 8.20255 10.6039 8.33005L14.0889 9.83172C14.1952 9.87422 14.266 9.87422 14.2872 9.86005C14.3085 9.84588 14.3368 9.78213 14.3368 9.6688V8.75505C14.3368 8.48588 14.1102 8.1388 13.8693 8.03963L9.91683 6.33255C9.60516 6.19797 9.38558 5.85796 9.38558 5.51797V3.39297C9.38558 2.92547 9.01725 2.32338 8.59225 2.11088C8.53558 2.08255 8.46475 2.08255 8.401 2.11088C7.99016 2.32338 7.61475 2.93963 7.61475 3.40005V5.52505C7.61475 5.85797 7.39516 6.20505 7.0835 6.33963L3.131 8.04672C2.88308 8.14588 2.65641 8.49297 2.65641 8.75505V9.6688C2.65641 9.78213 2.68475 9.84588 2.706 9.86005C2.72725 9.87422 2.79808 9.87422 2.90433 9.83172L6.38225 8.33005C6.50975 8.27338 6.64433 8.24505 6.77183 8.24505Z" fill="#4B4B4B"/></svg>';
+			var premiumIcon = '<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 16.1146C8.05375 16.1146 7.63583 15.9446 7.32416 15.6259L6.2475 14.5492C6.1625 14.4642 5.93583 14.3721 5.8225 14.3721H4.2925C3.37166 14.3721 2.62791 13.6283 2.62791 12.7074V11.1775C2.62791 11.0642 2.53582 10.8375 2.45082 10.7525L1.37417 9.67585C1.0625 9.36418 0.885414 8.94624 0.885414 8.49999C0.885414 8.05374 1.05542 7.6358 1.37417 7.32413L2.45082 6.24745C2.53582 6.16245 2.62791 5.9358 2.62791 5.82247V4.29253C2.62791 3.3717 3.37166 2.62788 4.2925 2.62788H5.8225C5.93583 2.62788 6.1625 2.5358 6.2475 2.4508L7.32416 1.37412C7.9475 0.750783 9.0525 0.750783 9.67583 1.37412L10.7525 2.4508C10.8375 2.5358 11.0642 2.62788 11.1775 2.62788H12.7075C13.6283 2.62788 14.3721 3.3717 14.3721 4.29253V5.82247C14.3721 5.9358 14.4642 6.16245 14.5492 6.24745L15.6258 7.32413C15.9375 7.6358 16.1146 8.05374 16.1146 8.49999C16.1146 8.94624 15.9446 9.36418 15.6258 9.67585L14.5492 10.7525C14.4642 10.8375 14.3721 11.0642 14.3721 11.1775V12.7074C14.3721 13.6283 13.6283 14.3721 12.7075 14.3721H11.1775C11.0642 14.3721 10.8375 14.4642 10.7525 14.5492L9.67583 15.6259C9.36417 15.9446 8.94625 16.1146 8.5 16.1146ZM3.20166 10.0017C3.48499 10.285 3.69041 10.7808 3.69041 11.1775V12.7074C3.69041 13.0404 3.95958 13.3096 4.2925 13.3096H5.8225C6.21917 13.3096 6.715 13.515 6.99833 13.7983L8.07499 14.875C8.30166 15.1017 8.69834 15.1017 8.925 14.875L10.0017 13.7983C10.285 13.515 10.7808 13.3096 11.1775 13.3096H12.7075C13.0404 13.3096 13.3096 13.0404 13.3096 12.7074V11.1775C13.3096 10.7808 13.515 10.285 13.7983 10.0017L14.875 8.92497C14.9883 8.81164 15.0521 8.66291 15.0521 8.49999C15.0521 8.33707 14.9883 8.18834 14.875 8.07501L13.7983 6.99833C13.515 6.71499 13.3096 6.21914 13.3096 5.82247V4.29253C13.3096 3.95962 13.0404 3.69038 12.7075 3.69038H11.1775C10.7808 3.69038 10.285 3.485 10.0017 3.20167L8.925 2.12499C8.69834 1.89832 8.30166 1.89832 8.07499 2.12499L6.99833 3.20167C6.715 3.485 6.21917 3.69038 5.8225 3.69038H4.2925C3.95958 3.69038 3.69041 3.95962 3.69041 4.29253V5.82247C3.69041 6.21914 3.48499 6.71499 3.20166 6.99833L2.125 8.07501C2.01166 8.18834 1.94791 8.33707 1.94791 8.49999C1.94791 8.66291 2.01166 8.81164 2.125 8.92497L3.20166 10.0017Z" fill="#4B4B4B"/><path d="M10.6252 11.3333C10.2285 11.3333 9.90975 11.0146 9.90975 10.625C9.90975 10.2354 10.2285 9.91666 10.6181 9.91666C11.0077 9.91666 11.3264 10.2354 11.3264 10.625C11.3264 11.0146 11.0148 11.3333 10.6252 11.3333Z" fill="#4B4B4B"/><path d="M6.38209 7.08332C5.98542 7.08332 5.66666 6.76457 5.66666 6.37499C5.66666 5.98541 5.98541 5.66666 6.375 5.66666C6.76458 5.66666 7.08333 5.98541 7.08333 6.37499C7.08333 6.76457 6.77167 7.08332 6.38209 7.08332Z" fill="#4B4B4B"/><path d="M6.37496 11.1562C6.24038 11.1562 6.10579 11.1067 5.99954 11.0004C5.79413 10.795 5.79413 10.455 5.99954 10.2496L10.2495 5.99955C10.455 5.79414 10.795 5.79414 11.0004 5.99955C11.2058 6.20497 11.2058 6.54501 11.0004 6.75043L6.75038 11.0004C6.64413 11.1067 6.50954 11.1562 6.37496 11.1562Z" fill="#4B4B4B"/></svg>';
+			var shareIcon = '<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5425 11.5C8.25208 11.5 8.01125 11.2733 8.01125 11V7.66666C8.01125 7.39332 8.25208 7.16666 8.5425 7.16666C8.83292 7.16666 9.07375 7.39332 9.07375 7.66666V11C9.07375 11.2733 8.83292 11.5 8.5425 11.5Z" fill="#4B4B4B"/><path d="M10.2708 9.83334H6.72917C6.43875 9.83334 6.19792 9.60668 6.19792 9.33334C6.19792 9.06001 6.43875 8.83334 6.72917 8.83334H10.2708C10.5612 8.83334 10.8021 9.06001 10.8021 9.33334C10.8021 9.60668 10.5612 9.83334 10.2708 9.83334Z" fill="#4B4B4B"/><path d="M12.0417 15.1667H4.95833C1.83458 15.1667 0.885416 14.2733 0.885416 11.3333V4.66668C0.885416 1.72668 1.83458 0.833344 4.95833 0.833344H6.02083C7.26042 0.833344 7.65 1.21334 8.14583 1.83334L9.20833 3.16668C9.44208 3.46001 9.4775 3.50001 9.91667 3.50001H12.0417C15.1654 3.50001 16.1146 4.39334 16.1146 7.33334V11.3333C16.1146 14.2733 15.1654 15.1667 12.0417 15.1667ZM4.95833 1.83334C2.42958 1.83334 1.94792 2.28668 1.94792 4.66668V11.3333C1.94792 13.7133 2.42958 14.1667 4.95833 14.1667H12.0417C14.5704 14.1667 15.0521 13.7133 15.0521 11.3333V7.33334C15.0521 4.95334 14.5704 4.50001 12.0417 4.50001H9.91667C9.01 4.50001 8.7125 4.20668 8.35833 3.76668L7.29583 2.43334C6.9275 1.97334 6.82125 1.83334 6.02083 1.83334H4.95833Z" fill="#4B4B4B"/></svg>';
+			var communityIcon = '<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.7499 5.60294C12.7286 5.60294 12.7145 5.60294 12.6932 5.60294H12.6578C11.319 5.56044 10.3203 4.52627 10.3203 3.25127C10.3203 1.94793 11.3828 0.892517 12.679 0.892517C13.9753 0.892517 15.0378 1.95502 15.0378 3.25127C15.0307 4.53335 14.032 5.56752 12.757 5.61002C12.757 5.60294 12.757 5.60294 12.7499 5.60294ZM12.679 1.94794C11.9636 1.94794 11.3828 2.52877 11.3828 3.24419C11.3828 3.94544 11.9282 4.51211 12.6295 4.54044C12.6365 4.53336 12.6932 4.53336 12.757 4.54044C13.444 4.50502 13.9753 3.93836 13.9824 3.24419C13.9824 2.52877 13.4015 1.94794 12.679 1.94794Z" fill="#4B4B4B"/><path d="M12.7571 10.8234C12.4808 10.8234 12.2046 10.8021 11.9283 10.7525C11.6379 10.7029 11.4467 10.4267 11.4962 10.1363C11.5458 9.84586 11.8221 9.65461 12.1125 9.70419C12.9837 9.85294 13.9046 9.69003 14.5208 9.2792C14.8537 9.05961 15.0308 8.78335 15.0308 8.5071C15.0308 8.23085 14.8467 7.96169 14.5208 7.7421C13.9046 7.33127 12.9696 7.16836 12.0912 7.32419C11.8008 7.38086 11.5246 7.18252 11.475 6.89211C11.4254 6.60169 11.6167 6.32544 11.9071 6.27586C13.0617 6.07044 14.2588 6.29002 15.1088 6.85669C15.7321 7.2746 16.0933 7.8696 16.0933 8.5071C16.0933 9.13752 15.7392 9.73961 15.1088 10.1646C14.4642 10.5896 13.6283 10.8234 12.7571 10.8234Z" fill="#4B4B4B"/><path d="M4.22874 5.60291C4.22165 5.60291 4.21457 5.60291 4.21457 5.60291C2.93957 5.56041 1.94082 4.52624 1.93373 3.25124C1.93373 1.9479 2.99624 0.885406 4.29249 0.885406C5.58874 0.885406 6.65123 1.94791 6.65123 3.24416C6.65123 4.52624 5.65249 5.56041 4.37749 5.60291L4.22874 5.07166L4.27832 5.60291C4.26415 5.60291 4.2429 5.60291 4.22874 5.60291ZM4.29957 4.54041C4.34207 4.54041 4.37749 4.54041 4.41999 4.54749C5.0504 4.51916 5.6029 3.95249 5.6029 3.25124C5.6029 2.53582 5.02207 1.95499 4.30665 1.95499C3.59124 1.95499 3.0104 2.53582 3.0104 3.25124C3.0104 3.9454 3.54873 4.50499 4.23582 4.54749C4.2429 4.54041 4.27123 4.54041 4.29957 4.54041Z" fill="#4B4B4B"/><path d="M4.22167 10.8234C3.35042 10.8234 2.51458 10.5896 1.87 10.1646C1.24667 9.7467 0.885418 9.1446 0.885418 8.5071C0.885418 7.87669 1.24667 7.2746 1.87 6.85669C2.72 6.29002 3.91708 6.07044 5.07167 6.27586C5.36208 6.32544 5.55334 6.60169 5.50375 6.89211C5.45417 7.18252 5.17792 7.38086 4.8875 7.32419C4.00917 7.16836 3.08125 7.33127 2.45792 7.7421C2.125 7.96169 1.94792 8.23085 1.94792 8.5071C1.94792 8.78335 2.13209 9.05961 2.45792 9.2792C3.07417 9.69003 3.995 9.85294 4.86625 9.70419C5.15667 9.65461 5.43292 9.85294 5.4825 10.1363C5.53209 10.4267 5.34084 10.7029 5.05042 10.7525C4.77417 10.8021 4.49792 10.8234 4.22167 10.8234Z" fill="#4B4B4B"/><path d="M8.49988 10.8942C8.47863 10.8942 8.46446 10.8942 8.44321 10.8942H8.40779C7.06904 10.8517 6.07029 9.8175 6.07029 8.5425C6.07029 7.23916 7.13279 6.18375 8.42904 6.18375C9.72529 6.18375 10.7878 7.24625 10.7878 8.5425C10.7807 9.82458 9.78196 10.8587 8.50696 10.9012C8.50696 10.8942 8.50696 10.8942 8.49988 10.8942ZM8.42904 7.23917C7.71363 7.23917 7.13279 7.82 7.13279 8.53542C7.13279 9.23667 7.67821 9.80334 8.37946 9.83167C8.38654 9.82459 8.44321 9.82459 8.50696 9.83167C9.19404 9.79625 9.72529 9.22958 9.73238 8.53542C9.73238 7.82708 9.15154 7.23917 8.42904 7.23917Z" fill="#4B4B4B"/><path d="M8.49985 16.1216C7.64985 16.1216 6.79985 15.9021 6.1411 15.4558C5.51776 15.0379 5.15651 14.4429 5.15651 13.8054C5.15651 13.175 5.51068 12.5658 6.1411 12.1479C7.46568 11.2696 9.5411 11.2696 10.8586 12.1479C11.4819 12.5658 11.8432 13.1608 11.8432 13.7983C11.8432 14.4287 11.489 15.0379 10.8586 15.4558C10.1998 15.895 9.34985 16.1216 8.49985 16.1216ZM6.72901 13.0404C6.3961 13.26 6.21901 13.5362 6.21901 13.8125C6.21901 14.0887 6.40318 14.3579 6.72901 14.5775C7.68526 15.2221 9.30735 15.2221 10.2636 14.5775C10.5965 14.3579 10.7736 14.0816 10.7736 13.8054C10.7736 13.5291 10.5894 13.26 10.2636 13.0404C9.31443 12.3958 7.69235 12.4029 6.72901 13.0404Z" fill="#4B4B4B"/></svg>';
+			var homeIcon = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.86 15.1667H4.13999C2.31333 15.1667 0.833328 13.68 0.833328 11.8533V6.91333C0.833328 6.00666 1.39333 4.86666 2.11333 4.30666L5.70666 1.50666C6.78666 0.66666 8.51333 0.62666 9.63333 1.41333L13.7533 4.29999C14.5467 4.85333 15.1667 6.03999 15.1667 7.00666V11.86C15.1667 13.68 13.6867 15.1667 11.86 15.1667ZM6.31999 2.29333L2.72666 5.09333C2.25333 5.46666 1.83333 6.31333 1.83333 6.91333V11.8533C1.83333 13.1267 2.86666 14.1667 4.13999 14.1667H11.86C13.1333 14.1667 14.1667 13.1333 14.1667 11.86V7.00666C14.1667 6.36666 13.7067 5.47999 13.18 5.11999L9.05999 2.23333C8.29999 1.69999 7.04666 1.72666 6.31999 2.29333Z" fill="#4B4B4B"/><path d="M8 12.5C7.72667 12.5 7.5 12.2733 7.5 12V10C7.5 9.72667 7.72667 9.5 8 9.5C8.27333 9.5 8.5 9.72667 8.5 10V12C8.5 12.2733 8.27333 12.5 8 12.5Z" fill="#4B4B4B"/></svg>';
+			
+			
+            jQuery('#main').append(`
+                <div class="homepage">
+                    <header class="homepage__header">
+                        <h1 class="homepage__title">TRAVEL BUDDY</h1>
+                        <p class="homepage__subtitle">What's Your Travel Plan Today?</p>
+                    </header>
+                    <div class="homepage__container">
+                        <section class="homepage__hero"></section>
+                        <div class="homepage__grid">
+                            <div class="homepage__card" data-card-type="find">
+								<div class="text-container">
+									<h3 class="homepage__card-title">
+										Find <span class="homepage__card-title-highlight">Buddies</span>
+									</h3>
+									<p class="homepage__card-description">Meet travelers with <strong>shared interests</strong> around the globe</p>
+									<div class="homepage__badge">Find your <strong>perfect match</strong></div>
+								</div>
+								<div class="homepage__card-image">
+									<img src="/view/assets/img/buddy-lp.webp" alt="Travel buddies illustration">
+								</div>
+							</div>
+							<div class="homepage__card" data-card-type="addPost">
+								<div class="text-container">
+									<h3 class="homepage__card-title">
+										<span class="homepage__card-title-highlight">Upload &</span> Shine
+									</h3>
+									<p class="homepage__card-description">Upload your post now and <strong>let your story be seen</strong></p>
+									<div class="homepage__badge">Share <strong>Your Vibe with the World</strong></div>
+								</div>
+								<div class="homepage__card-image">
+									<img src="/view/assets/img/member-lp.webp" alt="Membership illustration">
+								</div>
+							</div>
+							<div class="homepage__card" data-card-type="flights">
+								<div class="text-container">
+									<h3 class="homepage__card-title">
+										<span class="homepage__card-title-highlight">Flight</span> Booking
+									</h3>
+									<p class="homepage__card-description">Book flights tickets <strong>at the lowest price</strong></p>
+									<div class="homepage__badge"><strong>Take the Price Challenge Now</strong></div>
+								</div>
+								<div class="homepage__card-image">
+									<img src="/view/assets/img/flight-lp.webp" alt="Flight booking illustration">
+								</div>
+							</div>
+                            <div class="homepage__card" data-card-type="ai">
+                                <div class="text-container">
+                                    <h3 class="homepage__card-title">
+                                        <span class="homepage__card-title-highlight">AI</span> Planner
+                                    </h3>
+                                    <p class="homepage__card-description">Explore limitless possibilities<strong> with AI Buddy </strong></p>
+                                    <div class="homepage__badge">Trips, <strong>tailored for you.</strong></div>
+                                </div>
+                                <div class="homepage__card-image">
+                                    <div id="ai-lp"></div>
+                                    <img class="homepage__hero-image" src="/view/assets/img/ai-lp.webp" alt="Travel Buddy Hero Image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero__container homePage">
+                            <div class="hero__content">
+                                <div class="hero__title-primary">
+                                    Never
+                                </div>
+                                <div class="hero__title-secondary">
+                                    <div class="hero__title-secondary--left">
+                                        Feel
+                                    </div>
+                                    <div class="hero__title-secondary--right">
+                                        Alone
+                                    </div>
+                                </div>
+                                <div class="hero__footer">
+                                    Crafted with ${likeIcon}  in India
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<div class="footer__container">
+						<div class="footer__content">
+							<div class="footer__item active" data-item="home">
+								${homeIcon}
+								<p>Home</p>
+							</div>
+							<div class="footer__item" data-item="experiences">
+								${flightsIcon}
+								<p>Bookings</p>
+							</div>
+							<div class="footer__item" data-item="feed">
+								${communityIcon}
+								<p>Buddies</p>
+							</div>
+							<div class="footer__item" data-item="share">
+								${shareIcon}
+								<p>Share</p>
+							</div>
+							<div class="footer__item" data-item="premium">
+								${premiumIcon}
+								<p>Premium</p>
+							</div>
+						</div>
+					</div>	
+                </div>
+            `);
+            jQuery('.homepage').addClass('active');
+            
+            // get the width of .homepage__card
+            let cardWidth = jQuery('.homepage__card').width();
+            jQuery('.homepage__card-image img').css({
+                'width': `${cardWidth}px`,
+                'aspect-ratio': '1/1'
+            });
+            
+            // Removing & adding the carousel 
+            let image = getFlightsCarouselImages('landingPage');
+            jQuery('.homepage__hero').after(createPremiumCarousel(image, 'landingPage'));
+            //startAutoSlide(image.length);
+        }
+		
+		// Function to open a specific page
+		function openSpecificPage(pageName) {
+			var deviceType = isAndroid() ? 'android' : isIOS() ? 'ios' : isPwa() ? 'pwa' : 'web';
+			
+			window.open(`https://beatravelbuddy.com/${pageName}?app=${deviceType}`, '_self');
+		}
+		function openSpecificPageWithoutDevice(pageName) {
+			
+			window.open(`https://beatravelbuddy.com/${pageName}`, '_self');
+		}
+		
+		// Handle Notifications
+		function notificationMaster(data) {
+			console.log('Notification Data', data);
+			if (!isIOS()) {
+				function escapeNestedJSON(jsonString) {
+					return jsonString.replace(/"id":"({[^}]*})"/, (match, p1) => `"id":"${p1.replace(/"/g, '\\"')}"`);
+				}
+		
+				let escapedData = escapeNestedJSON(data);
+				let parsedData = JSON.parse(escapedData);
+				data = JSON.parse(parsedData["id"].replace(/\\"/g, '"'));
+			} else {
+				data = JSON.parse(data.id);
+			}
+		
+			console.log('Data after parsing', data, data.id, data.type);
+		
+			var pageMap = {
+				'like': `post/${data.id}`,
+				'engagementFind': 'add-find-post',
+				'engagementShare': 'add-share-post',
+				'premium': 'premium',
+				'aibuddy': 'ai-plan-trip',
+				'chat': 'chat',
+				'group_chat': 'chat',
+				'singleExperience': `experiences/${data.id}`
+			};
+			
+			var pageType = pageMap[data.type];
+		
+			if (pageType) {
+				if (data.type == 'like' || data.type == 'singleExperience') {
+					openSpecificPageWithoutDevice(pageType);
+				} 
+				else {
+					openSpecificPage(pageType);
+				}
+			}
+		}
+			
+		function deepLinkMaster(url) {
+			var queryParams = processUrl(url);
+			var pageMap = {
+				'postid': `post/${queryParams['t'] ? queryParams['t'].split('-')[1] : ''}`,
+				'find': 'add-find-post',
+				'share': 'add-share-post',
+				'premium': 'premium',
+				'aibuddy': 'ai-plan-trip',
+				'chat': 'chat',
+				'group_chat': 'chat',
+				'singleExperience': `experiences/${queryParams['t'] ? queryParams['t'].split('-')[1] : ''}`,
+				'groupTrips': 'groupTrips',
+				'enquiryForm': 'check-deals-hotels-flights-packages',
+				'search': 'search',
+				'home': 'community'
+			};
+		
+			for (var key in pageMap) {
+				if (queryParams['t'].includes(key)) {
+					if (key == 'singleExperience' || key == 'postid') {
+						openSpecificPageWithoutDevice(pageMap[key]);
+					} 
+					else {
+						openSpecificPage(pageMap[key]);
+					}
+					break;
+				}
+			}
+		}
+		
+		function processUrl(url) {
+			var query = {};
+			var params = url.split('?')[1].split('&');
+			params.forEach(param => {
+				var [key, value] = param.split('=');
+				query[key] = value;
+			});
+			console.log(query);
+			return query;
+		}
+		
+		// Defining the APP type
+		function isIOS() {
+			if (localStorage.getItem('isIOS') == 'true') {
+				// alert('isIOS');
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+
+		//Function to check if device is Android
+		function isAndroid() {
+			if (localStorage.getItem('isAndroid') == 'true') {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+
+		function isPwa() {
+			if (localStorage.getItem('isPWA') == 'true') {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		
+		function setNotificationToken(data) {
+			if (isAndroid()) {
+				data = JSON.parse(data);
+				localStorage.setItem('notificationToken', data.token);
+				localStorage.setItem('vendorUUID', data.vendorUUID);
+			}
+			else if (isIOS()) {
+				console.log(data);
+				localStorage.setItem('vendorUUID', data.vendorUUID);
+				localStorage.setItem('notificationToken', data.token);
+			}
+		}
+		function setAndroidVersion(appVersion, osVersion) {
+			if (isAndroid() && !guestMaster()) {
+				localStorage.setItem('androidVersion', appVersion);
+				localStorage.setItem('androidOSVersion', osVersion);
+			}
+		}
+
+        // Call the function to render the new homepage
+        renderNewHomePage();
+		
+		// on Dom loaded
+		jQuery(document).ready(function() {
+			
+			
+			function defineApp() {
+				url = window.location.href;
+				if (url.includes('?')) {
+					url = url.split('#');
+					url = url[0];
+
+					queryParams = url.split('?');
+					url = queryParams[0];
+					queryParams = queryParams[1];
+
+					queryParams = queryParams.split('&');
+					//Convert the query parameters into an object
+					queryArray = [];
+					for (i = 0; i < queryParams.length; i++) {
+						pushArr = {
+							'name': queryParams[i].split('=')[0],
+							'value': queryParams[i].split('=')[1]
+						}
+						queryArray.push(pushArr);
+					}
+
+					query = queryArray;
+
+					query.forEach(element => {
+						if (element['name'] == 'app') {
+							if (element['value'].toLowerCase() == 'android') {
+								localStorage.setItem('isAndroid', true);
+								localStorage.setItem('isIOS', false);
+								localStorage.setItem('isPWA', false);
+
+								return false;
+							}
+							else if (element['value'].toLowerCase() == 'ios') {
+								localStorage.setItem('isIOS', true);
+								localStorage.setItem('isAndroid', false);
+								localStorage.setItem('isPWA', false);
+
+								return false;
+							}
+							else if (element['value'].toLowerCase() == 'pwa') {
+								localStorage.setItem('isPWA', true);
+								localStorage.setItem('isAndroid', false);
+								localStorage.setItem('isIOS', false);
+
+								return false;
+							}
+							else {
+								localStorage.setItem('isAndroid', false);
+								localStorage.setItem('isIOS', false);
+								localStorage.setItem('isPWA', false);
+							}
+						}
+					});
+				}
+				
+
+				//For ios, we are hiding the initial image loads after the app starts loading
+				if (isIOS() && window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.HideInitialImage){
+					window.webkit.messageHandlers.HideInitialImage.postMessage('');
+				}
+
+			}
+			
+			function defineWebsiteLink() {
+				if (isAndroid()) {
+					if (window.location.href.includes('dev.beatravelbuddy.com')) {
+						Android.websiteLink('https://beatravelbuddy.com/?app=android')
+						try {
+							// Set to True after we make the Design of the Push Notification on the Web
+							Android.setNotification(false);
+							// Hide the Splash Screen
+							Android.hideSplashScreen();
+							// Set Android Version
+						}
+						catch (err) {
+							console.log(err);
+						}
+						// Android.websiteLink('https://dev.beatravelbuddy.com/?app=android')
+					}
+					else {
+						Android.websiteLink('https://beatravelbuddy.com/?app=android')
+					}
+				}
+			}
+			
+			function hideSplashScreen() {
+				//Hide the splash screen
+				if (isIOS()) {
+					try {
+						webkit.messageHandlers.HideInitialImage.postMessage();
+					} catch (err) { console.log(err); }
+				}
+			}
+			
+			function appUpdate() {
+				if (isAndroid()) {
+					Android.appUpdate('Forced', true);
+				}
+			}
+			
+			// Define the app
+			defineApp();
+			// Define the website link
+			defineWebsiteLink();
+			
+			// Hide the splash screen
+			hideSplashScreen();
+			if (isAndroid()) {
+				// Android.splashImage('https://firebasestorage.googleapis.com/v0/b/travelbuddy-174317.appspot.com/o/splashImageTest%2Fsplash_new.webp?alt=media&token=abbc45e2-5955-4be7-969c-bc478c27fba2');
+			}
+			
+
+			jQuery(document).on('click', '.homepage__card', function () {
+		
+				// Remove 'big' class from all cards
+				jQuery('.homepage__card').removeClass('big');
+				
+				let card = jQuery(this);
+				// Add 'big' class to the clicked card
+				card.addClass('big');
+				let cardType = card.attr('data-card-type');
+				
+				switch (cardType) {
+					case 'flights':
+						// Open https://beatravelbuddy.com/flights url in current tab
+						openSpecificPage('flights');
+						//fbEvent('Flights_LP');
+						break;
+					case 'find':
+						//window.open('https://beatravelbuddy.com/community', '_self');
+						openSpecificPage('community');
+						//fbEvent('Com_LP');
+						break;
+					case 'premium':
+						//window.open('https://beatravelbuddy.com/premium', '_self');
+						openSpecificPage('premium');
+						//fbEvent('Premium_LP');
+						break;
+					case 'ai':
+						//window.open('https://beatravelbuddy.com/ai-plan-trip', '_self');
+						openSpecificPage('ai-plan-trip');
+						//fbEvent('AI_LP');
+						break;
+					case 'addPost':
+						openSpecificPage('add-share-post');
+						break;
+				}
+				setTimeout(() => {
+					card.removeClass('big');
+				}, 1000);
+			});
+			
+			jQuery(document).on('click', '.homepage__hero', function () {
+				jQuery('#footer ul li[data-item="experiences"] svg').click();
+				//fbEvent('Flights_LP-hero');
+			});
+			
+			
+			
+			jQuery(document).on('click', '.premium-carousel-item.landingPage', function () {
+				let clickedImgSrc = jQuery(this).find('img').attr('src');
+				if (clickedImgSrc.includes('find')) {
+					//window.open('https://beatravelbuddy.com/community', '_self');
+					openSpecificPage('community');
+				}
+				else if (clickedImgSrc.includes('flights')) {
+					// Open https://beatravelbuddy.com/flights url incurrent tab
+					openSpecificPage('flights');
+				}
+				else if (clickedImgSrc.includes('member')) {
+					//window.open('https://beatravelbuddy.com/premium', '_self');
+					openSpecificPage('premium');
+				}
+				else {
+					window.open('https://beatravelbuddy.zetexa.com/', '_blank');
+				}
+			});
+			
+			jQuery(document).on('click', '.footer__item', function() {
+				var clickedButton = jQuery(this).attr('data-item');
+				switch (clickedButton) {
+					case 'experiences':
+						jQuery('.homepage__card[data-card-type="flights"]').click();
+						break;
+					case 'feed':
+						jQuery('.homepage__card[data-card-type="find"]').click();
+						break;
+					case 'share':
+						openSpecificPage('add-find-post');
+						break;
+					case 'premium':
+						openSpecificPage('premium');
+						break;
+					
+				}
+				
+				
+			});
+			
+		});
+		
+    </script>
+</body>
+</html>

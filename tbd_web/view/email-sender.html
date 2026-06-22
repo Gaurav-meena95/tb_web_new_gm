@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sender - Travel Buddy</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .step.active .step-number {
+            background: #667eea;
+            color: white;
+        }
+
+        .step.completed .step-number {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .step-label {
+            font-weight: 500;
+            color: #666;
+        }
+
+        .step.active .step-label {
+            color: #667eea;
+        }
+
+        .step.completed .step-label {
+            color: #4CAF50;
+        }
+
+        .form-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid #e9ecef;
+        }
+
+        .form-section h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-section h3 i {
+            margin-right: 10px;
+            color: #667eea;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group.required label::after {
+            content: " *";
+            color: #e74c3c;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .file-upload {
+            border: 2px dashed #667eea;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #f8f9ff;
+        }
+
+        .file-upload:hover {
+            background: #e8eaff;
+            border-color: #5a6fd8;
+        }
+
+        .file-upload.dragover {
+            background: #e8eaff;
+            border-color: #5a6fd8;
+            transform: scale(1.02);
+        }
+
+        .file-upload i {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .file-upload p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .file-upload .file-info {
+            display: none;
+            margin-top: 15px;
+            padding: 10px;
+            background: #e8f5e8;
+            border-radius: 5px;
+            color: #2e7d32;
+        }
+
+        .file-upload.has-file .file-info {
+            display: block;
+        }
+
+        .file-upload.has-file {
+            background: #e8f5e8;
+            border-color: #4CAF50;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+            margin-right: 15px;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .btn-success {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #45a049;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .success-message {
+            color: #4CAF50;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .review-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .review-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .review-item:last-child {
+            border-bottom: none;
+        }
+
+        .review-label {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .review-value {
+            color: #666;
+            text-align: right;
+            max-width: 300px;
+            word-wrap: break-word;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .step {
+                margin: 0 10px;
+            }
+            
+            .step-label {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-envelope"></i> Email Sender</h1>
+            <p>Send personalized emails with dynamic content and attachments</p>
+        </div>
+
+        <div class="main-content">
+            <!-- Step Indicator -->
+            <div class="step-indicator">
+                <div class="step active" id="step1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Email Type</div>
+                </div>
+                <div class="step" id="step2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Details</div>
+                </div>
+                <div class="step" id="step3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Review</div>
+                </div>
+            </div>
+
+            <!-- Step 1: Email Type Selection -->
+            <div id="step1-content" class="form-section">
+                <h3><i class="fas fa-list"></i> Select Email Type</h3>
+                <div class="form-group">
+                    <label for="emailType">Email Template</label>
+                    <select id="emailType" required>
+                        <option value="">Choose an email template...</option>
+                    </select>
+                </div>
+                <div id="templateDescription" class="form-group" style="display: none;">
+                    <label>Description</label>
+                    <p id="templateDesc" style="padding: 10px; background: #e8f4fd; border-radius: 5px; color: #0c5460;"></p>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="btn btn-primary" id="nextToStep2" disabled>
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Email Details -->
+            <div id="step2-content" class="form-section hidden">
+                <h3><i class="fas fa-edit"></i> Email Details</h3>
+                
+                <!-- Recipient Information -->
+                <div class="form-group">
+                    <label for="recipientEmail">Recipient Email *</label>
+                    <input type="email" id="recipientEmail" placeholder="Enter recipient email address" required>
+                </div>
+
+                <!-- Subject Line -->
+                <div class="form-group">
+                    <label for="emailSubject">Subject Line *</label>
+                    <input type="text" id="emailSubject" placeholder="Enter email subject" required>
+                </div>
+
+                <!-- Dynamic Fields Container -->
+                <div id="dynamicFields"></div>
+
+                <!-- PDF Upload -->
+                <div class="form-group">
+                    <label>PDF Attachment (Optional)</label>
+                    <div class="file-upload" id="fileUpload">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag and drop a PDF file here or click to browse</p>
+                        <p style="font-size: 0.9rem; color: #999;">Maximum file size: 10MB</p>
+                        <input type="file" id="pdfFile" accept=".pdf" style="display: none;">
+                        <div class="file-info">
+                            <i class="fas fa-file-pdf"></i>
+                            <span id="fileName"></span>
+                            <button type="button" class="btn btn-danger btn-sm" id="removeFile" style="margin-left: 10px; padding: 5px 10px; font-size: 0.8rem;">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn btn-secondary" id="backToStep1">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                    <button type="button" class="btn btn-primary" id="nextToStep3">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Review and Send -->
+            <div id="step3-content" class="form-section hidden">
+                <h3><i class="fas fa-eye"></i> Review Email</h3>
+                
+                <div class="review-section">
+                    <div class="review-item">
+                        <div class="review-label">Email Type:</div>
+                        <div class="review-value" id="reviewEmailType"></div>
+                    </div>
+                    <div class="review-item">
+                        <div class="review-label">Recipient:</div>
+                        <div class="review-value" id="reviewRecipient"></div>
+                    </div>
+                    <div class="review-item">
+                        <div class="review-label">Subject:</div>
+                        <div class="review-value" id="reviewSubject"></div>
+                    </div>
+                    <div class="review-item">
+                        <div class="review-label">Template Fields:</div>
+                        <div class="review-value" id="reviewFields"></div>
+                    </div>
+                    <div class="review-item" id="reviewAttachment" style="display: none;">
+                        <div class="review-label">Attachment:</div>
+                        <div class="review-value" id="reviewAttachmentName"></div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn btn-secondary" id="backToStep2">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                    <button type="button" class="btn btn-success" id="sendEmail">
+                        <i class="fas fa-paper-plane"></i> Send Email
+                    </button>
+                </div>
+            </div>
+
+            <!-- Alert Messages -->
+            <div id="alertContainer"></div>
+        </div>
+    </div>
+
+    <script src="/view/assets/js/email-sender.js"></script>
+    
+    <!-- Debug script to test API directly -->
+    <script>
+        // Test API endpoint directly
+        window.addEventListener('load', async () => {
+            try {
+                console.log('Testing API endpoint directly...');
+                const response = await fetch('/api/email-templates');
+                console.log('Direct API test - Status:', response.status);
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('Direct API test - Data:', data);
+                    console.log('Available templates:', Object.keys(data.emailTemplates || {}));
+                } else {
+                    console.log('Direct API test - Failed with status:', response.status);
+                }
+            } catch (error) {
+                console.error('Direct API test - Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>

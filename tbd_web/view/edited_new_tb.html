@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>TRAVEL BUDDY</title>
+		<style>
+			* {
+			  margin: 0;
+			  padding: 0;
+			  box-sizing: border-box;
+			}
+
+			body {
+			  font-family: sans-serif;
+			  line-height: 1.5;
+			  background-color: #000;
+			  color: #fff;
+			  overflow: hidden;
+			  height: 100vh;
+			  user-select: none;
+			}
+
+			.app-container {
+			  display: flex;
+			  flex-direction: column;
+			  height: 100vh;
+			  position: relative;
+			}
+
+			.header {
+			  position: fixed;
+			  top: 0;
+			  left: 0;
+			  right: 0;
+			  z-index: 10;
+			  text-align: center;
+			  padding: 10px;
+			  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+			}
+
+			.reels-container {
+			  flex: 1;
+			  overflow-y: auto;
+			  scroll-snap-type: y mandatory;
+			  height: calc(100vh - 60px);
+			  position: relative;
+			  -ms-overflow-style: none;
+			  scrollbar-width: none;
+			}
+
+			.reels-container::-webkit-scrollbar {
+			  display: none;
+			}
+
+			.reel-item {
+			  position: relative;
+			  height: 100vh;
+			  width: 100%;
+			  scroll-snap-align: start;
+			  scroll-snap-stop: always;
+			}
+
+			.video-container {
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  width: 100%;
+			  height: 100%;
+			  background-color: #000;
+			}
+
+			.video-player {
+			  width: 100%;
+			  height: 100%;
+			  object-fit: contain;
+			  background-color: #000;
+			}
+
+			.reel-overlay {
+			  position: absolute;
+			  bottom: 80px; /* Increased to avoid footer overlap */
+			  left: 0;
+			  right: 80px; /* Added right margin to avoid action buttons */
+			  padding: 20px;
+			  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%);
+			  z-index: 2;
+			  min-height: 120px; /* Ensure minimum height */
+			}
+
+			.reel-header {
+			  display: flex;
+			  align-items: center;
+			  gap: 10px;
+			  margin-bottom: 10px;
+			  flex-wrap: wrap;
+			}
+
+			.avatar {
+			  width: 40px;
+			  height: 40px;
+			  border-radius: 50%;
+			  overflow: hidden;
+			  border: 2px solid #fff;
+			  flex-shrink: 0;
+			}
+
+			.avatar img {
+			  width: 100%;
+			  height: 100%;
+			  object-fit: cover;
+			}
+
+			.username {
+			  font-weight: bold;
+			  font-size: 16px;
+			  flex-shrink: 0;
+			}
+
+			.location {
+			  font-size: 12px;
+			  opacity: 0.8;
+			  flex-shrink: 0;
+			}
+
+			.reel-caption {
+			  margin-bottom: 15px;
+			  font-size: 14px;
+			  line-height: 1.4;
+			  word-wrap: break-word;
+			  max-height: 60px;
+			  overflow: hidden;
+			}
+
+			.reel-actions {
+			  display: flex;
+			  flex-direction: column;
+			  position: absolute;
+			  right: 15px;
+			  bottom: 120px; /* Adjusted to not overlap with overlay */
+			  z-index: 3;
+			  align-items: center;
+			  gap: 20px;
+			}
+
+			.action-btn {
+			  background: none;
+			  border: none;
+			  color: white;
+			  font-size: 24px;
+			  cursor: pointer;
+			  display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  transition: transform 0.2s;
+			  padding: 8px;
+			  border-radius: 50%;
+			}
+
+			.action-btn:active {
+			  transform: scale(0.9);
+			}
+
+			.action-btn.liked {
+			  color: #ff3040;
+			}
+
+			.action-count {
+			  font-size: 12px;
+			  margin-top: 5px;
+			  font-weight: bold;
+			}
+
+			.progress-container {
+			  position: relative;
+			  height: 4px;
+			  background: rgba(255, 255, 255, 0.3);
+			  border-radius: 4px;
+			  cursor: pointer;
+			  margin-top: 10px;
+			}
+
+			.progress-bar {
+			  height: 100%;
+			  background: #fff;
+			  border-radius: 4px;
+			  width: 0;
+			  transition: width 0.1s linear;
+			}
+
+			.progress-handle {
+			  position: absolute;
+			  top: 50%;
+			  transform: translateY(-50%);
+			  width: 12px;
+			  height: 12px;
+			  background: #fff;
+			  border-radius: 50%;
+			  opacity: 0;
+			  transition: opacity 0.2s;
+			  pointer-events: none;
+			}
+
+			.progress-container:hover .progress-handle,
+			.progress-container.seeking .progress-handle {
+			  opacity: 1;
+			}
+
+			.play-indicator {
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);
+			  font-size: 72px;
+			  opacity: 0;
+			  transition: opacity 0.3s;
+			  z-index: 4;
+			  pointer-events: none;
+			}
+
+			.play-indicator.visible {
+			  opacity: 1;
+			}
+
+			.tap-to-play {
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);
+			  background: rgba(0, 0, 0, 0.7);
+			  color: white;
+			  padding: 15px 30px;
+			  border-radius: 30px;
+			  font-size: 18px;
+			  font-weight: bold;
+			  z-index: 5;
+			  cursor: pointer;
+			  display: none;
+			}
+
+			.tap-to-play.visible {
+			  display: block;
+			}
+
+			.speed-indicator {
+			  position: absolute;
+			  top: 20%;
+			  right: 20px;
+			  background: rgba(0, 0, 0, 0.7);
+			  color: white;
+			  padding: 8px 12px;
+			  border-radius: 20px;
+			  font-size: 14px;
+			  font-weight: bold;
+			  opacity: 0;
+			  transition: opacity 0.3s;
+			  z-index: 5;
+			}
+
+			.speed-indicator.visible {
+			  opacity: 1;
+			}
+
+			.like-animation {
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);
+			  font-size: 100px;
+			  color: #ff3040;
+			  opacity: 0;
+			  z-index: 6;
+			  pointer-events: none;
+			  animation: likeAnimation 0.8s ease-out;
+			}
+
+			@keyframes likeAnimation {
+			  0% {
+				opacity: 0;
+				transform: translate(-50%, -50%) scale(0.5);
+			  }
+			  50% {
+				opacity: 1;
+				transform: translate(-50%, -50%) scale(1.2);
+			  }
+			  100% {
+				opacity: 0;
+				transform: translate(-50%, -50%) scale(1);
+			  }
+			}
+
+			.footer {
+			  position: fixed;
+			  bottom: 0;
+			  left: 0;
+			  right: 0;
+			  display: flex;
+			  justify-content: space-around;
+			  padding: 10px 0;
+			  background-color: rgba(0, 0, 0, 0.9);
+			  z-index: 10;
+			  height: 60px;
+			}
+
+			.footer-btn {
+			  background: none;
+			  border: none;
+			  color: white;
+			  font-size: 24px;
+			  cursor: pointer;
+			}
+
+			.loading-indicator {
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);
+			  width: 40px;
+			  height: 40px;
+			  border: 4px solid rgba(255, 255, 255, 0.3);
+			  border-radius: 50%;
+			  border-top-color: #fff;
+			  animation: spin 1s linear infinite;
+			  z-index: 3;
+			}
+
+			@keyframes spin {
+			  0% {
+				transform: translate(-50%, -50%) rotate(0deg);
+			  }
+			  100% {
+				transform: translate(-50%, -50%) rotate(360deg);
+			  }
+			}
+		</style>
+	</head>
+	<body>
+		<div class="app-container">
+			<div class="header">
+				<h1>Travel Buddy</h1>
+			</div>
+
+			<div class="reels-container" id="reels-container">
+				<!-- Reels will be dynamically inserted here -->
+			</div>
+
+			<footer class="footer">
+				<button class="footer-btn">🏠</button>
+				<button class="footer-btn">🔍</button>
+				<button class="footer-btn">➕</button>
+				<button class="footer-btn">❤️</button>
+				<button class="footer-btn">👤</button>
+			</footer>
+		</div>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+			  // Sample data
+			  const data = {
+				totalItems: 4,
+				totalPages: 200,
+				itemsPerPage: 10,
+				pageNumber: 1,
+				list: [
+				  {
+					viewType: 0,
+					feedVal: 10,
+					post: {
+					  postId: 983085,
+					  isOwnPost: false,
+					  mediaList: [
+						{
+						  mediaUrl:
+							"https://res.cloudinary.com/dc9ywac95/video/upload/vc_h265/c_crop,h_600,w_800/v1743485872/98fd55566a2e398fa94dabaeb27e9d2aa977d6c0fe52419d02d2e2f824574a09_1743485817955.mp4",
+						  mediaType: "video",
+						  imageWidth: 960,
+						  imageHeight: 720,
+						  urlImageThumbnail:
+							"https://res.cloudinary.com/dc9ywac95/video/upload/v1743485872/98fd55566a2e398fa94dabaeb27e9d2aa977d6c0fe52419d02d2e2f824574a09_1743485817955.jpg",
+						  caption: "",
+						  mediaId: "1156302",
+						  likes: 0,
+						  comments: 0,
+						  isLiked: false,
+						},
+					  ],
+					  feedType: 0,
+					  findType: "buddy",
+					  uniqueUserId: "hgchaji",
+					  userId: "e45e10dea8f2904507095ce18cb3a7e2e3f520ba172ef7bea2b95632d3de839f",
+					  isFollowed: false,
+					  postDescription: "💫💫🙏🙏 Amazing travel experience in beautiful Mangaluru! The beaches here are absolutely stunning and the local culture is so rich.",
+					  groupId: null,
+					  postDateTime: "2025-04-01 05:37:51.315075+00",
+					  hasMedia: true,
+					  isLiked: false,
+					  isBookmarked: false,
+					  name: "Nandini Raghav (Ninni)",
+					  roleType: "7",
+					  userType: 1,
+					  imageUrl:
+						"/filters:format(webp)/fit-in/200x200/uploads/display_picture/3c55b1d02f1f8dfca83ba35242e7bab8f256a819a82113c70a9dd9c83c0d650e_1744269683970.jpg",
+					  likes: 4,
+					  comments: 0,
+					  location: "Mangaluru, Karnataka, India",
+					  placeId: "",
+					  lat: 12.9141417,
+					  lng: 74.8559568,
+					  suggestionCount: 0,
+					  dateOfTravel: "0001-01-01",
+					  gender: "any",
+					  isVerified: false,
+					  isPin: false,
+					  matchingPercentage: 0,
+					  isMask: false,
+					  tripDuration: null,
+					  dateType: null,
+					  travelerType: null,
+					  budget: null,
+					  bookFromTbd: null,
+					},
+				  },
+				  {
+					viewType: 0,
+					feedVal: 10,
+					post: {
+					  postId: 983684,
+					  isOwnPost: false,
+					  mediaList: [
+						{
+						  mediaUrl:
+							"https://res.cloudinary.com/dc9ywac95/video/upload/vc_h265/c_crop,h_600,w_800/v1744036634/0ac146398ce98c25dc6525c20e6fb8794887556ef67a37921b76c5cfabf44014_1744036560498.mp4",
+						  mediaType: "video",
+						  imageWidth: 960,
+						  imageHeight: 720,
+						  urlImageThumbnail:
+							"https://res.cloudinary.com/dc9ywac95/video/upload/v1744036634/0ac146398ce98c25dc6525c20e6fb8794887556ef67a37921b76c5cfabf44014_1744036560498.jpg",
+						  caption: "",
+						  mediaId: "1157242",
+						  likes: 0,
+						  comments: 0,
+						  isLiked: false,
+						},
+					  ],
+					  feedType: 0,
+					  findType: "buddy",
+					  uniqueUserId: "hgchaji",
+					  userId: "09474a86b1a313d473a44deed44659155c42cc0432cab6e6c44d44b6c040b846",
+					  isFollowed: false,
+					  postDescription: "Mangalore- Udupi- Murudeshwar- Honnavar- Gokarna 💫💫❤❤ What an incredible coastal journey!",
+					  groupId: null,
+					  postDateTime: "2025-04-07 14:37:13.104068+00",
+					  hasMedia: true,
+					  isLiked: false,
+					  isBookmarked: false,
+					  name: "Nandini Raghav (Ninni)",
+					  roleType: "7",
+					  userType: 1,
+					  imageUrl:
+						"/filters:format(webp)/fit-in/200x200/uploads/display_picture/3c55b1d02f1f8dfca83ba35242e7bab8f256a819a82113c70a9dd9c83c0d650e_1744269683970.jpg",
+					  likes: 3,
+					  comments: 1,
+					  location: "Udupi, Karnataka, India",
+					  placeId: "",
+					  lat: 13.3408807,
+					  lng: 74.7421427,
+					  suggestionCount: 0,
+					  dateOfTravel: "0001-01-01",
+					  gender: "any",
+					  isVerified: false,
+					  isPin: false,
+					  matchingPercentage: 0,
+					  isMask: false,
+					  tripDuration: null,
+					  dateType: null,
+					  travelerType: null,
+					  budget: null,
+					  bookFromTbd: null,
+					},
+				  },
+				  {
+					viewType: 0,
+					feedVal: 10,
+					post: {
+					  postId: 984367,
+					  isOwnPost: false,
+					  mediaList: [
+						{
+						  mediaUrl:
+							"https://res.cloudinary.com/dc9ywac95/video/upload/vc_h265/c_crop,h_600,w_1066.6666666667/v1744655803/0c32146d2a329132299e6f0d287b39efd4b57a9748c115f05f5843da53423a47_1744655799842.mov.mp4",
+						  mediaType: "video",
+						  imageWidth: 1920,
+						  imageHeight: 1080,
+						  urlImageThumbnail:
+							"https://res.cloudinary.com/dc9ywac95/video/upload/v1744655803/0c32146d2a329132299e6f0d287b39efd4b57a9748c115f05f5843da53423a47_1744655799842.mov.jpg",
+						  caption: "",
+						  mediaId: "1158153",
+						  likes: 0,
+						  comments: 0,
+						  isLiked: false,
+						},
+					  ],
+					  feedType: 0,
+					  findType: "buddy",
+					  uniqueUserId: "achjbh",
+					  userId: "4b23080f76bfc1ccd2f00c91270afedc72cb9b09e4e2d4b43c0d42999638c13a",
+					  isFollowed: false,
+					  postDescription: "Exploring the beautiful streets of London! 🇬🇧✨",
+					  groupId: null,
+					  postDateTime: "2025-04-14 18:36:41.425218+00",
+					  hasMedia: true,
+					  isLiked: false,
+					  isBookmarked: false,
+					  name: "Shikha Patel",
+					  roleType: "7",
+					  userType: 1,
+					  imageUrl: "/filters:format(webp)/fit-in/200x200/uploads/display_pictures/271931-1622406645461.jpg",
+					  likes: 2,
+					  comments: 0,
+					  location: "London, England, United Kingdom",
+					  placeId: "",
+					  lat: 51.5072178,
+					  lng: -0.1275862,
+					  suggestionCount: 0,
+					  dateOfTravel: "0001-01-01",
+					  gender: "any",
+					  isVerified: false,
+					  isPin: false,
+					  matchingPercentage: 0,
+					  isMask: false,
+					  tripDuration: null,
+					  dateType: null,
+					  travelerType: null,
+					  budget: null,
+					  bookFromTbd: null,
+					},
+				  },
+				  {
+					viewType: 0,
+					feedVal: 10,
+					post: {
+					  postId: 984430,
+					  isOwnPost: false,
+					  mediaList: [
+						{
+						  mediaUrl:
+							"https://res.cloudinary.com/dc9ywac95/video/upload/vc_h265/c_crop,h_600,w_1066.6666666667/v1744712598/e5bcb2966fba788afb1ed411c006ac728ed7ff3d74a3b3cdce464c71befc40bf_1744712559742.mp4",
+						  mediaType: "video",
+						  imageWidth: 3840,
+						  imageHeight: 2160,
+						  urlImageThumbnail:
+							"https://res.cloudinary.com/dc9ywac95/video/upload/v1744712598/e5bcb2966fba788afb1ed411c006ac728ed7ff3d74a3b3cdce464c71befc40bf_1744712559742.jpg",
+						  caption: "",
+						  mediaId: "1158251",
+						  likes: 0,
+						  comments: 0,
+						  isLiked: false,
+						},
+					  ],
+					  feedType: 0,
+					  findType: "buddy",
+					  uniqueUserId: "eicjei",
+					  userId: "d98f5364fafccc4209f12556df2c2dcdf82ec19657bf8e8e9489e8e63ed4fb88",
+					  isFollowed: false,
+					  postDescription: "Enjoyed the serene beauty of Puducherry! 🌊🏖️",
+					  groupId: null,
+					  postDateTime: "2025-04-15 10:23:17.344757+00",
+					  hasMedia: true,
+					  isLiked: false,
+					  isBookmarked: false,
+					  name: "Krish",
+					  roleType: "7",
+					  userType: 0,
+					  imageUrl:
+						"/filters:format(webp)/fit-in/200x200/uploads/display_picture/16132f2849cdb503ee9d765a5a01a4c4874a70d491192d89a4ef017e9d13f260_1720689281918.jpg",
+					  likes: 0,
+					  comments: 0,
+					  location: "Puducherry, India",
+					  placeId: "",
+					  lat: 11.9415915,
+					  lng: 79.8083133,
+					  suggestionCount: 0,
+					  dateOfTravel: "0001-01-01",
+					  gender: "any",
+					  isVerified: true,
+					  isPin: false,
+					  matchingPercentage: 0,
+					  isMask: false,
+					  tripDuration: null,
+					  dateType: null,
+					  travelerType: null,
+					  budget: null,
+					  bookFromTbd: null,
+					},
+				  },
+				],
+			  }
+
+			  const reelsContainer = document.getElementById("reels-container")
+			  let hasUserInteracted = false;
+
+			  // Track user interaction
+			  document.addEventListener('click', function() {
+				hasUserInteracted = true;
+			  });
+
+			  // Create and append reels
+			  data.list.forEach((entry) => {
+				const post = entry.post
+				const reelItem = document.createElement("div")
+				reelItem.className = "reel-item"
+				reelItem.dataset.reelId = post.postId
+
+				reelItem.innerHTML = `
+				  <div class="video-container">
+					<video 
+					  class="video-player" 
+					  preload="metadata" 
+					  playsinline 
+					  muted
+					  loop 
+					  poster="${post.mediaList[0].urlImageThumbnail}"
+					  src="${post.mediaList[0].mediaUrl}"
+					></video>
+					<div class="loading-indicator" style="display: none"></div>
+					<div class="play-indicator">⏸️</div>
+					<div class="speed-indicator">2x</div>
+					<div class="tap-to-play">Tap to play</div>
+				  </div>
+				  
+				  <div class="reel-overlay">
+					<div class="reel-header">
+					  <div class="avatar">
+						<img src="${post.imageUrl}" alt="${post.name}" />
+					  </div>
+					  <div class="username">${post.name}</div>
+					  ${post.location ? `<div class="location">📍 ${post.location}</div>` : ""}
+					</div>
+					
+					<div class="reel-caption">
+					  ${post.postDescription || ""}
+					</div>
+					
+					<div class="progress-container">
+					  <div class="progress-bar" style="width: 0%"></div>
+					  <div class="progress-handle" style="left: 0%"></div>
+					</div>
+				  </div>
+				  
+				  <div class="reel-actions">
+					<button class="action-btn like-btn" data-liked="false">
+					  ❤️
+					  <span class="action-count">${post.likes}</span>
+					</button>
+					<button class="action-btn comment-btn">
+					  💬
+					  <span class="action-count">${post.comments}</span>
+					</button>
+					<button class="action-btn share-btn">
+					  📤
+					</button>
+					<button class="action-btn bookmark-btn">
+					  🔖
+					</button>
+				  </div>
+				`
+
+				reelsContainer.appendChild(reelItem)
+			  })
+
+			  // Set up intersection observer for videos
+			  const reelItems = document.querySelectorAll(".reel-item")
+			  let currentlyPlaying = null
+
+			  // Create a more precise intersection observer for full-screen videos
+			  const observer = new IntersectionObserver(
+				(entries) => {
+				  entries.forEach((entry) => {
+					const reelItem = entry.target
+					const video = reelItem.querySelector("video")
+					const playIndicator = reelItem.querySelector(".play-indicator")
+					const loadingIndicator = reelItem.querySelector(".loading-indicator")
+					const tapToPlay = reelItem.querySelector(".tap-to-play")
+
+					if (entry.isIntersecting && entry.intersectionRatio > 0.8) {
+					  // If another video is playing, pause it
+					  if (currentlyPlaying && currentlyPlaying !== video) {
+						currentlyPlaying.pause()
+						currentlyPlaying.playbackRate = 1 // Reset speed
+					  }
+
+					  // Try to play this video if user has interacted
+					  if (hasUserInteracted) {
+						video
+						  .play()
+						  .then(() => {
+							currentlyPlaying = video
+							loadingIndicator.style.display = "none"
+							tapToPlay.classList.remove("visible")
+						  })
+						  .catch((error) => {
+							console.error("Error playing video:", error)
+							loadingIndicator.style.display = "none"
+							tapToPlay.classList.add("visible")
+						  })
+					  } else {
+						// Show tap to play if no user interaction yet
+						tapToPlay.classList.add("visible")
+					  }
+					} else if (!entry.isIntersecting && video === currentlyPlaying) {
+					  // Pause when out of view
+					  video.pause()
+					  video.playbackRate = 1 // Reset speed
+					  currentlyPlaying = null
+					}
+				  })
+				},
+				{ threshold: [0.8] },
+			  )
+
+			  reelItems.forEach((reelItem) => {
+				observer.observe(reelItem)
+
+				// Set up video event listeners
+				const video = reelItem.querySelector("video")
+				const progressBar = reelItem.querySelector(".progress-bar")
+				const progressHandle = reelItem.querySelector(".progress-handle")
+				const progressContainer = reelItem.querySelector(".progress-container")
+				const playIndicator = reelItem.querySelector(".play-indicator")
+				const speedIndicator = reelItem.querySelector(".speed-indicator")
+				const loadingIndicator = reelItem.querySelector(".loading-indicator")
+				const tapToPlay = reelItem.querySelector(".tap-to-play")
+				const likeBtn = reelItem.querySelector(".like-btn")
+
+				let longPressTimer = null
+				let isLongPress = false
+				let lastTapTime = 0
+				let isSeeking = false
+				let doubleTapTimer = null
+
+				// Tap to play button
+				tapToPlay.addEventListener("click", (e) => {
+				  e.stopPropagation()
+				  hasUserInteracted = true
+				  video.play()
+				    .then(() => {
+					  currentlyPlaying = video
+					  tapToPlay.classList.remove("visible")
+					})
+					.catch((error) => {
+					  console.error("Error playing video:", error)
+					})
+				})
+
+				// Video loading events
+				video.addEventListener("loadstart", () => {
+				  loadingIndicator.style.display = "block"
+				})
+
+				video.addEventListener("canplay", () => {
+				  loadingIndicator.style.display = "none"
+				})
+
+				video.addEventListener("waiting", () => {
+				  loadingIndicator.style.display = "block"
+				})
+
+				// Video playback events
+				video.addEventListener("playing", () => {
+				  loadingIndicator.style.display = "none"
+				  playIndicator.classList.remove("visible")
+				  video.removeAttribute("poster")
+				  tapToPlay.classList.remove("visible")
+				})
+
+				video.addEventListener("pause", () => {
+				  playIndicator.textContent = "▶️"
+				  playIndicator.classList.add("visible")
+				  setTimeout(() => {
+					playIndicator.classList.remove("visible")
+				  }, 1000)
+				})
+
+				// Update progress bar
+				video.addEventListener("timeupdate", () => {
+				  if (video.duration && !isSeeking) {
+					const progress = (video.currentTime / video.duration) * 100
+					progressBar.style.width = `${progress}%`
+					progressHandle.style.left = `${progress}%`
+				  }
+				})
+
+				// Progress bar seeking functionality
+				progressContainer.addEventListener("mousedown", startSeeking)
+				progressContainer.addEventListener("touchstart", startSeeking)
+
+				function startSeeking(e) {
+				  e.preventDefault()
+				  isSeeking = true
+				  progressContainer.classList.add("seeking")
+				  
+				  const rect = progressContainer.getBoundingClientRect()
+				  const clientX = e.type === "touchstart" ? e.touches[0].clientX : e.clientX
+				  const progress = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width))
+				  
+				  if (video.duration) {
+					video.currentTime = progress * video.duration
+					progressBar.style.width = `${progress * 100}%`
+					progressHandle.style.left = `${progress * 100}%`
+				  }
+
+				  const handleMove = (e) => {
+					const clientX = e.type === "touchmove" ? e.touches[0].clientX : e.clientX
+					const progress = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width))
+					
+					if (video.duration) {
+					  video.currentTime = progress * video.duration
+					  progressBar.style.width = `${progress * 100}%`
+					  progressHandle.style.left = `${progress * 100}%`
+					}
+				  }
+
+				  const handleEnd = () => {
+					isSeeking = false
+					progressContainer.classList.remove("seeking")
+					document.removeEventListener("mousemove", handleMove)
+					document.removeEventListener("mouseup", handleEnd)
+					document.removeEventListener("touchmove", handleMove)
+					document.removeEventListener("touchend", handleEnd)
+				  }
+
+				  document.addEventListener("mousemove", handleMove)
+				  document.addEventListener("mouseup", handleEnd)
+				  document.addEventListener("touchmove", handleMove)
+				  document.addEventListener("touchend", handleEnd)
+				}
+
+				// Long press for 2x speed
+				function startLongPress(e) {
+				  isLongPress = false
+				  longPressTimer = setTimeout(() => {
+					isLongPress = true
+					video.playbackRate = 2
+					speedIndicator.classList.add("visible")
+				  }, 500) // 500ms for long press
+				}
+
+				function endLongPress() {
+				  if (longPressTimer) {
+					clearTimeout(longPressTimer)
+					longPressTimer = null
+				  }
+				  
+				  if (isLongPress) {
+					video.playbackRate = 1
+					speedIndicator.classList.remove("visible")
+					isLongPress = false
+				  }
+				}
+
+				// Handle like functionality
+				function handleLike() {
+				  // Create like animation
+				  const likeAnimation = document.createElement("div")
+				  likeAnimation.className = "like-animation"
+				  likeAnimation.textContent = "❤️"
+				  reelItem.appendChild(likeAnimation)
+				  
+				  // Remove animation after completion
+				  setTimeout(() => {
+					if (reelItem.contains(likeAnimation)) {
+					  reelItem.removeChild(likeAnimation)
+					}
+				  }, 800)
+				  
+				  // Toggle like
+				  const isLiked = likeBtn.dataset.liked === "true"
+				  const countElement = likeBtn.querySelector(".action-count")
+				  const count = parseInt(countElement.textContent)
+				  
+				  if (!isLiked) {
+					likeBtn.dataset.liked = "true"
+					likeBtn.classList.add("liked")
+					countElement.textContent = count + 1
+				  }
+				}
+
+				// Improved double tap detection
+				function handleTap(e) {
+				  // Ignore if tap is on interactive elements
+				  if (
+					e.target.closest(".reel-actions") ||
+					e.target.closest(".reel-header") ||
+					e.target.closest(".progress-container") ||
+					e.target.closest(".tap-to-play")
+				  ) {
+					return;
+				  }
+
+				  const currentTime = new Date().getTime();
+				  const timeSinceLastTap = currentTime - lastTapTime;
+				  
+				  // Check for double tap (between 50ms and 300ms)
+				  if (timeSinceLastTap < 300 && timeSinceLastTap > 50) {
+					// Clear any pending single tap actions
+					clearTimeout(doubleTapTimer);
+					
+					// Double tap detected - like the video
+					handleLike();
+					
+					// Update last tap time
+					lastTapTime = 0; // Reset to prevent triple-tap issues
+				  } else {
+					// This might be a single tap or the first tap of a double tap
+					lastTapTime = currentTime;
+					
+					// Set a timer for single tap action
+					clearTimeout(doubleTapTimer);
+					doubleTapTimer = setTimeout(() => {
+					  // If we get here, it was a single tap
+					  if (video.paused) {
+						video.play()
+						  .then(() => {
+							playIndicator.textContent = "⏸️";
+							playIndicator.classList.add("visible");
+							setTimeout(() => {
+							  playIndicator.classList.remove("visible");
+							}, 1000);
+						  })
+						  .catch(error => {
+							console.error("Error playing video:", error);
+							tapToPlay.classList.add("visible");
+						  });
+					  } else {
+						video.pause();
+						playIndicator.textContent = "▶️";
+						playIndicator.classList.add("visible");
+					  }
+					}, 300); // Wait to see if a second tap occurs
+				  }
+				}
+
+				// Touch events for mobile
+				reelItem.addEventListener("touchstart", (e) => {
+				  if (
+					e.target.closest(".reel-actions") ||
+					e.target.closest(".reel-header") ||
+					e.target.closest(".progress-container") ||
+					e.target.closest(".tap-to-play")
+				  ) {
+					return;
+				  }
+				  
+				  startLongPress(e);
+				  hasUserInteracted = true;
+				});
+
+				reelItem.addEventListener("touchend", (e) => {
+				  if (
+					e.target.closest(".reel-actions") ||
+					e.target.closest(".reel-header") ||
+					e.target.closest(".progress-container") ||
+					e.target.closest(".tap-to-play")
+				  ) {
+					return;
+				  }
+				  
+				  endLongPress();
+				  
+				  if (!isLongPress) {
+					handleTap(e);
+				  }
+				});
+
+				// Mouse events for desktop
+				reelItem.addEventListener("mousedown", (e) => {
+				  if (
+					e.target.closest(".reel-actions") ||
+					e.target.closest(".reel-header") ||
+					e.target.closest(".progress-container") ||
+					e.target.closest(".tap-to-play")
+				  ) {
+					return;
+				  }
+				  
+				  startLongPress(e);
+				  hasUserInteracted = true;
+				});
+
+				reelItem.addEventListener("mouseup", (e) => {
+				  if (
+					e.target.closest(".reel-actions") ||
+					e.target.closest(".reel-header") ||
+					e.target.closest(".progress-container") ||
+					e.target.closest(".tap-to-play")
+				  ) {
+					return;
+				  }
+				  
+				  endLongPress();
+				  
+				  if (!isLongPress) {
+					handleTap(e);
+				  }
+				});
+
+				// Prevent context menu on long press
+				reelItem.addEventListener("contextmenu", (e) => {
+				  e.preventDefault();
+				});
+
+				// Set up action buttons
+				likeBtn.addEventListener("click", (e) => {
+				  e.stopPropagation();
+				  const isLiked = likeBtn.dataset.liked === "true";
+				  const countElement = likeBtn.querySelector(".action-count");
+				  const count = parseInt(countElement.textContent);
+
+				  if (!isLiked) {
+					likeBtn.dataset.liked = "true";
+					likeBtn.classList.add("liked");
+					countElement.textContent = count + 1;
+				  } else {
+					likeBtn.dataset.liked = "false";
+					likeBtn.classList.remove("liked");
+					countElement.textContent = Math.max(0, count - 1);
+				  }
+				});
+
+				const commentBtn = reelItem.querySelector(".comment-btn");
+				const shareBtn = reelItem.querySelector(".share-btn");
+				const bookmarkBtn = reelItem.querySelector(".bookmark-btn");
+
+				commentBtn.addEventListener("click", (e) => {
+				  e.stopPropagation();
+				  // Handle comment action
+				});
+
+				shareBtn.addEventListener("click", (e) => {
+				  e.stopPropagation();
+				  // Handle share action
+				});
+
+				bookmarkBtn.addEventListener("click", (e) => {
+				  e.stopPropagation();
+				  bookmarkBtn.classList.toggle("active");
+				});
+			  });
+
+			  // Handle smooth scrolling between reels
+			  reelsContainer.addEventListener("scroll", () => {
+				clearTimeout(reelsContainer.scrollTimeout);
+				reelsContainer.scrollTimeout = setTimeout(() => {
+				  const reels = document.querySelectorAll(".reel-item");
+				  let maxVisibleReel = null;
+				  let maxVisibleArea = 0;
+
+				  reels.forEach((reel) => {
+					const rect = reel.getBoundingClientRect();
+					const visibleHeight = Math.min(window.innerHeight, rect.bottom) - Math.max(0, rect.top);
+					const visibleArea = Math.max(0, visibleHeight);
+
+					if (visibleArea > maxVisibleArea) {
+					  maxVisibleArea = visibleArea;
+					  maxVisibleReel = reel;
+					}
+				  });
+
+				  if (maxVisibleReel) {
+					maxVisibleReel.scrollIntoView({ behavior: "smooth" });
+				  }
+				}, 100);
+			  });
+
+			  // Don't try to autoplay the first video - wait for user interaction
+			  const firstReel = document.querySelector(".reel-item:first-child");
+			  if (firstReel) {
+				const tapToPlay = firstReel.querySelector(".tap-to-play");
+				tapToPlay.classList.add("visible");
+			  }
+			});
+		</script>
+	</body>
+</html>

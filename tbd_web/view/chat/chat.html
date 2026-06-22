@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Travel Buddy -Chat</title>
+    <meta name="description" content="Plan, Find, Book & Travel across the Globe. Visit exotic locations and experience diverse cultures. Enjoy the best cuisines the world has to offer. Make memories that will last a lifetime. #NeverFeelAlone">
+    <meta name="keywords" content="Travel, Buddy, Find, Connect, Book, Explore weekend, trips, travel quotes, travel bag, weekend trips from delhi, weekend trips from bangalore, cheap international trips from india, honeymoon packages, vietnam tour packages, thailand packages">
+    <meta property="og:title" content="Travel Buddy - Plan & Book Trips, Flights & Packages">
+    <meta property="og:description" content="Plan, Find, Book & Travel across the Globe. Visit exotic locations and experience diverse cultures. Enjoy the best cuisines the world has to offer. Make memories that will last a lifetime. #NeverFeelAlone">
+    <meta property="og:image" content="https://beatravelbuddy.com//view/assets/img/experiences__bg.webp">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;800&display=swap" defer>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" defer>
+    <link rel='stylesheet' href='/view/assets/css/chat.css?v='+appVersion as='style' onload='this.rel="stylesheet"' preload>
+    <link rel="icon" href="/view/assets/img/app_logo_new.webp" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="image_src" href="/view/assets/img/experiences__bg.webp">
+    <link rel='stylesheet' href='/view/chat/chat.css'+appVersion as='style' onload='this.rel="stylesheet"'>
+    
+    
+</head>
+<body>
+	<!-- Global Loading Animation -->
+	<div class="global__loading" style="display: none;">
+		<div class="feed__loading" id="lottie__loading" style="width: 100%; height: 50rem"></div>
+		<div class="hold__horses"></div>
+	</div>
+    <div id="main"></div>
+    <div id="singleChat"></div>
+	<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-functions-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-performance-compat.js"></script>
+    
+	<script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBnKtZnePCqVLbr6jOUr4_Saf3iNmsZR-s",
+            authDomain: "travelbuddy-174317.firebaseapp.com",
+            databaseURL: "https://tbd-prod-174317-b933e.asia-southeast1.firebasedatabase.app/",
+            projectId: "travelbuddy-174317",
+            storageBucket: "travelbuddy-174317.appspot.com",
+            messagingSenderId: "9959459076",
+            appId: "1:9959459076:web:c4417f188991113b37a851",
+            measurementId: "G-PXBR867EGP"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const googleAnalytics = firebase.analytics();
+		</script>
+		
+	<script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '525874949911799');
+        fbq('track', 'PageView');
+        fbq('trackCustom', 'TrackCustomEventLeadGen');
+    </script>
+    <noscript>
+		
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=525874949911799&ev=PageView&noscript=1"/>
+    </noscript>
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TXFKZVW'); // Replace GTM-XXXXXX with your GTM container ID
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-827809061"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-827809061');
+    </script>
+	<div id="toast-container"></div>
+	
+
+	
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="/view/chat/chat_bem.js"></script>
+	<script src="/view/chat/svg_icons.js"></script>
+	<script src="/view/chat/chat_firebase.js"></script>
+    <script src="/view/chat/chat.js"></script>
+    <script src="/view/chat/chat_helper.js"></script>
+    <script src="/view/chat/chat_const.js"></script>
+	<script src="/view/chat/chat_render-message.js"></script>
+	<script src="/view/chat/chat_emojis.js"></script>
+	<script src="/view/chat/chat_start-newChat.js"></script>
+	<script src="/view/chat/chat_media-upload.js"></script>
+	<script src="/view/chat/chat_popups-tabs.js"></script>
+	<!-- <link rel="stylesheet" href="group_image_cropper.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script> -->
+	
+	<script src="node_modules/heic2any/dist/heic2any.min.js"></script>
+	
+	
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js'></script>
+</body>
+</html>

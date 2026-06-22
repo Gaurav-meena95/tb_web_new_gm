@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel to Rajasthan - Discover the Land of Kings</title>
+    <meta name="description" content="Experience the rich culture, majestic palaces, and vibrant traditions of India's Land of Kings. Book your Rajasthan tour with Travel Buddy today!">
+    <meta name="keywords" content="Rajasthan, India, travel, tour, culture, heritage, palaces, forts, traditions, Travel Buddy">
+    <meta property="og:title" content="Travel to Rajasthan - Discover the Land of Kings">
+    <meta property="og:description" content="Experience the rich culture, majestic palaces, and vibrant traditions of India's Land of Kings. Book your Rajasthan tour with Travel Buddy today!">
+    <meta property="og:image" content="https://beatravelbuddy.com/view/assets/img/leadGen/R2.jpg">
+    <link rel="icon" href="/view/assets/img/app_logo_new.webp" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="image_src" href="/view/assets/img/leadGen/R2.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Montserrat';
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(200deg, #FFF9CF, white);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat';
+        }
+        header {
+            color: #1e1e2d;
+            padding: 1rem;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            width: 100%;
+            position: fixed;
+            z-index: 4;
+        }
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+        }
+        nav h1 {
+            font-size: 31px;
+            font-weight: 700;
+            font-family: 'Nunito';
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/view/assets/img/leadGen/R2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            color: white;
+            padding-top: 4rem;
+            transition: background-image 3s ease-in-out;
+        }
+        .hero-content {
+            max-width: 500px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #FF6B6B;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-family: 'Montserrat';
+            font-weight: 600;
+        }
+        .btn:hover {
+            background-color: #FF8E8E;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 4rem 2rem;
+        }
+        .description {
+            margin-bottom: 2rem;
+        }
+        .description h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1e1e2d;
+            font-weight: 700;
+            font-family: 'Nunito';
+        }
+        .enquiry-form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            color: #1e1e2d;
+        }
+        img.cont_img {
+            margin-top: 15px;
+        }
+        input#verificationCodeInput {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Nunito';
+            margin-bottom: 15px;
+        }
+        .enquiry-form h3 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-family: 'Montserrat';
+        }
+        .form-group input, #countryCode {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Nunito';
+        }
+        #countryCode {
+            width: 40%;
+            margin-right: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #fde723;
+            color: #1e1e2d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            font-family: 'Montserrat';
+            font-weight: 600;
+        }
+        .destinations {
+            margin-top: 4rem;
+        }
+        .destinations h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #FF6B6B;
+            font-weight: 700;
+        }
+        .destination-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .destination-card {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .destination-card:hover {
+            transform: translateY(-5px);
+        }
+        .destination-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .destination-card-content {
+            padding: 1.5rem;
+        }
+        .destination-card-content h3 {
+            margin-bottom: 0.5rem;
+            color: #FF6B6B;
+            font-weight: 600;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-family: 'Montserrat';
+        }
+        .fixed-button {
+            position: fixed;
+            bottom: 20px;
+            /* right: 20px; */
+            /* background-color: #FF6B6B; */
+            /* color: white; */
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-family: 'Nunito';
+            font-weight: 700;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            color: #333;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            /* width: 98%; */
+            font-size: 22px;
+        }
+        .fixed-button:hover {
+            background-color: #FF8E8E;
+        }
+        #enquiry-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1999;
+        }
+        /* New styles for added sections */
+        .section-title {
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        strong {
+            font-size: 17px;
+            font-weight: 700;
+        }
+        .content-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .content-box h3 {
+            color: #FF6B6B;
+            margin-bottom: 1rem;
+        }
+        .itinerary-day {
+            margin-bottom: 1.5rem;
+        }
+        .itinerary-day h4 {
+            color: #FF6B6B;
+            margin-bottom: 0.5rem;
+        }
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .feature-list li::before {
+            content: '✓';
+            color: #FF6B6B;
+            position: absolute;
+            left: 0;
+        }
+        .policy-section {
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        .policy-section h3 {
+            margin-bottom: 1rem;
+        }
+        #toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .toast {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
+        .testimonial_cont {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 2rem;
+                height: auto;
+                min-height: 100vh;
+                margin-top: 20%;
+            }
+            .hero-content, .enquiry-form {
+                width: 100%;
+                max-width: 100%;
+            }
+            .destination-cards {
+                flex-direction: column;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            nav ul {
+                display: none;
+            }
+        }
+        @media (min-width: 768px) {
+            .hero {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            .hero-content {
+                max-width: 500px;
+                text-align: center;
+                left: 14%;
+                position: relative;
+            }
+            .enquiry-form {
+                position: fixed;
+                left: 65%;
+            }
+            .container {
+                max-width: 600px;
+                margin: unset;
+                padding: 4rem 2rem;
+                left: 10%;
+                position: relative;
+            }
+            .hero h1 {
+                font-size: 5.5rem;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="/view/assets/img/app_logo_new.webp" alt="Travel Buddy Logo" width="50" style="border-radius: 50%;">
+            <h1>Travel Buddy</h1>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover the Magic of Rajasthan</h1>
+            <p>Experience the rich culture, majestic palaces, and vibrant traditions of India's Land of Kings</p>
+        </div>
+        <div class="enquiry-form" id="enquiry">
+            <h3>Enquire Now</h3>
+            <form id="enquiryForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <div style="display: flex; align-items: center;">
+                        <select id="countryCode" name="countryCode" style="margin-right: 10px;">
+                            <option value="+91">+91</option>
+                        </select>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <input type="text" id="verificationCodeInput" placeholder="Enter verification code" style="display: none;">
+                <button type="button" id="sendOtpButton">Submit</button>
+                <button type="button" id="verifyOtpButton" style="display: none;">Verify OTP</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="container">
+        
+        <section id="why-travel-buddy">
+            <h2 class="section-title">Why Choose Travel Buddy?</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Reliable Vendor:</strong> We partner with trusted and dependable suppliers to ensure seamless travel experiences.</li>
+                    <li><strong>On-Time Guarantee:</strong> If your transportation is delayed for more than 30 minutes without a valid reason, we will provide a complimentary transfer and offer additional compensation as a gesture of goodwill.</li>
+                    <li><strong>Complimentary eSIM:</strong> Stay connected with our complimentary eSIM, offering easy access to mobile data during your travels.</li>
+                    <li><strong>24/7 Assistance:</strong> Our dedicated support team is available around the clock, ensuring you always know who to reach out to in case of an emergency.</li>
+                    <li><strong>Experienced Partners:</strong> Our experienced partners are well-equipped to handle your group's needs, ensuring a smooth and memorable journey.</li>
+                </ul>
+            </div>
+        </section>
+        <section id="why-rajasthan">
+            <h2 class="section-title">Why Choose Rajasthan?</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Royal Heritage:</strong> Explore iconic palaces and forts like the Amber Fort, Mehrangarh Fort, and the City Palace.</li>
+                    <li><strong>Cultural Vibrancy:</strong> Witness traditional folk dances, music, and festivals that showcase the rich heritage of the region.</li>
+                    <li><strong>Natural Wonders:</strong> Experience the beauty of the Aravalli Hills, serene lakes of Udaipur, and the golden sands of Jaisalmer.</li>
+                    <li><strong>Culinary Delights:</strong> Relish authentic Rajasthani dishes like Dal Baati Churma, Gatte ki Sabzi, and the famous Laal Maas.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="itinerary">
+            <h2 class="section-title">5-Day Basic Itinerary for Rajasthan</h2>
+            <div class="content-box">
+                <div class="itinerary-day">
+                    <h4>Day 1: Arrival in Jaipur – The Pink City</h4>
+                    <p><strong>Morning:</strong> Arrive at Jaipur International Airport or railway station. Check into your hotel.</p>
+                    <p><strong>Afternoon:</strong> Visit the Hawa Mahal, City Palace, and Jantar Mantar.</p>
+                    <p><strong>Evening:</strong> Explore the vibrant bazaars for handicrafts and jewelry. End your day with a traditional Rajasthani dinner at Chokhi Dhani.</p>
+                </div>
+                <div class="itinerary-day">
+                    <h4>Day 2: Jaipur – Forts and Palaces</h4>
+                    <p><strong>Morning:</strong> Head to the iconic Amber Fort and enjoy an elephant ride to the entrance.</p>
+                    <p><strong>Afternoon:</strong> Visit Jaigarh Fort and Nahargarh Fort for panoramic city views.</p>
+                    <p><strong>Evening:</strong> Relax and enjoy a local cultural show.</p>
+                </div>
+                <div class="itinerary-day">
+                    <h4>Day 3: Jodhpur – The Blue City</h4>
+                    <p><strong>Morning:</strong> Travel to Jodhpur (5-6 hours by road). Check into your hotel.</p>
+                    <p><strong>Afternoon:</strong> Explore Mehrangarh Fort, Jaswant Thada, and the bustling Clock Tower Market.</p>
+                    <p><strong>Evening:</strong> Enjoy sunset views over the blue-painted houses.</p>
+                </div>
+                <div class="itinerary-day">
+                    <h4>Day 4: Jaisalmer – The Golden City</h4>
+                    <p><strong>Morning:</strong> Drive to Jaisalmer (4-5 hours by road). Visit Jaisalmer Fort and Patwon Ki Haveli.</p>
+                    <p><strong>Afternoon:</strong> Head to the Sam Sand Dunes for a desert safari and camel ride.</p>
+                    <p><strong>Evening:</strong> Enjoy a cultural evening with Rajasthani folk music and dance under the starlit desert sky.</p>
+                </div>
+                <div class="itinerary-day">
+                    <h4>Day 5: Udaipur – The City of Lakes</h4>
+                    <p><strong>Morning:</strong> Travel to Udaipur (7-8 hours by road or flight from Jodhpur).</p>
+                    <p><strong>Afternoon:</strong> Visit the City Palace and Saheliyon Ki Bari.</p>
+                    <p><strong>Evening:</strong> Take a serene boat ride on Lake Pichola and witness the stunning sunset over the Lake Palace.</p>
+                </div>
+                <!-- Add similar divs for Days 2-5... -->
+            </div>
+        </section>
+
+        <section id="must-do">
+            <h2 class="section-title">Must-do Activities for a Rajasthan Trip</h2>
+            <div class="content-box">
+                <h3>1. Explore the Majestic Forts and Palaces</h3>
+                <ul>
+                    <li>Visit the iconic Amber Fort in Jaipur, known for its stunning architecture and light shows.</li>
+                    <li>Tour the grand Mehrangarh Fort in Jodhpur, offering breathtaking city views.</li>
+                    <li>Explore the City Palace of Udaipur, a blend of Rajasthani and Mughal architecture.</li>
+                </ul>
+                <img class= "cont_img"src="/view/assets/img/leadGen/R3.jpg" alt="Forts and Palaces" style="width: 100%;">
+            </div>
+            
+            <div class="content-box">
+                <h3>2. Experience the Golden Sands of Jaisalmer</h3>
+                <ul>
+                    <li>Enjoy a camel safari in the Thar Desert.</li>
+                    <li>Spend a night under the stars in a luxury desert camp, complete with folk music and dance performances.</li>
+                    <li>Visit the Jaisalmer Fort, one of the few “living forts” in the world.</li>
+                </ul>
+                <img class= "cont_img"src="/view/assets/img/leadGen/R6.jpg" alt="Forts and Palaces" style="width: 100%;">
+            </div>
+            
+            <div class="content-box">
+                <h3>3. Relive the Royalty</h3>
+                <ul>
+                    <li>Dine at heritage hotels like Umaid Bhawan Palace or Taj Lake Palace.</li>
+                    <li>Enjoy a vintage car ride in Udaipur for a royal experience.</li>
+                    <li>Attend the Chokhi Dhani cultural village in Jaipur for a taste of Rajasthani tradition.</li>
+                </ul>
+                <img class= "cont_img"src="/view/assets/img/leadGen/R5.png" alt="Forts and Palaces" style="width: 100%;">
+            </div>
+            
+            <div class="content-box">
+                <h3>4. Witness Rajasthan’s Vibrant Festivals</h3>
+                <ul>
+                    <li>Plan your trip around the Pushkar Camel Fair for an unforgettable cultural experience.</li>
+                    <li>Participate in the Desert Festival of Jaisalmer for folk performances and contests.</li>
+                </ul>
+                <img class= "cont_img"src="/view/assets/img/leadGen/R1.jpg" alt="Forts and Palaces" style="width: 100%;">
+            </div>
+            
+            <div class="content-box">
+                <h3>5. Marvel at the Temples and Spiritual Sites</h3>
+                <ul>
+                    <li>Visit the Dilwara Temples in Mount Abu for intricate marble carvings.</li>
+                    <li>Experience the spiritual aura at Brahma Temple in Pushkar.</li>
+                    <li>Seek blessings at Karni Mata Temple (Rat Temple) near Bikaner.</li>
+                </ul>
+            </div>
+            
+            <div class="content-box">
+                <h3>6. Dive into Adventure</h3>
+                <ul>
+                    <li>Go for a hot air balloon ride in Jaipur for stunning aerial views.</li>
+                    <li>Try ziplining at Neemrana Fort or Mehrangarh Fort.</li>
+                    <li>Enjoy wildlife safaris at Ranthambore National Park or Sariska Tiger Reserve.</li>
+                </ul>
+                <img class= "cont_img"src="/view/assets/img/leadGen/R2.jpg" alt="Forts and Palaces" style="width: 100%;">
+            </div>
+            
+            <div class="content-box">
+                <h3>7. Indulge in Local Flavors</h3>
+                <ul>
+                    <li>Savor authentic dishes like dal baati churma, laal maas, and ghevar.</li>
+                    <li>Explore the bustling streets of Jaipur for local street food and snacks.</li>
+                </ul>
+            </div>
+            
+            <div class="content-box">
+                <h3>8. Shop for Unique Handicrafts</h3>
+                <ul>
+                    <li>Explore the bazaars of Jaipur, Jodhpur, and Udaipur for traditional jewelry, textiles, and pottery.</li>
+                    <li>Pick up souvenirs like blue pottery, block prints, and leather goods.</li>
+                </ul>
+            </div>
+            
+            <div class="content-box">
+                <h3>9. Embrace the Arts and Culture</h3>
+                <ul>
+                    <li>Attend a Kalbeliya dance performance, a UNESCO-recognized cultural heritage.</li>
+                    <li>Watch a puppet show or listen to traditional folk music.</li>
+                </ul>
+            </div>
+            
+            <div class="content-box">
+                <h3>10. Discover Offbeat Gems</h3>
+                <ul>
+                    <li>Visit the haunted village of Kuldhara near Jaisalmer.</li>
+                    <li>Explore the serene Chand Baori Stepwell in Abhaneri.</li>
+                    <li>Enjoy the scenic beauty of Bundi and its lesser-known palaces.</li>
+                </ul>
+                <img class= "cont_img"src="/view/assets/img/leadGen/R7.jpg" alt="Forts and Palaces" style="width: 100%;">
+            </div>
+        </section>
+
+
+        <section id="policies" class="policy-section">
+            <h3>Confirmation Policy</h3>
+            <ul>
+                <li>The customer receives a confirmation voucher via email within 24 hours of successful booking.</li>
+                <li>In case the preferred slots are unavailable, an alternate schedule of the customer's preference will be arranged and a new confirmation voucher will be sent via email.</li>
+                <li>Alternatively, the customer may choose to cancel their booking before confirmation and a full refund will be processed.</li>
+            </ul>
+
+            <h3>Refund Policy</h3>
+            <p>The applicable refund amount will be processed within 2-3 business days.</p>
+
+            <h3>Cancellation Policy</h3>
+            <ul>
+                <li>If cancellation is made 45 days before the date of travel, then 10% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 30 days before the date of travel, then 50.0% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 21 days before the date of travel, then 70% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 10 days before the date of travel, then 100% of total tour cost will be charged as cancellation fees.</li>
+            </ul>
+        </section>
+        
+        <section id="testimonials" class="user-test">
+            <div class="content-box">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="testimonial_cont">
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/1.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/2.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/4.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/5.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/6.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/7.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/8.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/9.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/10.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/11.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/12.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/13.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/14.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                
+            </div>
+        </section>
+        
+    </div>
+
+    <a href="#" class="fixed-button" id="openEnquiry" style="display: none;">Enquire Now</a>
+
+    <div class="overlay" id="overlay"></div>
+    <div id="enquiry-popup" class="enquiry-form"></div>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '525874949911799');
+        fbq('track', 'PageView');
+        fbq('trackCustom', 'TrackCustomEvent');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=525874949911799&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Add this HTML for the toast container -->
+    <div id="toast-container"></div>
+
+    <script>
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBnKtZnePCqVLbr6jOUr4_Saf3iNmsZR-s",
+            authDomain: "travelbuddy-174317.firebaseapp.com",
+            databaseURL: "https://tbd-prod-174317-b933e.asia-southeast1.firebasedatabase.app/",
+            projectId: "travelbuddy-174317",
+            storageBucket: "travelbuddy-174317.appspot.com",
+            messagingSenderId: "9959459076",
+            appId: "1:9959459076:web:c4417f188991113b37a851",
+            measurementId: "G-PXBR867EGP"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const analytics = firebase.analytics();
+
+        // Log a test event
+        analytics.logEvent('test_event', { test_param: 'test_value' });
+
+        console.log('Firebase initialized and test event logged');
+    </script>
+    <script>
+        
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // Array of background images
+        const heroImages = [
+                '/view/assets/img/leadGen/rb1.jpg',
+                '/view/assets/img/leadGen/rb2.jpg',
+                '/view/assets/img/leadGen/rb3.jpg',
+                '/view/assets/img/leadGen/rb4.jpg',
+                '/view/assets/img/leadGen/rb5.png',
+                '/view/assets/img/leadGen/rb6.jpg',
+                '/view/assets/img/leadGen/rb7.jpg',
+                '/view/assets/img/leadGen/rb8.png',
+                
+        ];
+
+        let currentImageIndex = 0;
+        const heroSection = document.querySelector('.hero');
+
+        // Function to change the background image
+        function changeHeroBackground() {
+            currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+            heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${heroImages[currentImageIndex]}')`;
+        }
+
+        // Change the background image every 20 seconds
+        setInterval(changeHeroBackground, 7000);
+        
+        // Add this JavaScript to show a toast message
+        function showToast(message) {
+            const toastContainer = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            toastContainer.appendChild(toast);
+
+            // Show the toast
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+
+            // Hide the toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    toastContainer.removeChild(toast);
+                }, 500);
+            }, 3000);
+        }
+        
+        const countryCodeSelect = document.getElementById('countryCode');
+        const phoneInput = document.getElementById('phone');
+        const sendOtpButton = document.getElementById('sendOtpButton');
+        const verifyOtpButton = document.getElementById('verifyOtpButton');
+        const verificationCodeInput = document.getElementById('verificationCodeInput');
+
+        // Fetch country codes from a free API
+        fetch('https://restcountries.com/v3.1/all')
+            .then(response => response.json())
+            .then(data => {
+                const countryCodes = data.map(country => {
+                    const callingCode = country.idd.root + (country.idd.suffixes ? country.idd.suffixes[0] : '');
+                    return {
+                        name: country.name.common,
+                        code: callingCode
+                    };
+                }).sort((a, b) => a.name.localeCompare(b.name));
+
+                // Populate the select element with country codes
+                countryCodes.forEach(country => {
+                    const option = document.createElement('option');
+                    option.value = country.code;
+                    option.textContent = `${country.name} (${country.code})`;
+                    countryCodeSelect.appendChild(option);
+                });
+
+                // Set default country code to +91
+                countryCodeSelect.value = '+91';
+            })
+            .catch(error => console.error('Error fetching country codes:', error));
+
+        // Initialize reCAPTCHA verifier
+        const appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+            'size': 'invisible',
+            'callback': function(response) {
+                // reCAPTCHA solved, allow signInWithPhoneNumber.
+            }
+        });
+
+        let confirmationResult;
+
+        sendOtpButton.addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = phoneInput.value;
+            const countryCode = countryCodeSelect.value;
+
+            if (name && email && phone) {
+                const fullPhoneNumber = `${countryCode}${phone}`;
+                sendOTP(fullPhoneNumber, appVerifier);
+                sendOtpButton.style.display = 'none';
+                showToast('OTP sent successfully!');
+                fbEvent('sentOTP', { phone: fullPhoneNumber });
+            } else {
+                showToast('Please fill in all the required fields.');
+            }
+        });
+
+        function sendOTP(phoneNumber, appVerifier) {
+            firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+                .then(function(result) {
+                    confirmationResult = result;
+                    verificationCodeInput.style.display = 'block';
+                    verifyOtpButton.style.display = 'block';
+                }).catch(function(error) {
+                    console.error('Error during signInWithPhoneNumber', error);
+                });
+        }
+
+        verifyOtpButton.addEventListener('click', function() {
+            const code = verificationCodeInput.value;
+            confirmationResult.confirm(code).then( async function(result) {
+                const user = result.user;
+                showToast('Thank you for choosing Travel Buddy. Our team will get in touch with you within the next 24hours.');
+                fbEvent('verifyOTP');
+                
+                // Remove the enquiry form and open enquiry button
+                const enquiryForm = document.getElementById('enquiry');
+                const openEnquiryButton = document.getElementById('openEnquiry');
+                // Proceed with form submission or other actions
+                
+                let formData = {
+                    date: new Date().toLocaleString(),
+                    name: document.getElementById('name').value,
+                    phone: document.getElementById('countryCode').value + document.getElementById('phone').value,
+                    email: document.getElementById('email').value,
+                    destination: 'Rajasthan'
+                };
+
+                // Convert to 2D array format required by Google Sheets
+                let dataArray = [
+                    [
+                        formData.date,
+                        formData.name,
+                        formData.phone,
+                        formData.email,
+                        formData.destination
+                    ]
+                ];
+
+                try {
+                    let response = await fetch('/write-to-sheet', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            googleSheetId: '1FimuK7vR7WUAY5Qydep4_OOjSKaUVYFifEWfA0cUh6c',
+                            data: dataArray,
+                            sheetName: 'Domestic'
+                        })
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        // Open beatravelbuddy.com/flights
+                        window.open('https://beatravelbuddy.com/flights', '_self');
+                        
+                        //console.log('Form submitted successfully');
+                    } else {
+                        throw new Error(result.message || 'Form submission failed');
+                    }
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    showToast('Error submitting form. Please try again.');
+                }
+                
+                
+            }).catch(function(error) {
+                console.error('Error during confirmationResult.confirm', error);
+            });
+            
+            // if (enquiryForm) enquiryForm.remove();
+            // if (openEnquiryButton) openEnquiryButton.remove();
+        });
+        
+        function fbEvent(event, data) {
+	        if (window.location.href.includes('localhost') || window.location.href.includes('dev.')) {
+                return;
+            }
+            let trackEvent = '';
+            let params = {};
+
+            switch (event) {
+                case 'sentOTP':
+                    trackEvent = 'Sent OTP via Dom LP';
+                    params = {
+                        content_name: 'Sent OTP via Dom LP',
+                        content_category: 'Sent OTP via Dom LP',
+                    };
+                    break;
+                case 'verifyOTP':
+                    trackEvent = 'Verify OTP via Dom LP';
+                    params = {
+                        content_name: 'Verify OTP via Dom LP',
+                        content_category: 'Verify OTP via Dom LP',
+                    };
+                    break;    
+            }
+            // Call fbq with the prepared parameters
+            fbq('trackCustom', trackEvent, params);
+        }
+        
+        
+        
+    });
+    
+    // Intersection Observer to detect when the enquiry form goes out of view
+    document.addEventListener('DOMContentLoaded', function() {
+            const enquiryForm = document.getElementById('enquiry');
+            const fixedEnquiryButton = document.getElementById('openEnquiry');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        fixedEnquiryButton.style.display = 'flex';
+                    } else {
+                        fixedEnquiryButton.style.display = 'none';
+                    }
+                });
+            }, { threshold: 0 });
+
+            observer.observe(enquiryForm);
+        });
+    
+    // If we want to make any API calls, we can use the following function
+    /*let pageUrl = window.location.href;
+    let ajax_url = 'https://beatravelbuddy.com';
+
+    if (pageUrl.includes('localhost')) {
+        ajax_url = 'http://localhost:3000';
+    } else if (pageUrl.includes('https://dev.beatravelbuddy.com')) {
+        ajax_url = 'https://dev.beatravelbuddy.com';
+    } else if (pageUrl.includes('https://beatravelbuddy.com') || pageUrl.includes('https://www.beatravelbuddy.com')) {
+        ajax_url = 'https://beatravelbuddy.com';
+    }
+
+    // Ensure manageToken function is defined
+    function manageToken(state) {
+        // Replace with actual token management logic
+        return '169fdbc2ee484cdd627e698a88c155603744dde696aeddd4e64a41b84c13898eba4190001c25383bf95e529db2f71ef0fbc8bbceb6823bf9cbc6b6e337018dbffe5238f99f140bfb66832283223ef063e925aa7185e59f34c18fd70b43aa3349573b1d2c5dd643beb313d349bad320956479a34ad6e971b4b257c0169c8baf942db6be25fa161fc1bcb8059323cf8b3ddfce70d6a2f2eb2c96cd82de3eed6f58ba5991ef9bc96acf7c2a3c85aa66bf9125ade3e6a0168b618f269e97f0699e718735804f62c649636ea61c226c61acd1794db0cbb78c6d7e56aa810dde56101ddd22e00e136f962d9fc9d61c0fb6e8e1b7e3a7f246ed43aabf1fed97ffa1b60ee8535dfe95e0c4f11c34114d5b0310169738c9773daa22d5bd16da7a90720c7f1532dc50b3b0df17bedeab45a4022cb47ad523f63f139804b1d44a91116b5a4ac7ca8f7533efee2ccab64ca6cfa4c6afa85546c631cba41ca3aae65d4530aedc2d0431d84a949428a7a53af4976b2c113ed29730a6e313f7a4fc2c6587677c0a66863f74c5e8f19bbffd47c50d98b9566e61f119c3e8ac58e7eedd43c68eff3fee217aa9cb8d078417542146240aa9e43707ae8efca4467cb9432130be548794de272aa4d236aa338a5c174442dc57d2e74cf42b6f2d88b7e52479926d1cdf61a5b0de2412cf6638d3d458150dc66db99903dc66114dfa3fd7ce5f72a322e7ca';
+    }
+
+    function jsInit(state, data, element) {
+        // Get the posts
+        fetch(ajax_url + '/js-init', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': (manageToken(state) != '') ? "Bearer " + manageToken(state) : undefined
+            },
+            body: JSON.stringify({
+                reason: state,
+                data: data,
+                token: manageToken(state)
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }*/
+    </script>
+    <!-- Add a div for reCAPTCHA -->
+    <div id="recaptcha-container"></div>
+</body>
+</html>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover the Wonders of Sri Lanka</title>
+    <meta name="description" content="Sri Lanka offers an enchanting blend of cultural heritage, natural beauty, and warm hospitality that captivates every traveler">
+    <meta name="keywords" content="Sri Lanka, travel, tourism, culture, heritage, nature, wildlife, cuisine, adventure, relaxation">
+    <meta property="og:title" content="Discover the Wonders of Sri Lanka">
+    <meta property="og:description" content="Sri Lanka offers an enchanting blend of cultural heritage, natural beauty, and warm hospitality that captivates every traveler">
+    <meta property="og:image" content="https://beatravelbuddy.com/view/assets/img/leadGen/Srilanka/1.jpg">
+    <link rel="icon" href="/view/assets/img/app_logo_new.webp" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="image_src" href="/view/assets/img/leadGen/Srilanka/1.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Montserrat';
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(200deg, #FFF9CF, white);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat';
+        }
+        header {
+            color: #1e1e2d;
+            padding: 1rem;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            width: 100%;
+            position: fixed;
+            z-index: 4;
+        }
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+        }
+        nav h1 {
+            font-size: 31px;
+            font-weight: 700;
+            font-family: 'Nunito';
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/view/assets/img/leadGen/Srilanka/3.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            color: white;
+            padding-top: 4rem;
+            transition: background-image 3s ease-in-out;
+        }
+        .hero-content {
+            max-width: 500px;
+            text-align: center;
+        }
+        h4.day__name {
+            margin-top: 13px;
+            font-size: 18px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #FF6B6B;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-family: 'Montserrat';
+            font-weight: 600;
+        }
+        .btn:hover {
+            background-color: #FF8E8E;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 4rem 2rem;
+        }
+        .description {
+            margin-bottom: 2rem;
+        }
+        .description h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1e1e2d;
+            font-weight: 700;
+            font-family: 'Nunito';
+        }
+        .enquiry-form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            color: #1e1e2d;
+        }
+        img.cont_img {
+            margin-top: 15px;
+        }
+        input#verificationCodeInput {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Nunito';
+            margin-bottom: 15px;
+        }
+        .enquiry-form h3 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-family: 'Montserrat';
+        }
+        .form-group input, #countryCode {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Nunito';
+        }
+        #countryCode {
+            width: 40%;
+            margin-right: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #fde723;
+            color: #1e1e2d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            font-family: 'Montserrat';
+            font-weight: 600;
+        }
+        .destinations {
+            margin-top: 4rem;
+        }
+        .destinations h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #FF6B6B;
+            font-weight: 700;
+        }
+        .destination-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .destination-card {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .destination-card:hover {
+            transform: translateY(-5px);
+        }
+        .destination-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .destination-card-content {
+            padding: 1.5rem;
+        }
+        .destination-card-content h3 {
+            margin-bottom: 0.5rem;
+            color: #FF6B6B;
+            font-weight: 600;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-family: 'Montserrat';
+        }
+        .fixed-button {
+            position: fixed;
+            bottom: 20px;
+            /* right: 20px; */
+            /* background-color: #FF6B6B; */
+            /* color: white; */
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-family: 'Nunito';
+            font-weight: 700;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            color: #333;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            /* width: 98%; */
+            font-size: 22px;
+        }
+        .fixed-button:hover {
+            background-color: #FF8E8E;
+        }
+        #enquiry-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1999;
+        }
+        /* New styles for added sections */
+        .section-title {
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        strong {
+            font-size: 17px;
+            font-weight: 700;
+        }
+        .content-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .content-box h3 {
+            color: #FF6B6B;
+            margin-bottom: 1rem;
+        }
+        .itinerary-day {
+            margin-bottom: 1.5rem;
+        }
+        .itinerary-day h4 {
+            margin-bottom: 0.5rem;
+            font-size: 18px;
+        }
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .feature-list li::before {
+            content: '✓';
+            color: #FF6B6B;
+            position: absolute;
+            left: 0;
+        }
+        .policy-section {
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        .policy-section h3 {
+            margin-bottom: 1rem;
+        }
+        #toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .toast {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
+        .testimonial_cont {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 2rem;
+                height: auto;
+                min-height: 100vh;
+                margin-top: 20%;
+            }
+            .hero-content, .enquiry-form {
+                width: 100%;
+                max-width: 100%;
+            }
+            .destination-cards {
+                flex-direction: column;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            nav ul {
+                display: none;
+            }
+        }
+        @media (min-width: 768px) {
+            .hero {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            .hero-content {
+                max-width: 500px;
+                text-align: center;
+                left: 14%;
+                position: relative;
+            }
+            .enquiry-form {
+                position: fixed;
+                left: 65%;
+            }
+            .container {
+                max-width: 600px;
+                margin: unset;
+                padding: 4rem 2rem;
+                left: 10%;
+                position: relative;
+            }
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="/view/assets/img/app_logo_new.webp" alt="Travel Buddy Logo" width="50" style="border-radius: 50%;">
+            <h1>Travel Buddy</h1>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover the Wonders of Sri Lanka</h1>
+            <p>Sri Lanka offers an enchanting blend of cultural heritage, natural beauty, and warm hospitality that captivates every traveler</p>
+        </div>
+        <div class="enquiry-form" id="enquiry">
+            <h3>Enquire Now</h3>
+            <form id="enquiryForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <div style="display: flex; align-items: center;">
+                        <select id="countryCode" name="countryCode" style="margin-right: 10px;">
+                            <option value="+91">+91</option>
+                        </select>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <input type="text" id="verificationCodeInput" placeholder="Enter verification code" style="display: none;">
+                <button type="button" id="sendOtpButton">Submit</button>
+                <button type="button" id="verifyOtpButton" style="display: none;">Verify OTP</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="container">
+		
+		<section id="about-dubai">
+            <h2 class="section-title">About Srilanka</h2>
+            <div class="content-box">
+                <p>Welcome to the island nation of Sri Lanka, where pristine beaches, lush tea plantations, ancient ruins, and vibrant wildlife await your exploration. Known as the "Pearl of the Indian Ocean," Sri Lanka offers an enchanting blend of cultural heritage, natural beauty, and warm hospitality that captivates every traveler. Whether you're seeking adventure, relaxation, or cultural immersion, Sri Lanka has something for everyone.</p>
+				<p>Stay Included 🏨 Meals Included 🍴 Sightseeing Included 🗺️ Transport Included 🚐</p>
+            </div>
+        </section>
+        <section id="inclusions">
+            <h2 class="section-title">Inclusions</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Stay Included:</strong> 🏨</li>
+                    <li><strong>Meals Included:</strong> 🍴</li>
+                    <li><strong>Sightseeing Included:</strong> 🗺️</li>
+                    <li><strong>Transport Included:</strong> 🚐</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="why-travel-buddy">
+            <h2 class="section-title">Why Choose Travel Buddy?</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Reliable Vendor:</strong> We partner with trusted and dependable suppliers to ensure seamless travel experiences.</li>
+                    <li><strong>On-Time Guarantee:</strong> If your transportation is delayed for more than 30 minutes without a valid reason, we will provide a complimentary transfer and offer additional compensation as a gesture of goodwill.</li>
+                    <li><strong>Complimentary eSIM:</strong> Stay connected with our complimentary eSIM, offering easy access to mobile data during your travels.</li>
+                    <li><strong>24/7 Assistance:</strong> Our dedicated support team is available around the clock, ensuring you always know who to reach out to in case of an emergency.</li>
+                    <li><strong>Experienced Partners:</strong> Our experienced partners are well-equipped to handle your group's needs, ensuring a smooth and memorable journey.</li>
+                </ul>
+            </div>
+        </section>
+		
+        <section id="why-thailand">
+            <h2 class="section-title">Why Visit Sri Lanka?</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Rich Cultural Heritage:</strong>Sri Lanka boasts eight UNESCO World Heritage Sites, including the ancient cities of Anuradhapura and Polonnaruwa, the sacred city of Kandy, and the rock fortress of Sigiriya. These historical marvels provide a glimpse into the island's glorious past.</li>
+                    <img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/8.jpg" alt="Forts and Palaces" style="width: 100%;">
+					
+                    <li><strong>Breathtaking Landscapes:</strong>From the golden sands of Bentota to the rolling hills of Nuwara Eliya, Sri Lanka’s diverse terrain is a paradise for nature lovers. Don’t miss the chance to explore Horton Plains, Ella’s Nine Arches Bridge, and the verdant tea estates.</li>
+                    
+                    <img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/1.jpg" alt="Forts and Palaces" style="width: 100%;">
+					
+                    <li><strong>Wildlife Encounters:</strong>Sri Lanka is home to a stunning array of wildlife. Experience a thrilling safari at Yala National Park, known for its leopards, or visit Udawalawe to see herds of majestic elephants. Whale watching in Mirissa is another unforgettable experience.</li>
+                    <li><strong>Exotic Cuisine:</strong>Sri Lankan food is a burst of flavors. Relish local dishes like hoppers, kottu roti, and fragrant curries. The island’s tropical fruits and fresh seafood are a culinary delight.</li>
+					
+                    <li><strong>Adventure and Relaxation:</strong>Whether you’re hiking to Adam’s Peak, surfing in Arugam Bay, or unwinding at a luxurious spa, Sri Lanka offers both adrenaline-pumping activities and serene escapes.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="highlights-thailand">
+            <h2 class="section-title">Highlights of Srilanka: Must-Visit Destinations</h2>
+            <div class="content-box">
+                <h3>1. Sigiriya Rock Fortress</h3>
+                <p>Climb the iconic Lion Rock to explore ancient frescoes, landscaped gardens, and breathtaking panoramic views.</p>
+				<img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/7.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>2. Ella</h3>
+                <p>A picturesque hill town known for the Nine Arches Bridge, tea plantations, and scenic hikes to Little Adam's Peak.</p>
+				<img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/2.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>3. Yala National Park</h3>
+                <p>Witness incredible wildlife, including leopards, elephants, and exotic birds, on an unforgettable safari experience.</p>
+				<img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/4.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>4. Galle Fort</h3>
+                <p>Stroll through this UNESCO World Heritage Site, blending colonial architecture with quaint cafes and boutique shops.</p>
+                <img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/3.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>5. Temple of the Sacred Tooth Relic</h3>
+                <p>Visit this revered Buddhist temple in Kandy, housing a relic of Lord Buddha's tooth.</p>
+                <img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/5.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>6. Bentota Beach</h3>
+                <p>Unwind on golden sands, enjoy water sports, and explore the serene Bentota River with mangrove tours.</p>
+                <img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/6.jpg" alt="Forts and Palaces" style="width: 100%;">
+                <h3>7. Nuwara Eliya</h3>
+                <p>Known as "Little England," this charming town offers lush tea estates, cool weather, and the picturesque Gregory Lake.</p>
+                <img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/1.jpg" alt="Forts and Palaces" style="width: 100%;"> 
+                <h3>8. Mirissa</h3>
+                <p>A paradise for whale watching, relaxing on the beach, and experiencing Sri Lanka's vibrant coastal life</p> 
+                <h3>9. Polonnaruwa</h3>
+                <p>Step back in time to explore ancient ruins, temples, and stupas from Sri Lanka's rich historical heritage.</p>
+                <img class= "cont_img"src="/view/assets/img/leadGen/Srilanka/8.jpg" alt="Forts and Palaces" style="width: 100%;"> 
+				
+        </section>
+
+        <section id="itinerary-thailand">
+            <h2 class="section-title">7-Day Itinerary for Srilanka</h2>
+            <div class="content-box">
+                <h4 class="day__name">Day 1: Arrival in Colombo</h4>
+                <p><strong>Morning:</strong> Highlights: Bandaranaike International Airport, Galle Face Green, and Colombo Fort.</p>
+                <p><strong>Activities:</strong> Arrive in Colombo, the vibrant capital city. Take a city tour to explore colonial-era architecture, bustling markets, and tranquil temples. Visit the National Museum and enjoy a sunset stroll along Galle Face Green.</p>
+                <p><strong>Accommodation:</strong> Overnight stay in Colombo.</p>
+                <h4 class="day__name">Day 2: Colombo to Sigiriya</h4>
+                <p><strong>Highlights:</strong> Travel to Sigiriya, a UNESCO World Heritage Site. Climb the iconic rock fortress to admire ancient frescoes and panoramic views. En route, visit the Dambulla Cave Temple, famous for its Buddhist statues and vibrant murals.</p>
+                <p><strong>Activities:</strong> Overnight stay in Sigiriya.</p>
+                <p><strong>Accommodation:</strong> Shop at MBK Center or Siam Paragon. Experience the vibrant nightlife at Khao San Road.</p>
+                <h4 class="day__name">Day 3: Sigiriya to Kandy</h4>
+                <p><strong>Highlights:</strong> Temple of the Tooth Relic and Kandy Lake.</p>
+                <p><strong>Activities:</strong> Journey to Kandy, the cultural capital of Sri Lanka. Explore the Temple of the Tooth Relic, a revered Buddhist site. Stroll around Kandy Lake and enjoy a traditional Kandyan dance performance in the evening.</p>
+                <p><strong>Accommodation:</strong> Overnight stay in Kandy.</p>
+                <h4 class="day__name">Day 4: Kandy to Nuwara Eliya</h4>
+                <p><strong>Highlights:</strong> Tea Plantations and Gregory Lake.</p>
+                <p><strong>Activities:</strong> Drive to Nuwara Eliya, known as "Little England" for its colonial charm. Visit a tea factory to learn about tea production and sample some of the world’s finest teas. Spend a peaceful evening at Gregory Lake.</p>
+                <p><strong>Accommodation:</strong> Overnight stay in Nuwara Eliya.</p>
+                <h4 class="day__name">Day 5: Nuwara Eliya to Ella</h4>
+                <p><strong>Highlights:</strong> Train Journey and Nine Arches Bridge.</p>
+                <p><strong>Activities:</strong> Board a scenic train to Ella, offering breathtaking views of lush greenery and waterfalls. Explore the picturesque Nine Arches Bridge and hike to Little Adam’s Peak for a spectacular sunset.</p>
+                <p><strong>Accommodation:</strong> Overnight stay in Ella.</p>
+                <h4 class="day__name">Day 6: Ella to Yala National Park</h4>
+                <p><strong>Highlights:</strong> Yala Safari.</p>
+                <p><strong>Activities:</strong> Travel to Yala National Park for an exhilarating wildlife safari. Spot leopards, elephants, crocodiles, and a variety of bird species in their natural habitat.</p>
+                <p><strong>Accommodation:</strong> Overnight stay near Yala National Park.</p>
+                <h4 class="day__name">Day 7: Yala to Galle & Departure</h4>
+                <p><strong>Highlights:</strong> Galle Fort and Mirissa.</p>
+                <p><strong>Activities:</strong> Visit the historic Galle Fort, a UNESCO World Heritage Site. Explore its cobblestone streets, boutique shops, and colonial buildings. If time permits, head to Mirissa for a relaxing beach experience or whale watching.</p>
+                <p><strong>Accommodation:</strong> Drive back to Colombo for your departure flight.</p>
+            </div>
+        </section>
+		
+        <section id="testimonials" class="user-test">
+            <div class="content-box">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="testimonial_cont">
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/1.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/2.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/4.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/5.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/6.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/7.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/8.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/9.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/10.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/11.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/12.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/13.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/14.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                
+            </div>
+        </section>
+        
+        <section id="policies" class="policy-section">
+            <h3>Confirmation Policy</h3>
+            <ul>
+                <li>The customer receives a confirmation voucher via email within 24 hours of successful booking.</li>
+                <li>In case the preferred slots are unavailable, an alternate schedule of the customer’s preference will be arranged and a new confirmation voucher will be sent via email.</li>
+                <li>Alternatively, the customer may choose to cancel their booking before confirmation and a full refund will be processed.</li>
+            </ul>
+
+            <h3>Refund Policy</h3>
+            <p>The applicable refund amount will be processed within 2-3 business days.</p>
+
+            <h3>Cancellation Policy</h3>
+            <ul>
+                <li>If cancellation is made 45 days before the date of travel, then 10% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 30 days before the date of travel, then 50.0% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 21 days before the date of travel, then 70% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 10 days before the date of travel, then 100% of total tour cost will be charged as cancellation fees.</li>
+            </ul>
+        </section>
+    </div>
+
+    <a href="#" class="fixed-button" id="openEnquiry" style="display: none;">Enquire Now</a>
+
+    <div class="overlay" id="overlay"></div>
+    <div id="enquiry-popup" class="enquiry-form"></div>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+    <script>
+var _0x103a02=_0x5b92;function _0x5088(){var _0x361c64=['48474yQGXEF','_fbq','44437308lobBFD','374FAkSqR','PageView','nts.js','async','nnect.face','11|9|5|2|6','ent','7oYWMyR','fbq','2.0','queue','5258749499','split','11799','|10|8','insertBefo','callMethod','831972JUlgJD','apply','10714305WZllnK','push','https://co','sByTagName','16rkKhqE','nTrhQ','trackCusto','961990knfEAm','42ZCrKcI','getElement','parentNode','366720OEpBrg','XJBIK','3836421BtAPLw','loaded','Gen','script','TrackCusto','init','3WwQvrg'];_0x5088=function(){return _0x361c64;};return _0x5088();}function _0x5b92(_0x1ca3fb,_0x11612a){var _0x4e8ac2=_0x5088();return _0x5b92=function(_0x5dcc61,_0x2310a1){_0x5dcc61=_0x5dcc61-(0x25f7*-0x1+0xcc2+-0x19fd*-0x1);var _0x2fe9b1=_0x4e8ac2[_0x5dcc61];return _0x2fe9b1;},_0x5b92(_0x1ca3fb,_0x11612a);}(function(_0xd4bb53,_0x3b24f6){var _0x18b4ae=_0x5b92,_0x32a7f8=_0xd4bb53();while(!![]){try{var _0x6e8c9d=-parseInt(_0x18b4ae(0xda))/(-0xd79+0x1ab*0x8+0x2*0x11)*(parseInt(_0x18b4ae(0xd0))/(-0x9e*0x25+0xdbe+0x91a))+parseInt(_0x18b4ae(0xcf))/(0x3dc+-0x17*0xbf+0xd50)*(-parseInt(_0x18b4ae(0xe4))/(-0x3*0x125+-0x1295+0x1608))+parseInt(_0x18b4ae(0xed))/(0x6d*-0x37+0x3cc+0x13a4)*(-parseInt(_0x18b4ae(0xee))/(0x1*-0x18af+-0x8e*-0x39+0x1d*-0x3d))+-parseInt(_0x18b4ae(0xe6))/(-0x16bd*0x1+0x1*0xda3+0x921)+parseInt(_0x18b4ae(0xea))/(0x178*-0x5+0x1*0x13fa+-0xc9a)*(-parseInt(_0x18b4ae(0xc9))/(0x922+-0x14b1+0x2e6*0x4))+-parseInt(_0x18b4ae(0xf1))/(-0x517*0x4+-0x1aa0+0x1783*0x2)*(-parseInt(_0x18b4ae(0xd3))/(0x10c2+-0x1cfa+0x2b*0x49))+parseInt(_0x18b4ae(0xd2))/(0x9d4+0x19ab*0x1+0x16b*-0x19);if(_0x6e8c9d===_0x3b24f6)break;else _0x32a7f8['push'](_0x32a7f8['shift']());}catch(_0x1bc99d){_0x32a7f8['push'](_0x32a7f8['shift']());}}}(_0x5088,0x7f4b0*0x1+-0x49*0x260f+0x1443*0xc7),!function(_0x756f08,_0x99acc,_0x1b6287,_0x2cfab6,_0x3c3fc8,_0x582cbf,_0x3ce8a5){var _0x65c890=_0x5b92,_0x4dcc30={'XJBIK':'0|3|4|7|1|'+_0x65c890(0xd8)+_0x65c890(0xe1),'nTrhQ':_0x65c890(0xdc)},_0x1b3534=_0x4dcc30[_0x65c890(0xc8)][_0x65c890(0xdf)]('|'),_0x121d73=-0x108b*0x1+0xbbb+0x4d0;while(!![]){switch(_0x1b3534[_0x121d73++]){case'0':if(_0x756f08[_0x65c890(0xdb)])return;continue;case'1':_0x3c3fc8[_0x65c890(0xca)]=!(-0x1274+-0x2e3*0x3+0x277*0xb);continue;case'2':_0x582cbf[_0x65c890(0xd6)]=!(0xd*-0x209+-0x4db*0x2+0x242b);continue;case'3':_0x3c3fc8=_0x756f08[_0x65c890(0xdb)]=function(){var _0x598c1b=_0x65c890;_0x3c3fc8[_0x598c1b(0xe3)]?_0x3c3fc8[_0x598c1b(0xe3)][_0x598c1b(0xe5)](_0x3c3fc8,arguments):_0x3c3fc8[_0x598c1b(0xdd)][_0x598c1b(0xe7)](arguments);};continue;case'4':if(!_0x756f08[_0x65c890(0xd1)])_0x756f08[_0x65c890(0xd1)]=_0x3c3fc8;continue;case'5':_0x582cbf=_0x99acc['createElem'+_0x65c890(0xd9)](_0x1b6287);continue;case'6':_0x582cbf['src']=_0x2cfab6;continue;case'7':_0x3c3fc8[_0x65c890(0xe7)]=_0x3c3fc8;continue;case'8':_0x3ce8a5[_0x65c890(0xf0)][_0x65c890(0xe2)+'re'](_0x582cbf,_0x3ce8a5);continue;case'9':_0x3c3fc8[_0x65c890(0xdd)]=[];continue;case'10':_0x3ce8a5=_0x99acc[_0x65c890(0xef)+_0x65c890(0xe9)](_0x1b6287)[-0x47*0x43+0x10f*-0x2+0x14b3];continue;case'11':_0x3c3fc8['version']=_0x4dcc30[_0x65c890(0xeb)];continue;}break;}}(window,document,_0x103a02(0xcc),_0x103a02(0xe8)+_0x103a02(0xd7)+'book.net/e'+'n_US/fbeve'+_0x103a02(0xd5)),fbq(_0x103a02(0xce),_0x103a02(0xde)+_0x103a02(0xe0)),fbq('track',_0x103a02(0xd4)),fbq(_0x103a02(0xec)+'m',_0x103a02(0xcd)+'mEventLead'+_0x103a02(0xcb)));
+</script>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=525874949911799&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- Google Tag Manager -->
+    <script>
+var _0x55b455=_0x5b09;(function(_0xd7ea0b,_0x1c60af){var _0x2aab77=_0x5b09,_0x44ba67=_0xd7ea0b();while(!![]){try{var _0x184326=-parseInt(_0x2aab77(0x134))/(-0x10a0+-0x2127+0x31c8)+-parseInt(_0x2aab77(0x13d))/(0x18a*0x8+-0x9f*-0x27+-0x2487)*(-parseInt(_0x2aab77(0x132))/(0x1*0x1a23+-0x9*-0x1a7+-0x28ff))+parseInt(_0x2aab77(0x139))/(-0x8*-0x183+-0x10f*-0x3+0x47*-0x37)*(-parseInt(_0x2aab77(0x12a))/(-0x181d+-0x49*0x61+0x33cb))+-parseInt(_0x2aab77(0x13e))/(0x1d*-0xc5+-0x13e+-0x1795*-0x1)*(parseInt(_0x2aab77(0x12e))/(-0x669*-0x3+-0x9d4+0x12c*-0x8))+-parseInt(_0x2aab77(0x126))/(0x1*0x21b3+-0x834+0x3*-0x87d)+-parseInt(_0x2aab77(0x138))/(0x21fb+0x1*-0x9f2+-0x800*0x3)*(-parseInt(_0x2aab77(0x123))/(0x2*0x698+0x2f3+0x1019*-0x1))+parseInt(_0x2aab77(0x143))/(-0x2a1*0x7+0x18b6+-0x4*0x191);if(_0x184326===_0x1c60af)break;else _0x44ba67['push'](_0x44ba67['shift']());}catch(_0x411609){_0x44ba67['push'](_0x44ba67['shift']());}}}(_0x2b12,-0x23*-0x2455+-0x1*0xa1ad+0x37ecb),function(_0x504c17,_0x26cdad,_0x428c61,_0x2184a0,_0x5169e8){var _0x30f3e7=_0x5b09,_0x1fa649={'JtQNq':_0x30f3e7(0x145)+'0','mxMar':function(_0x43c3f1,_0x26951e){return _0x43c3f1!=_0x26951e;},'kFBKr':_0x30f3e7(0x13c),'FjoJR':function(_0x15fbf1,_0x384c5){return _0x15fbf1+_0x384c5;},'JaFTa':'&l=','kDWfP':_0x30f3e7(0x12d),'fBCiR':function(_0x4929d1,_0x2514d6){return _0x4929d1+_0x2514d6;}},_0x34b69b=_0x1fa649[_0x30f3e7(0x141)][_0x30f3e7(0x130)]('|'),_0x53365b=-0x1e78+0x202*-0x1+0x1*0x207a;while(!![]){switch(_0x34b69b[_0x53365b++]){case'0':_0x1a757d[_0x30f3e7(0x135)][_0x30f3e7(0x129)+'re'](_0x233758,_0x1a757d);continue;case'1':var _0x1a757d=_0x26cdad[_0x30f3e7(0x13a)+_0x30f3e7(0x12c)](_0x428c61)[0x26ea+0x1fd+-0x28e7],_0x233758=_0x26cdad[_0x30f3e7(0x133)+_0x30f3e7(0x12f)](_0x428c61),_0x56793b=_0x1fa649['mxMar'](_0x2184a0,_0x1fa649[_0x30f3e7(0x128)])?_0x1fa649[_0x30f3e7(0x144)](_0x1fa649[_0x30f3e7(0x136)],_0x2184a0):'';continue;case'2':_0x233758['async']=!![];continue;case'3':_0x504c17[_0x2184a0][_0x30f3e7(0x131)]({'gtm.start':new Date()[_0x30f3e7(0x125)](),'event':_0x1fa649[_0x30f3e7(0x142)]});continue;case'4':_0x233758[_0x30f3e7(0x137)]=_0x1fa649['fBCiR'](_0x1fa649[_0x30f3e7(0x12b)](_0x30f3e7(0x124)+_0x30f3e7(0x146)+_0x30f3e7(0x13b)+_0x30f3e7(0x127)+'id=',_0x5169e8),_0x56793b);continue;case'5':_0x504c17[_0x2184a0]=_0x504c17[_0x2184a0]||[];continue;}break;}}(window,document,_0x55b455(0x13f),_0x55b455(0x13c),_0x55b455(0x140)));function _0x5b09(_0x28c7dc,_0x1b7168){var _0x1f6131=_0x2b12();return _0x5b09=function(_0x583d74,_0x2de8cc){_0x583d74=_0x583d74-(-0x222+-0x1258+0x159d);var _0x2a555c=_0x1f6131[_0x583d74];return _0x2a555c;},_0x5b09(_0x28c7dc,_0x1b7168);}function _0x2b12(){var _0x39cb5a=['21050EQpFFA','https://ww','getTime','2078632mXERMz','om/gtm.js?','kFBKr','insertBefo','25pYSbqe','fBCiR','sByTagName','gtm.js','1337MoneOe','ent','split','push','393SYkLgR','createElem','179699RLUwtU','parentNode','JaFTa','src','18wOWzzk','649488ozGOwU','getElement','gmanager.c','dataLayer','12362BnGvPo','150lJhelc','script','GTM-TXFKZVW','JtQNq','kDWfP','10510005rIYbmc','FjoJR','5|3|1|2|4|','w.googleta'];_0x2b12=function(){return _0x39cb5a;};return _0x2b12();}
+</script>
+
+    <!-- End Google Tag Manager -->
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-827809061"></script>
+    <script>
+var _0x19c2c9=_0x582b;(function(_0x30e236,_0x9793ce){var _0x37e63b=_0x582b,_0x56a7ed=_0x30e236();while(!![]){try{var _0x9ba58c=parseInt(_0x37e63b(0xf3))/(0x485*-0x7+-0x26ff+0x46a3)*(-parseInt(_0x37e63b(0xf1))/(-0x166f+-0x2637+0x3ca8))+parseInt(_0x37e63b(0xed))/(-0x3f7*0x3+-0x9a5*-0x2+-0x1e*0x3f)*(parseInt(_0x37e63b(0xef))/(-0x1be9+-0x10ca*0x1+-0x1*-0x2cb7))+parseInt(_0x37e63b(0xf7))/(0x2234+0xa2+-0x22d1)*(parseInt(_0x37e63b(0xf2))/(0xcc9*0x3+0x1*-0x599+-0x105e*0x2))+-parseInt(_0x37e63b(0xeb))/(0xe7b+-0x1481+-0x1*-0x60d)+parseInt(_0x37e63b(0xec))/(-0x3b2+-0x1a80+-0x1*-0x1e3a)+parseInt(_0x37e63b(0xf5))/(0x1*0x1e6b+0x8*0x466+0x6d*-0x9a)*(-parseInt(_0x37e63b(0xee))/(-0x96b+0x1a*0x21+0x3*0x209))+parseInt(_0x37e63b(0xf8))/(0x1*-0xba9+0x9*-0xa3+0x116f);if(_0x9ba58c===_0x9793ce)break;else _0x56a7ed['push'](_0x56a7ed['shift']());}catch(_0x456e20){_0x56a7ed['push'](_0x56a7ed['shift']());}}}(_0x1a2a,-0x17*-0xeec7+-0x1103c+-0x86690),window[_0x19c2c9(0xf6)]=window['dataLayer']||[]);function _0x1a2a(){var _0x36a8d4=['dataLayer','33885WGCqwa','23450383wNdWCt','6716318WJzwTD','3383240mDpuHO','36DJelgV','27790ZTKObb','432168GVLser','push','2279402hsRkVo','318RBOtrj','1orUcKi','config','4293malFre'];_0x1a2a=function(){return _0x36a8d4;};return _0x1a2a();}function _0x582b(_0x408d8e,_0x4c32f5){var _0x3940d6=_0x1a2a();return _0x582b=function(_0x35c7ce,_0x45d311){_0x35c7ce=_0x35c7ce-(-0xa3+0x8e2*0x3+-0x248*0xb);var _0x26b53c=_0x3940d6[_0x35c7ce];return _0x26b53c;},_0x582b(_0x408d8e,_0x4c32f5);}function gtag(){var _0x56aa03=_0x19c2c9;dataLayer[_0x56aa03(0xf0)](arguments);}gtag('js',new Date()),gtag(_0x19c2c9(0xf4),'AW-8278090'+'61');
+</script>
+    <!-- End Google Analytics -->
+    <script>
+const _0x586806=_0x4907;function _0x356f(){const _0x56c0bc=['13720430PXvSwi','d-prod-174','7uDaiuB','317-b933e.','asia-south','se.app/','ZnePCqVLbr','ppspot.com','irebaseapp','3iNmsZR-s','basedataba','east1.fire','170915owiHLm','y-174317','travelbudd','76:web:c44','1:99594590','9959459076','3139928mQoGTm','3633nQKPQv','9EknSDs','965970PdJSrp','AIzaSyBnKt','y-174317.a','.com','1033178UhOufn','520CMXENe','3180102jGwnZO','initialize','6jOUr4_Saf','17f1889911','13b37a851'];_0x356f=function(){return _0x56c0bc;};return _0x356f();}(function(_0x4059d8,_0x185533){const _0x2c9603=_0x4907,_0x2d438f=_0x4059d8();while(!![]){try{const _0x2630ea=parseInt(_0x2c9603(0x1b1))/(0x970*0x2+-0x26b6+0x13d7)+parseInt(_0x2c9603(0x1be))/(0x1cfe+-0x2*0x1268+0x7d4)+parseInt(_0x2c9603(0x1b8))/(0xd0d+0xfac+0x23*-0xd2)*(-parseInt(_0x2c9603(0x1bf))/(-0x1*-0x214a+0xba*0x23+-0x3ab4))+parseInt(_0x2c9603(0x1ba))/(0x19*0x2b+0xeb*0x1+-0xf*0x57)+-parseInt(_0x2c9603(0x1c0))/(-0xe8b+-0xf3d+0x5f6*0x5)*(-parseInt(_0x2c9603(0x1c7))/(-0x1e08+-0xa11+0x2820))+-parseInt(_0x2c9603(0x1b7))/(0x543+0x5a*-0x19+0x38f)*(-parseInt(_0x2c9603(0x1b9))/(0x1bcb+-0xdbc+-0xe06))+-parseInt(_0x2c9603(0x1c5))/(0x1*-0xd03+0x3*0xb50+0x14e3*-0x1);if(_0x2630ea===_0x185533)break;else _0x2d438f['push'](_0x2d438f['shift']());}catch(_0x41c80a){_0x2d438f['push'](_0x2d438f['shift']());}}}(_0x356f,-0x1778f+0x1807c*0x3+0x7e0*0x25));const firebaseConfig={'apiKey':_0x586806(0x1bb)+_0x586806(0x1cb)+_0x586806(0x1c2)+_0x586806(0x1ae),'authDomain':_0x586806(0x1b3)+'y-174317.f'+_0x586806(0x1ad)+_0x586806(0x1bd),'databaseURL':'https://tb'+_0x586806(0x1c6)+_0x586806(0x1c8)+_0x586806(0x1c9)+_0x586806(0x1b0)+_0x586806(0x1af)+_0x586806(0x1ca),'projectId':_0x586806(0x1b3)+_0x586806(0x1b2),'storageBucket':_0x586806(0x1b3)+_0x586806(0x1bc)+_0x586806(0x1ac),'messagingSenderId':_0x586806(0x1b6),'appId':_0x586806(0x1b5)+_0x586806(0x1b4)+_0x586806(0x1c3)+_0x586806(0x1c4),'measurementId':'G-PXBR867E'+'GP'};function _0x4907(_0x335039,_0x203dec){const _0x1f5fa0=_0x356f();return _0x4907=function(_0x126ac8,_0x3e92d3){_0x126ac8=_0x126ac8-(0x727*-0x1+-0x945*0x2+0x1b5d);let _0x5cada6=_0x1f5fa0[_0x126ac8];return _0x5cada6;},_0x4907(_0x335039,_0x203dec);}firebase[_0x586806(0x1c1)+'App'](firebaseConfig);const googleAnalytics=firebase['analytics']();
+</script>
+    </head>
+    <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXFKZVW"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="toast-container"></div>
+    <script>
+function _0x46a3(_0x388c33,_0x3e7461){const _0x76923d=_0x2001();return _0x46a3=function(_0x26a864,_0x5c34d0){_0x26a864=_0x26a864-(0xfdd+-0xc1f*0x3+0x15c4);let _0x49a94f=_0x76923d[_0x26a864];return _0x49a94f;},_0x46a3(_0x388c33,_0x3e7461);}function _0x2001(){const _0x22b61d=['jdqDL','he\x20require','ORcwG','ftAvj','CPoOo','utmParams','/all','ation-send','ng\x20signInW','stener','suffixes','sentOTP','classList','nka/4.jpg','textConten','stringify','Error\x20fetc','Error\x20subm','fZBNX','includes','QwYBT','WgzSt','countryCod','hJtrz','ation-veri','ById','message','hing\x20count','mber','HJTBo','Verify\x20OTP','ssion\x20fail','catch','LczTi','Internatio','13820TUVScF','WWSyZ','block','1FimuK7vR7','4656091aGSipd','ithPhoneNu','Loaded','uTIMc','root','container','110slDNBQ','ry\x20codes:','bcwmQ','tor','event','Form\x20submi','utton','nka/3.jpg','enquiry','/view/asse','msfMZ','click','addEventLi','engagement','ring','nka/5.jpg','idd','PrNUk','?utm_','isIntersec','ng\x20confirm','error','flex','dGen/Srila','ation','6uYKuFV','itting\x20for','createElem','dev.','length','ZXnxY','name','DOMContent','.hero','Sent\x20OTP\x20v','ia\x20Dom\x20LP','hjukz','success','removeChil','GyUze','OTP\x20sent\x20s','search','ng\x20Travel\x20','XYhlD','Please\x20fil','Uh6c','wyKkv','sort','https://re','tywAJ','GYklW','OTP\x20Sent','YLPTa','2324sqNGnF','forEach','Error\x20duri','TvoVT','Otp','TJsUs','1670884XMtkwu','ssWdP','utm_','KpSoO','d\x20fields.','startsWith','href','auth','RecaptchaV','bvFIJ','IMQgb','Sri-Lanka','423828SkIuSQ','ation\x20Butt','signInWith','phone','/write-to-','confirm','display','observe','gfRGZ','style','9891924lsSkHa','on\x20Click','SIufl','Thank\x20you\x20','location','2681595roWpru','ationResul','try\x20again.','200kgMdCN','WUAY5Qydep','uch\x20with\x20y','param','nka/6.jpg','InULk','verifyOTP','n/json','none','getElement','code','value','ent','nal','ting','zWqFu','ljFtA','localeComp','kJchp','s.com/v3.1','m.\x20Please\x20','4hours.','TjlHS','rTKNU','date','\x20team\x20will','onCodeInpu','ts/img/lea','HfpFu','json','PhoneNumbe','open','querySelec','nApvA','Yeqny','OZtMB','umKlF','push','lead_gener','1429338rWoWkk','add','then','RDVVE','dy.com/fli','vtslN','toLocaleSt','pCGHQ','soCbS','invisible','Jpetr','(0,\x200,\x200,\x20','Buddy.\x20Our','erifier','WWOTf','mOsKF','show','toast','ton','Zhaom','OTP\x20Verifi','ScaHR','IUeSe','\x20get\x20in\x20to','map','toast-cont','ainer','ElazV','l\x20in\x20all\x20t','SDPxU','email','sendOtpBut','user','\x20via\x20Dom\x20L','RDVQy','nka/8.jpg','KxkEa','trackCusto','_self','drBDw','t.confirm','VyxOJ','HqdSt','0.5),\x20rgba','tPtjY','dsfPf','UbIWz','sbIig','recaptcha-','stcountrie','brnZs','NBTnx','nhdJN','TVLJm'];_0x2001=function(){return _0x22b61d;};return _0x2001();}const _0x26f4eb=_0x46a3;(function(_0x5126a3,_0x2109db){const _0x59409b=_0x46a3,_0x225f6c=_0x5126a3();while(!![]){try{const _0x1771b7=parseInt(_0x59409b(0x1c0))/(-0x1168+0x2*-0x610+0x1*0x1d89)+parseInt(_0x59409b(0x205))/(0x1685+-0x7*0x493+0x982)*(-parseInt(_0x59409b(0x19e))/(-0xd*0xce+-0x1294+0x1d0d))+parseInt(_0x59409b(0x1ba))/(-0x1c0f+0x218d*-0x1+0x3da0)*(-parseInt(_0x59409b(0x17b))/(0x132a*-0x1+0x5*-0x227+0x1df2*0x1))+-parseInt(_0x59409b(0x1d6))/(0x937+-0x212c+-0x1*-0x17fb)+parseInt(_0x59409b(0x1db))/(-0xb9d*0x1+-0x2065+-0x2c09*-0x1)+parseInt(_0x59409b(0x1de))/(0x16b3*0x1+0x6a3*0x3+-0x2a94)*(-parseInt(_0x59409b(0x1cc))/(0x95*-0x3+0x70b*-0x5+0x24ff))+parseInt(_0x59409b(0x185))/(-0x25a1+0xef*0xb+0x1b66)*(parseInt(_0x59409b(0x17f))/(0x17a0+0x803+0x4*-0x7e6));if(_0x1771b7===_0x2109db)break;else _0x225f6c['push'](_0x225f6c['shift']());}catch(_0x2088f6){_0x225f6c['push'](_0x225f6c['shift']());}}}(_0x2001,0xe4e09+0x41db7*-0x5+0x133a7e),document['addEventLi'+_0x26f4eb(0x161)](_0x26f4eb(0x1a5)+_0x26f4eb(0x181),function(){const _0x58be53=_0x26f4eb,_0x2ea981={'VyxOJ':_0x58be53(0x1e1),'IMQgb':function(_0x587afb,_0x4af165){return _0x587afb%_0x4af165;},'OZtMB':function(_0x27c2ff,_0x1dffed){return _0x27c2ff+_0x1dffed;},'InULk':function(_0x583194,_0x47d993,_0x37c7f8){return _0x583194(_0x47d993,_0x37c7f8);},'ORcwG':_0x58be53(0x21e)+_0x58be53(0x21f),'FvDpG':'div','umKlF':_0x58be53(0x216),'IeLcR':'+91','msfMZ':function(_0x54a1fc,_0x3ac70b){return _0x54a1fc&&_0x3ac70b;},'HJTBo':_0x58be53(0x1e6),'ssWdP':function(_0x2e21a8,_0x12552f){return _0x2e21a8(_0x12552f);},'mOsKF':function(_0xc1ca75,_0x7adcd2,_0x1e535a){return _0xc1ca75(_0x7adcd2,_0x1e535a);},'GyUze':_0x58be53(0x163),'myPOD':function(_0x399de4,_0x1c9474,_0x432174,_0x4217b0){return _0x399de4(_0x1c9474,_0x432174,_0x4217b0);},'QxJtK':_0x58be53(0x189),'aDUds':_0x58be53(0x204)+_0x58be53(0x15f)+_0x58be53(0x1be),'ljFtA':_0x58be53(0x192),'nApvA':_0x58be53(0x1b8),'Jpetr':_0x58be53(0x1b1)+_0x58be53(0x221)+_0x58be53(0x159)+_0x58be53(0x1c4),'YLPTa':_0x58be53(0x17d),'drBDw':_0x58be53(0x1bc)+_0x58be53(0x160)+_0x58be53(0x180)+_0x58be53(0x174),'Zhaom':function(_0x254ecf,_0x28e58f){return _0x254ecf(_0x28e58f);},'gRlnl':_0x58be53(0x1d9)+'for\x20choosi'+_0x58be53(0x1af)+_0x58be53(0x211)+_0x58be53(0x1f7)+_0x58be53(0x21c)+_0x58be53(0x1e0)+'ou\x20within\x20'+'the\x20next\x202'+_0x58be53(0x1f3),'EfFQS':_0x58be53(0x1e4),'tQBuL':_0x58be53(0x204)+_0x58be53(0x170)+'fyOtp','CPoOo':_0x58be53(0x219)+'ed','WWSyZ':_0x58be53(0x18d),'KpSoO':'openEnquir'+'y','WifQk':_0x58be53(0x197),'dsfPf':function(_0x458b60,_0x554940){return _0x458b60(_0x554940);},'QwYBT':function(_0x417644,_0x49b65f){return _0x417644+_0x49b65f;},'BuUAL':'phone','uTIMc':_0x58be53(0x1cb),'gfRGZ':_0x58be53(0x1d0)+'sheet','ftAvj':'POST','vhNOd':_0x58be53(0x18a)+_0x58be53(0x177)+'ed','vtslN':_0x58be53(0x1bc)+_0x58be53(0x199)+_0x58be53(0x1dc)+_0x58be53(0x14a),'HfpFu':'localhost','soCbS':_0x58be53(0x1a7)+_0x58be53(0x1a8),'aBlSU':_0x58be53(0x176)+_0x58be53(0x226)+'P','qrtXn':function(_0xcacc87,_0x5a9ddd,_0x1409e7,_0x724b34){return _0xcacc87(_0x5a9ddd,_0x1409e7,_0x724b34);},'hjukz':_0x58be53(0x19b),'kJchp':function(_0x2d1456,_0x2d00cf,_0x2d4773,_0x1c57cd){return _0x2d1456(_0x2d00cf,_0x2d4773,_0x1c57cd);},'jdqDL':_0x58be53(0x204)+_0x58be53(0x19d),'brnZs':'Lead\x20Gener'+_0x58be53(0x1cd)+_0x58be53(0x1d7),'tPtjY':_0x58be53(0x18e)+'ts/img/lea'+_0x58be53(0x19c)+'nka/1.jpg','NBTnx':'/view/asse'+_0x58be53(0x1f9)+_0x58be53(0x19c)+'nka/2.jpg','pCGHQ':_0x58be53(0x18e)+_0x58be53(0x1f9)+'dGen/Srila'+_0x58be53(0x18c),'TxwFh':_0x58be53(0x18e)+_0x58be53(0x1f9)+'dGen/Srila'+_0x58be53(0x165),'IUeSe':_0x58be53(0x18e)+'ts/img/lea'+_0x58be53(0x19c)+_0x58be53(0x194),'UbIWz':_0x58be53(0x18e)+_0x58be53(0x1f9)+_0x58be53(0x19c)+_0x58be53(0x1e2),'dmKmP':_0x58be53(0x18e)+_0x58be53(0x1f9)+_0x58be53(0x19c)+'nka/7.jpg','PrNUk':'/view/asse'+_0x58be53(0x1f9)+_0x58be53(0x19c)+_0x58be53(0x145),'XYhlD':_0x58be53(0x1a6),'xZFQQ':_0x58be53(0x224)+_0x58be53(0x217),'ZjdrQ':'verifyOtpB'+_0x58be53(0x18b),'rTKNU':'verificati'+_0x58be53(0x1f8)+'t','WWOTf':_0x58be53(0x1b5)+_0x58be53(0x153)+_0x58be53(0x1f1)+_0x58be53(0x15e),'Yeqny':_0x58be53(0x152)+_0x58be53(0x184),'nhdJN':_0x58be53(0x20e),'TjlHS':_0x58be53(0x190)};function _0x388fc7(_0x102fa4){const _0x22fcf3=_0x58be53,_0x3412d9={'HqdSt':_0x22fcf3(0x1c2),'TvoVT':_0x2ea981[_0x22fcf3(0x14b)]};let _0x5802c6=new URLSearchParams(new URL(_0x102fa4)[_0x22fcf3(0x1ae)]),_0x388936={};return _0x5802c6[_0x22fcf3(0x1bb)]((_0x1ad265,_0xc6e21a)=>{const _0x5763c0=_0x22fcf3;(_0xc6e21a['startsWith'](_0x3412d9[_0x5763c0(0x14c)])||_0xc6e21a[_0x5763c0(0x1c5)](_0x3412d9[_0x5763c0(0x1bd)]))&&(_0x388936[_0xc6e21a]=_0x1ad265);}),_0x388936;}_0x2ea981[_0x58be53(0x1f0)](gtag,'event',_0x2ea981[_0x58be53(0x158)],{'event_category':_0x58be53(0x192),'event_label':_0x2ea981[_0x58be53(0x154)],'value':0x1}),dataLayer[_0x58be53(0x203)]({'event':_0x2ea981[_0x58be53(0x158)],'event_category':_0x58be53(0x192),'event_label':_0x2ea981['brnZs'],'value':0x1});const _0x4bf9d2=[_0x2ea981[_0x58be53(0x14e)],_0x2ea981[_0x58be53(0x155)],_0x2ea981[_0x58be53(0x20c)],_0x2ea981['TxwFh'],_0x2ea981[_0x58be53(0x21b)],_0x2ea981[_0x58be53(0x150)],_0x2ea981['dmKmP'],_0x2ea981[_0x58be53(0x196)]];let _0x11e52f=-0x1012+0x1895+-0x883;const _0x57a604=document[_0x58be53(0x1fe)+_0x58be53(0x188)](_0x2ea981[_0x58be53(0x1b0)]);function _0x157f55(){const _0x2f33d9=_0x58be53;_0x11e52f=_0x2ea981[_0x2f33d9(0x1ca)](_0x2ea981[_0x2f33d9(0x201)](_0x11e52f,-0xc8c+-0x154b+0x21d8),_0x4bf9d2[_0x2f33d9(0x1a2)]),_0x57a604[_0x2f33d9(0x1d5)]['background'+'Image']='linear-gra'+'dient(rgba'+_0x2f33d9(0x210)+_0x2f33d9(0x14d)+_0x2f33d9(0x210)+'0.5)),\x20url'+'(\x27'+_0x4bf9d2[_0x11e52f]+'\x27)';}setInterval(_0x157f55,0x1*0x2875+0x1937*-0x2+0x2551);function _0x42bbd4(_0x504b04){const _0x63204e=_0x58be53,_0x14203f={'nReOU':function(_0x2ea369,_0x30443a,_0x403506){return _0x2ea981['InULk'](_0x2ea369,_0x30443a,_0x403506);}},_0x438b64=document['getElement'+_0x63204e(0x171)](_0x2ea981[_0x63204e(0x15a)]),_0x460c42=document['createElem'+_0x63204e(0x1ea)](_0x2ea981['FvDpG']);_0x460c42['className']=_0x2ea981[_0x63204e(0x202)],_0x460c42[_0x63204e(0x166)+'t']=_0x504b04,_0x438b64['appendChil'+'d'](_0x460c42),setTimeout(()=>{const _0x3ca7bf=_0x63204e;_0x460c42['classList'][_0x3ca7bf(0x206)](_0x3ca7bf(0x215));},0x293*0x9+-0x781*0x1+-0xf46),setTimeout(()=>{const _0x5683d4=_0x63204e;_0x460c42[_0x5683d4(0x164)]['remove']('show'),_0x14203f['nReOU'](setTimeout,()=>{const _0x49fb2b=_0x5683d4;_0x438b64[_0x49fb2b(0x1ab)+'d'](_0x460c42);},0x4*-0x5a+-0x2467+0x27c3);},-0x204e+-0x1*-0x16eb+0x151b);}const _0x2bf1fd=document[_0x58be53(0x1e7)+_0x58be53(0x171)](_0x58be53(0x16e)+'e'),_0x49de47=document[_0x58be53(0x1e7)+_0x58be53(0x171)](_0x58be53(0x1cf)),_0x1e8c17=document[_0x58be53(0x1e7)+'ById'](_0x2ea981['xZFQQ']),_0x1cc9dd=document[_0x58be53(0x1e7)+_0x58be53(0x171)](_0x2ea981['ZjdrQ']),_0x3eb0bc=document['getElement'+_0x58be53(0x171)](_0x2ea981[_0x58be53(0x1f5)]);fetch(_0x2ea981[_0x58be53(0x213)])[_0x58be53(0x207)](_0x243bb1=>_0x243bb1[_0x58be53(0x1fb)]())[_0x58be53(0x207)](_0x36a89b=>{const _0x12eac1=_0x58be53,_0x123068={'fZBNX':function(_0x174526,_0x3f59aa){return _0x174526+_0x3f59aa;}},_0x5ccbe4=_0x36a89b[_0x12eac1(0x21d)](_0x540c76=>{const _0x37483a=_0x12eac1,_0x1fecef=_0x123068[_0x37483a(0x16a)](_0x540c76[_0x37483a(0x195)][_0x37483a(0x183)],_0x540c76[_0x37483a(0x195)][_0x37483a(0x162)]?_0x540c76[_0x37483a(0x195)][_0x37483a(0x162)][-0x10*-0x21a+0x25*-0x77+0x106d*-0x1]:'');return{'name':_0x540c76[_0x37483a(0x1a4)]['common'],'code':_0x1fecef};})[_0x12eac1(0x1b4)]((_0x2091da,_0x518956)=>_0x2091da['name'][_0x12eac1(0x1ef)+'are'](_0x518956[_0x12eac1(0x1a4)]));_0x5ccbe4['forEach'](_0x307541=>{const _0x392989=_0x12eac1,_0x2e58d8=document[_0x392989(0x1a0)+_0x392989(0x1ea)]('option');_0x2e58d8[_0x392989(0x1e9)]=_0x307541[_0x392989(0x1e8)],_0x2e58d8[_0x392989(0x166)+'t']=_0x307541[_0x392989(0x1a4)]+'\x20('+_0x307541[_0x392989(0x1e8)]+')',_0x2bf1fd['appendChil'+'d'](_0x2e58d8);}),_0x2bf1fd['value']=_0x2ea981['IeLcR'];})[_0x58be53(0x178)](_0x26633a=>console[_0x58be53(0x19a)](_0x58be53(0x168)+_0x58be53(0x173)+_0x58be53(0x186),_0x26633a));const _0x352370=new firebase[(_0x58be53(0x1c7))][(_0x58be53(0x1c8))+(_0x58be53(0x212))](_0x2ea981[_0x58be53(0x200)],{'size':_0x2ea981[_0x58be53(0x156)],'callback':function(_0x122621){}});let _0x2a8898;_0x1e8c17[_0x58be53(0x191)+'stener'](_0x58be53(0x190),function(){const _0x3af131=_0x58be53,_0x23a88e=document[_0x3af131(0x1e7)+'ById'](_0x3af131(0x1a4))['value'],_0x5dcac1=document[_0x3af131(0x1e7)+_0x3af131(0x171)]('email')['value'],_0x4c5a82=_0x49de47[_0x3af131(0x1e9)],_0x148e3a=_0x2bf1fd[_0x3af131(0x1e9)];if(_0x2ea981[_0x3af131(0x18f)](_0x23a88e,_0x5dcac1)&&_0x4c5a82){const _0x326648=''+_0x148e3a+_0x4c5a82;_0x2ea981[_0x3af131(0x1e3)](_0x22e0ad,_0x326648,_0x352370),_0x1e8c17[_0x3af131(0x1d5)]['display']=_0x2ea981[_0x3af131(0x175)],_0x2ea981[_0x3af131(0x1c1)](_0x42bbd4,_0x3af131(0x1ad)+'uccessfull'+'y!'),_0x2ea981[_0x3af131(0x214)](_0x5ab80e,_0x2ea981[_0x3af131(0x1ac)],{'phone':_0x326648}),_0x2ea981['myPOD'](gtag,_0x2ea981['QxJtK'],_0x2ea981['aDUds'],{'event_category':_0x2ea981[_0x3af131(0x1ee)],'event_label':'OTP\x20Sent','value':_0x326648}),dataLayer[_0x3af131(0x203)]({'event':_0x3af131(0x204)+'ation-send'+_0x3af131(0x1be),'event_category':_0x2ea981[_0x3af131(0x1ee)],'event_label':_0x2ea981[_0x3af131(0x1ff)],'value':_0x326648});}else _0x42bbd4(_0x2ea981[_0x3af131(0x20f)]);});function _0x22e0ad(_0x20a7ff,_0x1196f7){const _0x4fc018=_0x58be53,_0x340a30={'zWqFu':_0x2ea981[_0x4fc018(0x149)]};firebase['auth']()[_0x4fc018(0x1ce)+_0x4fc018(0x1fc)+'r'](_0x20a7ff,_0x1196f7)[_0x4fc018(0x207)](function(_0xca32ae){const _0x402fb7=_0x4fc018;_0x2a8898=_0xca32ae,_0x3eb0bc[_0x402fb7(0x1d5)][_0x402fb7(0x1d2)]=_0x402fb7(0x17d),_0x1cc9dd['style']['display']=_0x2ea981[_0x402fb7(0x1b9)];})[_0x4fc018(0x178)](function(_0x18fe54){const _0x445ae5=_0x4fc018;console['error'](_0x340a30[_0x445ae5(0x1ed)],_0x18fe54);});}_0x1cc9dd[_0x58be53(0x191)+'stener'](_0x2ea981[_0x58be53(0x1f4)],function(){const _0x9a3350=_0x58be53,_0x30ce39={'ScaHR':function(_0x1c9c5c,_0x5bdbe9){const _0x4f976e=_0x46a3;return _0x2ea981[_0x4f976e(0x218)](_0x1c9c5c,_0x5bdbe9);},'WgzSt':_0x2ea981['gRlnl'],'hJtrz':_0x2ea981['EfFQS'],'bvFIJ':_0x2ea981['tQBuL'],'SIufl':_0x2ea981[_0x9a3350(0x1ee)],'ElazV':_0x2ea981[_0x9a3350(0x15c)],'QtAKz':_0x2ea981[_0x9a3350(0x17c)],'SDPxU':_0x2ea981[_0x9a3350(0x1c3)],'TJsUs':_0x2ea981['WifQk'],'KxkEa':function(_0x5d1770,_0x22345c){const _0xc04cb4=_0x9a3350;return _0x2ea981[_0xc04cb4(0x14f)](_0x5d1770,_0x22345c);},'GYklW':_0x9a3350(0x1a4),'LczTi':function(_0x4d4f93,_0x3ff31a){const _0x405230=_0x9a3350;return _0x2ea981[_0x405230(0x16c)](_0x4d4f93,_0x3ff31a);},'bcwmQ':_0x2ea981['BuUAL'],'CfyfI':_0x9a3350(0x223),'wyKkv':_0x2ea981[_0x9a3350(0x182)],'TVLJm':function(_0x5d2fad,_0x18c9cf,_0x497b02){return _0x2ea981['InULk'](_0x5d2fad,_0x18c9cf,_0x497b02);},'sbIig':_0x2ea981[_0x9a3350(0x1d4)],'RDVQy':_0x2ea981[_0x9a3350(0x15b)],'tywAJ':_0x9a3350(0x17a)+_0x9a3350(0x1eb),'ULVWY':_0x9a3350(0x148),'RDVVE':_0x2ea981['vhNOd'],'ZXnxY':_0x9a3350(0x169)+_0x9a3350(0x19f)+'m:','VtZww':_0x9a3350(0x169)+'itting\x20for'+_0x9a3350(0x1f2)+_0x9a3350(0x1dd),'FbTFk':_0x2ea981[_0x9a3350(0x20a)]},_0x3c2a4b=_0x3eb0bc[_0x9a3350(0x1e9)];_0x2a8898[_0x9a3350(0x1d1)](_0x3c2a4b)[_0x9a3350(0x207)](async function(_0x338207){const _0x14a3cb=_0x9a3350,_0x222df3=_0x338207[_0x14a3cb(0x225)];_0x30ce39[_0x14a3cb(0x21a)](_0x42bbd4,_0x30ce39[_0x14a3cb(0x16d)]),_0x30ce39[_0x14a3cb(0x21a)](_0x5ab80e,_0x30ce39[_0x14a3cb(0x16f)]),gtag(_0x14a3cb(0x189),_0x30ce39[_0x14a3cb(0x1c9)],{'event_category':_0x30ce39[_0x14a3cb(0x1d8)],'event_label':_0x14a3cb(0x219)+'ed','value':0x1}),dataLayer[_0x14a3cb(0x203)]({'event':_0x30ce39['bvFIJ'],'event_category':_0x30ce39[_0x14a3cb(0x1d8)],'event_label':_0x30ce39[_0x14a3cb(0x220)],'value':0x1});return;const _0x1e0e40=document[_0x14a3cb(0x1e7)+_0x14a3cb(0x171)](_0x30ce39['QtAKz']),_0x18b63f=document['getElement'+_0x14a3cb(0x171)](_0x30ce39[_0x14a3cb(0x222)]);var _0x6b8629=window[_0x14a3cb(0x1da)][_0x14a3cb(0x1c6)],_0xcf3ae5;_0x6b8629[_0x14a3cb(0x16b)](_0x30ce39[_0x14a3cb(0x1bf)])&&(_0xcf3ae5=_0x30ce39[_0x14a3cb(0x146)](_0x388fc7,_0x6b8629));let _0x1b31a2={'date':new Date()[_0x14a3cb(0x20b)+_0x14a3cb(0x193)](),'name':document[_0x14a3cb(0x1e7)+_0x14a3cb(0x171)](_0x30ce39[_0x14a3cb(0x1b7)])[_0x14a3cb(0x1e9)],'phone':_0x30ce39[_0x14a3cb(0x179)](document[_0x14a3cb(0x1e7)+_0x14a3cb(0x171)]('countryCod'+'e')[_0x14a3cb(0x1e9)],document[_0x14a3cb(0x1e7)+'ById'](_0x30ce39[_0x14a3cb(0x187)])[_0x14a3cb(0x1e9)]),'email':document['getElement'+_0x14a3cb(0x171)](_0x30ce39['CfyfI'])[_0x14a3cb(0x1e9)],'destination':_0x30ce39[_0x14a3cb(0x1b3)],'utmParams':_0xcf3ae5},_0x3d3c22=[[_0x1b31a2[_0x14a3cb(0x1f6)],_0x1b31a2['name'],_0x1b31a2[_0x14a3cb(0x1cf)],_0x1b31a2[_0x14a3cb(0x223)],_0x1b31a2['destinatio'+'n'],JSON[_0x14a3cb(0x167)](_0x1b31a2[_0x14a3cb(0x15d)])]];try{let _0x3d535a=await _0x30ce39[_0x14a3cb(0x157)](fetch,_0x30ce39[_0x14a3cb(0x151)],{'method':_0x30ce39[_0x14a3cb(0x144)],'headers':{'Content-Type':'applicatio'+_0x14a3cb(0x1e5)},'body':JSON[_0x14a3cb(0x167)]({'googleSheetId':_0x14a3cb(0x17e)+_0x14a3cb(0x1df)+'4_OOjSKaUV'+'YFifEWfA0c'+_0x14a3cb(0x1b2),'data':_0x3d3c22,'sheetName':_0x30ce39[_0x14a3cb(0x1b6)]})});const _0x593d80=await _0x3d535a[_0x14a3cb(0x1fb)]();if(_0x593d80[_0x14a3cb(0x1aa)])window[_0x14a3cb(0x1fd)]('https://be'+'atravelbud'+_0x14a3cb(0x209)+'ghts',_0x30ce39['ULVWY']);else throw new Error(_0x593d80[_0x14a3cb(0x172)]||_0x30ce39[_0x14a3cb(0x208)]);}catch(_0x43aba0){console[_0x14a3cb(0x19a)](_0x30ce39[_0x14a3cb(0x1a3)],_0x43aba0),_0x42bbd4(_0x30ce39['VtZww']);}})[_0x9a3350(0x178)](function(_0x502ee0){const _0x56eb94=_0x9a3350;console[_0x56eb94(0x19a)](_0x30ce39['FbTFk'],_0x502ee0);});});function _0x5ab80e(_0x58d15d,_0x5c8507){const _0x7f605=_0x58be53;if(window[_0x7f605(0x1da)][_0x7f605(0x1c6)][_0x7f605(0x16b)](_0x2ea981[_0x7f605(0x1fa)])||window[_0x7f605(0x1da)]['href'][_0x7f605(0x16b)](_0x7f605(0x1a1)))return;let _0x47f460='',_0x2fa24e={};switch(_0x58d15d){case _0x2ea981[_0x7f605(0x1ac)]:_0x47f460=_0x2ea981[_0x7f605(0x20d)],_0x2fa24e={'content_name':_0x2ea981['soCbS'],'content_category':_0x2ea981['soCbS']};break;case _0x7f605(0x1e4):_0x47f460=_0x2ea981['aBlSU'],_0x2fa24e={'content_name':'Verify\x20OTP'+'\x20via\x20Dom\x20L'+'P','content_category':_0x7f605(0x176)+_0x7f605(0x226)+'P'};break;}_0x2ea981['qrtXn'](fbq,_0x7f605(0x147)+'m',_0x47f460,_0x2fa24e);}const _0x417af6=document[_0x58be53(0x1e7)+_0x58be53(0x171)](_0x2ea981[_0x58be53(0x17c)]),_0x4c3af7=document[_0x58be53(0x1e7)+_0x58be53(0x171)](_0x2ea981[_0x58be53(0x1c3)]),_0x11280e=new IntersectionObserver(_0x5ca932=>{_0x5ca932['forEach'](_0x102eb0=>{const _0x574cd3=_0x46a3;!_0x102eb0[_0x574cd3(0x198)+_0x574cd3(0x1ec)]?_0x4c3af7[_0x574cd3(0x1d5)][_0x574cd3(0x1d2)]=_0x2ea981[_0x574cd3(0x1a9)]:_0x4c3af7[_0x574cd3(0x1d5)][_0x574cd3(0x1d2)]='none';});},{'threshold':0x0});_0x11280e[_0x58be53(0x1d3)](_0x417af6);}));
+</script>
+    <!-- Add a div for reCAPTCHA -->
+    <div id="recaptcha-container"></div>
+</body>
+</html>

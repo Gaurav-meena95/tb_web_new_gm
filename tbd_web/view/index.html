@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <link
+      rel="icon"
+      href="https://beatravelbuddy.com/view/assets/img/app_logo_new.webp"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="/view/assets/css/filepond" />
+    <link rel="stylesheet" href="/view/assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="/view/assets/plugins/jquery-nice-select-1.1.0/css/nice-select.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- <link rel="manifest" href="view/manifest" /> -->
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/edacf2d146.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Primary Meta Tags -->
+    <title>Travel Buddy - Travel Social Commerce</title>
+    <meta name="title" content="Travel Buddy - Travel Social Commerce" />
+    <meta
+      name="description"
+      content="Never feel alone when you travel. Join travel buddy today to find travel meetups around you, travel partners, travel services & local experiences."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://beatravelbuddy.com/" />
+    <meta property="og:title" content="Travel Buddy - Travel Social Commerce" />
+    <meta
+      property="og:description"
+      content="Never feel alone when you travel. Join travel buddy today to find travel meetups around you, travel partners, travel services & local experiences."
+    />
+    <meta property="og:image" content="/view/assets/img/meta_image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://beatravelbuddy.com/" />
+    <meta
+      property="twitter:title"
+      content="Travel Buddy - Travel Social Commerce"
+    />
+    <meta
+      property="twitter:description"
+      content="Never feel alone when you travel. Join travel buddy today to find travel meetups around you, travel partners, travel services & local experiences."
+    />
+    <meta property="twitter:image" content="view/assets/img/meta_image.jpg" />
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TXFKZVW");
+    </script>
+  </head>
+  <body>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TXFKZVW"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <div id="app"></div>
+    <div id="recaptcha-container"></div>
+    <footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script
+        src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"
+        type="text/javascript"
+      ></script>
+
+      <!-- We might have to use compatible formats of firebase -->
+      <script
+        src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app-compat.js"
+        defer
+      ></script>
+      <script
+        src="https://www.gstatic.com/firebasejs/9.20.0/firebase-messaging-compat.js"
+        defer
+      ></script>
+      <script
+        src="https://www.gstatic.com/firebasejs/9.20.0/firebase-auth-compat.js"
+        defer
+      ></script>
+      <script
+        src="https://www.gstatic.com/firebasejs/9.20.0/firebase-analytics-compat.js"
+        defer
+      ></script>
+      <script
+        src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"
+        defer
+      ></script>
+      <script src="/view/assets/js/firebase" defer></script>
+      <!-- <script src="/view/assets/js/firebase-messaging-sw.js"></script> -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+      <script src="/view/assets/js/svg-icons"></script>
+      <script src="/view/assets/js/const"></script>
+      <script src="/view/assets/js/helper"></script>
+      <script src="/view/assets/js/bem"></script>
+      <script src="/view/assets/js/render"></script>
+      <script src="/view/assets/js/actions"></script>
+      <script src="/view/assets/js/validator"></script>
+      <script src="/view/assets/js/transaction"></script>
+      <script src="/view/assets/plugins/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
+      <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
+      <script src="https://www.google.com/recaptcha/api.js?render=6LfoX5glAAAAAGTL-DkquTJVBWWMXoxU6qTHwUkM"></script>
+      <!-- <script
+				disable-devtool-auto
+				src="https://cdn.jsdelivr.net/npm/disable-devtool"
+				md5="xxx"
+				url="xxx"
+				tk-name="xxx"
+				interval="xxx"
+				disable-menu="xxx"
+				detectors="xxx"
+				clear-log="true"
+				disable-select="true"
+				disable-copy="true"
+				disable-cut="true"
+				disable-paste="false"
+			></script> -->
+    </footer>
+  </body>
+</html>

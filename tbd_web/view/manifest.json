@@ -1,0 +1,12 @@
+{
+	"name": "Travel Buddy",
+	"short_name": "Travel Buddy",
+	"description": "",
+	"categories": ["news", "business"],
+	"theme_color": "#ffffff",
+	"background_color": "#ffffff",
+	"display": "standalone",
+	"orientation": "natural",
+	"lang": "en-US",
+	"dir": "rtl"
+}

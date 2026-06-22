@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel to Rajasthan - Discover the Land of Kings</title>
+    <meta name="description" content="Experience the rich culture, majestic palaces, and vibrant traditions of India's Land of Kings. Book your Rajasthan tour with Travel Buddy today!">
+    <meta name="keywords" content="Rajasthan, India, travel, tour, culture, heritage, palaces, forts, traditions, Travel Buddy">
+    <meta property="og:title" content="Travel to Rajasthan - Discover the Land of Kings">
+    <meta property="og:description" content="Experience the rich culture, majestic palaces, and vibrant traditions of India's Land of Kings. Book your Rajasthan tour with Travel Buddy today!">
+    <meta property="og:image" content="https://beatravelbuddy.com/view/assets/img/leadGen/R2.jpg">
+    <link rel="icon" href="/view/assets/img/app_logo_new.webp" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="image_src" href="/view/assets/img/leadGen/R2.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Montserrat';
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(200deg, #FFF9CF, white);
+        }
+		
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat';
+        }
+        header {
+            color: #1e1e2d;
+            padding: 1rem;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            width: 100%;
+            position: fixed;
+            z-index: 4;
+        }
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+        }
+        nav h1 {
+            font-size: 31px;
+            font-weight: 700;
+            font-family: 'Nunito';
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/view/assets/img/leadGen/R2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            color: white;
+            padding-top: 4rem;
+            transition: background-image 3s ease-in-out;
+        }
+        .hero-content {
+            max-width: 500px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #FF6B6B;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-family: 'Montserrat';
+            font-weight: 600;
+        }
+        .btn:hover {
+            background-color: #FF8E8E;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 4rem 2rem;
+        }
+        .description {
+            margin-bottom: 2rem;
+        }
+        .description h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1e1e2d;
+            font-weight: 700;
+            font-family: 'Nunito';
+        }
+        .enquiry-form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            color: #1e1e2d;
+        }
+        img.cont_img {
+            margin-top: 15px;
+        }
+        input#verificationCodeInput {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Nunito';
+            margin-bottom: 15px;
+        }
+        .enquiry-form h3 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-family: 'Montserrat';
+        }
+        .form-group input, #countryCode {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Nunito';
+        }
+        #countryCode {
+            width: 40%;
+            margin-right: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #fde723;
+            color: #1e1e2d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            font-family: 'Montserrat';
+            font-weight: 600;
+        }
+        .destinations {
+            margin-top: 4rem;
+        }
+        .destinations h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #FF6B6B;
+            font-weight: 700;
+        }
+        .destination-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .destination-card {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .destination-card:hover {
+            transform: translateY(-5px);
+        }
+        .destination-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .destination-card-content {
+            padding: 1.5rem;
+        }
+        .destination-card-content h3 {
+            margin-bottom: 0.5rem;
+            color: #FF6B6B;
+            font-weight: 600;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-family: 'Montserrat';
+        }
+        .fixed-button {
+            position: fixed;
+            bottom: 20px;
+            /* right: 20px; */
+            /* background-color: #FF6B6B; */
+            /* color: white; */
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-family: 'Nunito';
+            font-weight: 700;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            color: #333;
+            background: linear-gradient(200deg, #FFF9CF, white);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            /* width: 98%; */
+            font-size: 22px;
+        }
+        .fixed-button:hover {
+            background-color: #FF8E8E;
+        }
+        #enquiry-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1999;
+        }
+        /* New styles for added sections */
+        .section-title {
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        strong {
+            font-size: 17px;
+            font-weight: 700;
+        }
+        .content-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .content-box h3 {
+            color: #FF6B6B;
+            margin-bottom: 1rem;
+        }
+        .itinerary-day {
+            margin-bottom: 1.5rem;
+        }
+        .itinerary-day h4 {
+            color: #FF6B6B;
+            margin-bottom: 0.5rem;
+        }
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .feature-list li::before {
+            content: '✓';
+            color: #FF6B6B;
+            position: absolute;
+            left: 0;
+        }
+        .policy-section {
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        .policy-section h3 {
+            margin-bottom: 1rem;
+        }
+        #toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .toast {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
+        .testimonial_cont {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 2rem;
+                height: auto;
+                min-height: 100vh;
+                margin-top: 20%;
+            }
+            .hero-content, .enquiry-form {
+                width: 100%;
+                max-width: 100%;
+            }
+            .destination-cards {
+                flex-direction: column;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            nav ul {
+                display: none;
+            }
+        }
+        @media (min-width: 768px) {
+            .hero {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            .hero-content {
+                max-width: 500px;
+                text-align: center;
+                left: 14%;
+                position: relative;
+            }
+            .enquiry-form {
+                position: fixed;
+                left: 65%;
+            }
+            .container {
+                max-width: 600px;
+                margin: unset;
+                padding: 4rem 2rem;
+                left: 10%;
+                position: relative;
+            }
+            .hero h1 {
+                font-size: 5.5rem;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="/view/assets/img/app_logo_new.webp" alt="Travel Buddy Logo" width="50" style="border-radius: 50%;">
+            <h1>Travel Buddy</h1>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover the Magic of Rajasthan</h1>
+            <p>Experience the rich culture, majestic palaces, and vibrant traditions of India's Land of Kings</p>
+        </div>
+        <div class="enquiry-form" id="enquiry">
+            <h3>Enquire Now</h3>
+            <form id="enquiryForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <div style="display: flex; align-items: center;">
+                        <select id="countryCode" name="countryCode" style="margin-right: 10px;">
+                            <option value="+91">+91</option>
+                        </select>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <input type="text" id="verificationCodeInput" placeholder="Enter verification code" style="display: none;">
+                <button type="button" id="sendOtpButton">Submit</button>
+                <button type="button" id="verifyOtpButton" style="display: none;">Verify OTP</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="container">
+        
+        <section id="why-travel-buddy">
+            <h2 class="section-title">Why Choose Travel Buddy?</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Reliable Vendor:</strong> We partner with trusted and dependable suppliers to ensure seamless travel experiences.</li>
+                    <li><strong>On-Time Guarantee:</strong> If your transportation is delayed for more than 30 minutes without a valid reason, we will provide a complimentary transfer and offer additional compensation as a gesture of goodwill.</li>
+                    <li><strong>Complimentary eSIM:</strong> Stay connected with our complimentary eSIM, offering easy access to mobile data during your travels.</li>
+                    <li><strong>24/7 Assistance:</strong> Our dedicated support team is available around the clock, ensuring you always know who to reach out to in case of an emergency.</li>
+                    <li><strong>Experienced Partners:</strong> Our experienced partners are well-equipped to handle your group's needs, ensuring a smooth and memorable journey.</li>
+                </ul>
+            </div>
+        </section>
+        <section id="why-rajasthan">
+            <h2 class="section-title">Why Choose Rajasthan?</h2>
+            <div class="content-box">
+                <ul class="feature-list">
+                    <li><strong>Royal Heritage:</strong> Explore iconic palaces and forts like the Amber Fort, Mehrangarh Fort, and the City Palace.</li>
+                    <li><strong>Cultural Vibrancy:</strong> Witness traditional folk dances, music, and festivals that showcase the rich heritage of the region.</li>
+                    <li><strong>Natural Wonders:</strong> Experience the beauty of the Aravalli Hills, serene lakes of Udaipur, and the golden sands of Jaisalmer.</li>
+                    <li><strong>Culinary Delights:</strong> Relish authentic Rajasthani dishes like Dal Baati Churma, Gatte ki Sabzi, and the famous Laal Maas.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="itinerary">
+            <h2 class="section-title">5-Day Basic Itinerary for Rajasthan</h2>
+            <div class="content-box">
+                <div class="itinerary-day">
+                    <h4>Day 1: Arrival in Jaipur – The Pink City</h4>
+                    <p><strong>Morning:</strong> Arrive at Jaipur International Airport or railway station. Check into your hotel.</p>
+                    <p><strong>Afternoon:</strong> Visit the Hawa Mahal, City Palace, and Jantar Mantar.</p>
+                    <p><strong>Evening:</strong> Explore the vibrant bazaars for handicrafts and jewelry. End your day with a traditional Rajasthani dinner at Chokhi Dhani.</p>
+                </div>
+                <div class="itinerary-day">
+                    <h4>Day 2: Jaipur – Forts and Palaces</h4>
+                    <p><strong>Morning:</strong> Head to the iconic Amber Fort and enjoy an elephant ride to the entrance.</p>
+                    <p><strong>Afternoon:</strong> Visit Jaigarh Fort and Nahargarh Fort for panoramic city views.</p>
+                    <p><strong>Evening:</strong> Relax and enjoy a local cultural show.</p>
+                </div>
+                <div class="itinerary-day">
+                    <h4>Day 3: Jodhpur – The Blue City</h4>
+                    <p><strong>Morning:</strong> Travel to Jodhpur (5-6 hours by road). Check into your hotel.</p>
+                    <p><strong>Afternoon:</strong> Explore Mehrangarh Fort, Jaswant Thada, and the bustling Clock Tower Market.</p>
+                    <p><strong>Evening:</strong> Enjoy sunset views over the blue-painted houses.</p>
+                </div>
+                <div class="itinerary-day">
+                    <h4>Day 4: Jaisalmer – The Golden City</h4>
+                    <p><strong>Morning:</strong> Drive to Jaisalmer (4-5 hours by road). Visit Jaisalmer Fort and Patwon Ki Haveli.</p>
+                    <p><strong>Afternoon:</strong> Head to the Sam Sand Dunes for a desert safari and camel ride.</p>
+                    <p><strong>Evening:</strong> Enjoy a cultural evening with Rajasthani folk music and dance under the starlit desert sky.</p>
+                </div>
+                <div class="itinerary-day">
+                    <h4>Day 5: Udaipur – The City of Lakes</h4>
+                    <p><strong>Morning:</strong> Travel to Udaipur (7-8 hours by road or flight from Jodhpur).</p>
+                    <p><strong>Afternoon:</strong> Visit the City Palace and Saheliyon Ki Bari.</p>
+                    <p><strong>Evening:</strong> Take a serene boat ride on Lake Pichola and witness the stunning sunset over the Lake Palace.</p>
+                </div>
+                <!-- Add similar divs for Days 2-5... -->
+            </div>
+        </section>
+
+        <section id="must-do">
+            <h2 class="section-title">Must-do Activities for a Rajasthan Trip</h2>
+            <div class="content-box">
+                <h3>1. Explore the Majestic Forts and Palaces</h3>
+                <ul>
+                    <li>Visit the iconic Amber Fort in Jaipur, known for its stunning architecture and light shows.</li>
+                    <li>Tour the grand Mehrangarh Fort in Jodhpur, offering breathtaking city views.</li>
+                    <li>Explore the City Palace of Udaipur, a blend of Rajasthani and Mughal architecture.</li>
+                </ul>
+                <img class= "cont_img"src="/view/assets/img/leadGen/R3.jpg" alt="Forts and Palaces" style="width: 100%;">
+            </div>
+            
+            <div class="content-box">
+                <h3>2. Experience the Golden Sands of Jaisalmer</h3>
+                <ul>
+                    <li>Enjoy a camel safari in the Thar Desert.</li>
+                    <li>Spend a night under the stars in a luxury desert camp, complete with folk music and dance performances.</li>
+                    <li>Visit the Jaisalmer Fort, one of the few “living forts” in the world.</li>
+                </ul>
+                <img class= "cont_img"src="/view/assets/img/leadGen/R6.jpg" alt="Forts and Palaces" style="width: 100%;">
+            </div>
+            
+            <div class="content-box">
+                <h3>3. Relive the Royalty</h3>
+                <ul>
+                    <li>Dine at heritage hotels like Umaid Bhawan Palace or Taj Lake Palace.</li>
+                    <li>Enjoy a vintage car ride in Udaipur for a royal experience.</li>
+                    <li>Attend the Chokhi Dhani cultural village in Jaipur for a taste of Rajasthani tradition.</li>
+                </ul>
+                <img class= "cont_img"src="/view/assets/img/leadGen/R5.png" alt="Forts and Palaces" style="width: 100%;">
+            </div>
+            
+            <div class="content-box">
+                <h3>4. Witness Rajasthan’s Vibrant Festivals</h3>
+                <ul>
+                    <li>Plan your trip around the Pushkar Camel Fair for an unforgettable cultural experience.</li>
+                    <li>Participate in the Desert Festival of Jaisalmer for folk performances and contests.</li>
+                </ul>
+                <img class= "cont_img"src="/view/assets/img/leadGen/R1.jpg" alt="Forts and Palaces" style="width: 100%;">
+            </div>
+            
+            <div class="content-box">
+                <h3>5. Marvel at the Temples and Spiritual Sites</h3>
+                <ul>
+                    <li>Visit the Dilwara Temples in Mount Abu for intricate marble carvings.</li>
+                    <li>Experience the spiritual aura at Brahma Temple in Pushkar.</li>
+                    <li>Seek blessings at Karni Mata Temple (Rat Temple) near Bikaner.</li>
+                </ul>
+            </div>
+            
+            <div class="content-box">
+                <h3>6. Dive into Adventure</h3>
+                <ul>
+                    <li>Go for a hot air balloon ride in Jaipur for stunning aerial views.</li>
+                    <li>Try ziplining at Neemrana Fort or Mehrangarh Fort.</li>
+                    <li>Enjoy wildlife safaris at Ranthambore National Park or Sariska Tiger Reserve.</li>
+                </ul>
+                <img class= "cont_img"src="/view/assets/img/leadGen/R2.jpg" alt="Forts and Palaces" style="width: 100%;">
+            </div>
+            
+            <div class="content-box">
+                <h3>7. Indulge in Local Flavors</h3>
+                <ul>
+                    <li>Savor authentic dishes like dal baati churma, laal maas, and ghevar.</li>
+                    <li>Explore the bustling streets of Jaipur for local street food and snacks.</li>
+                </ul>
+            </div>
+            
+            <div class="content-box">
+                <h3>8. Shop for Unique Handicrafts</h3>
+                <ul>
+                    <li>Explore the bazaars of Jaipur, Jodhpur, and Udaipur for traditional jewelry, textiles, and pottery.</li>
+                    <li>Pick up souvenirs like blue pottery, block prints, and leather goods.</li>
+                </ul>
+            </div>
+            
+            <div class="content-box">
+                <h3>9. Embrace the Arts and Culture</h3>
+                <ul>
+                    <li>Attend a Kalbeliya dance performance, a UNESCO-recognized cultural heritage.</li>
+                    <li>Watch a puppet show or listen to traditional folk music.</li>
+                </ul>
+            </div>
+            
+            <div class="content-box">
+                <h3>10. Discover Offbeat Gems</h3>
+                <ul>
+                    <li>Visit the haunted village of Kuldhara near Jaisalmer.</li>
+                    <li>Explore the serene Chand Baori Stepwell in Abhaneri.</li>
+                    <li>Enjoy the scenic beauty of Bundi and its lesser-known palaces.</li>
+                </ul>
+                <img class= "cont_img"src="/view/assets/img/leadGen/R7.jpg" alt="Forts and Palaces" style="width: 100%;">
+            </div>
+        </section>
+
+
+        <section id="policies" class="policy-section">
+            <h3>Confirmation Policy</h3>
+            <ul>
+                <li>The customer receives a confirmation voucher via email within 24 hours of successful booking.</li>
+                <li>In case the preferred slots are unavailable, an alternate schedule of the customer's preference will be arranged and a new confirmation voucher will be sent via email.</li>
+                <li>Alternatively, the customer may choose to cancel their booking before confirmation and a full refund will be processed.</li>
+            </ul>
+
+            <h3>Refund Policy</h3>
+            <p>The applicable refund amount will be processed within 2-3 business days.</p>
+
+            <h3>Cancellation Policy</h3>
+            <ul>
+                <li>If cancellation is made 45 days before the date of travel, then 10% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 30 days before the date of travel, then 50.0% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 21 days before the date of travel, then 70% of total tour cost will be charged as cancellation fees.</li>
+                <li>If cancellation is made 10 days before the date of travel, then 100% of total tour cost will be charged as cancellation fees.</li>
+            </ul>
+        </section>
+        
+        <section id="testimonials" class="user-test">
+            <div class="content-box">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="testimonial_cont">
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/1.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/2.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/4.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/5.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/6.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/7.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/8.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/9.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/10.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/11.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/12.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/13.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="testimonial">
+                    <img class="test_img" src="/view/assets/img/Testimonials/14.jpg" alt="Testimonial 1" style="height: 250px; object-fit: cover;">
+                </div>
+                
+            </div>
+        </section>
+        
+    </div>
+
+    <a href="#" class="fixed-button" id="openEnquiry" style="display: none;">Enquire Now</a>
+
+    <div class="overlay" id="overlay"></div>
+    <div id="enquiry-popup" class="enquiry-form"></div>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+    <script>
+function _0x3066(){var _0x46b14f=['PageView','fbq','216549lpdYtK','book.net/e','11799','nts.js','loaded','createElem','2|1|10|11|','22IfeOoe','script','sByTagName','init','367224zwKLJU','242384ocVnoD','queue','2184AnYjgx','TrackCusto','6|5|4','1136940qXBSLH','src','10aSelAm','trackCusto','8FcQwgD','version','getElement','parentNode','split','nnect.face','insertBefo','track','apply','2.0','22806oCbtJr','_fbq','6VdmtkK','23UhxLzw','async','callMethod','8788sPIwVk','push','ent','5258749499','943900IIhFLd'];_0x3066=function(){return _0x46b14f;};return _0x3066();}var _0x31d172=_0x7584;function _0x7584(_0x42cf0d,_0x9a4496){var _0x2abb89=_0x3066();return _0x7584=function(_0x442e1e,_0x47c903){_0x442e1e=_0x442e1e-(-0x31f*-0x7+0x1*0x16be+-0x2bf4);var _0x2d8ad9=_0x2abb89[_0x442e1e];return _0x2d8ad9;},_0x7584(_0x42cf0d,_0x9a4496);}(function(_0x10611b,_0x2aa10d){var _0x3c5f08=_0x7584,_0x381ffc=_0x10611b();while(!![]){try{var _0x27fd54=-parseInt(_0x3c5f08(0xa6))/(0x22d1+-0x2536+0x266*0x1)*(-parseInt(_0x3c5f08(0xa3))/(-0x2b3*-0xa+-0xcc8+-0x25e*0x6))+-parseInt(_0x3c5f08(0xa5))/(0xb*0x107+0xf*0x17b+-0x23*0xf5)*(-parseInt(_0x3c5f08(0xbc))/(0x2a7*-0x8+0x9c8*0x1+0xb74))+parseInt(_0x3c5f08(0xc3))/(0x962+-0x1*-0x5b0+-0xf0d)*(-parseInt(_0x3c5f08(0xbb))/(0x101b*-0x2+-0x2125+0x31d*0x15))+-parseInt(_0x3c5f08(0xc1))/(-0x789+-0x1aa5+0x2235)+-parseInt(_0x3c5f08(0xc5))/(0x24a7+0x1*-0x14c7+-0xa9*0x18)*(-parseInt(_0x3c5f08(0xb0))/(-0x25f*-0x9+0x2*0xb7e+-0x2c4a))+-parseInt(_0x3c5f08(0xad))/(0x2*-0x61c+-0x9fa+0x163c)*(-parseInt(_0x3c5f08(0xb7))/(-0x7*-0x172+0x1df2+-0x2805))+-parseInt(_0x3c5f08(0xbe))/(0x1*0x669+0x1313+0x4a*-0x58)*(parseInt(_0x3c5f08(0xa9))/(0x42*-0x81+0x1948+-0x1*-0x807));if(_0x27fd54===_0x2aa10d)break;else _0x381ffc['push'](_0x381ffc['shift']());}catch(_0x3f1db3){_0x381ffc['push'](_0x381ffc['shift']());}}}(_0x3066,0x6e58*-0x7+0x411e9+0xb*0x2a6b),!function(_0x46c815,_0x2e1380,_0x49ad63,_0x14084c,_0x182a04,_0x5475e0,_0x39f7){var _0x405ded=_0x7584,_0x7ddf17={'QwrZK':'7|3|9|8|0|'+_0x405ded(0xb6)+_0x405ded(0xc0)},_0x5393ff=_0x7ddf17['QwrZK'][_0x405ded(0xc9)]('|'),_0xe8e3db=-0x92f+0x4e+-0x8e1*-0x1;while(!![]){switch(_0x5393ff[_0xe8e3db++]){case'0':_0x182a04[_0x405ded(0xb4)]=!(-0x15*0x2f+-0x5*-0xd7+-0x2c*0x2);continue;case'1':_0x182a04[_0x405ded(0xbd)]=[];continue;case'2':_0x182a04[_0x405ded(0xc6)]=_0x405ded(0xce);continue;case'3':_0x182a04=_0x46c815[_0x405ded(0xaf)]=function(){var _0x5c3c01=_0x405ded;_0x182a04[_0x5c3c01(0xa8)]?_0x182a04[_0x5c3c01(0xa8)][_0x5c3c01(0xcd)](_0x182a04,arguments):_0x182a04[_0x5c3c01(0xbd)][_0x5c3c01(0xaa)](arguments);};continue;case'4':_0x39f7[_0x405ded(0xc8)][_0x405ded(0xcb)+'re'](_0x5475e0,_0x39f7);continue;case'5':_0x39f7=_0x2e1380[_0x405ded(0xc7)+_0x405ded(0xb9)](_0x49ad63)[-0x24d2+-0xdb0+-0x3*-0x10d6];continue;case'6':_0x5475e0[_0x405ded(0xc2)]=_0x14084c;continue;case'7':if(_0x46c815['fbq'])return;continue;case'8':_0x182a04['push']=_0x182a04;continue;case'9':if(!_0x46c815[_0x405ded(0xa4)])_0x46c815[_0x405ded(0xa4)]=_0x182a04;continue;case'10':_0x5475e0=_0x2e1380[_0x405ded(0xb5)+_0x405ded(0xab)](_0x49ad63);continue;case'11':_0x5475e0[_0x405ded(0xa7)]=!(-0xc77+-0xcce+-0x1*-0x1945);continue;}break;}}(window,document,_0x31d172(0xb8),'https://co'+_0x31d172(0xca)+_0x31d172(0xb1)+'n_US/fbeve'+_0x31d172(0xb3)),fbq(_0x31d172(0xba),_0x31d172(0xac)+_0x31d172(0xb2)),fbq(_0x31d172(0xcc),_0x31d172(0xae)),fbq(_0x31d172(0xc4)+'m',_0x31d172(0xbf)+'mEvent'));
+</script>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=525874949911799&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Add this HTML for the toast container -->
+    <div id="toast-container"></div>
+
+    <script>
+const _0x2916ed=_0x2ece;(function(_0x10a0e2,_0x5e0a73){const _0x41ac36=_0x2ece,_0x106413=_0x10a0e2();while(!![]){try{const _0x4a9f0c=-parseInt(_0x41ac36(0xa6))/(-0x1e42+0x1*-0x908+0x1*0x274b)*(parseInt(_0x41ac36(0xa2))/(-0x15a5*-0x1+-0x17b5+-0x35*-0xa))+parseInt(_0x41ac36(0x8b))/(-0x18d*-0x9+-0xc3d+-0x1b5)+parseInt(_0x41ac36(0x9c))/(-0x1a*0x11b+-0x130d*0x1+-0x1*-0x2fcf)*(parseInt(_0x41ac36(0x89))/(0xa52*0x1+0xf53+-0x14*0x148))+-parseInt(_0x41ac36(0x98))/(0xb93+0x1533+-0x4*0x830)+parseInt(_0x41ac36(0xa9))/(0x72d*0x3+-0x1b5d+0x5dd)+parseInt(_0x41ac36(0x91))/(0x88e+-0x9f*-0x31+-0x26f5)+-parseInt(_0x41ac36(0x8e))/(0x2696+-0x2b*-0xe3+-0x4cae);if(_0x4a9f0c===_0x5e0a73)break;else _0x106413['push'](_0x106413['shift']());}catch(_0x38f981){_0x106413['push'](_0x106413['shift']());}}}(_0x2ba0,-0x13a1c*0x4+0x1ccd1+-0x1*-0x605bd));const firebaseConfig={'apiKey':_0x2916ed(0x9b)+_0x2916ed(0x9f)+_0x2916ed(0x90)+'3iNmsZR-s','authDomain':_0x2916ed(0x92)+'y-174317.f'+_0x2916ed(0xab)+_0x2916ed(0x8a),'databaseURL':_0x2916ed(0xa5)+'d-prod-174'+_0x2916ed(0x93)+_0x2916ed(0x9d)+_0x2916ed(0x8d)+_0x2916ed(0xaa)+_0x2916ed(0xa4),'projectId':_0x2916ed(0x92)+_0x2916ed(0x99),'storageBucket':_0x2916ed(0x92)+_0x2916ed(0x8c)+_0x2916ed(0xac),'messagingSenderId':_0x2916ed(0x97),'appId':_0x2916ed(0x88)+'76:web:c44'+_0x2916ed(0x95)+'13b37a851','measurementId':_0x2916ed(0xa3)+'GP'};firebase[_0x2916ed(0xa8)+_0x2916ed(0xa0)](firebaseConfig);const analytics=firebase[_0x2916ed(0x9e)]();function _0x2ba0(){const _0x4860e5=['nitialized','initialize','2131542gSlQVs','basedataba','irebaseapp','ppspot.com','1:99594590','355825FRwoBz','.com','1072608eIqobU','y-174317.a','east1.fire','5553018tImcuK','test_value','6jOUr4_Saf','1578472QFvBzv','travelbudd','317-b933e.','logEvent','17f1889911','event\x20logg','9959459076','992628RsuaIc','y-174317','\x20and\x20test\x20','AIzaSyBnKt','12WKMZwX','asia-south','analytics','ZnePCqVLbr','App','Firebase\x20i','28vZkvWi','G-PXBR867E','se.app/','https://tb','7100lqLvXP'];_0x2ba0=function(){return _0x4860e5;};return _0x2ba0();}function _0x2ece(_0x361018,_0x172ba1){const _0x478e61=_0x2ba0();return _0x2ece=function(_0x4d9360,_0x9a6e61){_0x4d9360=_0x4d9360-(0xc7a+0x23bb+-0x2fad*0x1);let _0x23484a=_0x478e61[_0x4d9360];return _0x23484a;},_0x2ece(_0x361018,_0x172ba1);}analytics[_0x2916ed(0x94)]('test_event',{'test_param':_0x2916ed(0x8f)}),console['log'](_0x2916ed(0xa1)+_0x2916ed(0xa7)+_0x2916ed(0x9a)+_0x2916ed(0x96)+'ed');
+</script>
+    <script>
+const _0x31d90f=_0x130e;function _0x5935(){const _0x5241fd=['message','ts/img/lea','show','hing\x20count','phone','3901464HnYXiy','rBDtf','t.confirm','DStUR','aqGJE','dy.com/fli','1FimuK7vR7','\x20via\x20Dom\x20L','uccessfull','applicatio','\x20team\x20will','eqdGK','display','vuJjb','EHXRv','utton','Error\x20fetc','atravelbud','dGen/rb4.j','(0,\x200,\x200,\x20','rDXHx','dGen/rb6.j','366jKwGJh','4546071BixSom','linear-gra','block','Buddy.\x20Our','OwmWQ','ton','iyJZB','common','getElement','mber','verifyOtpB','click','classList','forEach','dVfYl','ia\x20Dom\x20LP','/view/asse','ationResul','dnRnz','d\x20fields.','yHSNC','auth','4799384jlwbJn','WUAY5Qydep','\x20get\x20in\x20to','are','isIntersec','sentOTP','user','success','toast','error','tyAqc','l\x20in\x20all\x20t','tor','container','gZvww','MRuFO','Loaded','stener','ent','href','onCodeInpu','eYwMO','19869910qAVrYY','POST','textConten','email','recaptcha-','bumhC','MKoPa','aEMWC','4524235XCGSAG','trackCusto','626647UvCXHt','dvhLD','tsvSg','name','destinatio','Form\x20submi','stringify','198443VmTJON','observe','sendOtpBut','div','Sent\x20OTP\x20v','value','omeoi','ainer','dient(rgba','XdYeE','className','4_OOjSKaUV','dViIN','mcMye','option','idd','jLSVw','0.5),\x20rgba','try\x20again.','code','xHuXr','2jHIEox','style','agtiS','suffixes','wMZIX','ting','cvDDK','invisible','qMPpH','FVKyT','Error\x20subm','Please\x20fil','dGen/rb7.j','then','/write-to-','ou\x20within\x20','ById','jRFrR','nZWCX','Domestic','cZrRl','Image','PhoneNumbe','tyTjT','pySIV','uKNKc','dev.','BhyAL','kzYmU','DOMContent','ithPhoneNu','map','zVZyt','Uh6c','s.com/v3.1','zyzRw','QiIDl','tXnpY','countryCod','uxHgY','querySelec','date','bSxwY','/all','acMNb','uch\x20with\x20y','https://re','none','signInWith','dGen/rb8.p','Verify\x20OTP','appendChil','includes','ng\x20signInW','Error\x20duri','json','open','confirm','fZFuf','verifyOTP','JPZiZ','he\x20require','addEventLi','openEnquir','m.\x20Please\x20','Thank\x20you\x20','dGen/rb3.j','rZaXJ','xxWsf','RecaptchaV','4bwewJm','location','.hero','ng\x20confirm','ring','createElem','cgOqA','11SdwaqR','the\x20next\x202','OTP\x20sent\x20s','JOEOZ','CbPBj','erifier','itting\x20for','OnOWS','add','catch','enquiry','removeChil','background','xkljI'];_0x5935=function(){return _0x5241fd;};return _0x5935();}function _0x130e(_0x924208,_0x4269b7){const _0x57a69e=_0x5935();return _0x130e=function(_0x102b05,_0x1ab194){_0x102b05=_0x102b05-(-0x86*0x1a+0xdb9*-0x1+0x1ca7);let _0x38da53=_0x57a69e[_0x102b05];return _0x38da53;},_0x130e(_0x924208,_0x4269b7);}(function(_0x35a3b,_0x2d01cc){const _0x17f843=_0x130e,_0x416b00=_0x35a3b();while(!![]){try{const _0x419641=parseInt(_0x17f843(0x174))/(-0x21ff+-0x284*0x2+0x2708)*(parseInt(_0x17f843(0x190))/(-0x12fd+-0x1*-0xe1b+0x4e4))+-parseInt(_0x17f843(0x207))/(-0x83*0x3d+0x31*-0xb9+0x42a3)+-parseInt(_0x17f843(0x1d6))/(-0x31f+-0x183f*0x1+0x1b62)*(parseInt(_0x17f843(0x172))/(-0x103b*0x2+0x1779+0x2*0x481))+-parseInt(_0x17f843(0x206))/(-0x22d2+-0x29*-0xc9+0x2a7)*(-parseInt(_0x17f843(0x17b))/(0x1674+-0x23c+-0x1431*0x1))+-parseInt(_0x17f843(0x154))/(0x15fe+-0x2502+0xf0c)+-parseInt(_0x17f843(0x1f0))/(-0x2235+-0xcf2+0x4*0xbcc)+-parseInt(_0x17f843(0x16a))/(-0x1742+-0x19fd+0x3149)*(-parseInt(_0x17f843(0x1dd))/(0x19a3+-0x14bf*0x1+-0x4d9));if(_0x419641===_0x2d01cc)break;else _0x416b00['push'](_0x416b00['shift']());}catch(_0x1a2cbb){_0x416b00['push'](_0x416b00['shift']());}}}(_0x5935,0x44754+-0x2*0x79c25+-0x7d7f*-0x32),document[_0x31d90f(0x1ce)+_0x31d90f(0x165)](_0x31d90f(0x1ad)+'Loaded',function(){const _0x5dacff=_0x31d90f,_0xc329a5={'MKoPa':function(_0x422354,_0x842cbe){return _0x422354+_0x842cbe;},'qMPpH':_0x5dacff(0x1ed),'DStUR':_0x5dacff(0x17e),'fZFuf':_0x5dacff(0x15c),'bSxwY':function(_0x18cea1,_0x570424,_0x1f24ca){return _0x18cea1(_0x570424,_0x1f24ca);},'eqdGK':_0x5dacff(0x189),'iyJZB':'+91','jLSVw':_0x5dacff(0x177),'rZaXJ':_0x5dacff(0x16d),'mEGfu':function(_0x508f36,_0x51c2c0){return _0x508f36&&_0x51c2c0;},'yHSNC':function(_0x29947e,_0x306b21,_0xd4092e){return _0x29947e(_0x306b21,_0xd4092e);},'vuJjb':_0x5dacff(0x1bf),'gZvww':_0x5dacff(0x1df)+_0x5dacff(0x1f8)+'y!','QsEay':_0x5dacff(0x159),'JPZiZ':function(_0x41e078,_0x418047){return _0x41e078(_0x418047);},'tyTjT':_0x5dacff(0x19b)+_0x5dacff(0x15f)+_0x5dacff(0x1cd)+_0x5dacff(0x21a),'EHXRv':_0x5dacff(0x1c6)+_0x5dacff(0x1c5)+_0x5dacff(0x1ae)+_0x5dacff(0x210),'xkljI':_0x5dacff(0x209),'eYwMO':_0x5dacff(0x1d1)+'for\x20choosi'+'ng\x20Travel\x20'+_0x5dacff(0x20a)+_0x5dacff(0x1fa)+_0x5dacff(0x156)+_0x5dacff(0x1bd)+_0x5dacff(0x19f)+_0x5dacff(0x1de)+'4hours.','RZIjR':function(_0x3337db,_0x3c8b4f){return _0x3337db+_0x3c8b4f;},'aqGJE':'Rajasthan','CbPBj':_0x5dacff(0x19e)+'sheet','nZWCX':_0x5dacff(0x16b),'dVfYl':_0x5dacff(0x1a3),'dnRnz':'_self','Upkga':_0x5dacff(0x19a)+'itting\x20for'+'m:','tAKeO':_0x5dacff(0x19a)+_0x5dacff(0x1e3)+_0x5dacff(0x1d0)+_0x5dacff(0x18d),'QBWbZ':'localhost','reCfr':_0x5dacff(0x1aa),'uKNKc':'Sent\x20OTP\x20v'+_0x5dacff(0x216),'OnOWS':_0x5dacff(0x1cb),'XdYeE':_0x5dacff(0x1c2)+_0x5dacff(0x1f7)+'P','aEMWC':_0x5dacff(0x173)+'m','omeoi':_0x5dacff(0x217)+_0x5dacff(0x1ec)+'dGen/rb1.j'+'pg','OwmWQ':_0x5dacff(0x217)+_0x5dacff(0x1ec)+'dGen/rb2.j'+'pg','gutQj':_0x5dacff(0x217)+_0x5dacff(0x1ec)+_0x5dacff(0x1d2)+'pg','rPmHg':_0x5dacff(0x217)+_0x5dacff(0x1ec)+_0x5dacff(0x202)+'pg','zVZyt':_0x5dacff(0x217)+_0x5dacff(0x1ec)+'dGen/rb5.p'+'ng','TfbgY':'/view/asse'+_0x5dacff(0x1ec)+_0x5dacff(0x19c)+'pg','dViIN':_0x5dacff(0x217)+_0x5dacff(0x1ec)+_0x5dacff(0x1c1)+'ng','dvhLD':function(_0x5d989c,_0x3ee3a3,_0x1047b8){return _0x5d989c(_0x3ee3a3,_0x1047b8);},'JOEOZ':_0x5dacff(0x1b6)+'e','zyzRw':_0x5dacff(0x1ef),'YOBnt':_0x5dacff(0x17d)+_0x5dacff(0x20c),'tsvSg':_0x5dacff(0x1be)+'stcountrie'+_0x5dacff(0x1b2)+_0x5dacff(0x1bb),'AXvAo':_0x5dacff(0x197),'xxWsf':_0x5dacff(0x212)},_0x1edb71=[_0xc329a5[_0x5dacff(0x181)],_0xc329a5[_0x5dacff(0x20b)],_0xc329a5['gutQj'],_0xc329a5['rPmHg'],_0xc329a5[_0x5dacff(0x1b0)],_0x5dacff(0x217)+'ts/img/lea'+_0x5dacff(0x205)+'pg',_0xc329a5['TfbgY'],_0xc329a5[_0x5dacff(0x187)]];let _0x1e409c=-0x1d*0xd0+0xcab*0x3+-0xe71*0x1;const _0xd1647c=document[_0x5dacff(0x1b8)+_0x5dacff(0x160)](_0x5dacff(0x1d8));function _0x37eee0(){const _0x444a29=_0x5dacff;_0x1e409c=_0xc329a5[_0x444a29(0x170)](_0x1e409c,0x1d11+-0x25*0xe5+0x409)%_0x1edb71['length'],_0xd1647c['style'][_0x444a29(0x1e9)+_0x444a29(0x1a5)]=_0x444a29(0x208)+_0x444a29(0x183)+_0x444a29(0x203)+_0x444a29(0x18c)+'(0,\x200,\x200,\x20'+'0.5)),\x20url'+'(\x27'+_0x1edb71[_0x1e409c]+'\x27)';}_0xc329a5[_0x5dacff(0x175)](setInterval,_0x37eee0,0x25*0x1+-0x7*0x439+0x38c2);function _0x288c5b(_0x4a2cf5){const _0x384026=_0x5dacff,_0x338ec3=document[_0x384026(0x20f)+_0x384026(0x1a0)]('toast-cont'+_0x384026(0x182)),_0x4530f5=document[_0x384026(0x1db)+_0x384026(0x166)](_0xc329a5[_0x384026(0x1f3)]);_0x4530f5[_0x384026(0x185)]=_0xc329a5[_0x384026(0x1ca)],_0x4530f5[_0x384026(0x16c)+'t']=_0x4a2cf5,_0x338ec3[_0x384026(0x1c3)+'d'](_0x4530f5),_0xc329a5[_0x384026(0x1ba)](setTimeout,()=>{const _0x32d263=_0x384026;_0x4530f5['classList'][_0x32d263(0x1e5)](_0xc329a5[_0x32d263(0x198)]);},-0x20bf+0xf31+-0x8f9*-0x2),_0xc329a5['bSxwY'](setTimeout,()=>{const _0x59d2ef=_0x384026;_0x4530f5[_0x59d2ef(0x213)]['remove'](_0xc329a5[_0x59d2ef(0x198)]),setTimeout(()=>{const _0x172b53=_0x59d2ef;_0x338ec3[_0x172b53(0x1e8)+'d'](_0x4530f5);},-0xfa1+-0x10*-0x121+-0x7b);},-0xa8a*0x3+0x67*-0x3b+-0xb*-0x619);}const _0x104cac=document['getElement'+_0x5dacff(0x1a0)](_0xc329a5[_0x5dacff(0x1e0)]),_0x3fc33c=document['getElement'+'ById'](_0xc329a5[_0x5dacff(0x1b3)]),_0x5e785e=document[_0x5dacff(0x20f)+_0x5dacff(0x1a0)](_0xc329a5['YOBnt']),_0x7cddd7=document[_0x5dacff(0x20f)+_0x5dacff(0x1a0)](_0x5dacff(0x211)+_0x5dacff(0x1ff)),_0x1411f1=document[_0x5dacff(0x20f)+_0x5dacff(0x1a0)]('verificati'+_0x5dacff(0x168)+'t');_0xc329a5['JPZiZ'](fetch,_0xc329a5[_0x5dacff(0x176)])[_0x5dacff(0x19d)](_0x14c38a=>_0x14c38a[_0x5dacff(0x1c7)]())[_0x5dacff(0x19d)](_0x4b6771=>{const _0x1ce07b=_0x5dacff,_0x1355c9={'uxHgY':function(_0x250dfb,_0x14c634){const _0x27d343=_0x130e;return _0xc329a5[_0x27d343(0x170)](_0x250dfb,_0x14c634);},'MRuFO':_0xc329a5[_0x1ce07b(0x1fb)]},_0xcc3136=_0x4b6771[_0x1ce07b(0x1af)](_0xb598fe=>{const _0x4c8972=_0x1ce07b,_0x43e133=_0x1355c9[_0x4c8972(0x1b7)](_0xb598fe[_0x4c8972(0x18a)]['root'],_0xb598fe['idd'][_0x4c8972(0x193)]?_0xb598fe[_0x4c8972(0x18a)][_0x4c8972(0x193)][-0x1d8c+0x19*0xd9+0x85b]:'');return{'name':_0xb598fe[_0x4c8972(0x177)][_0x4c8972(0x20e)],'code':_0x43e133};})['sort']((_0x3df752,_0x2326ab)=>_0x3df752['name']['localeComp'+_0x1ce07b(0x157)](_0x2326ab[_0x1ce07b(0x177)]));_0xcc3136[_0x1ce07b(0x214)](_0x4a303e=>{const _0x28644e=_0x1ce07b,_0xa68c8c=document[_0x28644e(0x1db)+'ent'](_0x1355c9[_0x28644e(0x163)]);_0xa68c8c[_0x28644e(0x180)]=_0x4a303e['code'],_0xa68c8c[_0x28644e(0x16c)+'t']=_0x4a303e[_0x28644e(0x177)]+'\x20('+_0x4a303e[_0x28644e(0x18e)]+')',_0x104cac['appendChil'+'d'](_0xa68c8c);}),_0x104cac[_0x1ce07b(0x180)]=_0xc329a5[_0x1ce07b(0x20d)];})[_0x5dacff(0x1e6)](_0x2e96b1=>console[_0x5dacff(0x15d)](_0x5dacff(0x200)+_0x5dacff(0x1ee)+'ry\x20codes:',_0x2e96b1));const _0x311ae7=new firebase[(_0x5dacff(0x153))][(_0x5dacff(0x1d5))+(_0x5dacff(0x1e2))](_0x5dacff(0x16e)+_0x5dacff(0x161),{'size':_0xc329a5['AXvAo'],'callback':function(_0x5917d2){}});let _0x17d5c1;_0x5e785e[_0x5dacff(0x1ce)+_0x5dacff(0x165)](_0xc329a5[_0x5dacff(0x1d4)],function(){const _0x1823d3=_0x5dacff,_0x3d4a28=document[_0x1823d3(0x20f)+_0x1823d3(0x1a0)](_0xc329a5[_0x1823d3(0x18b)])[_0x1823d3(0x180)],_0xb52a5c=document['getElement'+'ById'](_0xc329a5[_0x1823d3(0x1d3)])[_0x1823d3(0x180)],_0xb6878f=_0x3fc33c[_0x1823d3(0x180)],_0x4e4c42=_0x104cac[_0x1823d3(0x180)];if(_0xc329a5['mEGfu'](_0x3d4a28,_0xb52a5c)&&_0xb6878f){const _0x396939=''+_0x4e4c42+_0xb6878f;_0xc329a5[_0x1823d3(0x152)](_0x7ea93e,_0x396939,_0x311ae7),_0x5e785e[_0x1823d3(0x191)][_0x1823d3(0x1fc)]=_0xc329a5[_0x1823d3(0x1fd)],_0x288c5b(_0xc329a5[_0x1823d3(0x162)]),_0xc329a5[_0x1823d3(0x152)](_0x311a58,_0xc329a5['QsEay'],{'phone':_0x396939});}else _0xc329a5[_0x1823d3(0x1cc)](_0x288c5b,_0xc329a5[_0x1823d3(0x1a7)]);});function _0x7ea93e(_0x4e1c70,_0x2eb71c){const _0x3e9829=_0x5dacff,_0x3eb23d={'kzYmU':_0xc329a5[_0x3e9829(0x1ea)]};firebase[_0x3e9829(0x153)]()[_0x3e9829(0x1c0)+_0x3e9829(0x1a6)+'r'](_0x4e1c70,_0x2eb71c)['then'](function(_0x1447f8){const _0x313cd7=_0x3e9829;_0x17d5c1=_0x1447f8,_0x1411f1[_0x313cd7(0x191)][_0x313cd7(0x1fc)]=_0x3eb23d[_0x313cd7(0x1ac)],_0x7cddd7[_0x313cd7(0x191)]['display']=_0x3eb23d[_0x313cd7(0x1ac)];})['catch'](function(_0x175a47){const _0x2e9ce5=_0x3e9829;console[_0x2e9ce5(0x15d)](_0xc329a5[_0x2e9ce5(0x1fe)],_0x175a47);});}_0x7cddd7[_0x5dacff(0x1ce)+'stener'](_0xc329a5[_0x5dacff(0x1d4)],function(){const _0x99db4d=_0x5dacff,_0xbef11={'xHuXr':function(_0x404354,_0xde2ca6){const _0xa2e17=_0x130e;return _0xc329a5[_0xa2e17(0x1cc)](_0x404354,_0xde2ca6);},'bumhC':_0xc329a5[_0x99db4d(0x169)],'mcMye':_0x99db4d(0x1cb),'lULHv':_0x99db4d(0x1cf)+'y','rBDtf':_0xc329a5[_0x99db4d(0x18b)],'agtiS':function(_0x12b51f,_0x40a088){return _0xc329a5['RZIjR'](_0x12b51f,_0x40a088);},'jRFrR':_0x99db4d(0x1ef),'FVKyT':_0xc329a5[_0x99db4d(0x1f4)],'cvDDK':_0xc329a5[_0x99db4d(0x1e1)],'tyAqc':_0xc329a5[_0x99db4d(0x1a2)],'QiIDl':_0x99db4d(0x1f9)+'n/json','BhyAL':_0xc329a5[_0x99db4d(0x215)],'tXnpY':_0xc329a5[_0x99db4d(0x219)],'acMNb':_0x99db4d(0x179)+'ssion\x20fail'+'ed','pySIV':_0xc329a5['Upkga'],'Pzfhu':_0xc329a5['tAKeO']},_0x583178=_0x1411f1[_0x99db4d(0x180)];_0x17d5c1[_0x99db4d(0x1c9)](_0x583178)[_0x99db4d(0x19d)](async function(_0x1a397d){const _0x497646=_0x99db4d,_0x508a90=_0x1a397d[_0x497646(0x15a)];_0xbef11[_0x497646(0x18f)](_0x288c5b,_0xbef11[_0x497646(0x16f)]),_0xbef11[_0x497646(0x18f)](_0x311a58,_0xbef11[_0x497646(0x188)]);const _0xc6134c=document[_0x497646(0x20f)+_0x497646(0x1a0)](_0x497646(0x1e7)),_0x55d8ee=document[_0x497646(0x20f)+_0x497646(0x1a0)](_0xbef11['lULHv']);let _0xfab589={'date':new Date()['toLocaleSt'+_0x497646(0x1da)](),'name':document[_0x497646(0x20f)+_0x497646(0x1a0)](_0xbef11[_0x497646(0x1f1)])[_0x497646(0x180)],'phone':_0xbef11[_0x497646(0x192)](document[_0x497646(0x20f)+'ById'](_0x497646(0x1b6)+'e')[_0x497646(0x180)],document[_0x497646(0x20f)+_0x497646(0x1a0)](_0xbef11[_0x497646(0x1a1)])['value']),'email':document['getElement'+_0x497646(0x1a0)](_0x497646(0x16d))[_0x497646(0x180)],'destination':_0xbef11[_0x497646(0x199)]},_0x167294=[[_0xfab589[_0x497646(0x1b9)],_0xfab589[_0x497646(0x177)],_0xfab589['phone'],_0xfab589['email'],_0xfab589[_0x497646(0x178)+'n']]];try{let _0x3796d7=await fetch(_0xbef11[_0x497646(0x196)],{'method':_0xbef11[_0x497646(0x15e)],'headers':{'Content-Type':_0xbef11[_0x497646(0x1b4)]},'body':JSON[_0x497646(0x17a)]({'googleSheetId':_0x497646(0x1f6)+_0x497646(0x155)+_0x497646(0x186)+'YFifEWfA0c'+_0x497646(0x1b1),'data':_0x167294,'sheetName':_0xbef11[_0x497646(0x1ab)]})});const _0x46d0b9=await _0x3796d7[_0x497646(0x1c7)]();if(_0x46d0b9[_0x497646(0x15b)])window[_0x497646(0x1c8)]('https://be'+_0x497646(0x201)+_0x497646(0x1f5)+'ghts',_0xbef11[_0x497646(0x1b5)]);else throw new Error(_0x46d0b9[_0x497646(0x1eb)]||_0xbef11[_0x497646(0x1bc)]);}catch(_0x21e5f1){console['error'](_0xbef11[_0x497646(0x1a8)],_0x21e5f1),_0x288c5b(_0xbef11['Pzfhu']);}})[_0x99db4d(0x1e6)](function(_0x4801d2){const _0xbc000a=_0x99db4d;console[_0xbc000a(0x15d)](_0xbc000a(0x1c6)+_0xbc000a(0x1d9)+_0xbc000a(0x218)+_0xbc000a(0x1f2),_0x4801d2);});});function _0x311a58(_0x12ff6f,_0x3438c4){const _0x4af350=_0x5dacff;if(window[_0x4af350(0x1d7)][_0x4af350(0x167)][_0x4af350(0x1c4)](_0xc329a5['QBWbZ'])||window['location']['href'][_0x4af350(0x1c4)](_0xc329a5['reCfr']))return;let _0x19ebbf='',_0x463df1={};switch(_0x12ff6f){case _0xc329a5['QsEay']:_0x19ebbf=_0xc329a5[_0x4af350(0x1a9)],_0x463df1={'content_name':_0x4af350(0x17f)+_0x4af350(0x216),'content_category':_0xc329a5[_0x4af350(0x1a9)]};break;case _0xc329a5[_0x4af350(0x1e4)]:_0x19ebbf='Verify\x20OTP'+'\x20via\x20Dom\x20L'+'P',_0x463df1={'content_name':_0xc329a5[_0x4af350(0x184)],'content_category':_0xc329a5[_0x4af350(0x184)]};break;}fbq(_0xc329a5[_0x4af350(0x171)],_0x19ebbf,_0x463df1);}}),document['addEventLi'+_0x31d90f(0x165)](_0x31d90f(0x1ad)+_0x31d90f(0x164),function(){const _0x231b19=_0x31d90f,_0x4fc366={'wMZIX':'flex','cgOqA':_0x231b19(0x1bf),'rDXHx':_0x231b19(0x1e7),'cZrRl':_0x231b19(0x1cf)+'y'},_0x5a5223=document[_0x231b19(0x20f)+_0x231b19(0x1a0)](_0x4fc366[_0x231b19(0x204)]),_0x4c575d=document[_0x231b19(0x20f)+'ById'](_0x4fc366[_0x231b19(0x1a4)]),_0x12b1d7=new IntersectionObserver(_0x2d5e75=>{const _0x2404e3=_0x231b19;_0x2d5e75[_0x2404e3(0x214)](_0x531fd6=>{const _0x4e686f=_0x2404e3;!_0x531fd6[_0x4e686f(0x158)+_0x4e686f(0x195)]?_0x4c575d[_0x4e686f(0x191)]['display']=_0x4fc366[_0x4e686f(0x194)]:_0x4c575d[_0x4e686f(0x191)][_0x4e686f(0x1fc)]=_0x4fc366[_0x4e686f(0x1dc)];});},{'threshold':0x0});_0x12b1d7[_0x231b19(0x17c)](_0x5a5223);}));
+</script>
+    <!-- Add a div for reCAPTCHA -->
+    <div id="recaptcha-container"></div>
+</body>
+</html>

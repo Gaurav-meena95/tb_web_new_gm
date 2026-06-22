@@ -1,0 +1,10 @@
+{
+	"editor.maxTokenizationLineLength": 400000,
+	"editor.colorDecoratorsLimit": 1000,
+	"githubPullRequests.ignoredPullRequestBranches": [
+		"main",
+		"main"
+	],
+	"CodeGPT.maxTokens": 800,
+	"liveServer.settings.port": 5501
+}

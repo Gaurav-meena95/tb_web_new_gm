@@ -1,0 +1,14 @@
+{
+	"applinks": {
+		"apps": [],
+		"details": [
+			{
+				"appID": "78JY7ZPE6H.com.beatravelbuddy.travelbuddy",
+				"paths": [
+					"/*",
+					"/auth/instagram/callback*"
+				]
+			}
+		]
+	}
+}
